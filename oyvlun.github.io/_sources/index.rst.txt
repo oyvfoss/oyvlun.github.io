@@ -1,0 +1,15 @@
+oyvshare 
+========
+
+This page is a subset of Øyvind's personal work page *oyweb*. It contains
+material which may be if interest to collaborators. For now, this only includes
+the *projects* folder of oyweb - more content may be included at a later time.
+
+.. toctree::
+   :maxdepth: 1
+
+   projects/projects
+
+
+   
+

@@ -1,0 +1,10 @@
+Projects
+========
+
+.. toctree::
+   :maxdepth: 1
+ 
+   arven_etter_nansen/arven_etter_nansen
+   atwain/atwain
+   argo_barents/argo_barents
+   fjordeco/fjordeco

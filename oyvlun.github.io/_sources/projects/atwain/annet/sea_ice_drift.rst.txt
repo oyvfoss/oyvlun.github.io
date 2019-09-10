@@ -1,0 +1,99 @@
+Sea ice drift
+\\\\\\\\\\\\\
+
+Products
+++++++++
+
+NSIDC
+'''''
+
+Sea ice drift estimates were obtained from the NSIDC Polar Pathfinder Daily 25
+km EASE-Grid Sea Ice Motion Vectors product (obtained from from
+https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0116\_icemotion\_vectors\_v4/, hf. referred to as
+*NSIDC*). The data is available on the 25x25 km EASE grid, and ice drift
+velocity vectors are by default separated into components in the local grid
+direction, making the calculation of drift into a grid cell relatively simple. 
+
+
+Ifremer
+'''''''
+
+Sea-ice drift was also obtained from the Ifremer-CERSAT merged sea-ice product
+obtained from
+*ftp://ftp.ifremer.fr/ifremer/cersat/products/gridded/psi-drift*
+hf. referred to as *Ifremer*. We use the merged ASCAT (A-B) SSMI product,
+and look at 3-day averaged fields where missing values have been filled (by
+drift inferred from wind data?).
+
+This product is available on a 62.5 x 62.5 km polar stereographic grid, and
+drift vectors are presented in terms of geographic coordinates (zonal and
+meridional velocity components). 
+
+
+Boundary box
+++++++++++++
+
+In order to look at a budget of sea-ice, we defined a rectangular lat-lon
+area defined by the 28E and 35E parallels and the 81N and 82N meridians. The
+area enclosed by this boundary spans 111.7 km meridionally and from 108.8 km to
+122.3 km zonally. 
+
+In addition to the corner points, 3 additional, evenly spaced grid points were
+defined along each of the boundaries. Grid spacing was 27.83 meridionally and
+27.20 km and 30.58 km zonally. The grid was produced with the script
+*code/processing_and_data/sea_ice_drift/create_grid_box/define_box_area.py*. The
+grid was stored as
+*/home/oyvindl/work/atwain/data/other/sea_ice_drift/interp/ipgrid.p*.
+
+.. figure:: /files/sea_ice_drift_interp_area.png
+    :scale: 70
+
+Interpolation and computation of fluxes
++++++++++++++++++++++++++++++++++++++++
+
+NSIDC
+'''''
+
+Interpolating NSIDC onto box boundary and computing fluxes:
+*atwain/data/other/sea_ice_drift/interp/interp_NSIDC.py*.
+
+- Rotated from native grid coordinates to *u,v* after interpolating.
+- Also interpolating *u,v* onto the atwain point.
+- Integrating fluxes across the boundary and computing net flux.
+- Missing values (indicating no sea ice) set to 0.
+
+Results look qualitatively similar to my previous calculation for the native
+3x3 grid. 
+
+Result is saved to **/home/oyvindl/work/atwain/data/other/sea_ice_drift/NSIDC_bound_fluxes.p**.
+
+Ifremer
+'''''''
+
+
+Interpolating Ifremer onto box boundary and computing fluxes:
+*atwain/data/other/sea_ice_drift/interp/interp_ifremer.py*.
+
+- Also interpolating *u,v* onto the atwain point.
+- Integrating fluxes across the boundary and computing net flux.
+- Missing values (indicating no sea ice) set to 0.
+
+Result is saved to **/home/oyvindl/work/atwain/data/other/sea_ice_drift/ifremer_bound_fluxes.p**.
+
+
+Comparison
+''''''''''
+
+Fairly good match between *u* and *v* (source script: *compare_u_v_atwain.py*).
+
+.. figure:: /files/uv_atwain_ifremer_vs_nsdic.png
+    :scale: 70
+
+    Comparison of u and v interpolated onto the ATWAIN mooring location. plot
+    shows 31-d running mean.
+
+.. figure:: /files/flux_net_abs_atwain_ifremer_vs_nsdic.png
+    :scale: 70
+
+    Net area sea ice flux into the box domain (upper) and sum of all flux
+    magnitudes through the boundaries (lower). Plot shows 31-d running mean.

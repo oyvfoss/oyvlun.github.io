@@ -1,0 +1,27 @@
+A-TWAIN
+=======
+
+
+
+.. figure:: /files/map_basic_atwain.png
+    :width: 60%
+
+200-m rigg koordinater (2015 utplassering):
+
+81N 24.255' , 31E 13.533'
+
+Ref. toktrapport A-TWAIN 2015. Koordinater lagret i */atwain/data/atwain_200m_latlon.p*
+
+
+
+Annet
+'''''
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    data
+    annet/*
+
+- :download:`A-TWAIN initial writeup </files/atwain_initial.pdf>`.

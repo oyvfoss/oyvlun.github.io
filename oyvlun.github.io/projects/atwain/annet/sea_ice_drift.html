@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sea ice drift &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Sea ice along the 200 m contour" href="seaice_200m.html" />
+    <link rel="prev" title="Mooring time series, overview" href="mooring_ts.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="sea-ice-drift">
+<h1>Sea ice drift<a class="headerlink" href="#sea-ice-drift" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="products">
+<h2>Products<a class="headerlink" href="#products" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nsidc">
+<h3>NSIDC<a class="headerlink" href="#nsidc" title="Permalink to this headline">¶</a></h3>
+<p>Sea ice drift estimates were obtained from the NSIDC Polar Pathfinder Daily 25
+km EASE-Grid Sea Ice Motion Vectors product (obtained from from
+<a class="reference external" href="https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0116_icemotion_vectors_v4/">https://daacdata.apps.nsidc.org/pub/DATASETS/nsidc0116_icemotion_vectors_v4/</a>, hf. referred to as
+<em>NSIDC</em>). The data is available on the 25x25 km EASE grid, and ice drift
+velocity vectors are by default separated into components in the local grid
+direction, making the calculation of drift into a grid cell relatively simple.</p>
+</div>
+<div class="section" id="ifremer">
+<h3>Ifremer<a class="headerlink" href="#ifremer" title="Permalink to this headline">¶</a></h3>
+<p>Sea-ice drift was also obtained from the Ifremer-CERSAT merged sea-ice product
+obtained from
+<em>ftp://ftp.ifremer.fr/ifremer/cersat/products/gridded/psi-drift</em>
+hf. referred to as <em>Ifremer</em>. We use the merged ASCAT (A-B) SSMI product,
+and look at 3-day averaged fields where missing values have been filled (by
+drift inferred from wind data?).</p>
+<p>This product is available on a 62.5 x 62.5 km polar stereographic grid, and
+drift vectors are presented in terms of geographic coordinates (zonal and
+meridional velocity components).</p>
+</div>
+</div>
+<div class="section" id="boundary-box">
+<h2>Boundary box<a class="headerlink" href="#boundary-box" title="Permalink to this headline">¶</a></h2>
+<p>In order to look at a budget of sea-ice, we defined a rectangular lat-lon
+area defined by the 28E and 35E parallels and the 81N and 82N meridians. The
+area enclosed by this boundary spans 111.7 km meridionally and from 108.8 km to
+122.3 km zonally.</p>
+<p>In addition to the corner points, 3 additional, evenly spaced grid points were
+defined along each of the boundaries. Grid spacing was 27.83 meridionally and
+27.20 km and 30.58 km zonally. The grid was produced with the script
+<em>code/processing_and_data/sea_ice_drift/create_grid_box/define_box_area.py</em>. The
+grid was stored as
+<em>/home/oyvindl/work/atwain/data/other/sea_ice_drift/interp/ipgrid.p</em>.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../_images/sea_ice_drift_interp_area.png"><img alt="../../../_images/sea_ice_drift_interp_area.png" src="../../../_images/sea_ice_drift_interp_area.png" style="width: 315.7px; height: 232.39999999999998px;" /></a>
+</div>
+</div>
+<div class="section" id="interpolation-and-computation-of-fluxes">
+<h2>Interpolation and computation of fluxes<a class="headerlink" href="#interpolation-and-computation-of-fluxes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>NSIDC<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Interpolating NSIDC onto box boundary and computing fluxes:
+<em>atwain/data/other/sea_ice_drift/interp/interp_NSIDC.py</em>.</p>
+<ul class="simple">
+<li><p>Rotated from native grid coordinates to <em>u,v</em> after interpolating.</p></li>
+<li><p>Also interpolating <em>u,v</em> onto the atwain point.</p></li>
+<li><p>Integrating fluxes across the boundary and computing net flux.</p></li>
+<li><p>Missing values (indicating no sea ice) set to 0.</p></li>
+</ul>
+<p>Results look qualitatively similar to my previous calculation for the native
+3x3 grid.</p>
+<p>Result is saved to <strong>/home/oyvindl/work/atwain/data/other/sea_ice_drift/NSIDC_bound_fluxes.p</strong>.</p>
+</div>
+<div class="section" id="id2">
+<h3>Ifremer<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Interpolating Ifremer onto box boundary and computing fluxes:
+<em>atwain/data/other/sea_ice_drift/interp/interp_ifremer.py</em>.</p>
+<ul class="simple">
+<li><p>Also interpolating <em>u,v</em> onto the atwain point.</p></li>
+<li><p>Integrating fluxes across the boundary and computing net flux.</p></li>
+<li><p>Missing values (indicating no sea ice) set to 0.</p></li>
+</ul>
+<p>Result is saved to <strong>/home/oyvindl/work/atwain/data/other/sea_ice_drift/ifremer_bound_fluxes.p</strong>.</p>
+</div>
+<div class="section" id="comparison">
+<h3>Comparison<a class="headerlink" href="#comparison" title="Permalink to this headline">¶</a></h3>
+<p>Fairly good match between <em>u</em> and <em>v</em> (source script: <em>compare_u_v_atwain.py</em>).</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../_images/uv_atwain_ifremer_vs_nsdic.png"><img alt="../../../_images/uv_atwain_ifremer_vs_nsdic.png" src="../../../_images/uv_atwain_ifremer_vs_nsdic.png" style="width: 448.0px; height: 336.0px;" /></a>
+<p class="caption"><span class="caption-text">Comparison of u and v interpolated onto the ATWAIN mooring location. plot
+shows 31-d running mean.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../../_images/flux_net_abs_atwain_ifremer_vs_nsdic.png"><img alt="../../../_images/flux_net_abs_atwain_ifremer_vs_nsdic.png" src="../../../_images/flux_net_abs_atwain_ifremer_vs_nsdic.png" style="width: 448.0px; height: 336.0px;" /></a>
+<p class="caption"><span class="caption-text">Net area sea ice flux into the box domain (upper) and sum of all flux
+magnitudes through the boundaries (lower). Plot shows 31-d running mean.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../projects.html">Projects</a><ul>
+  <li><a href="../atwain.html">A-TWAIN</a><ul>
+      <li>Previous: <a href="mooring_ts.html" title="previous chapter">Mooring time series, overview</a></li>
+      <li>Next: <a href="seaice_200m.html" title="next chapter">Sea ice along the 200 m contour</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/projects/atwain/annet/sea_ice_drift.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
