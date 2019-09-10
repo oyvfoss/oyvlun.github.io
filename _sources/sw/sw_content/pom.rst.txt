@@ -1,0 +1,30 @@
+Princeton Ocean Model
+:::::::::::::::::::::
+
+Introductory notes from Glen: 
+
+**compile_test** 
+
+Has configurations and parameters overriding the ones in
+*defalt_params*. Any parameter in *default_params* can be set in
+*compile_test*. The grid size parameters under "Array sizes" *must* be
+set. *im* is x-grid, *jm* y-grid and *kb* sigma levels. Horizontal
+velocities are computed at points between *w*-points. So if you want
+100 layers of horizontal velocity, kb needs to be 101.
+
+In principle, these steps should get me a long way:
+
+- **source complile_test**: Runs the commands in compile_test,
+  builds a bunch of *.o* and other files based on the
+  parameters.
+- **make**: Compiles code with the compile specified in the makefile. 
+- **run ./pom2kt**: Runs the model.
+
+Newer versions of the model can deal with circular BCs. 
+
+Glen has horizontally uniform stratification. He gives one profile,
+which is interpolated onto the corresponding sigma levels at ech
+grid. I want a horizontally varying stratification, but at least to
+begin woith I want a flat bottom, so I won't need all the interpolation.
+   
+    

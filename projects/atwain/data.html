@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Data &#8212; oyweb  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Svalbard Science Conference 2019" href="annet/svalbard_konferanse.html" />
+    <link rel="prev" title="A-TWAIN" href="atwain.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="data">
+<h1>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h1>
+<p>Ser foreløpig kun på data fra riggen på 200 m.</p>
+<div class="section" id="adcper">
+<h2>ADCPer<a class="headerlink" href="#adcper" title="Permalink to this headline">¶</a></h2>
+<p>Legger sammen de tre tidsseriene for å se i sammenheng
+(<em>atwain/code/processing_and_data/moorings/combine_currents.py</em>).</p>
+<ul class="simple">
+<li><p>Hver profil interpoleres på en uniformt grid (1, 2, .. , 109, 110).</p></li>
+<li><p>Utplassering 1 og 2: bruker et 3-p running average filter i z-retningen for å
+kompansere for skiftene vertikal resolusjon.</p></li>
+</ul>
+<p>Filen i
+<strong>work/atwain/data/processed_mooring_data/combined_adcp.nc</strong> (~126 MB). Noen diskrepanser mellom
+de tre utplasseringene:</p>
+<p><strong>dt:</strong></p>
+<ul class="simple">
+<li><p>Utplassering 1 (2012-2013): <em>dt = 20 min</em>.</p></li>
+<li><p>Utplassering 2 (2013-2015): <em>dt = 15 min</em>.</p></li>
+<li><p>Utplassering 3 (2015-2017): <em>dt = 20 min</em>.</p></li>
+</ul>
+<p><strong>dz:</strong></p>
+<ul class="simple">
+<li><p>Utplassering 1 (2012-2013): <em>dt = 4 m</em>.</p></li>
+<li><p>Utplassering 2 (2013-2015): <em>dt = 4 m</em>.</p></li>
+<li><p>Utplassering 3 (2015-2017): <em>dt = 8 m</em>.</p></li>
+</ul>
+</div>
+<div class="section" id="ctder">
+<h2>CTDer:<a class="headerlink" href="#ctder" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="oversikt">
+<h3>Oversikt<a class="headerlink" href="#oversikt" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="utplassering-1-2012-2013">
+<h4>Utplassering 1 (2012-2013):<a class="headerlink" href="#utplassering-1-2012-2013" title="Permalink to this headline">¶</a></h4>
+<p>Alle CTD-data i filen <em>A</em>. Oversikt over
+prosessering i <em>ATWAIN_datasets_overview.xlsx</em>.</p>
+<p>CTDer på 200m-riggen (i tillegg var det 6 sensorer på 800-riggen):</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 8%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Instrument</strong></p></th>
+<th class="head"><p><strong>#</strong></p></th>
+<th class="head"><p><strong>Variabler</strong></p></th>
+<th class="head"><p><strong>dt (min)</strong></p></th>
+<th class="head"><p><strong>Dybde (db)</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Microcat</p></td>
+<td><p>9294</p></td>
+<td><p>T, S, P</p></td>
+<td><p>15</p></td>
+<td><p>105</p></td>
+</tr>
+<tr class="row-odd"><td><p>Microcat</p></td>
+<td><p>9295</p></td>
+<td><p>T, S, P</p></td>
+<td><p>15</p></td>
+<td><p>133</p></td>
+</tr>
+<tr class="row-even"><td><p>Microcat</p></td>
+<td><p>9296</p></td>
+<td><p>T, S, P</p></td>
+<td><p>15</p></td>
+<td><p>182</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="utplassering-2-2013-2015">
+<h4>Utplassering 2 (2013-2015):<a class="headerlink" href="#utplassering-2-2013-2015" title="Permalink to this headline">¶</a></h4>
+<p>Alle CTD-data i filen <em>ATWAIN2013_Microcats_interpolated_SST.mat</em> (NB: ligger i
+mappen <em>/2015_2017deployment/</em>). I denne filen finnes enkelt-tidsserier for
+4 Microcats (alle interpolert til samme <em>t</em>?).</p>
+<p>I tillegg finnes matriser hvor:</p>
+<ul class="simple">
+<li><p>T har blitt interpolert til et jevnt p-grid (<em>_int</em>).</p></li>
+<li><p>Enkelttidsserier hvor SST <em>(fra hvor?)</em> har blitt inkludert (<em>_sst</em>).</p></li>
+<li><p>Interpolert, med SST (<em>_sst_int</em>).</p></li>
+<li><p>Interpolert, 1-d avg (<em>_int_1d</em>).</p></li>
+<li><p>Interpolert, med SST, 1-d avg (<em>_sst_int_1d</em>).</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 8%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Instrument</strong></p></th>
+<th class="head"><p><strong>#</strong></p></th>
+<th class="head"><p><strong>Variabler</strong></p></th>
+<th class="head"><p><strong>dt (min)</strong></p></th>
+<th class="head"><p><strong>Dybde (db)</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Microcat</p></td>
+<td><p>?</p></td>
+<td><p>T, S, P</p></td>
+<td><p>15</p></td>
+<td><p>46</p></td>
+</tr>
+<tr class="row-odd"><td><p>Microcat</p></td>
+<td><p>?</p></td>
+<td><p>T, S, P</p></td>
+<td><p>15</p></td>
+<td><p>112</p></td>
+</tr>
+<tr class="row-even"><td><p>Microcat</p></td>
+<td><p>?</p></td>
+<td><p>T, S, P</p></td>
+<td><p>15</p></td>
+<td><p>137</p></td>
+</tr>
+<tr class="row-odd"><td><p>Microcat</p></td>
+<td><p>?</p></td>
+<td><p>T, S, P</p></td>
+<td><p>15</p></td>
+<td><p>187</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="utplassering-3-2015-2017">
+<h4>Utplassering 3 (2015-2017):<a class="headerlink" href="#utplassering-3-2015-2017" title="Permalink to this headline">¶</a></h4>
+<p><em>ATWAIN2015_Microcats_interpolated_SST.mat</em> har samme struktur som
+<em>ATWAIN2015_Microcats_interpolated_SST.mat</em>, vist over. I tillegg finnes
+<em>ATWAIN2015_Microcats_processed.mat</em>, som har samme struktur som
+<em>ATWAIN2012_allcats_processed.mat</em>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 8%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Instrument</strong></p></th>
+<th class="head"><p><strong>#</strong></p></th>
+<th class="head"><p><strong>Variabler</strong></p></th>
+<th class="head"><p><strong>dt (min)</strong></p></th>
+<th class="head"><p><strong>Dybde (db)</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Microcat</p></td>
+<td><p>9296</p></td>
+<td><p>T, S, P</p></td>
+<td><p>15</p></td>
+<td><p>50</p></td>
+</tr>
+<tr class="row-odd"><td><p>Microcat</p></td>
+<td><p>9294</p></td>
+<td><p>T, S, P</p></td>
+<td><p>15</p></td>
+<td><p>130</p></td>
+</tr>
+<tr class="row-even"><td><p>Microcat</p></td>
+<td><p>9295</p></td>
+<td><p>T, S, P</p></td>
+<td><p>15</p></td>
+<td><p>144</p></td>
+</tr>
+<tr class="row-odd"><td><p>Microcat</p></td>
+<td><p>8763</p></td>
+<td><p>T, S, P</p></td>
+<td><p>15</p></td>
+<td><p>192</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="prosessering">
+<h3>Prosessering<a class="headerlink" href="#prosessering" title="Permalink to this headline">¶</a></h3>
+<p><strong>A</strong>: Begynner med å produsere en enkel tidsserie for hele perioden: <em>T/S på
+105 m</em> <strong>CTD_105db_combined.p</strong>:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Utplassering 1: Tidsserie fra 105 db.</p></li>
+<li><p>Utplassering 2: 105 db-indeks fra <em>ATWAIN2013_Microcats_interpolated_SST.mat</em>.</p></li>
+<li><p>Utplassering 3: 105 db-indeks fra <em>ATWAIN2015_Microcats_interpolated_SST.mat</em>.</p></li>
+</ul>
+</div></blockquote>
+<p>Kun ment for å kikke litt rundt midlertidig - usikker på f.eks. om #2 og #3 har
+blit interpolert til et fast 105db punkt..</p>
+<p><strong>B</strong>: Kombinerer feltene fra utplassering 2 og 3 (reinterpolerer til ADCP-griddet.)</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">oyweb</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../logg/logg.html">Logg</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../projects.html">Prosjekter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tokt_data/tokt_data.html">Data og tokt</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sci_notes/sci_notes.html">Fagnotater</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sw/sw.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../links/links.html">Nyttige lenker</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../projects.html">Prosjekter</a><ul>
+  <li><a href="atwain.html">A-TWAIN</a><ul>
+      <li>Previous: <a href="atwain.html" title="previous chapter">A-TWAIN</a></li>
+      <li>Next: <a href="annet/svalbard_konferanse.html" title="next chapter">Svalbard Science Conference 2019</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Oyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/projects/atwain/data.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

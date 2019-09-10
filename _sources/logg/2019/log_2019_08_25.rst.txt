@@ -1,0 +1,98 @@
+Søndag 25.08 2019
++++++++++++++++++
+
+ERA preparation for ATWAIN
+..........................
+
+Extracting fields and computing wind stress curl. (t, lon, lat) fields in
+*/atwain/code/processing_and_data/wind/era_interim/compute_wscurl.py*.
+
+Wind stress computed using Large and Pond (*mcalc.ws*).
+
+Wind stress curl computed from first differences using
+*pycurrents.data.wind.curl*. **Note**: ERA Interim is on an even lat-lon grid,
+meaning that dx is about 0.16*dy. The spatial scales over which the gradients
+are computed are therefore different for x and y. However, the fields themselves
+look reasonable, as does the curl field (the atmosperic stuff is dominated by
+large-scale motion), so I'll leave it as is for now.
+
+
+Interpolating fields onto ATWAIN point using
+*scipy.interpolate.RectSphereBivariateSpline*
+(bivariate spline interpolation over a rectangular mesh on a sphere).
+
+**Output:**
+*/atwain/data/other/wind/era_interim/era_interim_for_atwain_are.p* - 2D fields in Python
+arrays, with wind stress curl.
+*/atwain/data/other/wind/era_interim/era_interim_for_atwain_point.p* - fields
+interpolated onto ATWAIN.
+
+(Note: the download script is */atwain/data//other/wind/era_interim/dl_era_winds.py*).
+
+From what I can tell `here
+<https://www.ecmwf.int/en/faq/how-do-i-cite-era-interim-my-publication>`_, I
+just need to cite *dee_2011*.
+
+Sea ice drift preparation for ATWAIN
+....................................
+
+Fiddled around quite a bit to find a suitable product. There is *PIOMAS*, which
+probably would be most approproate in that it gives volume fluxes. However, it
+is only available as fortran binary files, and I'm unsure if there is actually
+data past 2004..
+
+I also looked into the sea-ice drift product from EUMETSAT OSISAF (hosted at
+*met.no*). This is a gridded satellite product, and therefore too patchy for my
+purposes. It's available from April 2014 to present. I have these files
+downloaded at */atwain/data/other/sea_ice_drift/osisaf.met.no* - maybe they will
+come in handy for validation or something later?
+
+Ultimately decided on using the **Polar Pathfinder Daily 25 km EASE-Grid Sea Ice
+Motion Vectors** product (reference added: *tschudi_2019*). This is easy to use,
+the fields are unambiguous, and the netCDF format is convenient. The product seems to be an estimate based
+on a number of observations - I'm unsure if there is modelling involved.
+
+Downloaded annual files through the website GUI (think I needed a password).
+These are located in *atwain/data/other/sea_ice_drift/polar_pathfinder_daily/*.
+
+
+Computing flow into and out of a 3x3 (75km x 75km) box where the ATWAIN mooring is
+approximately at the center (**script**:
+*atwain/code/processing_and_data/sea_ice_drift/extract_timeseries_pathfinder_25x25.py*).
+This script calculates relevant quantities (including fluxes) and concatenates
+data from the annual files into single multi-year time series. The resulting
+time series themselves are located in 
+*atwain/data/other/sea_ice_drift/polar_pathfinder_daily/atwain_sea_ice_drift_timeseries.p*.
+
+
+Slices defining this box are stored in
+*atwain/data/other/sea_ice_drift/polar_pathfinder_daily/slices_atwain_pathfinder25x25.p*.
+
+DO
+..
+
+**ATWAIN**
+
+- Sea Ice cover: Interpolate onto exact point to produce time series.
+- Grab SST from *the Optimum Interpolation Sea Surface Tem-
+  perature product (OISST v2, available from NOAA/OAR/ESRL PSD, Boulder, Colorado, USA, at
+  https://www.esrl.noaa.gov/psd/; Reynolds et al., 2007; Reynolds, 2009)*.
+  Interpolate onto exact point (note: this might already be included, but
+  probably just as well to do it myself for consistency.. 
+- Temperature: Create "heat time series" by combining with SST. Also include the
+  middle sensor for the first deployment, for comparison..
+- Currents: Short comparative analysis of the deployments:
+    - Spectra.
+    - Mean flow.
+- Use the latter to define the dominant direction. Rotate each ccordingly and
+  rerun the script to join the current time series. 
+- Find the depth range where u and Q can both be computed, and compute a heat
+  flux field.
+- If this looks pretty uniform (it should): Do a vertical integral to get a 1d
+  time series.
+  
+**OTHER**
+
+- Answer Brian.
+- Answer Mark (with data locations).
+- Answer Amanda. 

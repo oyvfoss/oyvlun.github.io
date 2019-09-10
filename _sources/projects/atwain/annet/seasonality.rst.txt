@@ -1,0 +1,5 @@
+Seasonality
+'''''''''''
+
+.. figure:: /files/seasonal_prelim.png
+    :width: 150%

@@ -1,0 +1,67 @@
+Arctic Oscillation
+''''''''''''''''''
+
+.. admonition:: Typical definition
+
+  **The first EOF of the mean sea level pressure field in
+  the Northern Hemisphere.**
+ 
+
+Also: **Northern Annular mode**. 
+AO index `data
+<https://www.cpc.ncep.noaa.gov/products/precip/CWlink/daily_ao_index/monthly.ao.index.b50.current.ascii>`_.
+
+
+
+.. figure:: /files/ao_from_wiki.png
+    :scale: 70
+
+    Schematic (Wikipedia)
+
+Phases
+++++++
+
+
+.. figure:: /files/ao_index.png
+    :scale: 70
+
+    AO index (source code: *work/climate_indices/code/plot_ao.py*).
+
+
+My understanding *(could be wrong!)*:
+
+**Negative phase:** Weaker and more unstable `polar vortex <./polar_vortex.html>`_, therefore increased meridional
+mass and heat transport. As a result: *warmer Arctic, cooler mid-latitudes,
+increased storminess in the Midwest..*.
+
+**Positive phase:** Stronger and more stable polar vortex with less heat transport towards the
+pole. Therefore: colder Arctic.
+
+
+.. figure:: /files/ao_from_noaa.jpg
+    :scale: 70
+
+    Sea level pressure anomaly during strongly negative
+    (left, December 2009-February 2010) and positive (right, December
+    1988-February 1989) phases of the Arctic Oscillation. (`Source
+    <https://www.climate.gov/news-features/event-tracker/how-polar-vortex-related-arctic-oscillation>`_).
+
+Relation to sea ice
++++++++++++++++++++
+
+
+Negative AO favors a clockwise atmospheric circulation direction. This acts to
+keep more older, thicker ice within the central Arctic Ocean.
+
+Positive AO tends to push sea ice out of the Fram Strait, so that the central
+ice is thinner and melts more easily during summer.
+
+Relation to the NAO
++++++++++++++++++++
+
+
+`Ambbaum et al. 2001
+<https://journals.ametsoc.org/doi/pdf/10.1175/1520-0442(2001)014%3C3495:AOONAO%3E2.0.CO%3B2>`_:
+*Arctic Oscillation or North Atlantic Oscillation?* 
+
+

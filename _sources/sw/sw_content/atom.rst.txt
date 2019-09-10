@@ -1,0 +1,14 @@
+Atom
+::::
+
+*January 2015: Switching to Atom as primary editor, although I am skeptical about the slow startup speed..*
+
+Commands
+''''''''
+
+- *Command palette*: **Ctr+Shift+P**
+- *Toggle tree side bar*: **Ctr + K**
+- *Open/close file*: **Ctr + O/W**
+- *Settings pane*:  **Ctr+,**
+- *"Fuzzy finder"*: **Ctr + T** 
+- *Jump to method*: **Ctr+ R**

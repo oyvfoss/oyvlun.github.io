@@ -1,0 +1,40 @@
+Literature summaries
+====================
+
+
+Overview of the Barents Sea
++++++++++++++++++++++++++++
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+ 
+   barents_overview/*
+
+
+Papers
++++++++++
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+ 
+   papers/*
+
+Other
++++++
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+ 
+   other/*
+
+TBW
++++
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+ 
+   TBW/*

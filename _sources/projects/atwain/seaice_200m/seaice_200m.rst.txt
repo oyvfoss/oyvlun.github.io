@@ -1,0 +1,85 @@
+Sea ice along the 200 m contour
+|||||||||||||||||||||||||||||||
+
+Interested in sea ice cover along the 200 m bathy contour north of Svalbard.
+
+Using the *Near-Real-Time DMSP SSM/I-SSMIS Daily Polar
+Gridded Sea Ice Concentrations* (daily, 25 km x 25 km).
+
+Path
+''''
+
+Handpicking a number of points (roughly) along the 200 m isobath
+(*pick_points_200m.py*) based on ETOPO1 bathymetry. Saved in (200m_points.p*):
+
+.. figure:: /files/map_200m_path.png
+     :scale: 60
+
+
+     Path points (red) plotted on ETOPO1 bathymetry. ATWAIN mooring location
+     (second deployment) in green ring.
+
+There are 24 points spanning a distance of 720 km from west of Albert I Land on
+Spitsbergen to north of Franz Josef Land. Average spacing between points is 34.8
+km, giving a total path distance of 799 km. 
+
+
+Subset
+''''''
+
+Due its large , it was difficult to work directly with the full dataset, either
+locally or remotely. Therefore, an nc-file containing a 20 x 30 point subset
+spanning the area was generated. In addition, data before 2011 was removed. The
+resulting subset file is stored in
+*atwain/data/other/sea_ice_concentration/NSIDC_subset_atwain.nc*.
+
+.. figure:: /files/subset_sic.png
+     :scale: 60
+
+     Left: Full SIC product coverage (left) and span of subset (right). SEC
+     field from 01.01.2012.
+
+
+Bilinear interpolation of the (2011-) SIC field onto the point was done (using
+*xesmf.Regridder*). Code in *interpolate_sic_onto_path.p*. 
+
+
+Interpolation
+'''''''''''''
+
+This subset was then interpolated onto the 24-point path (bilinear
+interpolation using *xesmf.Regridder*. The resulting data is stored as a Bunch
+in */home/oyvindl/work/atwain/data/other/sea_ice_concentration/SIC_200m_path.p*.
+
+
+Results
+'''''''
+
+Average sea ice cover
++++++++++++++++++++++
+
+.. figure:: /files/means_sic_path.png
+     :scale: 60
+
+Time evolution
+++++++++++++++
+
+
+.. figure:: /files/sic_path_hovmuller.png
+     :scale: 60
+
+     Time-distance plot of SIC along the 24-point path.
+
+
+.. figure:: /files/sic_gradient_path_hovmuller.png
+     :scale: 60
+
+     Time-distance plot of SIC gradient along the 24-point path. Smoothed with a
+     31-day boxcar window in time.
+
+.. figure:: /files/gradient_atwainloc.png
+     :scale: 60
+
+     Time-distance plot of SIC gradient near the ATWAIN 200 mooting location
+     (*x=0* in the previous plot). 
+

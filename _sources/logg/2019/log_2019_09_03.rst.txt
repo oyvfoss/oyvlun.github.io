@@ -1,0 +1,39 @@
+Tirsdag 03.09 2019
+++++++++++++++++++
+
+`ATWAIN-møte <../moeter/atwain/moete_atwain_030919.html>`_ med Arild og Angelica.
+
+Lesing og klimaindekser
+'''''''''''''''''''''''
+
+Styrte en del med å lese inn indekser for AO og havisdekke i Arktis. Dette
+ligger nå i
+
+::
+
+    work/climate_indices
+
+I denne mappa finnes nå *data*, *plots* og *code*. Fint å lage systemer for å
+hente ut disse enkelt. Hent ENSO, NAO, AAO etc. etter hvert.
+
+PIO revision
+''''''''''''
+
+Set up everything for revision. Officially made the first change (#2.6)..
+
+Do
+''
+
+- Find IFREMER sea ice drift data?
+- Hent ut SIC oppstrøms?
+- Read up, AO.
+- Sett opp dropbox-konto (få reimbursement..) - se om rådata ligger der.
+- Få oversikt over PIO edits (skriv inn i manuskript).
+- Sjekk om Fram-toktet er over den 18?
+- Få oversikt over datoer i November.
+- Mail sjømannsdoktor.
+- Mock draft, A-TWAIN?
+
+
+**Keywords**
+ATWAIN, sea ice over, climate, index, indices, Arctic Oscillation, AO

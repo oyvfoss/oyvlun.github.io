@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Importing data &#8212; oyweb  documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Interpolation" href="interpolating.html" />
+    <link rel="prev" title="Filtering" href="filtering_p.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="importing-data">
+<h1>Importing data<a class="headerlink" href="#importing-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="general-files-unfinished">
+<h2>General files (UNFINISHED)<a class="headerlink" href="#general-files-unfinished" title="Permalink to this headline">¶</a></h2>
+<p>For an arbitrary file format, it is necessary to look at the actual file and see how the data is organized. The file can be opened, and read in whatever way is specified.</p>
+<p>Slightly awkward example script for reading a <em>.txt</em> file. Should modify this when I find a more effective approach.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">src</span> <span class="o">=</span> <span class="s1">&#39;../data/co2_annmean_mlo.txt&#39;</span>
+<span class="n">srcfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">rl</span> <span class="o">=</span> <span class="n">srcfile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> <span class="c1"># List containing each individual row.</span>
+<span class="n">YR</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">CO2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">rl</span><span class="p">[</span><span class="mi">57</span><span class="p">:]:</span> <span class="c1"># Data starts at line 72..</span>
+    <span class="n">YR</span> <span class="o">=</span> <span class="n">YR</span> <span class="o">+</span> <span class="p">[</span><span class="n">date2num</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">]),</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">))]</span>
+    <span class="n">CO2</span> <span class="o">=</span> <span class="n">CO2</span> <span class="o">+</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">])]</span>
+</pre></div>
+</div>
+<p><em>split</em> separates a string into a list containing strings separated by blanks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;hei jeg heter knut&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+ <span class="c1"># Returns:</span>
+
+ <span class="p">[</span><span class="s1">&#39;hei&#39;</span><span class="p">,</span> <span class="s1">&#39;jeg&#39;</span><span class="p">,</span> <span class="s1">&#39;heter&#39;</span><span class="p">,</span> <span class="s1">&#39;knut&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adcp-data">
+<h2>ADCP data<a class="headerlink" href="#adcp-data" title="Permalink to this headline">¶</a></h2>
+<p>ADCP data in Eric’s format can be read uding <em>Multiread</em>. Specify the instrument. The <em>read</em> command is then used with a specified step <em>n</em>, which picks out every <em>nth</em> profile.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pycurrents.adcp.rdiraw</span> <span class="k">import</span> <span class="n">Multiread</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">Multiread</span><span class="p">(</span><span class="s1">&#39;file.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;wh300&#39;</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">step</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">velocities</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">vel</span>
+<span class="n">dday</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">dday</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="mat-files">
+<h2>.mat files<a class="headerlink" href="#mat-files" title="Permalink to this headline">¶</a></h2>
+<p>If the file was not produced in a weird version of MATLAB, using <em>pycurrents.file.matfile</em> or <em>scipy.io.loadmat</em> is very easy. See the <a class="reference external" href="../octave.html">Octave documentation</a>.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">oyweb</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../logg/logg.html">Logg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../projects/projects.html">Prosjekter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tokt_data/tokt_data.html">Data og tokt</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../sci_notes/sci_notes.html">Fagnotater</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../sw.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../links/links.html">Nyttige lenker</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../sw.html">Software</a><ul>
+  <li><a href="../python.html">Python</a><ul>
+      <li>Previous: <a href="filtering_p.html" title="previous chapter">Filtering</a></li>
+      <li>Next: <a href="interpolating.html" title="next chapter">Interpolation</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Oyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/sw/sw_content/frequently_used/python/import_p.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

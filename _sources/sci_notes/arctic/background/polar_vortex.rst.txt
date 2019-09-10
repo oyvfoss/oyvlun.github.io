@@ -1,0 +1,7 @@
+Polar vortex
+............
+
+.. figure:: /files/polar_vortex.png
+    :scale: 18
+
+    Schematic (`source <https://www.noaa.gov/multimedia/infographic/science-behind-polar-vortex>`_)

@@ -1,0 +1,9 @@
+Faguttrykk: Engelsk - norsk
+***************************
+
+
+=============  ============
+Shear          *Skjær*
+Averaging      *Midling*
+Curl           *Rotasjon*
+=============  ============

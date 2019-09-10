@@ -1,0 +1,16 @@
+Sesongtokt Q4, november 2019 
+''''''''''''''''''''''''''''
+**12.11.19 - 27.11.19** (16 dager)
+
+*Longyearbyen-Longyearbyen*
+
+.. figure:: ../../../../arven_etter_nansen/documents/tokt/kh_nov2019/tokt_kart.png
+    :scale: 30
+
+    Kart over planlagt rute.
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   tokt_kh_nov2019/*

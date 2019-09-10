@@ -1,0 +1,52 @@
+Importing data
+______________
+
+
+General files (UNFINISHED)
+::::::::::::::::::::::::::
+
+For an arbitrary file format, it is necessary to look at the actual file and see how the data is organized. The file can be opened, and read in whatever way is specified.
+
+Slightly awkward example script for reading a *.txt* file. Should modify this when I find a more effective approach.
+
+::
+
+ src = '../data/co2_annmean_mlo.txt'
+ srcfile = open(src, 'r')
+ rl = srcfile.readlines() # List containing each individual row.
+ YR = []
+ CO2 = []
+ for line in rl[57:]: # Data starts at line 72..
+     YR = YR + [date2num(datetime.datetime(int(line.split()[0]),6,1))]
+     CO2 = CO2 + [float(line.split()[1])]
+
+*split* separates a string into a list containing strings separated by blanks:
+
+::
+
+ 'hei jeg heter knut'.split()
+
+  # Returns:
+ 
+  ['hei', 'jeg', 'heter', 'knut']
+ 
+
+ADCP data
+:::::::::
+
+ADCP data in Eric's format can be read uding *Multiread*. Specify the instrument. The *read* command is then used with a specified step *n*, which picks out every *nth* profile. 
+
+::
+ 
+ from pycurrents.adcp.rdiraw import Multiread
+ 
+ m = Multiread('file.dat', 'wh300')
+ r = m.read(step = 10)
+ velocities = r.vel
+ dday = r.dday
+
+
+.mat files
+::::::::::
+
+If the file was not produced in a weird version of MATLAB, using *pycurrents.file.matfile* or *scipy.io.loadmat* is very easy. See the `Octave documentation <../octave.html>`_.

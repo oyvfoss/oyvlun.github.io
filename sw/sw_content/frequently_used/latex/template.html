@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Standard template &#8212; oyweb  documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Mercurial" href="../merc.html" />
+    <link rel="prev" title="Figures" href="figures.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="standard-template">
+<h1>Standard template<a class="headerlink" href="#standard-template" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">documentclass</span><span class="p">{</span><span class="n">article</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">amsmath</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">hyperref</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">color</span><span class="p">}</span>
+<span class="o">%</span>\<span class="n">usepackage</span><span class="p">[</span><span class="n">demo</span><span class="p">]{</span><span class="n">graphicx</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">graphicx</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">caption</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">{</span><span class="n">subcaption</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">[</span><span class="n">utf8</span><span class="p">]{</span><span class="n">inputenc</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">[</span><span class="n">T1</span><span class="p">]{</span><span class="n">fontenc</span><span class="p">}</span>
+\<span class="n">usepackage</span><span class="p">[</span><span class="nb">round</span><span class="p">]{</span><span class="n">natbib</span><span class="p">}</span>
+\<span class="n">bibliographystyle</span><span class="p">{</span><span class="n">agu08</span><span class="p">}</span>
+\<span class="n">renewcommand</span><span class="p">{</span>\<span class="n">contentsname</span><span class="p">}{}</span>
+<span class="o">%</span>\<span class="n">graphicspath</span><span class="p">{{</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">oyvindl</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">fjordeco</span><span class="o">/</span><span class="n">figures</span><span class="p">}}</span>
+\<span class="n">newcommand</span><span class="p">{</span>\<span class="n">zotbibref</span><span class="p">}{</span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">oyvindl</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">misc</span><span class="o">/</span><span class="n">latex</span><span class="o">/</span><span class="n">zotbib</span><span class="p">}</span>
+
+\<span class="n">begin</span><span class="p">{</span><span class="n">document</span><span class="p">}</span>
+
+\<span class="n">definecolor</span><span class="p">{</span><span class="n">o</span><span class="p">}{</span><span class="n">rgb</span><span class="p">}{</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span>
+\<span class="n">title</span><span class="p">{</span><span class="n">Title</span><span class="p">}</span>
+\<span class="n">author</span><span class="p">{</span><span class="n">Øyvind</span> <span class="n">Lundesgaard</span><span class="p">}</span>
+\<span class="n">maketitle</span><span class="p">{}</span>
+\<span class="n">parindent</span><span class="o">=</span><span class="mi">0</span><span class="ow">in</span>
+\<span class="n">parskip</span><span class="o">=</span><span class="mi">8</span><span class="n">pt</span>
+
+<span class="o">%</span> <span class="n">Insert</span> <span class="n">science</span> <span class="n">here</span>
+
+\<span class="n">bibliography</span><span class="p">{</span>\<span class="n">zotbibref</span><span class="p">}</span>
+\<span class="n">end</span><span class="p">{</span><span class="n">document</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">oyweb</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../logg/logg.html">Logg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../projects/projects.html">Prosjekter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tokt_data/tokt_data.html">Data og tokt</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../sci_notes/sci_notes.html">Fagnotater</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../sw.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../links/links.html">Nyttige lenker</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../sw.html">Software</a><ul>
+  <li><a href="../latex.html">Latex</a><ul>
+      <li>Previous: <a href="figures.html" title="previous chapter">Figures</a></li>
+      <li>Next: <a href="../merc.html" title="next chapter">Mercurial</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Oyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/sw/sw_content/frequently_used/latex/template.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

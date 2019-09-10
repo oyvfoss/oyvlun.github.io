@@ -1,0 +1,35 @@
+Fagnotater
+==========
+
+*Forskningsrelatert*:
+
+.. toctree::
+   :maxdepth: 1
+ 
+   barents/barents
+   arctic/arctic
+
+
+*Generelt*:
+
+.. toctree::
+   :maxdepth: 1
+
+   fag_div/fys_os
+   fag_div/is
+   fag_div/klima
+
+
+*Metode, statistikk og dataanalyse*:
+
+.. toctree::
+   :maxdepth: 1
+
+   metode/statistikk
+
+*Skriving og formidling*:
+
+.. toctree::
+   :maxdepth: 1
+
+   formidling/skriv

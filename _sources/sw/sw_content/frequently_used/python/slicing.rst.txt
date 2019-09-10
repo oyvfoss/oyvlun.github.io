@@ -1,0 +1,63 @@
+Slicing
+:::::::
+
+A slice object is handy for isolating a (continuous) part of an array.
+
+::
+ 
+ sl = slice(3,8)  
+ c = a[sl]
+
+is equivalent to 
+
+::
+
+ b = a[3:8]
+
+Use *None* as (opposed to 0, -1) to extend to the beginning/end:
+ 
+::
+ 
+ # Full range:
+ slice(None, None)
+ slice(None,) # Equivalent
+
+ # Index 3 through end:
+ slice(3, None)
+
+**Multidimensional slicing**
+
+A slice can be applied in a particular dimension, like:
+
+::
+
+ B = A[:,sl]
+
+A slice can be multidimensional. For an *n*-dimensional array *A*: 
+
+::
+ 
+ sl = [slice(1,3), ] * n
+ B = A[sl]
+
+ # Is equivalent to: 
+
+ sl = slice(1,3)
+ B = A[sl,sl,sl,..]
+
+
+For slicing an *arbitrary dimension* (adim):
+
+::
+ 
+ #Example: For a n-d array A
+ 
+ adim = 3 
+
+ sl = [slice(None,), ] * n # Building n-dimensional slice
+ sl[adim] = slice[1,3]
+
+ B = A[sl]
+   
+
+Expand: Eric's *rangeslice*

@@ -1,0 +1,49 @@
+Filtering
+_________
+
+bl_filt
+???????
+
+
+::
+
+ from pycurrents.num import bl_filt
+
+Performs a running mean low pass filter with a Blackman window weight.
+
+Also works on 2D arrays, for filtering in one particular dimension.
+
+For a depth/time series *u*: 
+
+::
+
+ halfwidth = 100
+ ufilt = bl_filt(u , halfwidth , axis = 0)[0]
+
+The *half width* will correspond to a cutoff wavelengths per unit (*dx,dt..*). 
+
+
+Try: For filtering out frequencies higher than :math:`\omega_c = 2\pi f_c`:
+
+:math:`halfwidth = \frac{\lambda_c}{dt} = \frac{2\pi}{\omega_c\cdot dt}`
+
+In reality, if you really need this frequency out of the signal, use a significantly lower cutoff frequency.
+
+
+
+Example
+///////
+
+::
+
+ dx = 0.01
+ x = np.arange(0,10,dx)
+ y = sin(x)+3*sin(3*x+1)+2.3*cos(15*x)+sin(30*x)*1.2
+ cut_om = 10
+ hw = 2*np.pi/(dx*cut_om)
+ yf = bl_filt(y,10)[0]
+
+.. image:: /figures/filt.png
+	   :scale: 55
+
+ 

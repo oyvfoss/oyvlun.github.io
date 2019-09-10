@@ -1,0 +1,78 @@
+Tirsdag 20.08 2019
++++++++++++++++++
+
+Lesing
+\\\\\\
+
+Tatt en kjapp titt på Perez-Hernandez 2017.
+
+DFØ og timeføring
+\\\\\\\\\\\\\\\\\
+
+*Brukernavn:* 
+::
+ 
+ 3660oylu
+
+Passord: Øy øst for Edgeøya. Stor første bokstav, ø byttet med 0, utropstegn til
+slutt.
+
+Ført timer over fra min manuelle timeliste. Etter samtale med seksjonsleder: Før
+riktig timeantall, men greit å jevne ut ved f.eks. halv dags fravær på torsdag. 
+
+For torsdag: Har tatt 2.5 timer fra søndag 19., og 1 time fra mandag 12. Tar
+dette ut på torsdag og jobber 1230 til 1600.
+
+Greit å fortsette å føre timer i eget regnskap.
+
+A-TWAIN
+\\\\\\\
+
+Abstract for Svalbard Science Conference
+........................................
+
+Lagt til i oyweb.
+
+Sjøis
+.....
+
+Fikk tak i en tidsserie for sjøis: `Near-Real-Time DMSP SSM/I-SSMIS Daily Polar
+Gridded Sea Ice Concentrations
+<https://catalog.data.gov/dataset/near-real-time-dmsp-ssm-i-ssmis-daily-polar-gridded-sea-ice-concentrations54c05>`_.
+
+Har plukka ut data (script: */oyvindl/work/atwain/code/sea_ice/get_si_cover.py*)
+og lagret tidsserie for ATWAIN-området i
+*/home/oyvindl/work/argo_barents/data/other/sea_ice/NSIDC_SIC_atwain_loc.p*.
+
+Kombinere strømdata
+...................
+
+Legger sammen de tre tidsseriene for å se i sammenheng
+(*atwain/code/processing_and_data/moorings/combine_currents.py*).
+
+Interpolerer til samme z-grid. Verdt å merke seg at det ser ut som vertikal
+resolusjon er halvert i 2015-2017 datasettet (går fra 4 til 8). Smoother
+med et 3pt verikalt binomielt filter på de to første for å sikre ca samme
+karakter.
+
+
+Iflg Renner et al. 2018 skal ADCPen (som er 150kHz) være på ca 112 m dyp. Dette
+stemmer bra med dybdefeltet - går ut ifra at dybdekloordinatene er riktige.
+
+Gjør foreløpig ingen ytterligere prosessering (ser ikke på amplituder og
+korrelasjoner, osv). Det burde imidlertid kunne gjøres på dette stadiet ganske
+enkelt seinere. 
+
+For 2012 finnes det *filtered* og *filtered_rot*-varianter av uv-datasettene.
+Ser ut som filtreringa er LP filter i tid, *rot* ser ut til å være en justering
+av retning, kanskje 10-20 grader. Usikker på hva dette er basert på, hør med
+Arild. Inntil videre bruker jeg det som jeg antar er råprossesert data.
+
+
+
+Vind
+....
+
+ERA5 har tatt over for ERA Interim. Har ingen åpenbar plass jeg kan få tak i
+data enkelt over Opendap akkurat nå (får ikke tilgag på APDRC). Spør Arild om
+NPI har tilgang til vindprodukter?

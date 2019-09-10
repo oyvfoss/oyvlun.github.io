@@ -1,0 +1,28 @@
+Spectra
++++++++
+
+**import pycurrents.num.spectra as ps**
+
+Basic spectrum calculations
+:::::::::::::::::::::::::::
+
+For data *y* on an even grid *x* with spacing *dx*:
+
+::
+
+ SD = abs(ps.fft(y))**2
+ F = ps.fftfreq(len(y) , d = dx)
+ plot(F,SD)
+
+
+ps.spectrum
+:::::::::::
+
+Calculates windowed spectrum. Can read 2-D array input and complex numbers. Detrend option.
+
+::
+
+ S = ps.spectrum(y , dt = dx)
+ PSD = S.psd_x
+ F = S.freqs
+ plot(F,PSD)

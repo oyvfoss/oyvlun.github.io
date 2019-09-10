@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mandag 02.09 2019 &#8212; oyweb  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tirsdag 03.09 2019" href="log_2019_09_03.html" />
+    <link rel="prev" title="2019" href="../daglige_logger.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="mandag-02-09-2019">
+<h1>Mandag 02.09 2019<a class="headerlink" href="#mandag-02-09-2019" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="atwain">
+<h2>ATWAIN<a class="headerlink" href="#atwain" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="remaking-sic">
+<h3>Remaking SIC<a class="headerlink" href="#remaking-sic" title="Permalink to this headline">¶</a></h3>
+<p>Previously only NaNs (was using the <em>interp2d</em> functions and there were NaNs in
+the source array). Later figured out that interpolating with this function was
+yielding weird results (SIC &gt; 105%, etc.). Now instead using the
+<em>scipy.interpolate.griddata</em> function, which seems to perform well.</p>
+<p><strong>Notes on interpolating:</strong>
+For python intepolation: <a class="reference external" href="https://stackoverflow.com/questions/49185127/unexpected-results-when-using-scipy-interpolate-griddata">This</a>:
+may be the way to go, actually:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">get</span> <span class="n">bilinear</span> <span class="n">interpolation</span> <span class="n">of</span> <span class="n">unstructured</span> <span class="n">data</span> <span class="k">with</span> <span class="n">SciPy</span><span class="p">,</span>
+<span class="n">use</span> <span class="n">SmoothBivariateSpline</span> <span class="k">with</span> <span class="n">kx</span><span class="o">=</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">ky</span><span class="o">=</span><span class="mi">1</span> <span class="p">(</span><span class="n">bilinear</span><span class="p">),</span> <span class="ow">and</span>
+<span class="n">s</span><span class="o">=</span><span class="mi">0</span> <span class="p">(</span><span class="n">no</span> <span class="n">smoothing</span><span class="p">)</span><span class="o">.</span> <span class="p">(</span><span class="n">But</span> <span class="n">it</span> <span class="n">seems</span> <span class="n">you</span><span class="s1">&#39;ll need more data points</span>
+<span class="n">than</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">example</span> <span class="n">to</span> <span class="n">achieve</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>May want to eventually look into <a class="reference external" href="http://gmt.soest.hawaii.edu/doc/5.4.5/pdf/GMT_Tutorial.pdf">GMT (Generic Mapping Tools)</a> for interpolation
+and other grid operations. Looks well-documented and seems like it would be easy
+to apply in UNIX shell..</p>
+</div>
+<div class="section" id="combining-time-series">
+<h3>Combining time series<a class="headerlink" href="#combining-time-series" title="Permalink to this headline">¶</a></h3>
+<p>Code for combining the time series in a single Bunch in
+<em>atwain/code/processinganddata/combine_time_series.py</em>.</p>
+<p>Included metadata in the Bunch, and dowumented in the ATWAIN pdf.</p>
+<p>Resulting file (1-d running averages) in <em>atwain/data/combined_timeseries.p</em>.</p>
+</div>
+<div class="section" id="atwain-doc">
+<h3>Atwain doc<a class="headerlink" href="#atwain-doc" title="Permalink to this headline">¶</a></h3>
+<p>Updated, reorganized, inserted figures etc.</p>
+</div>
+<div class="section" id="current-section">
+<h3>Current section<a class="headerlink" href="#current-section" title="Permalink to this headline">¶</a></h3>
+<p>For panel plot: Wanted to detide. <em>oyv.tides.tidefit_ts_1d</em> ran into troubel when there
+are completely masked rows. Fixed this.</p>
+</div>
+</div>
+<div class="section" id="seminar-abstract">
+<h2>Seminar abstract<a class="headerlink" href="#seminar-abstract" title="Permalink to this headline">¶</a></h2>
+<p>Created an abstract roughly based on previous stuff. Idea: Use Ziegler and Eidam
+to <em>support</em> the claims, without going into detail.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">oyweb</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../logg.html">Logg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/projects.html">Prosjekter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tokt_data/tokt_data.html">Data og tokt</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sci_notes/sci_notes.html">Fagnotater</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sw/sw.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../links/links.html">Nyttige lenker</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../logg.html">Logg</a><ul>
+  <li><a href="../daglige_logger.html">2019</a><ul>
+      <li>Previous: <a href="../daglige_logger.html" title="previous chapter">2019</a></li>
+      <li>Next: <a href="log_2019_09_03.html" title="next chapter">Tirsdag 03.09 2019</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Oyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/logg/2019/log_2019_09_02.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

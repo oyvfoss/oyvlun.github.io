@@ -1,0 +1,23 @@
+Software
+========
+
+Useful commands etc
+
+Contents:
+
+.. toctree::
+   :maxdepth: 1
+
+   unix
+   python
+   anaconda
+   merc
+   sphinx
+   latex
+   him 
+   gimp
+   emacs
+   atom
+   octave
+   libreoffice
+   videos

@@ -1,0 +1,23 @@
+Statistical tools
+=================
+
+**import scipy.stats as ss**...
+
+
+The documentation for this package is consequently incredibly cryptic, while the functions are fairly simple. Each distribution type has *shape* and *loc* parameters which typically are i.e. the mean and deviation.
+
+Fitting data to a distribution
+++++++++++++++++++++++++++++++
+
+
+*Example: Rayleigh fitting of data x,y:*
+
+
+
+**fitparams = ss.rayleigh.fit(y)**
+
+Returns a tuple *fitparams = (shape,loc)*.
+
+**yfit = ss.rayleigh.pdf(x,shape=fitparams[0],loc=fitparams[1])**
+
+Creates an array *yfit* at the points *x* corresponding to the Rayleigh probability density function with the extracted parameters.

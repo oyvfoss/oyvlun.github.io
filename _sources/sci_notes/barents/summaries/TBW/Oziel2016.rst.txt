@@ -1,0 +1,15 @@
+*Oziel et al [2016]:* The Barents Sea frontal zones and water masses variability (1980–2011)*
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+*Ocean Science, 12, 169-184*, `doi:10.5194/os-12-169-2016 <https://hal.sorbonne-universite.fr/hal-01284484>`_
+
+Intro
+"""""
+nn
+
+Data
+""""
+nn
+
+Method
+""""""

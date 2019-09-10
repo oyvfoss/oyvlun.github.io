@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Søndag 25.08 2019 &#8212; oyweb  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mandag 25.08 2019" href="log_2019_08_26.html" />
+    <link rel="prev" title="Fredag 23.08 2019" href="log_2019_08_23.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="sondag-25-08-2019">
+<h1>Søndag 25.08 2019<a class="headerlink" href="#sondag-25-08-2019" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="era-preparation-for-atwain">
+<h2>ERA preparation for ATWAIN<a class="headerlink" href="#era-preparation-for-atwain" title="Permalink to this headline">¶</a></h2>
+<p>Extracting fields and computing wind stress curl. (t, lon, lat) fields in
+<em>/atwain/code/processing_and_data/wind/era_interim/compute_wscurl.py</em>.</p>
+<p>Wind stress computed using Large and Pond (<em>mcalc.ws</em>).</p>
+<p>Wind stress curl computed from first differences using
+<em>pycurrents.data.wind.curl</em>. <strong>Note</strong>: ERA Interim is on an even lat-lon grid,
+meaning that dx is about 0.16*dy. The spatial scales over which the gradients
+are computed are therefore different for x and y. However, the fields themselves
+look reasonable, as does the curl field (the atmosperic stuff is dominated by
+large-scale motion), so I’ll leave it as is for now.</p>
+<p>Interpolating fields onto ATWAIN point using
+<em>scipy.interpolate.RectSphereBivariateSpline</em>
+(bivariate spline interpolation over a rectangular mesh on a sphere).</p>
+<p><strong>Output:</strong>
+<em>/atwain/data/other/wind/era_interim/era_interim_for_atwain_are.p</em> - 2D fields in Python
+arrays, with wind stress curl.
+<em>/atwain/data/other/wind/era_interim/era_interim_for_atwain_point.p</em> - fields
+interpolated onto ATWAIN.</p>
+<p>(Note: the download script is <em>/atwain/data//other/wind/era_interim/dl_era_winds.py</em>).</p>
+<p>From what I can tell <a class="reference external" href="https://www.ecmwf.int/en/faq/how-do-i-cite-era-interim-my-publication">here</a>, I
+just need to cite <em>dee_2011</em>.</p>
+</div>
+<div class="section" id="sea-ice-drift-preparation-for-atwain">
+<h2>Sea ice drift preparation for ATWAIN<a class="headerlink" href="#sea-ice-drift-preparation-for-atwain" title="Permalink to this headline">¶</a></h2>
+<p>Fiddled around quite a bit to find a suitable product. There is <em>PIOMAS</em>, which
+probably would be most approproate in that it gives volume fluxes. However, it
+is only available as fortran binary files, and I’m unsure if there is actually
+data past 2004..</p>
+<p>I also looked into the sea-ice drift product from EUMETSAT OSISAF (hosted at
+<em>met.no</em>). This is a gridded satellite product, and therefore too patchy for my
+purposes. It’s available from April 2014 to present. I have these files
+downloaded at <em>/atwain/data/other/sea_ice_drift/osisaf.met.no</em> - maybe they will
+come in handy for validation or something later?</p>
+<p>Ultimately decided on using the <strong>Polar Pathfinder Daily 25 km EASE-Grid Sea Ice
+Motion Vectors</strong> product (reference added: <em>tschudi_2019</em>). This is easy to use,
+the fields are unambiguous, and the netCDF format is convenient. The product seems to be an estimate based
+on a number of observations - I’m unsure if there is modelling involved.</p>
+<p>Downloaded annual files through the website GUI (think I needed a password).
+These are located in <em>atwain/data/other/sea_ice_drift/polar_pathfinder_daily/</em>.</p>
+<p>Computing flow into and out of a 3x3 (75km x 75km) box where the ATWAIN mooring is
+approximately at the center (<strong>script</strong>:
+<em>atwain/code/processing_and_data/sea_ice_drift/extract_timeseries_pathfinder_25x25.py</em>).
+This script calculates relevant quantities (including fluxes) and concatenates
+data from the annual files into single multi-year time series. The resulting
+time series themselves are located in
+<em>atwain/data/other/sea_ice_drift/polar_pathfinder_daily/atwain_sea_ice_drift_timeseries.p</em>.</p>
+<p>Slices defining this box are stored in
+<em>atwain/data/other/sea_ice_drift/polar_pathfinder_daily/slices_atwain_pathfinder25x25.p</em>.</p>
+</div>
+<div class="section" id="do">
+<h2>DO<a class="headerlink" href="#do" title="Permalink to this headline">¶</a></h2>
+<p><strong>ATWAIN</strong></p>
+<ul class="simple">
+<li><p>Sea Ice cover: Interpolate onto exact point to produce time series.</p></li>
+<li><p>Grab SST from <em>the Optimum Interpolation Sea Surface Tem-
+perature product (OISST v2, available from NOAA/OAR/ESRL PSD, Boulder, Colorado, USA, at
+https://www.esrl.noaa.gov/psd/; Reynolds et al., 2007; Reynolds, 2009)</em>.
+Interpolate onto exact point (note: this might already be included, but
+probably just as well to do it myself for consistency..</p></li>
+<li><p>Temperature: Create “heat time series” by combining with SST. Also include the
+middle sensor for the first deployment, for comparison..</p></li>
+<li><dl class="simple">
+<dt>Currents: Short comparative analysis of the deployments:</dt><dd><ul>
+<li><p>Spectra.</p></li>
+<li><p>Mean flow.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Use the latter to define the dominant direction. Rotate each ccordingly and
+rerun the script to join the current time series.</p></li>
+<li><p>Find the depth range where u and Q can both be computed, and compute a heat
+flux field.</p></li>
+<li><p>If this looks pretty uniform (it should): Do a vertical integral to get a 1d
+time series.</p></li>
+</ul>
+<p><strong>OTHER</strong></p>
+<ul class="simple">
+<li><p>Answer Brian.</p></li>
+<li><p>Answer Mark (with data locations).</p></li>
+<li><p>Answer Amanda.</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">oyweb</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../logg.html">Logg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/projects.html">Prosjekter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tokt_data/tokt_data.html">Data og tokt</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sci_notes/sci_notes.html">Fagnotater</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sw/sw.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../links/links.html">Nyttige lenker</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../logg.html">Logg</a><ul>
+  <li><a href="../daglige_logger.html">2019</a><ul>
+      <li>Previous: <a href="log_2019_08_23.html" title="previous chapter">Fredag 23.08 2019</a></li>
+      <li>Next: <a href="log_2019_08_26.html" title="next chapter">Mandag 25.08 2019</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Oyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/logg/2019/log_2019_08_25.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

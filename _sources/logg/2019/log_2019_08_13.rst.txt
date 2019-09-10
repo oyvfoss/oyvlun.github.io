@@ -1,0 +1,46 @@
+Tirsdag 13.08 2019
+++++++++++++++++++
+
+Symlinker i delte mapper
+''''''''''''''''''''''''
+
+Ser ikke ut til at det egentlig fins støtte for å lage symlinker i delte mapper. Fant imidlertid etter hvert en 
+løsning som ser ut til å funke, `her <https://stackoverflow.com/questions/17895256/creating-symbolic-link-protocol-error>`_. 
+For at dette skal fungere, må virtualbox alltid **åpnes som administrator** på windows-sida. Litt tungvindt, men skal være
+fornøyd hvis det fungerer, da det fort kan bli irriterende å ikke kunne bruke lenker.
+
+
+Disk og sikkerhetskopiering
+'''''''''''''''''''''''''''
+
+Hadde opprinnelig satt opp *fenrir* slik at den kunne deles mellom windows- og linux-sidene. 
+Får ikke skrivetillatelser fra linux-siden, så endrer nå til å mounte direkte på *vidarr*. 
+Måtte installere extensions for Virtualbox for å få dette til å fungere. Dette skal være
+tilsvarende som oppsettet jeg hadde på *baldr*. Disken skal være formatert slik at den kan
+brukes også på Windows-siden (når den ikke er mounted på vidarr).
+
+I mangel på et med altomfattende sikkerhetskopieringssystem a la *time machine*, vil jeg 
+sette opp et system for enkel, daglig sikkerhetskopiering til *fenrir*. Tror *rsync* skal
+kunne fungere bra, og inntil videre setter jeg opp kopiering av *work*-mappen. 
+Kopien oppretholdes på *fenrir/safety_copies_vidarr/*.
+
+Hurtigkommando for sikkerhetskopi:
+::
+
+    fsync
+
+Ser ut til å fungere foreløpig - vil sjekke at kopien ser ok ut og kan leses på andre systemer.
+
+Lesing
+''''''
+Lest litt generelt om barentshavet, brukte lang tid på å produsere et kart. Kan brukes ved behov senere, 
+og er en fin måte å orientere seg på. Begynt på `oversiksside over barentshavet <../../sci_notes/barents/summaries/other/barents_sea_overview.html>`_.
+
+I morgen
+''''''''
+- Svar uit
+- Les dokumenter fra IMR etc., fullfør artikkelen om Barentshavet.
+- Les ATWAIN-artikkel.
+- Les Barents hydrography-artikkel.
+- Jobb videre med A-TWAIN.
+- Jobb videre med å kontekstualisere ARGO.

@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mandag 09.09 2019 &#8212; oyweb  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mandag 12.08 2019" href="log_2019_08_12.html" />
+    <link rel="prev" title="Lørdag 07.09 2019" href="log_2019_09_07.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="mandag-09-09-2019">
+<h1>Mandag 09.09 2019<a class="headerlink" href="#mandag-09-09-2019" title="Permalink to this headline">¶</a></h1>
+<p>Lagde nytt grid for sea ice drift-box (5x5). Dokumetert <a class="reference external" href="../../projects/atwain/sea_ice_drift/sea_ice_drift.html">her</a>.</p>
+<p>Interpolerte NSIDC-drift.</p>
+<p><strong>Ifremer</strong></p>
+<p>Samme problem som forrige: <em>longitude, latitude</em> må endres til <em>lon, lat</em>.</p>
+<p>Flyttet ifremer-data til en midlertidig (ikke-delt) mappe og endret navn (kjapt
+script med bruk av <em>ncrename</em>.</p>
+<div class="admonition-subprocess-i-python admonition">
+<p class="admonition-title">subprocess i python</p>
+<p>Ser ut som <em>subprocess</em> har blitt litt forenklet siden sist.</p>
+<p>En enkel måte å utføre bash-kommandoen fra python er nå:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="n">kommando_streng</span><span class="p">],</span> <span class="n">shell</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="simple">
+<dt>Flyttet de endrede filene tilbake til (felles) mappe:</dt><dd><p><em>atwain/data/other/sea_ice_drift/ifremer/3-daily_missing_values_filled</em></p>
+</dd>
+</dl>
+<div class="section" id="master-bunch">
+<h2>Master Bunch<a class="headerlink" href="#master-bunch" title="Permalink to this headline">¶</a></h2>
+<p>Building a bunch:</p>
+<ul class="simple">
+<li><p>Loading all fields.</p></li>
+<li><p>Interpolate all time series onto an even grid spanning the 2013-2017
+deployment, with spacing 1/(99 days).</p></li>
+<li><p>Smoothing each time series with a 99 pt running window and subsampling each
+99th datapoint - yielding a 1-day average dataset.</p></li>
+</ul>
+<p>Results look sensible.</p>
+<p>Script: <strong>build_master_bunch.py</strong>.</p>
+<p>File: <strong>home/oyvindl/work/atwain/data/master_bunch.p</strong>.</p>
+<p>Can update this script as I reprocedss or add new time series..</p>
+</div>
+<div class="section" id="do-atwain">
+<h2>Do, ATWAIN<a class="headerlink" href="#do-atwain" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Plot <em>Q</em> vs <em>u</em> anomaly more carefully.</p></li>
+<li><p>Plot all variables on a seasonal cycle (plotting 31-day averages on yday seems
+prominsing. Just mask the first day of the year - <em>SST.mask[D.yday&lt;2]</em> ..).</p></li>
+<li><p>Plot ice vs no ice..</p></li>
+<li><p>Se på isdrift-retning og windretning i sammenheng.</p></li>
+<li><p>Plot mean direction of ice..</p></li>
+<li><p>CW vs CCW: Plot spectrograms of amplitude and CW/CCW along with SIC..</p></li>
+</ul>
+</div>
+<div class="section" id="other">
+<h2>Other<a class="headerlink" href="#other" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Oceanography lunch.</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">oyweb</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../logg.html">Logg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/projects.html">Prosjekter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tokt_data/tokt_data.html">Data og tokt</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sci_notes/sci_notes.html">Fagnotater</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sw/sw.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../links/links.html">Nyttige lenker</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../logg.html">Logg</a><ul>
+  <li><a href="../daglige_logger.html">2019</a><ul>
+      <li>Previous: <a href="log_2019_09_07.html" title="previous chapter">Lørdag 07.09 2019</a></li>
+      <li>Next: <a href="log_2019_08_12.html" title="next chapter">Mandag 12.08 2019</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Oyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/logg/2019/log_2019_09_09.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

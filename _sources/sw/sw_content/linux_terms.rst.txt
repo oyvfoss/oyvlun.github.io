@@ -1,0 +1,26 @@
+Linux terms
++++++++++++
+
+A list of explanations of some concepts I have run into without properly understanding. Partly grabbed from `this page <http://macpablodesigns.wordpress.com/essays/linux-glossary-for-windows-users/>`_.
+
+**Compiling** - Turning source code into an executable program.
+
+**Compiled language** - A language that requires a compiler program to turn programming source code into an executable machine-language binary program. After compiling once, the program can continue to be run from its binary form without compiling again. Compiled languages and programs tend to be faster than interpreted or p-code languages, but require an extra step of compiling before running the application. Examples of compiled languages are C and C++, COBOL, and FORTRAN.
+
+**Daemon** -  A background process of the operating system that usually has root security level permission. A daemon usually lurks in the background until something triggers it into activity, such as a specific time or date, or time interval.
+
+**Distribution** - A packaging of the Linux kernel (core) with various user interfaces, utilities, drivers, and other software into a user deliverable. Popular distributions include Ubuntu, Debian and Linux Mint. Sometimes referred to as a “distro.”
+
+**Interpreted language** - Unlike a compiled program, which is converted from source code to an executable one time, by a compiler, and then run from its binary form, an interpreted program is converted to binary on the fly each time it is run, by an interpreter program. Interpreted languages (and thus their programs) tend to be slower than compiled and p-code languages, and generally have limited authorization to low-level operating system functions or direct hardware access. On the other hand, they are often included along with operating systems, and are usually easier to program than compiled languages. Examples of interpreted languages are BASIC, Perl, Python, and REXX/Object REXX.
+
+**Kernel** - The core of the operating system, upon which all other components rely. The kernel manages such tasks as low-level hardware interaction and the sharing of resources, including memory allocation, input/output, security, and user access.
+
+**Package** - A set of related files and programs. Ex: A web browser, a library for handling PNG images, a font collection. 'Package' can also refer to a .tar file containing all this stuff.
+
+**Partition** - A contiguous section of a disk drive that is treated by the operating system as a physical drive. Thus, one disk drive can have several mount points assigned to it.
+
+**SSH (Secure Shell)** - A secure protocol for logging in to a remote machine. Many protocols can be “tunneled” through SSH, such that connections travel through a SSH connection between two machines instead of traveling unencrypted across the network.
+
+**Tar (Tape ARchive)** - A file packaging tool included with Linux for the purpose of assembling a collection of files into one combined file for easier archiving. It was originally designed for tape backup, but today can be used with other storage media. When run by itself, it produces files with a .tar extension. When combined with Gzip, for data compression, the resulting file extensions can be .tgz, .tar.gz, or .tar.Z.
+
+**Tarball** - A file created by the Tar utility, containing one or more other archived and, optionally, compressed files.

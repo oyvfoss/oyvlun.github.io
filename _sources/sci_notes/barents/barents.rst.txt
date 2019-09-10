@@ -1,0 +1,40 @@
+Barentshavet og Arven etter Nansen
+==================================
+
+
+Overview of the Barents Sea
++++++++++++++++++++++++++++
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+ 
+   summaries/barents_overview/*
+
+
+Papers
++++++++++
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+ 
+   summaries/papers/*
+
+Other
++++++
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+ 
+   summaries/other/*
+
+TBW
++++
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+ 
+   summaries/TBW/*

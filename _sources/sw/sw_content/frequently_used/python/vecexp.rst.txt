@@ -1,0 +1,10 @@
+Multiplying a 1d array with a n-d array along a specified axis
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Syntax, for a multidimensional array *A* and a vector *v* along axis m (shape(A)[m] = len(v)):
+
+::
+   
+ dxobj = [None for i in xrange(A.ndim)] # n-dimensional [newaxis, newaxis,..] index
+ dxobj[m] = slice(None) #  m-th index is slice(None)
+ C = A * b[dxobj]

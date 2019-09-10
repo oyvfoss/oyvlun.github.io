@@ -1,0 +1,30 @@
+Møte med Geli og Arild 03.09.19
+'''''''''''''''''''''''''''''''
+
+*Arild's kontor*.
+
+Noen kommentarer
+++++++++++++++++
+
+- Ikke bruk *u* og *v* for roterte koordinater.
+- Sea-ice drift-datasett: Bruk IFREMER-produkt (bedre i iskanten..).
+- SIC: Spiller ikke så stor rolle - Geli bruker AWI's produkt.
+- Istykkelse: SMOS?
+
+
+
+Gjør
+++++
+
+- Organiser data for **årlig syklus**.
+- Organiser data for **havis av/på** (spesielt 1.5-årsperioder. 
+- Se på AO indeks, (evt. EOF over Arktis?).
+- Se på isdrift-*retning* over ATWAIN-rigg (nordfra er tykkere)..
+- Se på SIC oppstrøms lands kontinentalsokkelen.
+- Se om jeg får samme resultat med isdriftproduktet fra IFREMER.
+- Se på netto is i et større område.
+
+Annet
++++++
+
+- Se på polarisering (CW vs CCW) som funksjon av tid - endrer dette seg med isdekke?

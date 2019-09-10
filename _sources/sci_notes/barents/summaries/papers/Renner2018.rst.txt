@@ -1,0 +1,12 @@
+*Renner et al. [2018]:* Variability and Redistribution of Heat in the Atlantic Water Boundary Current North of Svalbard*
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+*JGR Oceans*, `https://doi.org/10.1029/2018JC013814 <https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018JC013814>`_
+
+Beskrivelse
+"""""""""""
+
+Data fra A-TWAIN rigger (CTD, ADCP, MMP) over ett år (Sep 2012 - Sep 2013).
+
+.. image:: /files/renner2018_kart.png
+            :scale: 80

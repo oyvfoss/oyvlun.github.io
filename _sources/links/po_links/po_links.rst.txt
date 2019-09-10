@@ -1,0 +1,27 @@
+Fysisk oseanografi
+..................
+
+
+Eric Firing's UH course pages
+'''''''''''''''''''''''''''''
+- `OCN620 Physical Oceanography`_
+- `OCN 760 Data Analysis site <https://currents.soest.hawaii.edu/ocn_data_analysis/index.html>`_
+
+Geophysical fluid dynamics
+''''''''''''''''''''''''''
+- `GFD lectures <http://wwwf.imperial.ac.uk/~pberloff/gfd_lectures.pdf>`_ by Paul Berloff, Imperial College London .
+
+
+- `Potential Vorticity
+  <https://www.meteo.physik.uni-muenchen.de/~roger/Lectures/Adm_Lectures/PV.pdf>`_
+  (incl. *PV thinking*) by Roger K. Smith.
+
+- `Ocean Tides
+  <https://www.whoi.edu/fileserver.do?id=21351&pt=10&p=17272>`_
+  by Myrl Hendershott.
+
+
+
+.. _OCN620 Physical Oceanography:
+    https://currents.soest.hawaii.edu/ocn620/
+

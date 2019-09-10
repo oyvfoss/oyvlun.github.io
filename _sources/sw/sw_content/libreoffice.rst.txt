@@ -1,0 +1,6 @@
+LibreOffice
+:::::::::::
+
+Superscript: *Ctrl+Shift+P*
+
+Subscript: *Ctrl+Shift+B*

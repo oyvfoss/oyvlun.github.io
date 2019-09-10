@@ -1,0 +1,63 @@
+Matplotlib
+----------
+
+Use latex format
+================
+::
+
+ plt.rc('text', usetex=True)
+
+Controlling date ticks
+======================
+
+`This <http://matplotlib.org/api/dates_api.html>`_ is a useful reference.
+
+When using *plot* or *contourf*, date format axes are supported. In
+these cases, the format and spacing can be customized easily:
+
+::
+  
+ # Example: Monthly ticks 
+ fig, ax = plt.subplots()
+ ax.pcolor(t_datefmt, y, Z,)
+ fmt = mpl.dates.DateFormatter('%b')
+ ax.xaxis.set_major_formatter(fmt)
+
+::
+
+ # Example: Set major x ticks on Mondays.
+ ax.xaxis.set_major_locator(
+ matplotlib.dates.WeekdayLocator(byweekday=matplotlib.dates.MO))
+ ax.xaxis.set_major_formatter(
+ matplotlib.dates.DateFormatter('%a %d\n%b %Y'))
+
+There are tick locators and tick formatters. I am still unsure about
+how this really works.
+
+Legend formatting
+=================
+
+*loc = 'best'* chooses the best location. *fancybox = True*  
+
+::
+
+ leg = ax.legend(loc='best', fancybox=True)
+ leg.get_frame().set_alpha(0.5)
+ leg.draw_frame(False)
+
+Reducing density of ticks
+=========================
+
+::
+
+ # Example: Forcing 5 ticks on the y-axis of ax[nn] 
+ ax[nn].locator_params(axis = 'y', nbins=5)
+
+
+Global labels for multiple subplots
+===================================
+Pretty much has to be done manually:
+
+**fig.text(0.5, 0.04, 'common xlabel', ha='center', va='center')**
+
+**fig.text(0.06, 0.5, 'common ylabel', ha='center', va='center', rotation='vertical')**

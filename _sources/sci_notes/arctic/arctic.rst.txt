@@ -1,0 +1,27 @@
+Arktis
+''''''
+
+Background
+++++++++++
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+ 
+   background/*
+   
+
+Papers
+++++++
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+ 
+   papers/*
+
+TBW
++++
+
+- Climate change in the Arctic: overview.
+- Geography of the Arctic Ocean.

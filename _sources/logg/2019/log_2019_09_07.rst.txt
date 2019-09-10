@@ -1,0 +1,15 @@
+Lørdag 07.09 2019
++++++++++++++++++
+
+Sjekket at subset av SIC er ok, plottet. 
+
+Interpolerte og
+produserte resultat-plott. Mest interessant er kanskje dt siste?  Bra dokumentert på `oywebside
+<../../projects/atwain/seaice_200m/seaice_200m.html>`_
+
+
+Skulle holde for nå. Eventuelle ting å gjøre videre:
+
+- Plott oversiktskart (average).
+- Kjapp video?
+- Se på snapshots - Hva skjer når gradienten er negativ?

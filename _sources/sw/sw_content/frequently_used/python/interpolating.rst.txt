@@ -1,0 +1,30 @@
+Interpolation
+-------------
+
+Loads of slightly different functions around, somewhat confusing.
+
+Interpolating along one dimension, including masks
+''''''''''''''''''''''''''''''''''''''''''''''''''
+
+The best and most versatile one seems to be
+*scipy.interpolate.interp1d*. This function does interpolation (linear
+or others) along the *m*-axis of the *N*-d array :math:`Y`. Takes the
+original grid :math:`X` which must have the same length as the
+dimension *m* of :math:`Y`. Can then be called as a function of *x*.
+
+Example:
+
+::
+
+ f = scipy.interpolate.interp1d(X, Y, axis = m)
+ Y_new = f(X_new)
+
+*scipy.interpolate* also has a bunch of other useful interpolation
+functions, like splines and 2d interpolation.
+ 
+Interpolating along one dimension, across masks
+'''''''''''''''''''''''''''''''''''''''''''''''
+
+For interpolation across masks, I haven't found any functions in the
+standard libraries. For moderately sized arrays, use
+*calc.interp_overmask*. 

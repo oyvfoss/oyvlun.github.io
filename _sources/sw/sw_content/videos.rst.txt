@@ -1,0 +1,15 @@
+Creating animations
+;;;;;;;;;;;;;;;;;;;
+
+Simple algorithm for making video of a bunch of (properly sorted) images
+::
+
+ mencoder  mf:'//*.png' -mf type=png:fps=5 -ovc lavc -lavcopts vcodec=mpeg4 -oac copy -o animation.mpg
+
+
+For making mp4 (quicktime-compatible) videos, use *ffmpeg*. Note: right now
+ffmpeg is not on my path, so I have to execute this from *~/bin*.
+
+::
+
+  ./ffmpeg -framerate 15 -i /home/oyvindl/location/uvpl_%03d.png -s:v 1280x720 -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p outname.mp4

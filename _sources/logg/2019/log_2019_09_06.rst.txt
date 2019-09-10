@@ -1,0 +1,144 @@
+Fredag 06.09 2019
++++++++++++++++++
+
+Oppdaterte `avtaler og datoer <../diverse/avtaler_og_datoer.html>`_.
+
+Strategy for ice drift computation
+''''''''''''''''''''''''''''''''''
+
+- Create a grid box bounded by parallels/meridians enclosing the A-TWAIN
+  location (E.g. 10x10 km?). Define grids representing both the boundaries and the
+  internal grid points. Save the grid into to a netCDF file.
+
+- Interpolate *u*, *v* from both NSIDC (remember to rotate) and Ifremer datasets
+  onto:
+ 
+ - Each of the boundaries.
+ - Each of the grid points.
+ - The exact A-TWAIN point.
+
+- Save results in (common netCDF file) *or, actually, maybe as a dictionary*.
+
+- Do some checks, including plotting the results geographically.
+
+- Compute area fluxes into the area bu integrating velocity normal to the
+  boundaries (:math:`\pm\sum_i u_i dy` (zonal), :math:`\pm\sum_i v_i dx` (meridional)).
+
+- Compute area average drift by averaging u, v at the internal points.
+
+- Save time series of u_loc, u_box and fluxes (each boundary and net) to a Bunch.
+
+
+
+ATWAIN data on Dropbox
+''''''''''''''''''''''
+
+Styrte en del for å få ilgang til ATWAIN-mappa. Viste seg å være det samme som
+jeg har på disk fra før.
+
+
+
+Sjømannslege
+''''''''''''
+
+Ser ut som det er drop-in på `Sjøgata legekontor
+<http://www.sjogatalegesenter.no/sj%c3%b8mannslegen/>`_. Koster 1800 kr for
+attest. Bør vel dobbeltsjekke at det er *attest båt* jeg trenger. 
+
+.. |br| raw:: html
+
+    <br>
+
+Sjekket hvem som er min fastlege:
+
+    *Leif Røssås* |br|
+    *Doktern Min Legesenter*  |br|
+    *Mellomvegen 50, TROMSØ* |br|
+    *970 04 905*
+
+Han er visst også sjømannslege - kanskje han kan gjøre sertifiseringen?
+
+
+200 m contour ice cover
+'''''''''''''''''''''''
+
+.. admonition:: Idea
+
+ Pick out points along the 200 m contour (or just a parallel),
+ interpolate sea ice onto these points and get a dataset *(time, x)* of SIC. Can
+ then do hovmuller plots etc?
+
+Putting code for all this in
+*/atwain/code/processing_and_data/sea_ice_concentration/along_traj/*.
+
+
+Plotting bathymetry
+???????????????????
+
+ETOPO1 never loads. Using ETOPO2 instead. Also put in a request for GEBCO subset
+for this area (might be good to rely on something local for bathymetry). 
+
+*Later:* ETOPO1 loads fina again. is this a server issue?
+
+Grabbing sic (Opendap issues)
+'''''''''''''''''''''''''''''
+
+Got errors trying to interface netCDF4 to opendap file. Issu had to do with
+*fill value mismatch*, `solution
+<https://github.com/Unidata/netcdf-c/issues/1299>`_ was to append *#fillmissmatch*
+to the url..
+
+Icedrift
+''''''''
+
+Much easier processing (*define_box_area* and *interp_zonal.oy..*).
+
+Had to move source files (annual, NSIDC) off the work folder and into a
+completely local directory to change *latitude/longitude* to *lat/lon* for
+compatibility with xESMF. Probably some weird permission issue..
+
+
+
+SIC
+'''
+
+Struggled immensely with reading directly from opendap and processing- takes an
+extremely long time and produces weird results.
+
+After hours of struggle: Decided to just make a smaller subset .nc-file which
+can be managed in local memory. this should be straight forward to interpolate
+onto the path grid..
+
+Code for making subset: *make_subset.py*.
+File:
+*atwain/code/processing_and_data/sea_ice_concentration/make_subset/home/oyvindl/work/atwain/data/other/sea_ice_concentration/NSDIC_subset_atwain.nc*
+
+Looks fine, but I'll obviously have to check. Huge size reduction, from 1.8e9 to
+5.1e6 data points. 
+
+Originally: New grid is 40x40 around the atwain array, and starts in
+2011. Looks a little narrow if I want to interpolate the path: Increasing the
+'x' dimension to 80.
+
+Results look very sensible.
+
+.. admonition:: To do, ice business (for now)
+
+    **DRIFT**
+
+        - Create meridional equivalent to  *interp_zonal.py* - should now have
+          normal flow at the borders. 
+        - Compute fluxes from the borders (*careful* with this calculation!
+          uneven *dy, dx*, masks, etc..).
+        - Check that the results are sensible.
+        - Repeat the process for IFREMER data.
+        - Interpolate u, v, onto atwain for both
+        - Create bulk time series of net area gain and *u, v* for both products,
+          store in Bunch.
+        - Make some basic plots.
+
+    **CONCENTRATION**
+    
+        - Check the results.
+        - Create some basic plots and write a quick explanation.
+        - Look at ncview movies tocheck that my interpretation makes sense..

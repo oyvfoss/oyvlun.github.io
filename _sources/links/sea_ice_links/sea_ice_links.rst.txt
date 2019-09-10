@@ -1,0 +1,7 @@
+
+Sea ice 
+'''''''
+
+- `Common terms used in sea ice research <http://seaiceatlas.snap.uaf.edu/glossary>`_
+
+test a link to `a page <../links.html>`_

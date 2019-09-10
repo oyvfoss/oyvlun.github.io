@@ -1,0 +1,24 @@
+Tirsdag 10.09 2019
+++++++++++++++++++
+
+
+`Møte med Arild <../moeter/arild/moete_arild_100919.html>`_.
+
+
+
+
+Do, ATWAIN
+''''''''''
+
+- Plot *Q* vs *u* anomaly more carefully.
+- Plot all variables on a seasonal cycle (plotting 31-day averages on yday seems
+  prominsing. Just mask the first day of the year - *SST.mask[D.yday<2]* ..).
+- Plot ice vs no ice..
+- Se på isdrift-retning og windretning i sammenheng.
+- Plot mean direction of ice..
+- CW vs CCW: Plot spectrograms of amplitude and CW/CCW along with SIC..
+
+Other
+'''''
+
+- Oceanography lunch.

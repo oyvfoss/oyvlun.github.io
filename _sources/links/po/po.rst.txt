@@ -1,0 +1,16 @@
+Fysisk oseanografi
+..................
+
+
+Eric Firing's UH course pages
+'''''''''''''''''''''''''''''
+- ´OCN620 Physical Oceanography <https://currents.soest.hawaii.edu/ocn620/>´_
+- ´OCN 760 Data Analysis site <https://currents.soest.hawaii.edu/ocn_data_analysis/index.html>_
+
+Geophysical fluid dynamics
+''''''''''''''''''''''''''
+- ´*GFD lectures*, Paul Berloff, Imperial College London <http://wwwf.imperial.ac.uk/~pberloff/gfd_lectures.pdf>´_
+
+Sea ice 
+'''''''
+- ´Common terms used in sea ice research <seaiceatlas.snap.uaf.edu/glossary>´_

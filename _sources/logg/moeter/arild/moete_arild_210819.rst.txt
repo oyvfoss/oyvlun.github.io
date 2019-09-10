@@ -1,0 +1,45 @@
+Møte med Arild 21.08.19
+'''''''''''''''''''''''
+
+ATWAIN
+------
+
+- Interessant å se på **is-drift-datasett**. Fra divergens kan vi anslå
+  smelting. Enten i enheter av areal, eller kombinert med istykkelse: volum.
+- Ellers: Se på vindretning/styrke fra ERA.
+- Regn ut varmeinnhold i 0 til ~100 m- laget ved å interpolere mellom SST og 105
+  m-sensoren.
+    * *Notat: Regn ut inkludert ~50 m-sensoren fra Utplassering 1, se om det er forskjell?*
+- ERA: Se også på hav-atmo flukser (ikke veldig viktig).
+- *Se på SSH gradient?* Arild mener at det signalet vil være lite, men det ville
+  jo være pussing hvis det ikke var det i det hele tatt med en såpass sterk strøm?
+
+**ADCP**: 
+- Juster *u* til dominant strømretning.
+- Se nøyere på diskrepans i Utplassering 2 (se på spektra, og på  
+
+
+ATWAIN-riggene skal fortsette å stå ute til 2027 eller noe i den duren. På neste
+tokt skal de byttes ut med nyere instrumenter.
+
+En medarbeider ved UAF jobber muligens også med dette..
+
+*Mål foreløpig: Produser et kjapt PDF-dokument a la argo-dokumentet.*  
+
+AEN-rigger
+----------
+
+Står i området mellom Kong Karls land og Kvitøya. En nært Kvitøya-renna, en
+annen i Franz-Victoria-renna. I tillegg en mindre rigg (kun bunnmontert ADCP og
+CTD) i Hopenrenna. 
+
+Tokt
+----
+
+Redningsdraktkurs blir i Longyearbyen før toktet.
+
+Må gå til sjømannslege - fins i Strandgata?
+
+Tokt neste August for å plukke opp rigger og gjøre omfattende prosesstudier
+etc.
+

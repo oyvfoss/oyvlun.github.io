@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sphinx &#8212; oyweb  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Linux terms" href="../unix/linux_terms.html" />
+    <link rel="prev" title="Multiplying a 1d array with a n-d array along a specified axis" href="python/vecexp.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="sphinx">
+<h1>Sphinx<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html">This</a> is a nice reference for rst/format stuff.</p>
+<div class="section" id="math">
+<h2>Math<a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">math</span><span class="p">::</span>
+  \<span class="nb">int</span>\<span class="n">Psi</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>\ <span class="n">dx</span>
+</pre></div>
+</div>
+<p>Yields:</p>
+<div class="math notranslate nohighlight">
+\[\int\Psi(x)^2\ dx\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Thus, clearly :math:`a^2 + b^2 = c^2`.
+</pre></div>
+</div>
+<p>Yields:</p>
+<p>Thus, clearly <span class="math notranslate nohighlight">\(a^2 + b^2 = c^2\)</span>.</p>
+<p><strong>Equation numbering/labelling</strong></p>
+<p>The format supports labelling, with automatic numbering.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">math</span><span class="p">::</span> \<span class="nb">int</span>\<span class="n">Psi</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span>\ <span class="n">dx</span>
+   <span class="p">:</span><span class="n">label</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Yields:</p>
+<div class="math notranslate nohighlight" id="equation-sw-sw-content-frequently-used-sphinx-0">
+<span class="eqno">(1)<a class="headerlink" href="#equation-sw-sw-content-frequently-used-sphinx-0" title="Permalink to this equation">¶</a></span>\[\int\Psi(x)^2\ dx\]</div>
+<p>Labelled equations can be referred to later.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. math:: \int\Psi(x)^2\ dx
+   :label: this
+
+That reminds me of :eq:`this`.
+</pre></div>
+</div>
+<p>Yields:</p>
+<blockquote>
+<div><div class="math notranslate nohighlight" id="equation-this">
+<span class="eqno">(2)<a class="headerlink" href="#equation-this" title="Permalink to this equation">¶</a></span>\[\int\Psi(x)^2\ dx\]</div>
+</div></blockquote>
+<p>That reminds me of <a class="reference internal" href="#equation-this">(2)</a>.</p>
+</div>
+<div class="section" id="quoting-code">
+<h2>Quoting code<a class="headerlink" href="#quoting-code" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">::</span>
+
+ <span class="n">Heihei</span>
+</pre></div>
+</div>
+<p>Yields:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Heihei</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AGoogle</span> <span class="o">&lt;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span><span class="n">A_</span>
+</pre></div>
+</div>
+<p>Replacing A with <a class="reference external" href="http://www.google.com">, yields:
+| `Google</a></p>
+</div>
+<div class="section" id="images">
+<h2>Images<a class="headerlink" href="#images" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">image</span><span class="p">::</span> <span class="o">../</span><span class="n">processed</span><span class="o">/</span><span class="n">pf_good</span><span class="o">/</span><span class="n">panelplots</span><span class="o">/</span><span class="n">lg0611b_d_panel</span><span class="o">.</span><span class="n">png</span>
+          <span class="p">:</span><span class="n">scale</span><span class="p">:</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<p>Location relative to the core folder.</p>
+</div>
+<div class="section" id="line-breaks">
+<h2>Line breaks<a class="headerlink" href="#line-breaks" title="Permalink to this headline">¶</a></h2>
+<p>Line breaks are generally not conserved. To force a line break, begin the next line with <em>|</em>.</p>
+</div>
+<div class="section" id="footnotes">
+<h2>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Do</span> <span class="n">a</span> <span class="n">footnote</span> <span class="n">here</span> <span class="p">[</span><span class="c1">#f1]_ .</span>
+
+<span class="o">..</span> <span class="n">rubric</span><span class="p">::</span> <span class="n">Footnotes</span>
+
+<span class="o">..</span> <span class="p">[</span><span class="c1">#f1] This is the footnote.</span>
+</pre></div>
+</div>
+<p>Do a footnote here <a class="footnote-reference brackets" href="#f1" id="id1">1</a> .</p>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>This is the footnote.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="tables">
+<h2>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
+<p>Fairly simple, graphical syntax. Pluses are corners, dashes are horizontal lines, <a href="#id2"><span class="problematic" id="id3">|</span></a>’s are vertical lines. = for headers. The table style depends on html configuration. Currently this does not display column dividers. I should look into <a class="reference external" href="https://pythonhosted.org/cloud_sptheme/lib/cloud_sptheme.ext.table_styling.html#module-cloud_sptheme.ext.table_styling">the Cloud Sphinx theme extension</a>, which adds more options for tables.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+------------+------------+-----------+</span>
+<span class="o">|</span> <span class="n">Header</span> <span class="mi">1</span>   <span class="o">|</span> <span class="n">Header</span> <span class="mi">2</span>   <span class="o">|</span> <span class="n">Header</span> <span class="mi">3</span>  <span class="o">|</span>
+<span class="o">+============+============+===========+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">1</span> <span class="o">|</span> <span class="n">column</span> <span class="mi">2</span>   <span class="o">|</span> <span class="n">column</span> <span class="mi">3</span>  <span class="o">|</span>
+<span class="o">+------------+------------+-----------+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">2</span> <span class="o">|</span> <span class="n">Cells</span> <span class="n">may</span> <span class="n">span</span> <span class="n">columns</span><span class="o">.|</span>
+<span class="o">+------------+------------+-----------+</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">3</span> <span class="o">|</span> <span class="n">Cells</span> <span class="n">may</span>  <span class="o">|</span> <span class="o">-</span> <span class="n">Cells</span>   <span class="o">|</span>
+<span class="o">+------------+</span> <span class="n">span</span> <span class="n">rows</span><span class="o">.</span> <span class="o">|</span> <span class="o">-</span> <span class="n">contain</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">body</span> <span class="n">row</span> <span class="mi">4</span> <span class="o">|</span>            <span class="o">|</span> <span class="o">-</span> <span class="n">blocks</span><span class="o">.</span> <span class="o">|</span>
+<span class="o">+------------+------------+-----------+</span>
+</pre></div>
+</div>
+<p>Yields:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 34%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Header 1</p></th>
+<th class="head"><p>Header 2</p></th>
+<th class="head"><p>Header 3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>body row 1</p></td>
+<td><p>column 2</p></td>
+<td><p>column 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>body row 2</p></td>
+<td colspan="2"><p>Cells may span columns.</p></td>
+</tr>
+<tr class="row-even"><td><p>body row 3</p></td>
+<td rowspan="2"><p>Cells may
+span rows.</p></td>
+<td rowspan="2"><ul class="simple">
+<li><p>Cells</p></li>
+<li><p>contain</p></li>
+<li><p>blocks.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>body row 4</p></td>
+</tr>
+</tbody>
+</table>
+<p>A simpler syntax can also be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+  <span class="n">Inputs</span>     <span class="n">Output</span>
+<span class="o">------------</span>  <span class="o">------</span>
+ <span class="n">A</span>      <span class="n">B</span>    <span class="n">A</span> <span class="ow">or</span> <span class="n">B</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+<span class="kc">False</span>  <span class="kc">False</span>  <span class="kc">False</span>
+<span class="kc">True</span>   <span class="kc">False</span>  <span class="kc">True</span>
+<span class="o">=====</span>  <span class="o">=====</span>  <span class="o">======</span>
+</pre></div>
+</div>
+<p>Yields:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p>Inputs</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>A or B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>False</p></td>
+<td><p>True</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="admonitions">
+<h2>Admonitions<a class="headerlink" href="#admonitions" title="Permalink to this headline">¶</a></h2>
+<p><strong>Specific admonitions</strong> (<em>attention</em>, <em>caution</em>, <em>danger</em>, <em>error</em>, <em>hint</em>,
+<em>important</em>, <em>note</em>, <em>tip</em>, <em>warning</em>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">warning</span><span class="p">::</span>
+   <span class="n">This</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">warningful</span> <span class="n">text</span><span class="o">.</span>
+
+<span class="o">..</span> <span class="n">note</span><span class="p">::</span>
+   <span class="n">This</span> <span class="ow">is</span> <span class="n">some</span> <span class="n">hintful</span> <span class="n">text</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Yields:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is some warning text.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is some noteful text.</p>
+</div>
+<p><strong>Generic admonitions</strong> where the header text is specified are written like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">admonition</span><span class="p">::</span> <span class="n">My</span> <span class="n">headline</span>
+
+   <span class="n">This</span> <span class="ow">is</span> <span class="n">my</span> <span class="n">admonition</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Yielding:</p>
+<div class="admonition-my-headline admonition">
+<p class="admonition-title">My headline</p>
+<p>This is my admonition.</p>
+</div>
+</div>
+<div class="section" id="theme-customizations">
+<h2>Theme customizations<a class="headerlink" href="#theme-customizations" title="Permalink to this headline">¶</a></h2>
+<p>The most straight-forward way to customize the theme is to make local changes in
+<em>conf.py</em>.</p>
+<p>For example, I’ve specified the following to change background colors for
+adminition boxes in the <em>alabaster</em> theme:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+   <span class="s1">&#39;admonition_bg&#39;</span><span class="p">:</span><span class="s1">&#39;#ADD8E6&#39;</span><span class="p">,</span>
+   <span class="s1">&#39;note_bg&#39;</span><span class="p">:</span><span class="s1">&#39;#90EE90&#39;</span><span class="p">,</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">oyweb</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../logg/logg.html">Logg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/projects.html">Prosjekter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tokt_data/tokt_data.html">Data og tokt</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../sci_notes/sci_notes.html">Fagnotater</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../sw.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../links/links.html">Nyttige lenker</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../sw.html">Software</a><ul>
+      <li>Previous: <a href="python/vecexp.html" title="previous chapter">Multiplying a 1d array with a n-d array along a specified axis</a></li>
+      <li>Next: <a href="../unix/linux_terms.html" title="next chapter">Linux terms</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Oyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/sw/sw_content/frequently_used/sphinx.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

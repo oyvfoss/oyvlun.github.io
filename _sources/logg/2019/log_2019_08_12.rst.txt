@@ -1,0 +1,60 @@
+Mandag 12.08 2019
++++++++++++++++++
+
+A-TWAIN
+''''''' 
+Lastet inn ATWAIN siste data. Ligger i */work/atwain/code/explore/read_last_deployment.py*. Ser greit ut. Knotet en del runst med *oyv.timeseries.tsclass*. Hadde problemer med å last inn ting riktig, men det ser også ut til å være ok.
+
+Måtte installere *seapy* for å få tide-applikasjon til å fungere. Måtte oppgradere *gcc* (usikker på om det var nødvendig) og fjerne *-O*-flagget i setup.py.
+
+Produserer fine spektra. Fint å bruke *tsclass* videre, men må nok oppgraderes underveis. Kanskje overføre til *easyuv* mens jeg driver på?
+
+
+Har opprettet dokument *work/atwain/documents/initial_writeup/atwain_initial.tex*. Det er foreløpig tomt.
+
+Seksjonsmøte
+''''''''''''
+
+Kjapp runde med hva folk driver med, diverse diskusjon, og av og til presentasjoner. Tok ca 2 timer. 
+
+- Introduksjon til folk etc.
+
+- Kan være aktuelt å gi et seminar i løpet av de neste par månedene. Fast seminartidspunkt er **onsdager 11:00**. Kanskje greit å komme dette i forskjøpet og begynne å arbeide med presentasjon. Ide: Prøv å favne litt bredere: Innkorporer resultater fra Amanda og Emily..
+
+- Logistikk etc ifb. MOSAIC-tokt. Kanskje ta en titt på *Polarstern*?
+
+- Laura med presentasjon fra toktet på KPH i Sørishavet. Slet med mye havis der også, og fikk ikke satt ut alle rigger. Tekniske problemer med glidere.
+
+
+oyweb
+'''''
+
+Begynte med å skulle notere fra lit review i Refnotes -  endte opp med å sette opp et helt nytt Sphinx-prosjekt: *oyweb*. 
+Tenker å integrere prosjektnotater, notater fra lesing av papers etc, samt opprettholde (helst daglig) logg. Litt styr å sette opp, men jeg 
+tenker at det kan være en stor fordel å ha en søkbar logg så lenge dette gjøres håndterlig og skikkelig.
+
+oyweb ligger i */work/oyweb/*. Jeg har definert noen hurtigkommandoer:
+
+- **ow**: *cd* inn i */work/oyweb/source/*
+- **wow**: Bygg html fra -rst-kode (make html).
+- **OW**: Åpne oyweb i Chrome.
+
+Har laget en kjapp struktur på siden - denne må nok utbedres etter hvert. Vil også overføre ting fra *refnotes* (men det er nok ikke alt som er like verdifullt). 
+Vil også automatisere logginga etter hvert (autogenerere filer med noe innhold). Kanskje finne overskrifter og poste under linker? Eller er dette i overkant?
+
+Annet
+'''''
+
+- På seksjonsmøte nevntes det noe om at noen kontor kanskje er midlertidige. Usikker på om dette gjelder mitt også, men det er kanskje ikke noe vits å installere seg ytterligere foreløpig..
+- Fått meldig fra DFØ om manglende timeregistrering fra forrige uke. Så vidt jeg kan se kan jeg fremdeles ikke logge meg inn.
+
+I morgen
+''''''''
+
+Førsteprioritet: Kom igang med lesinga. 
+
+Vil bli ferdig med et dokument om ARGO. Ikke distribuer til Arild helt enda (vil helst se om det gir mening å kombinere med A-TWAIN).
+
+- **Les og noter:** Wikipedia-artikkel om Barentshavet. Grunnlegende geografi og historie, etc.
+- **Les og noter:** OCC kap 17: *The Arctic and Subarctic Oceans/Seas*.
+- **Les og noter:** Oziel et al [2016]: *The Barents Sea frontal zones and water masses variability (1980–2011)*.

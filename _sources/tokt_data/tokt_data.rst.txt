@@ -1,0 +1,18 @@
+Data og tokt
+''''''''''''
+
+Data
+****
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   data/*
+
+Tokt
+****
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   tokt/*

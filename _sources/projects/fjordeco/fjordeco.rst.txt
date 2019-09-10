@@ -1,0 +1,21 @@
+FjordEco
+========
+
+
+Summaries
++++++++++
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+    
+    summaries/*
+
+Other
++++++
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+    
+    other/*

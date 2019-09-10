@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fredag 06.09 2019 &#8212; oyweb  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Mandag 12.08 2019" href="log_2019_08_12.html" />
+    <link rel="prev" title="Torsdag 05.09 2019" href="log_2019_09_05.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="fredag-06-09-2019">
+<h1>Fredag 06.09 2019<a class="headerlink" href="#fredag-06-09-2019" title="Permalink to this headline">¶</a></h1>
+<p>Oppdaterte <a class="reference external" href="../diverse/avtaler_og_datoer.html">avtaler og datoer</a>.</p>
+<div class="section" id="strategy-for-ice-drift-computation">
+<h2>Strategy for ice drift computation<a class="headerlink" href="#strategy-for-ice-drift-computation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Create a grid box bounded by parallels/meridians enclosing the A-TWAIN
+location (E.g. 10x10 km?). Define grids representing both the boundaries and the
+internal grid points. Save the grid into to a netCDF file.</p></li>
+<li><p>Interpolate <em>u</em>, <em>v</em> from both NSIDC (remember to rotate) and Ifremer datasets
+onto:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Each of the boundaries.</p></li>
+<li><p>Each of the grid points.</p></li>
+<li><p>The exact A-TWAIN point.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Save results in (common netCDF file) <em>or, actually, maybe as a dictionary</em>.</p></li>
+<li><p>Do some checks, including plotting the results geographically.</p></li>
+<li><p>Compute area fluxes into the area bu integrating velocity normal to the
+boundaries (<span class="math notranslate nohighlight">\(\pm\sum_i u_i dy\)</span> (zonal), <span class="math notranslate nohighlight">\(\pm\sum_i v_i dx\)</span> (meridional)).</p></li>
+<li><p>Compute area average drift by averaging u, v at the internal points.</p></li>
+<li><p>Save time series of u_loc, u_box and fluxes (each boundary and net) to a Bunch.</p></li>
+</ul>
+</div>
+<div class="section" id="atwain-data-on-dropbox">
+<h2>ATWAIN data on Dropbox<a class="headerlink" href="#atwain-data-on-dropbox" title="Permalink to this headline">¶</a></h2>
+<p>Styrte en del for å få ilgang til ATWAIN-mappa. Viste seg å være det samme som
+jeg har på disk fra før.</p>
+</div>
+<div class="section" id="sjomannslege">
+<h2>Sjømannslege<a class="headerlink" href="#sjomannslege" title="Permalink to this headline">¶</a></h2>
+<p>Ser ut som det er drop-in på <a class="reference external" href="http://www.sjogatalegesenter.no/sj%c3%b8mannslegen/">Sjøgata legekontor</a>. Koster 1800 kr for
+attest. Bør vel dobbeltsjekke at det er <em>attest båt</em> jeg trenger.</p>
+<p>Sjekket hvem som er min fastlege:</p>
+<blockquote>
+<div><p><em>Leif Røssås</em> <br>
+<em>Doktern Min Legesenter</em>  <br>
+<em>Mellomvegen 50, TROMSØ</em> <br>
+<em>970 04 905</em></p>
+</div></blockquote>
+<p>Han er visst også sjømannslege - kanskje han kan gjøre sertifiseringen?</p>
+</div>
+<div class="section" id="m-contour-ice-cover">
+<h2>200 m contour ice cover<a class="headerlink" href="#m-contour-ice-cover" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-idea admonition">
+<p class="admonition-title">Idea</p>
+<p>Pick out points along the 200 m contour (or just a parallel),
+interpolate sea ice onto these points and get a dataset <em>(time, x)</em> of SIC. Can
+then do hovmuller plots etc?</p>
+</div>
+<p>Putting code for all this in
+<em>/atwain/code/processing_and_data/sea_ice_concentration/along_traj/</em>.</p>
+<div class="section" id="plotting-bathymetry">
+<h3>Plotting bathymetry<a class="headerlink" href="#plotting-bathymetry" title="Permalink to this headline">¶</a></h3>
+<p>ETOPO1 never loads. Using ETOPO2 instead. Also put in a request for GEBCO subset
+for this area (might be good to rely on something local for bathymetry).</p>
+<p><em>Later:</em> ETOPO1 loads fina again. is this a server issue?</p>
+</div>
+</div>
+<div class="section" id="grabbing-sic-opendap-issues">
+<h2>Grabbing sic (Opendap issues)<a class="headerlink" href="#grabbing-sic-opendap-issues" title="Permalink to this headline">¶</a></h2>
+<p>Got errors trying to interface netCDF4 to opendap file. Issu had to do with
+<em>fill value mismatch</em>, <a class="reference external" href="https://github.com/Unidata/netcdf-c/issues/1299">solution</a> was to append <em>#fillmissmatch</em>
+to the url..</p>
+</div>
+<div class="section" id="icedrift">
+<h2>Icedrift<a class="headerlink" href="#icedrift" title="Permalink to this headline">¶</a></h2>
+<p>Much easier processing (<em>define_box_area</em> and <em>interp_zonal.oy..</em>).</p>
+<p>Had to move source files (annual, NSIDC) off the work folder and into a
+completely local directory to change <em>latitude/longitude</em> to <em>lat/lon</em> for
+compatibility with xESMF. Probably some weird permission issue..</p>
+</div>
+<div class="section" id="sic">
+<h2>SIC<a class="headerlink" href="#sic" title="Permalink to this headline">¶</a></h2>
+<p>Struggled immensely with reading directly from opendap and processing- takes an
+extremely long time and produces weird results.</p>
+<p>After hours of struggle: Decided to just make a smaller subset .nc-file which
+can be managed in local memory. this should be straight forward to interpolate
+onto the path grid..</p>
+<p>Code for making subset: <em>make_subset.py</em>.
+File:
+<em>atwain/code/processing_and_data/sea_ice_concentration/make_subset/home/oyvindl/work/atwain/data/other/sea_ice_concentration/NSDIC_subset_atwain.nc</em></p>
+<p>Looks fine, but I’ll obviously have to check. Huge size reduction, from 1.8e9 to
+5.1e6 data points.</p>
+<p>Originally: New grid is 40x40 around the atwain array, and starts in
+2011. Looks a little narrow if I want to interpolate the path: Increasing the
+‘x’ dimension to 80.</p>
+<p>Results look very sensible.</p>
+<div class="admonition-to-do-ice-business-for-now admonition">
+<p class="admonition-title">To do, ice business (for now)</p>
+<p><strong>DRIFT</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Create meridional equivalent to  <em>interp_zonal.py</em> - should now have
+normal flow at the borders.</p></li>
+<li><p>Compute fluxes from the borders (<em>careful</em> with this calculation!
+uneven <em>dy, dx</em>, masks, etc..).</p></li>
+<li><p>Check that the results are sensible.</p></li>
+<li><p>Repeat the process for IFREMER data.</p></li>
+<li><p>Interpolate u, v, onto atwain for both</p></li>
+<li><p>Create bulk time series of net area gain and <em>u, v</em> for both products,
+store in Bunch.</p></li>
+<li><p>Make some basic plots.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>CONCENTRATION</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Check the results.</p></li>
+<li><p>Create some basic plots and write a quick explanation.</p></li>
+<li><p>Look at ncview movies tocheck that my interpretation makes sense..</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">oyweb</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../logg.html">Logg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/projects.html">Prosjekter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tokt_data/tokt_data.html">Data og tokt</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sci_notes/sci_notes.html">Fagnotater</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sw/sw.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../links/links.html">Nyttige lenker</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../logg.html">Logg</a><ul>
+  <li><a href="../daglige_logger.html">2019</a><ul>
+      <li>Previous: <a href="log_2019_09_05.html" title="previous chapter">Torsdag 05.09 2019</a></li>
+      <li>Next: <a href="log_2019_08_12.html" title="next chapter">Mandag 12.08 2019</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Oyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/logg/2019/log_2019_09_06.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

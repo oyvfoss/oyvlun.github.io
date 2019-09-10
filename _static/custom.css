@@ -1,0 +1,9 @@
+%import url("default.css");
+
+
+
+
+div.hint {
+    background-color: {{ theme_hint_bg }};
+    border: 1px solid {{ theme_hint_border }};
+}

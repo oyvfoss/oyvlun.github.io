@@ -1,0 +1,30 @@
+Useful commands
++++++++++++++++
+
+`Nice reference <http://community.linuxmint.com/tutorial/view/244>`_
+
+**ps** - List running processes. *ps aux* is much more detailed.
+
+**lpr** - Print a file
+
+**ln -s #file or folder#  #target dir#** - Create symbolic link
+
+**lpq** - Display print queue
+
+**kill** - Force kill processes. *kill [PID]* kills a particular process, can get this from column 2 in *ps aux*. *kill -9 [PID]* force kills by any means, so even if it will mess something up. 
+
+**killall** - Kill all instances of a program. E.g> *killall firefox* kills all current firefox sessions. 
+
+
+**|** - "Pipe", redirects output from one program to be input in a second program.
+
+**>** - Send output to a *file*. *>* will overwrite, *>>* will append. Example: *ps aux > processes.log*.
+
+**df -h** - Show disk usage.  
+
+**du -cksh** - Show size of folder or file. *du -cksh foldername*, or no input which gives current folder.
+
+ 
+
+**which** - Shows the path of a command. (*which ls*..)
+

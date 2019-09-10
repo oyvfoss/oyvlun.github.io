@@ -1,0 +1,15 @@
+netCDF
+::::::
+
+Works roughly like this:
+
+- Define the 'dataset' (source file)
+- Set up the dataset dimensions (e.g. len in lat, lon, z, t..)
+- Define variables (lat, lon, u, v..), specifying what dimensions each
+  variable spans. E.g lat only spans the lat dimension, *u_s* spans [lat,
+  lon, t], *u* spans  [lat, lon, z, t]..
+- Fill data into the variables.
+
+`This <http://nbviewer.ipython.org/github/cedadev/ceda_training_mod5/blob/master/03-Creating_NetCDF.ipynb>`_ is a nice reference.
+
+My MIXET notebook *merge_ERA_winds.ipynb* runs through this.

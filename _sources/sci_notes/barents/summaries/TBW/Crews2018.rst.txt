@@ -1,0 +1,46 @@
+*Crews et al [2016]:* How the Yermak Pass Branch Regulates Atlantic Water Inflow to the Arctic Ocean*
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+*JGR, 124, 267-280*, `<https://doi.org/10.1029/2018JC014476>`_
+
+
+
+Motivation: How/when/why does atlantic water make it into the Arctic Ocean?
+
+Investigating water mass pathways in the eastern Fram Strait, by far the main
+path for AW into the Arctic. This main pathway goes across the Yermak Plateau.
+
+Using an ocean/sea-ice model and looking at tracer distributions.
+
+Identified 4 main pathways:
+
+- **Recirculation**: Flow deflects to the east - water ends up along the coast of
+  Greenland and never makes it into the Arctic Ocean.
+
+- **Outer Yermak Branch**: Flow along the outer contour of the Yermak Plateau.
+
+- **Yermak Pass Branch**: Flow through a slightl depression in the bathymetry at
+  the souther base of the Yermak Plateau.
+
+- **Svalbard Branch**: Flow close to the coast of Spitsbergen, inward of the
+  main continental slope.
+
+.. image:: /files/yermak_schematic.png
+          :scale: 45
+
+*Illustration of the main pathways. Lines indicate the shelf edge.*
+
+
+Intro
+"""""
+nn
+
+
+
+
+Data
+""""
+nn
+
+Method
+""""""

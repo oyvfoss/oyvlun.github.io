@@ -1,0 +1,13 @@
+GIMP
+====
+
+GNU image editor. Seems a little too fancy for my taste, really. Layers and all kinds of useless crap. Use *pinta* instead.
+
+
+
+Drawing a line
+++++++++++++++
+
+Draw a point. Hold shift. Draw another point.
+
+-> Line between the two points.

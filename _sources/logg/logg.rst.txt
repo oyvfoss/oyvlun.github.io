@@ -1,0 +1,34 @@
+Logg
+''''
+
+Daglig logg
+-----------
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    daglige_logger
+
+
+Ukeplaner
+---------
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+    :reversed:
+    
+    ukeplaner/*
+
+
+Annet
+-------
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    moeter/moeter_arild
+    moeter/moeter_atwain
+    diverse/*

@@ -1,0 +1,177 @@
+Barentshavet 
+============
+
+Geografi 
+''''''''
+
+**Barentshavet** er et havområde som regnes som et av grunnhavene (marginal sea)
+som tilhører Nordishavet (Polhavet). Barentshavet er et sokkelhav med med
+gjennomsnittsdybde rundt 230 m, men grenser mot dybassengene i Polhavet og
+Norskehavet.
+
+Barentshavet kan omtrentlig beskrives som området avgrenset av Svalbard, Franz
+Josef land, Novaja Semlja, Nenetsia, og Kola-halvøya vestover til Nordkapp.
+Kvitsjøen regnes ikke til Barentshavet, mens Petsjora-sjøen sør for Novaja
+Samlja som oftest gjør det.
+
+I enkelte definisjoner innen norsk forvaltning tas deler av kontinentalsokkelen
+lenger vest i Nord-Norge med i *Barentshavet*.
+
+.. figure:: /files/map_barents.png
+    :scale: 100
+
+    Overview map of the Barents Sea with key labels. (Source code:
+    */work/arven_etter_nansen/code/maps/misc/barents_sea_overview_map.ipynb*)
+
+
+
+
+Oseanografi 
+'''''''''''
+
+Vannmassene i Barentshavet påvirkes både av relativt varmt og saltholdig vann fra
+Nord-Atlanteren og kaldere, ferskere vann fra polhavet. I tillegg påvirker issmelting
+vannmassene i det øvre havlaget. Langs den sørlige kysten er vannmassene som
+driver med den norske kyststrømmen distinkt fra vannmassene i resten av
+Barentshavet.
+
+Det atlantiske vannet som strømmer inn i Barentshavet er svært varmt (6-7°C).
+Generelt kan "Atlantiske forhold" defineres ved (>2°C), mens arktisk vann kan
+defineres med (<0°C).
+
+
+.. figure:: /files/barents_currents_temp.png
+    :scale: 100
+
+    Øverst: Barentshavet med skjematiske epiler som viser overflatestrømmer og Polarfronten. Nederst:
+    Middeltemperatur på 50 m dyp (venstre) og langs bunnen (høyre). Fra `Loeng og Ingvaldsen
+    <https://uit.no/Content/463384/oseanografi.pdf>`_
+
+
+.. figure:: /files/vannmasser_barents.png
+    :scale: 100
+
+    Fronter og vannmasser i Barentshavet. Fra `Lien et al.
+    <https://www.hi.no/filarkiv/2018/09/f_h_nr._8-2018_polarfronten.pdf/nb-no>`_
+    
+
+
+Grovt sett er det sørlige/østlige sektoren av Barentshavet dominert av atlantisk
+vann, mens den nordlige og vestlige sektoren ar dominert av arktisk vann.
+Skillet mellom disse regimene, **Polarfronten**, er skarpt i vest og svakere i
+øst. 
+
+`Dette <https://www.hi.no/filarkiv/2018/09/f_h_nr._8-2018_polarfronten.pdf/nb-no>`_ er
+et fint oversiktsdokument om Polarfronten, som også beskriver
+"Polarfrontsystemet" som tre forskjellige fronter:
+
+- *Sommerfronten* på skråningen av Spitsbergenbanken (50-100 m):
+    Hydrografisk skille opprettholdt av topografi og tidevansstrømmer. Forskjellen i vannmassene er
+    først og fremst tilstede om sommeren. Området rundt denne fronten er svært
+    biologisk produktiv.
+
+- *Den "egentlige" polarfronten*:
+    Skillet mellom atlantisk og arktisk vann. Finnes typisk rundt 200 m isobaten rundt Hopendypet, og kan identifiseres fra
+    bunnen opp til 50 m. Denen fronten bidrar ikke i seg selv til forhøyet
+    primærproduksjon, men er habitargrense og kanskje også aggregeringsområde for
+    mange arter.
+
+- *Smeltevannsfronten*:
+    Front i overflatelaget, til stede om våren og sommeren. Ikke
+    dynamisk kontrollert av topografi, og vanskelig å kartfeste til et bestemt
+    geografisk område. Denne fronten er også viktig for primærproduksjon.
+
+
+.. figure:: /files/transect_bjornoya_schem.png
+    :scale: 100
+
+    Skjematisk oversikt over vannmasser øst for Bjørnøya om sommeren. Fra
+    `Sakshaug el al.
+    <https://books.google.no/books/about/Ecosystem_Barents_Sea.html?id=2ckz1IGcp-0C&redir_esc=y>`_
+
+
+
+Is 
+''
+
+
+Biologi 
+'''''''
+
+
+Klimaendringer
+''''''''''''''
+
+Is, hav og biologi i Barentshavet er sterkt knyttet til varmeinnholdet i havet.
+Temperaturen er i konstant endring, både som et resultat av naturlige
+svingninger og av menneskeskapt oppvarming.
+
+Mye av den intraårlige variabiliteten i Barentshavet knyttes til den
+Nord-Atlantiske Oscillasjonen (NAO). Positiv NAO er vanligvis assosiert med
+varmere forhold i Barentshavet. Over lengre tid følger variasjoner i
+Barentshavet den Atlantiske Multidekadiske Oscillasjonen. 
+
+Den mest dramatiske oppvarmingen av Arktis i de seneste tiårene har foregått i
+Barentshavet. Fra midten av 2000-tallet begynte en dramatisk økning i temperatur
+og saltinnhold. `Lind et al. 2018
+<https://www.nature.com/articles/s41558-018-0205-y>`_ (se også `denne
+<https://www.hi.no/hi/nyheter/2018/juni/dramatisk-skifte-fra-arktisk-til-atlantisk-klima-i-det-nordlige-barentshavet>`_) viste at dette var
+forårsaket av en reduksjon av import av havis fra det indre Polhavet inn i
+Barentshavet. Dermed tilføres også mindre ferkvann i form av smeltevann,
+lagdelinga blir svakere, miksingen blir mer intensiv, og atlantisk vann bringes til overflaten. 
+Det snakkes om at vi kan stå overfor et fullstendig regimeskifte i Barentshavet
+fra arktiske til atlantiske tilstander. Dette vil være første gang et slikt
+regimeskifte blir observert (det finnes noen beviser for slike skifter i paleodata).
+
+
+
+
+Politikk, olje og gass 
+''''''''''''''''''''''
+
+Iskanten 
+++++++++
+
+**Iskanten** er et viktig begrep i norsk forvaltningspolitikk. Det er vedtatt (*hvor?*) at
+det ikke skal drives petroleumsvirksomhet nord for iskanten, men det er ikke
+avklart hvordan linja som definerer *iskanten* skal tegnes. `Her
+<https://www.yr.no/magasin/iskantdramaet-1.13560889>`_ er en fin
+oversiktsartikkel om iskanten og petroleumsvirksomhet i Barentshavet.
+
+Delelinjen 
+++++++++++ 
+
+Gjennom andre havdel av 1900-tallet var det uenighet
+mellom Norge og Sovjetunionen/Russland om hvor grensen mellom landenes
+territorialfarvann skulle gå. Norge støttet *midtlinjeprintsippet*, hvor grensen
+skal trekkes langs en linje der alle punkter ligger like langt fra landenes
+grunnlinje. Russland sto på *sektorlinjeprinsippet*, hvor grensen trekkes rett
+nordover fra grensepunktet på land. Resultatet var en "gråsone" mellom de to
+grensene hvor fiskeri ble regulert av midlertidige avtaler, og *smutthullet*, en
+sone som ikke tilhørte noen av landenes territorie og derfor var relativt uregulert.
+
+
+.. figure:: /files/delelinje.gif
+    :scale: 30
+
+    Delelinje (Kilde: BBC).
+
+
+
+I 2010 forhandlet Norge (under Stoltenberg) og Russland (under Medvedev) frem en
+permanent grense som ble trukket midt mellom de to landenes respektive krav.
+
+Vern 
+++++
+
+
+
+Kilder
+''''''
+
+- `Wikipedia. <https://en.wikipedia.org/wiki/Barents_Sea>`_ 
+
+- `Loeng og Ingvaldsen: "Oseanografi og klima i Barentshavet". <https://uit.no/Content/463384/oseanografi.pdf>`_
+
+- `Lind et al. 2018 <https://www.nature.com/articles/s41558-018-0205-y>`_.
+

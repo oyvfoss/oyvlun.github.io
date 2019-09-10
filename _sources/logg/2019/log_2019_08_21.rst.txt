@@ -1,0 +1,33 @@
+Onsdag 21.08 2019
++++++++++++++++++
+
+
+`Møte med Arild <../moeter/arild/moete_arild_210819.html>`_
+
+A-TWAIN
+-------
+
+**ADCP** - prosessering gjørt på nytt med filtering av de to uplasseingene hvor
+*dz = 4 m*. 
+
+Fylt inn en *data* seksjon i *oyweb/prosjekter/a-twain*.
+
+Gjør, A-TWAIN:
+--------------
+
+**ADCP**
+
+- Roter til dominant strømretning (*calc.principal_axis*).
+- Skriv opp prosessering i dokument.
+- Basic-plot: Produser og skriv opp.
+- Lag bulk-tidsserie (gjennomsnitt i dybde)?
+
+** CTD **
+- Tidsserie 105 m ok.
+- Grabb SST.
+- Kombiner for å få Q.
+- Kombiner også med 50m CTD for å få Q med høyere resolusjon.
+
+**Dataprodukter**
+- Sea ice drift
+- ERA (vind, vind stress, overflateflukser..).

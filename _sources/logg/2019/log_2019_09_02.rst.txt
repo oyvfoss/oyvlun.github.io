@@ -1,0 +1,59 @@
+Mandag 02.09 2019
++++++++++++++++++
+
+ATWAIN
+------
+
+Remaking SIC
+''''''''''''
+
+Previously only NaNs (was using the *interp2d* functions and there were NaNs in
+the source array). Later figured out that interpolating with this function was
+yielding weird results (SIC > 105%, etc.). Now instead using the
+*scipy.interpolate.griddata* function, which seems to perform well. 
+
+**Notes on interpolating:**
+For python intepolation: `This
+<https://stackoverflow.com/questions/49185127/unexpected-results-when-using-scipy-interpolate-griddata>`_:
+may be the way to go, actually:
+::
+
+ To get bilinear interpolation of unstructured data with SciPy, 
+ use SmoothBivariateSpline with kx=1 and ky=1 (bilinear), and 
+ s=0 (no smoothing). (But it seems you'll need more data points 
+ than in this example to achieve s=0.)
+
+
+May want to eventually look into `GMT (Generic Mapping Tools)
+<http://gmt.soest.hawaii.edu/doc/5.4.5/pdf/GMT_Tutorial.pdf>`_ for interpolation
+and other grid operations. Looks well-documented and seems like it would be easy
+to apply in UNIX shell..
+
+
+Combining time series
+'''''''''''''''''''''
+
+Code for combining the time series in a single Bunch in
+*atwain/code/processinganddata/combine_time_series.py*.
+
+Included metadata in the Bunch, and dowumented in the ATWAIN pdf. 
+
+Resulting file (1-d running averages) in *atwain/data/combined_timeseries.p*.
+
+Atwain doc
+''''''''''
+Updated, reorganized, inserted figures etc.
+
+
+Current section
+'''''''''''''''
+
+For panel plot: Wanted to detide. *oyv.tides.tidefit_ts_1d* ran into troubel when there
+are completely masked rows. Fixed this.
+
+
+Seminar abstract
+----------------
+
+Created an abstract roughly based on previous stuff. Idea: Use Ziegler and Eidam
+to *support* the claims, without going into detail.  
