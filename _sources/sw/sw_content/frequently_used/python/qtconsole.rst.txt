@@ -1,7 +1,0 @@
-Qtconsole
-=========
-
-Opens a small, separate console window that has all the variables and stuff from the notebook. Great for keeping the notebook clean.
-::
-
- ipython qtconsole --existing

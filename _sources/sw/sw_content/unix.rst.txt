@@ -1,8 +1,0 @@
-UNIX/Linux
-==========
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-   
-   unix/*

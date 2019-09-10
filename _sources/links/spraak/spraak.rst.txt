@@ -1,7 +1,0 @@
-Språk
-=====
-
-.. toctree::
-   :maxdepth: 1
-
-   norsk_engelsk

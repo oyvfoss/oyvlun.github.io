@@ -1,22 +1,15 @@
-.. oyweb documentation master file, created by
-   sphinx-quickstart on Mon Aug 12 15:46:13 2019.
+oyvshare 
+========
 
-oyweb 
-=====
-Dokumetasjon, logger og diverse for Øyvind.
+This page is a subset of Øyvinds personal work page *oyweb*, and contains
+material which may be if interest to collaborators. For now, this only includes
+the *projects* folder of oyweb - may include more content at a later time.
 
 .. toctree::
    :maxdepth: 1
 
-   logg/logg
    projects/projects
-   tokt_data/tokt_data
 
 
-.. toctree::
-   :maxdepth: 1
-
-   sci_notes/sci_notes
-   sw/sw
-   links/links
+   
 

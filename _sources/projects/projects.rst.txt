@@ -1,5 +1,5 @@
-Prosjekter
-==========
+Projects
+========
 
 .. toctree::
    :maxdepth: 1

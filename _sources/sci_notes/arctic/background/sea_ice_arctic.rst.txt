@@ -1,6 +1,0 @@
-Sea-ice in the Arctic
-'''''''''''''''''''''
-
-.. image:: /files/sea_ice_extent_arctic.png
-    :scale: 60
-

@@ -1,8 +1,0 @@
-Latex
-=====
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-   latex/*

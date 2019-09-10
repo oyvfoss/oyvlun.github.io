@@ -1,8 +1,0 @@
-Mooring time series, overview
-'''''''''''''''''''''''''''''
-
-.. figure:: /files/u_v_q_sic_panels_basic.png
-    :scale: 90
-
-    Time series of depth-average currents, ocean heat content and sea ice
-    concentration. Script: */atwain/code/mooring_ts/q_vs_a/q_vs_a.py*.
