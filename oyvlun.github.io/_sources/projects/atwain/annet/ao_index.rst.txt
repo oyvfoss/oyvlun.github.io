@@ -1,5 +1,0 @@
-AO and Arctic State
-'''''''''''''''''''
-
-.. figure:: /files/ao_vs_sic.png
-    :width: 150%
