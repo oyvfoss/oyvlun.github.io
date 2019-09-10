@@ -1,113 +1,110 @@
-
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta charset="utf-8" />
-    <title>oyvshare &#8212; oyvshare  documentation</title>
-    <link rel="stylesheet" href="/oyvlun.github.io/_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="/oyvlun.github.io/_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="/oyvlun.github.io/_static/documentation_options.js"></script>
-    <script type="text/javascript" src="/oyvlun.github.io/_static/jquery.js"></script>
-    <script type="text/javascript" src="/oyvlun.github.io/_static/underscore.js"></script>
-    <script type="text/javascript" src="/oyvlun.github.io/_static/doctools.js"></script>
-    <script type="text/javascript" src="/oyvlun.github.io/_static/language_data.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Projects" href="projects/projects.html" />
-   
-  <link rel="stylesheet" href="/oyvlun.github.io/_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+<head>
+<title></title>
 
-  </head><body>
-  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
+</head>
 
-          <div class="body" role="main">
-            
-  <div class="section" id="oyvshare">
-<h1>oyvshare<a class="headerlink" href="#oyvshare" title="Permalink to this headline">¶</a></h1>
-<p>This page is a subset of Øyvind’s personal work page <em>oyweb</em>. It contains
-material which may be if interest to collaborators. For now, this only includes
-the <em>projects</em> folder of oyweb - more content may be included at a later time.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="projects/projects.html">Projects</a></li>
-</ul>
-</div>
-</div>
+<style>
+body {
+	background-image: url('mittbilde.jpg');
+	background-attachment: fixed;
+	color: #333;
+}
+.box {
+	border-radius: 3px;
+	background: rgba(101, 101, 101, 0.7); margin: auto; padding: 12px;
+}
+.lightbox {
+	zoom: 1.5;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(10, 10, 10, 0.8);
+	text-align: center;
+	margin: auto;
+}
+div.horizontal {
+	display: flex;
+	justify-content: center;
+	height: 100%;
+}
+div.vertical {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+}
+::-webkit-input-placeholder {
+   color: #955;
+   text-align: center;
+}
+::-moz-placeholder {
+   color: #955;
+   text-align: center;
+}
+:-ms-input-placeholder {
+   color: #955;
+   text-align: center;
+}
+</style>
 
+<body>
 
-          </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="#">oyvshare</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="projects/projects.html">Projects</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="projects/projects.html" title="next chapter">Projects</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+	<div id="loginbox" class="lightbox" >
+		<div class="horizontal">
+			<div class="vertical">
+				<div class="box">
+					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="password" /> <br />
+					<button id="loginbutton" type="button">Enter</button>
+					<p id="wrongPassword" style="display: none">wrong password</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
 
+	 <script type="text/javascript" src="https://rawcdn.githack.com/chrisveness/crypto/7067ee62f18c76dd4a9d372a00e647205460b62b/sha1.js"></script>
 
+	<script type="text/javascript">
+	"use strict";
+	function loadPage(pwd) {
+		var hash= pwd;
+		hash= Sha1.hash(pwd);
+		var url= hash + "/index.html";
+		$.ajax({
+			url : url,
+			dataType : "html",
+			success : function(data) {
+				window.location= url;
+			},
+			error : function(xhr, ajaxOptions, thrownError) {
+				parent.location.hash= hash;
+				//$("#wrongPassword").show();
+				$("#password").attr("placeholder","wrong password");
+				$("#password").val("");
+			}
+		});
+	}
+	$("#loginbutton").on("click", function() {
+		loadPage($("#password").val());
+	});
+	$("#password").keypress(function(e) {
+		if (e.which == 13) {
+			loadPage($("#password").val());
+		}
+	});
+	$("#password").focus();
+	</script>
 
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2019, Øyvind Lundesgaard.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/index.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>
+
