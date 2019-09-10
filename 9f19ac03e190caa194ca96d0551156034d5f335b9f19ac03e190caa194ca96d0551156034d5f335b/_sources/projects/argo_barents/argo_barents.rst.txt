@@ -1,0 +1,4 @@
+Barents Sea ARGO float
+======================
+
+PDF-rapport: :download:`Første kikk på ARGO-bøye i Barentshavet</files/argo_barents_oversikt.pdf>`.
