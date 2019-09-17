@@ -1,8 +1,19 @@
 Mooring time series, overview
-'''''''''''''''''''''''''''''
+#############################
+
+Note: Processing is quick and preliminary and there could be errors.
+
+.. figure:: /files/u_v_q_sic_div_panels_basic.png
+    :scale: 90
+
+    Time series of depth-average currents, ocean heat content, density
+    difference between 50 and 105 db,  sea ice concentration, and net sea ice
+    drift into the area (see this). Script: ``/atwain/code/mooring_ts/q_vs_a/q_curr_other_panel.py``.
+
+
 
 .. figure:: /files/u_v_q_sic_panels_basic.png
     :scale: 90
 
     Time series of depth-average currents, ocean heat content and sea ice
-    concentration. Script: */atwain/code/mooring_ts/q_vs_a/q_vs_a.py*.
+    concentration. Script: ``/atwain/code/mooring_ts/q_vs_a/q_vs_a.py``.
