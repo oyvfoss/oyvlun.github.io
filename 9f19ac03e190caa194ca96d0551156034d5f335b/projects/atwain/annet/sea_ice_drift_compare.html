@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Comparing net sea ice drift on different scales &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Sea ice along the 200 m contour" href="seaice_200m.html" />
+    <link rel="prev" title="Sea ice drift" href="sea_ice_drift.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="comparing-net-sea-ice-drift-on-different-scales">
+<h1>Comparing net sea ice drift on different scales<a class="headerlink" href="#comparing-net-sea-ice-drift-on-different-scales" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/sea_ice_drift_interp_areas_three.png"><img alt="../../../_images/sea_ice_drift_interp_areas_three.png" src="../../../_images/sea_ice_drift_interp_areas_three.png" style="width: 335.20000000000005px; height: 252.8px;" /></a>
+<p class="caption"><span class="caption-text">Three boundary grids used to estimate net sea ice drift. Code for generating
+the grids, and the figure:
+<code class="docutils literal notranslate"><span class="pre">/atwain/code/processing_and_data/sea_ice_drift/create_grid_box</span></code>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Grid: &quot;small&quot;: ##</span>
+<span class="n">File</span><span class="p">:</span> <span class="n">data</span><span class="o">/</span><span class="n">other</span><span class="o">/</span><span class="n">sea_ice_drift</span><span class="o">/</span><span class="n">interp</span><span class="o">/</span><span class="n">ipgrid_small</span><span class="o">.</span><span class="n">p</span>
+<span class="n">Lon</span><span class="p">:</span> <span class="mf">30.0</span> <span class="n">to</span> <span class="mf">33.0</span>
+<span class="n">Lat</span><span class="p">:</span> <span class="mf">81.2</span> <span class="n">to</span> <span class="mf">81.6</span>
+<span class="n">dy</span><span class="p">:</span> <span class="mf">44.5</span> <span class="n">km</span>
+<span class="n">dx</span><span class="p">:</span> <span class="mf">51.3</span> <span class="n">to</span> <span class="mf">48.9</span> <span class="n">km</span>
+
+<span class="c1">## Grid: &quot;mid&quot;: ##</span>
+<span class="n">File</span><span class="p">:</span> <span class="n">data</span><span class="o">/</span><span class="n">other</span><span class="o">/</span><span class="n">sea_ice_drift</span><span class="o">/</span><span class="n">interp</span><span class="o">/</span><span class="n">ipgrid_mid</span><span class="o">.</span><span class="n">p</span>
+<span class="n">Lon</span><span class="p">:</span> <span class="mf">28.0</span> <span class="n">to</span> <span class="mf">35.0</span>
+<span class="n">Lat</span><span class="p">:</span> <span class="mf">81.0</span> <span class="n">to</span> <span class="mf">82.0</span>
+<span class="n">dy</span><span class="p">:</span> <span class="mf">111.3</span> <span class="n">km</span>
+<span class="n">dx</span><span class="p">:</span> <span class="mf">122.3</span> <span class="n">to</span> <span class="mf">108.8</span> <span class="n">km</span>
+
+<span class="c1">## Grid: &quot;large&quot;: ##</span>
+<span class="n">File</span><span class="p">:</span> <span class="n">data</span><span class="o">/</span><span class="n">other</span><span class="o">/</span><span class="n">sea_ice_drift</span><span class="o">/</span><span class="n">interp</span><span class="o">/</span><span class="n">ipgrid_large</span><span class="o">.</span><span class="n">p</span>
+<span class="n">Lon</span><span class="p">:</span> <span class="mf">24.0</span> <span class="n">to</span> <span class="mf">39.0</span>
+<span class="n">Lat</span><span class="p">:</span> <span class="mf">80.5</span> <span class="n">to</span> <span class="mf">82.5</span>
+<span class="n">dy</span><span class="p">:</span> <span class="mf">222.6</span> <span class="n">km</span>
+<span class="n">dx</span><span class="p">:</span> <span class="mf">276.5</span> <span class="n">to</span> <span class="mf">218.7</span> <span class="n">km</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../_images/compare_net_sid_three.png"><img alt="../../../_images/compare_net_sid_three.png" src="../../../_images/compare_net_sid_three.png" style="width: 627.2px; height: 787.2px;" /></a>
+<p class="caption"><span class="caption-text">Quick comparison.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../projects.html">Projects</a><ul>
+  <li><a href="../atwain.html">A-TWAIN</a><ul>
+      <li>Previous: <a href="sea_ice_drift.html" title="previous chapter">Sea ice drift</a></li>
+      <li>Next: <a href="seaice_200m.html" title="next chapter">Sea ice along the 200 m contour</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/projects/atwain/annet/sea_ice_drift_compare.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
