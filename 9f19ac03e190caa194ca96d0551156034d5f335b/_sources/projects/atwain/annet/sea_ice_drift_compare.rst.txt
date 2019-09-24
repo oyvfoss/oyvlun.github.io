@@ -36,6 +36,12 @@ Comparing net sea ice drift on different scales
 .. figure:: /files/compare_net_sid_three.png
     :scale: 80
 
-    Quick comparison.
+    Quick comparison of net ice flux into the three areas using NSIDC (*blue*) and
+    Ifremer (*red*) products. 
+
+    Correlations and means are computed after interpolating the data interpolated onto the same time
+    grid (23.10.12 to 30.12.18).
+
+    Code: ``atwain/code/sid/compare_three/quick_compare_three.py``
 
 
