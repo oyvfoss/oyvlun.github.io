@@ -6,7 +6,7 @@ Comparing net sea ice drift on different scales
 
     Three boundary grids used to estimate net sea ice drift. Code for generating
     the grids, and the figure:
-    ``/atwain/code/processing_and_data/sea_ice_drift/create_grid_box``.
+    ``/atwain/code/processing_and_data/sea_ice_drift/create_grid_box.py``.
 
 
 ::
