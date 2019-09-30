@@ -1,0 +1,75 @@
+ROMS model overview
+###################
+
+Overview
+========
+
+ROMS ``S800_2014`` run.
+
+- **1300** (:math:`\xi`) **x 1150** (:math:`\eta`) **point** horizontal grid (even **800 m** spacing).
+
+- **35 vertical layers** (should give an average resolution of 5.7 m at 200 m depth).
+
+- Time coverage is **01.01.2005 to 16.07.2010**.
+
+- Looks like the model includes rather advances sea ice modelling and freshwater fluxes
+  etc. (fresh fjords..).
+
+- Mixing quantities are exported, as are vorticity terms (I think these are all
+  implicitly computed).
+
+- Model domain spans a large area around Svalbard, including the continental
+  slope all the way to Frans Jozef Land, much of the Nansen Basin, and the
+  northern Barents Sea: 
+
+.. figure:: /files/roms800_2014_temp_example.png
+    :scale: 50
+
+    Example: SST field on a randomly chosen model day.
+
+.. admonition:: Parameter values
+
+    - ``Vstretching``: **1** *(vertical stretching parameter?)*
+    - ``Vtransform``: **1** *(vertical stretching parameter?)*
+    - ``theta_s``: **8** *(vertical stretching parameter?)*
+    - ``theta_b``: **0.1** *(vertical stretching parameter?)*
+    - ``dt``: **60** *(Size of long (baroclinic?) time steps, seconds)*
+    - ``dfast``: **1** *(Size of short (barotropic?) time steps, seconds)*
+
+Data
+====
+
+Files are located on shared disk */berner (?)*. Since my VM doesn't interface
+very easily with the network, I've imported everything to disk
+(``fenrir/data/roms_runs_norseas/S800_2014``).
+
+Files are **daily averages**, each is about 1.5 GB.
+
+Quick look: transect
+====================
+
+.. figure:: /files/map_transect_atwain_initial.png
+    :scale: 80%
+
+    A-TWAIN 200 location (black dot) and model transect (red).
+
+
+
+.. figure:: /files/T_u_transect_large.png
+    :scale: 80%
+
+    Time average temperature and cross-transect velocity (grid *u*) along the transect.
+
+    
+.. figure:: /files/T_u_transect_mean_std.png
+    :scale: 80%
+
+    Time average (upper) and standard deviation (lower) of temperature and
+    cross-transect velocity (grid *u*) along the transect, zommed in on the
+    shallow region.
+
+.. admonition:: Animation of currents and temperature across the transect
+
+
+    :download:`Video link </files/transect_movie.mp4>` 
+    

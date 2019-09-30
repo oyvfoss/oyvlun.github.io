@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>ROMS model overview &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Sea ice animation" href="sea_ice_animation.html" />
+    <link rel="prev" title="Mooring time series, overview" href="mooring_ts.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="roms-model-overview">
+<h1>ROMS model overview<a class="headerlink" href="#roms-model-overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>ROMS <code class="docutils literal notranslate"><span class="pre">S800_2014</span></code> run.</p>
+<ul class="simple">
+<li><p><strong>1300</strong> (<span class="math notranslate nohighlight">\(\xi\)</span>) <strong>x 1150</strong> (<span class="math notranslate nohighlight">\(\eta\)</span>) <strong>point</strong> horizontal grid (even <strong>800 m</strong> spacing).</p></li>
+<li><p><strong>35 vertical layers</strong> (should give an average resolution of 5.7 m at 200 m depth).</p></li>
+<li><p>Time coverage is <strong>01.01.2005 to 16.07.2010</strong>.</p></li>
+<li><p>Looks like the model includes rather advances sea ice modelling and freshwater fluxes
+etc. (fresh fjords..).</p></li>
+<li><p>Mixing quantities are exported, as are vorticity terms (I think these are all
+implicitly computed).</p></li>
+<li><p>Model domain spans a large area around Svalbard, including the continental
+slope all the way to Frans Jozef Land, much of the Nansen Basin, and the
+northern Barents Sea:</p></li>
+</ul>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/roms800_2014_temp_example.png"><img alt="../../../_images/roms800_2014_temp_example.png" src="../../../_images/roms800_2014_temp_example.png" style="width: 454.0px; height: 408.5px;" /></a>
+<p class="caption"><span class="caption-text">Example: SST field on a randomly chosen model day.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-parameter-values admonition">
+<p class="admonition-title">Parameter values</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Vstretching</span></code>: <strong>1</strong> <em>(vertical stretching parameter?)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Vtransform</span></code>: <strong>1</strong> <em>(vertical stretching parameter?)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">theta_s</span></code>: <strong>8</strong> <em>(vertical stretching parameter?)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">theta_b</span></code>: <strong>0.1</strong> <em>(vertical stretching parameter?)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dt</span></code>: <strong>60</strong> <em>(Size of long (baroclinic?) time steps, seconds)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dfast</span></code>: <strong>1</strong> <em>(Size of short (barotropic?) time steps, seconds)</em></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<p>Files are located on shared disk <em>/berner (?)</em>. Since my VM doesn’t interface
+very easily with the network, I’ve imported everything to disk
+(<code class="docutils literal notranslate"><span class="pre">fenrir/data/roms_runs_norseas/S800_2014</span></code>).</p>
+<p>Files are <strong>daily averages</strong>, each is about 1.5 GB.</p>
+</div>
+<div class="section" id="quick-look-transect">
+<h2>Quick look: transect<a class="headerlink" href="#quick-look-transect" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../_images/map_transect_atwain_initial.png"><img alt="../../../_images/map_transect_atwain_initial.png" src="../../../_images/map_transect_atwain_initial.png" style="width: 400.0px; height: 320.0px;" /></a>
+<p class="caption"><span class="caption-text">A-TWAIN 200 location (black dot) and model transect (red).</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../_images/T_u_transect_large.png"><img alt="../../../_images/T_u_transect_large.png" src="../../../_images/T_u_transect_large.png" style="width: 512.0px; height: 384.0px;" /></a>
+<p class="caption"><span class="caption-text">Time average temperature and cross-transect velocity (grid <em>u</em>) along the transect.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../../_images/T_u_transect_mean_std.png"><img alt="../../../_images/T_u_transect_mean_std.png" src="../../../_images/T_u_transect_mean_std.png" style="width: 512.0px; height: 384.0px;" /></a>
+<p class="caption"><span class="caption-text">Time average (upper) and standard deviation (lower) of temperature and
+cross-transect velocity (grid <em>u</em>) along the transect, zommed in on the
+shallow region.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-animation-of-currents-and-temperature-across-the-transect admonition">
+<p class="admonition-title">Animation of currents and temperature across the transect</p>
+<p><a class="reference download internal" download="" href="../../../_downloads/55d986cec7f99938f32d123d22ebd388/transect_movie.mp4"><code class="xref download docutils literal notranslate"><span class="pre">Video</span> <span class="pre">link</span></code></a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../projects.html">Projects</a><ul>
+  <li><a href="../atwain.html">A-TWAIN</a><ul>
+      <li>Previous: <a href="mooring_ts.html" title="previous chapter">Mooring time series, overview</a></li>
+      <li>Next: <a href="sea_ice_animation.html" title="next chapter">Sea ice animation</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/projects/atwain/annet/roms_model_overview.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
