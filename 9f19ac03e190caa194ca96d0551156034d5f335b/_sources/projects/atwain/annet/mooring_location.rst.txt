@@ -1,42 +1,25 @@
 Mooring locations during the 3 deployments
-''''''''''''''''''''''''''''''''''''''''''
-
-Quick plot of the mooring location (reading coordinates from cruise reports).
-Where there are both deployment and recovery coordinates, I've plotted a line
-between the two.
-
-*Couldn't find recovery coordinates for the first deployment?*
-
-.. figure:: /files/map_moorings.png
-    :width: 150%
+##########################################
 
 
-
-200-m mooring coordinates ref. cruise reports. *(Note: need to update this!)*:
-
-.. admonition:: Defining "mooring cvoordinates*
-    For interpolation purposes etc: Using the 2015 (deployment 3) deployment
-    coordinates. These are stored in:
-         **/atwain/data/atwain_200m_latlon.p**
-
-
-
+200-m mooring coordinates taken from  cruise reports:
 
 ==========   =========  ===========   ===========
 Deployment   Time       Lat           Lon
 ==========   =========  ===========   ===========
-D1 (dep)     16 Sep 12  81N 24.18'     31E 13.05'
-D1 (rec)     Sep 13?    ?             ?
+D1 (dep)     16 Sep 12  81N 24.2'     31E 13.02'
 ----------   ---------  -----------   -----------
-D2 (dep)     22 Sep 13  81N 24.04'    31E 16.15'
-D2 (rec)     19 Sep 15  81N 24.202'   31E 13.247'
+D2 (dep)     22 Sep 13  81N 24.202'   31E 13.247'
 ----------   ---------  -----------   -----------
 D3 (dep)     19 Sep 15  81N 24.255'   31E 13.533'
-D3 (rec)     17 Sep 17  81N 24.255'   31E 13.533'
 ==========   =========  ===========   ===========
 
 
 
+Quick plot of the mooring locations:
 
+.. figure:: /files/map_moorings.png
+    :width: 150%
 
+    Mooring deployment locations plotted on *IBCAO v3* 500 m x 500 m bathymetry.
 
