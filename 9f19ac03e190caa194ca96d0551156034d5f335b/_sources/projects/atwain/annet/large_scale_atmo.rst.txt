@@ -1,0 +1,46 @@
+Large-scale atmosphere
+######################
+
+Interested in whether the main driver of sea-ice concentration near the A-TWAIN
+mooring is large-scale atmospherice forcing.
+
+Doing some preliminary analysis of the large-scale atmosphere based on a subset
+of ERA-Interim. Experimenting with using the python *eofs* module, which seems
+very promising. 
+
+At each point, EOFs are weighted with the square root of the cosine of latitude.
+
+*Note: Check that the data is provided on an equal lat/lon grid - if not, this
+probably doesn't make sense*.
+
+.. figure:: /files/era_slice_area.png
+    :scale: 80%
+
+    Area subset used for EOF analysis of ERA-Interim data.
+
+
+.. figure:: /files/eof_slp_modes.png
+    :scale: 80%
+
+    Spatial structure of first three EOF modes.
+
+
+.. figure:: /files/eof_slp_modes_cov.png
+    :scale: 80%
+
+    Covariance of time series of first three EOF modes with each spatial point.
+
+
+.. figure:: /files/eof_slp_timeseries.png
+    :scale: 80%
+
+    Time series of first three EOF modes.
+
+Ideas
+=====
+
+- Look at time series in relation to A-TWAIN SIC.
+- Look at structure of correlation (lagged) between local/regional SIC and large
+  spatial fields.
+- EOF analysis of all ERA fields.
+- Try removing the seasonal cycle before computing the modes?
