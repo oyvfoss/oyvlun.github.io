@@ -82,8 +82,7 @@ Litt usikker på hvor mye vi kan generalisere ut fra denne riggen mtp på plasse
 
 **Spektra og miksing**
 
-(Relevante plott `her
-  <../atwain/annet/roms_model_overview.html>`_). 
+(Relevante plott `her <../atwain/annet/spectra_etc.html>`_). 
 
 - Klar sammenheng mellom subtidal energi og vind..
 - Øyensynlig sammenheng mellom M2-skjær og lagdeling (logisk mtp modes)?
