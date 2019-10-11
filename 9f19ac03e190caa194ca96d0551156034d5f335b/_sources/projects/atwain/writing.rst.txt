@@ -1,0 +1,10 @@
+Section writeups
+################
+
+Collection of various snippets of text that could be useful at some point.
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    writing/*

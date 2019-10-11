@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Comparing currents from the three deployments &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="ADCP processing" href="adcp_processing.html" />
+    <link rel="prev" title="Mooring data" href="../mooring_data_atwain.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="comparing-currents-from-the-three-deployments">
+<h1>Comparing currents from the three deployments<a class="headerlink" href="#comparing-currents-from-the-three-deployments" title="Permalink to this headline">¶</a></h1>
+<p>Code in <code class="docutils literal notranslate"><span class="pre">atwain/code/processing_and_data/moorings/</span></code>
+<code class="docutils literal notranslate"><span class="pre">adcps/reprocessing/qc_processing/compare_deployments/</span></code>.</p>
+<p>See <a class="reference external" href="adcp_processing.html">this page</a> for details of the ADCP reprocessing.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 15%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Dep</p></th>
+<th class="head"><p>Year</p></th>
+<th class="head"><p>Time step</p></th>
+<th class="head"><p>Bin size</p></th>
+<th class="head"><p>Mean transducer depth</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>2012-2013</p></td>
+<td><p>20 min</p></td>
+<td><p>4 m</p></td>
+<td><p>111.6 m</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>2013-2015</p></td>
+<td><p>15 min</p></td>
+<td><p>4 m</p></td>
+<td><p>118.5 m</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2015-2017</p></td>
+<td><p>20 min</p></td>
+<td><p>8 m</p></td>
+<td><p>118.9 m</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="interpolation-to-common-dz-and-dt">
+<h2>Interpolation to common <em>dz</em> and <em>dt</em><a class="headerlink" href="#interpolation-to-common-dz-and-dt" title="Permalink to this headline">¶</a></h2>
+<p>Code: <code class="docutils literal notranslate"><span class="pre">interpolate_deployments_for_comparison.py</span></code></p>
+<p>For comparison purposes, we interpolated the data from each deployment:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>First: onto evenly spaced depth grid</dt><dd><ul>
+<li><p><em>dz = 2 m</em>.</p></li>
+<li><p>Between 14 and 94 m depth.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Second: onto evenly spaced time grid.</dt><dd><ul>
+<li><p><em>dt=(1/24/60) days=6.7 min</em>.</p></li>
+<li><p>Spanning the length of the deployment (after removing deployment and
+recovery).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The time series in each bin was then smoothed with a 9-point running mean to achieve
+the same (hourly) resolution.</p>
+<p>Saved to
+<code class="docutils literal notranslate"><span class="pre">atwain/data/reprocessed_mooring_data/adcp_combined/</span></code>
+<code class="docutils literal notranslate"><span class="pre">interpolated_for_comparison/uv_interp_dep1.p</span></code>
+<em>(etc)</em>.</p>
+</div>
+<div class="section" id="mean-currents">
+<h2>Mean currents<a class="headerlink" href="#mean-currents" title="Permalink to this headline">¶</a></h2>
+<p>The following figures show the depth average currents (upper: <em>u</em>, lower: <em>v</em>).
+Black lines are 20 minute resolution, colored lines are 7 day running means (NB:
+can give funny results for missing data).</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../../_images/mean_uv_alldep_zoomout.png"><img alt="../../../../_images/mean_uv_alldep_zoomout.png" src="../../../../_images/mean_uv_alldep_zoomout.png" style="width: 384.0px; height: 288.0px;" /></a>
+<p class="caption"><span class="caption-text"><em>Full record.</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/mean_uv_alldep_yzoom.png"><img alt="../../../../_images/mean_uv_alldep_yzoom.png" src="../../../../_images/mean_uv_alldep_yzoom.png" style="width: 384.0px; height: 288.0px;" /></a>
+<p class="caption"><span class="caption-text"><em>Full record (reduced y-range).</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../../_images/mean_uv_joint_1_2.png"><img alt="../../../../_images/mean_uv_joint_1_2.png" src="../../../../_images/mean_uv_joint_1_2.png" style="width: 384.0px; height: 288.0px;" /></a>
+<p class="caption"><span class="caption-text"><em>Around the first redeployment (2013).</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../../../_images/mean_uv_joint_2_3.png"><img alt="../../../../_images/mean_uv_joint_2_3.png" src="../../../../_images/mean_uv_joint_2_3.png" style="width: 384.0px; height: 288.0px;" /></a>
+<p class="caption"><span class="caption-text"><em>Around the second redeployment (2015).</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="tides">
+<h2>Tides<a class="headerlink" href="#tides" title="Permalink to this headline">¶</a></h2>
+<p>Computation of tidal fits were based on the <code class="docutils literal notranslate"><span class="pre">seapy.tide</span></code> module. Fits were
+performed to the 11 primary constituents.</p>
+<div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../../../_images/compare_tides_deployments.png"><img alt="../../../../_images/compare_tides_deployments.png" src="../../../../_images/compare_tides_deployments.png" style="width: 360.0px; height: 480.0px;" /></a>
+<p class="caption"><span class="caption-text"><em>Major and minor amplitude and phase of each tidal constituent based on fits
+to the depth-average currents during each deployment.</em></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>The relatively good match between the amplitude from independent fits to the current record
+from each deployment is reassuring. If we assume that there is no error in the
+recorded time fields, the good match in phase of the main constistuent suggests
+that there is no large discrepancy in heading between the deployments.</p>
+<div class="figure align-default" id="id6">
+<a class="reference internal image-reference" href="../../../../_images/detided_mean_u_v.png"><img alt="../../../../_images/detided_mean_u_v.png" src="../../../../_images/detided_mean_u_v.png" style="width: 816.0px; height: 198.0px;" /></a>
+<p class="caption"><span class="caption-text"><em>20 minute (gray) and daily averaged (colored) depth mean currents after removing the
+tidal fit to the depth average currents.</em></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id7">
+<a class="reference internal image-reference" href="../../../../_images/detided_mean_uv_joint_1_2.png"><img alt="../../../../_images/detided_mean_uv_joint_1_2.png" src="../../../../_images/detided_mean_uv_joint_1_2.png" style="width: 816.0px; height: 198.0px;" /></a>
+<p class="caption"><span class="caption-text"><em>Around the first redeployment (2013).</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id8">
+<a class="reference internal image-reference" href="../../../../_images/detided_mean_uv_joint_2_3.png"><img alt="../../../../_images/detided_mean_uv_joint_2_3.png" src="../../../../_images/detided_mean_uv_joint_2_3.png" style="width: 816.0px; height: 198.0px;" /></a>
+<p class="caption"><span class="caption-text"><em>Around the second redeployment (2015).</em></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../projects.html">Projects</a><ul>
+  <li><a href="../../atwain.html">A-TWAIN</a><ul>
+  <li><a href="../../data.html">Data</a><ul>
+  <li><a href="../mooring_data_atwain.html">Mooring data</a><ul>
+      <li>Previous: <a href="../mooring_data_atwain.html" title="previous chapter">Mooring data</a></li>
+      <li>Next: <a href="adcp_processing.html" title="next chapter">ADCP processing</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/projects/atwain/data/mooring_data/adcp_compare_deployments.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

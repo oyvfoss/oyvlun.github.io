@@ -1,0 +1,107 @@
+Møte 10.10.19
+#############
+
+**Siden sist**
+==============
+
+SIC-produkt
+-----------
+
+Etter litt frem og tilbake landet på å bruke U of Bremen AMSR2 SIC (6.25 x 6.25
+km). Bedre resolusjon enn NSIDC-produkt (25 km), og MASIE ser ikke ut til å være
+velegnet for å se på konsentrasjon.
+
+- Mer info, og sammenligning med NSIDC `her
+  <../atwain/data/sea_ice_concentration_data/bremen_amsr2_data.html>`_.
+
+- Også sett litt på romlige korrelasjoner til A-TWAIN punktet, `her
+  <../atwain/annet/correlations_sic.html>`_.
+
+Godt samsvar mellom de forskjellige produktene :math:`\rightarrow` holder meg
+til dette produktet nå.
+
+ADCP-prosessering
+-----------------
+
+
+Brukt en del tid på å skrive kode for rask prosessering av TRDI-ADCP-data.
+
+- Reprossesert all A-TWAIN ADCP data (detajer `her
+  <../atwain/data/adcp_processing.html>`_).
+
+- Sett litt nøyere på forskjeller og ulikheter mellom de tre utplasseringene (detajer `her
+  <../atwain/data/adcp_compare_deployments.html>`_). Finner ikke noe som tilsier
+  at det er et problem med datakvaliteten ved deployment 1. Det er også god
+  overenstemmelse mellom tidevansstrømmene gjennom alle 5 årene.
+
+:math:`\rightarrow` Ingen grunn til å utelate perioden 2012-2013? 
+
+:math:`\rightarrow` Ser også ut som kompasset er stabilt - kanskje vi kan stole
+på retningen?
+
+- **Har magdec-korreksjon blitt utført**?
+
+Storskala atmosfære
+-------------------
+
+- Sett litt på storskala atmosfære i ERA Interim, og regnet EOF'er av
+  overflatetrykk i et større område (`her
+  <../atwain/annet/large_scale_atmo.html>`_). 
+  
+Etter hvert: sammenlikne disse indeksene med observasjoner, isdekke etc.
+
+Kan kanskje også være en ide å lagr en liknende **indeks for storskala
+isdrift**? 
+
+
+
+ROMS
+----
+
+- Sett litt på ROMS-datasettet, og tatt en kjapp titt på ATWAIN-området  (`her
+  <../atwain/annet/roms_model_overview.html>`_). 
+  
+I følge modellen er AT201
+plassert et godt stykke utenfor kjernen av strømmen, og forventet strømstyrke  og
+temperatur er langt lavere her enn lengre nord.
+
+**Diskusjonspunkter**
+=====================
+
+A-TWAIN
+-------
+- Skal vi bruke hele tidsperioden?
+
+**Narrativ/videre utforsking**
+Hvile spørsmål kan vi addressere med disse dataene? 
+
+- *What are the predominant drivers of sea ice cover on the shelf north of Svalbard?*
+- *What is the interannual variability of heat and currents on the outer shelf?
+
+Litt usikker på hvor mye vi kan generalisere ut fra denne riggen mtp på plassering..
+
+**Spektra og miksing**
+
+(Relevante plott `her
+  <../atwain/annet/roms_model_overview.html>`_). 
+
+- Klar sammenheng mellom subtidal energi og vind..
+- Øyensynlig sammenheng mellom M2-skjær og lagdeling (logisk mtp modes)?
+
+Postdokplan
+-----------
+- Er detaljnivået ok?
+- Er *ambisjons*nivået ok?
+- Noe mer som skal inn?
+- Uklarheter om riggdata etc.
+
+
+
+**Til neste gang**
+==================
+
+- Helt grovt utkast av poster/presentasjon, med grunnstruktur.
+- Ferdigskrive dokumentasjon av alle klarerte datasett.
+- Forberedelser til AeN-møte.
+- Ferdig postdokplan.
+

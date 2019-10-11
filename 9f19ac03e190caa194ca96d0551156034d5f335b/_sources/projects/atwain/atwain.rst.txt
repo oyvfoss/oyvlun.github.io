@@ -12,6 +12,7 @@ A-TWAIN
     :glob:
 
     data
+    writing
     annet/*
 
 - :download:`A-TWAIN initial writeup </files/atwain_initial.pdf>`.

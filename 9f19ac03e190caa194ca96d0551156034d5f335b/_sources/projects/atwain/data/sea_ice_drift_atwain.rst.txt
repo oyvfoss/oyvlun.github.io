@@ -1,0 +1,8 @@
+Sea ice drift
+#############
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    sea_ice_drift_data/*

@@ -8,3 +8,12 @@ Projects
    atwain/atwain
    argo_barents/argo_barents
    fjordeco/fjordeco
+
+Miscellaneous:
+
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   misc/*

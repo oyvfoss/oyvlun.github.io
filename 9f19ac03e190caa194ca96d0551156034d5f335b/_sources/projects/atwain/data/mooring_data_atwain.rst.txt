@@ -1,0 +1,8 @@
+Mooring data
+============
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    mooring_data/*

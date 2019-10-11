@@ -1,0 +1,105 @@
+Comparing currents from the three deployments
+#############################################
+
+
+Code in ``atwain/code/processing_and_data/moorings/`` 
+``adcps/reprocessing/qc_processing/compare_deployments/``.
+
+See `this page <adcp_processing.html>`_ for details of the ADCP reprocessing.
+
+
+Overview 
+========
+
+============  ========== ===========  =========== =====================
+Dep           Year       Time step    Bin size    Mean transducer depth
+============  ========== ===========  =========== =====================
+1             2012-2013  20 min       4 m         111.6 m  
+2             2013-2015  15 min       4 m         118.5 m 
+3             2015-2017  20 min       8 m         118.9 m
+============  ========== ===========  =========== =====================
+
+
+Interpolation to common *dz* and *dt*
+=====================================
+
+Code: ``interpolate_deployments_for_comparison.py``
+
+For comparison purposes, we interpolated the data from each deployment:
+
+- First: onto evenly spaced depth grid
+    - *dz = 2 m*.
+    - Between 14 and 94 m depth. 
+- Second: onto evenly spaced time grid.
+    - *dt=(1/24/60) days=6.7 min*. 
+    - Spanning the length of the deployment (after removing deployment and
+      recovery).
+
+The time series in each bin was then smoothed with a 9-point running mean to achieve
+the same (hourly) resolution.
+
+Saved to
+``atwain/data/reprocessed_mooring_data/adcp_combined/``
+``interpolated_for_comparison/uv_interp_dep1.p``
+*(etc)*.
+
+Mean currents
+=============
+
+The following figures show the depth average currents (upper: *u*, lower: *v*).
+Black lines are 20 minute resolution, colored lines are 7 day running means (NB:
+can give funny results for missing data). 
+
+.. figure:: /files/mean_uv_alldep_zoomout.png
+    :scale: 60%
+
+    *Full record.*
+
+.. figure:: /files/mean_uv_alldep_yzoom.png
+    :scale: 60%
+
+    *Full record (reduced y-range).*
+
+.. figure:: /files/mean_uv_joint_1_2.png
+    :scale: 60%
+
+    *Around the first redeployment (2013).*
+
+.. figure:: /files/mean_uv_joint_2_3.png
+    :scale: 60%
+
+    *Around the second redeployment (2015).*
+
+Tides
+=====
+
+Computation of tidal fits were based on the ``seapy.tide`` module. Fits were
+performed to the 11 primary constituents.
+
+.. figure:: /files/compare_tides_deployments.png
+    :scale: 60%
+
+    *Major and minor amplitude and phase of each tidal constituent based on fits
+    to the depth-average currents during each deployment.*
+
+The relatively good match between the amplitude from independent fits to the current record
+from each deployment is reassuring. If we assume that there is no error in the
+recorded time fields, the good match in phase of the main constistuent suggests
+that there is no large discrepancy in heading between the deployments.
+
+.. figure:: /files/detided_mean_u_v.png
+    :scale: 60%
+
+    *20 minute (gray) and daily averaged (colored) depth mean currents after removing the
+    tidal fit to the depth average currents.*
+
+
+.. figure:: /files/detided_mean_uv_joint_1_2.png
+    :scale: 60%
+
+    *Around the first redeployment (2013).*
+
+.. figure:: /files/detided_mean_uv_joint_2_3.png
+    :scale: 60%
+
+    *Around the second redeployment (2015).*

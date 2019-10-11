@@ -1,0 +1,105 @@
+U of Bremen AMSR2
+#################
+
+Overview
+========
+
+- AMSR2 sea ice concentration based on the ASI algorithm (Spreen et al., 2008).
+- Daily.
+- I use the 6.25 x 6.25 km gridded product.
+- 2012 to present (only downloaded through 2018 for now).
+
+
+Zip-files downloaded from `this page
+<https://seaice.uni-bremen.de/data/amsr2/asi_daygrid_swath/n6250/netcdf/>`_ on
+04-10-2019 to
+``/atwain/data/other/sea_ice_concentration/bremen_amsr2/zip_files_annual``.
+
+**Citation**
+
+`This link <https://seaice.uni-bremen.de/sea-ice-concentration/information/>`_
+says to cite the following:
+
+    Spreen, G., L. Kaleschke, and G.Heygster (2008), *Sea ice remote sensing
+    using AMSR-E 89 GHz channels* J. Geophys. Res.,vol. 113, C02S03,
+    doi:10.1029/2005JC003384.
+
+However, it might make sense to use something newer for AMSR2?
+
+
+**File contents**
+
+- Daily files.
+- 2 Jul 2012 to present (I have only downloaded up until 31/12/2018).
+- *y, x* = [1216, 1716]
+
+Variables:
+
+- **x** *(y, x)*.
+- **y** *(y, x)*.
+- **sea ice concentration** or **sea_ice_concentration** *(t, y, x)*. 
+    - 0-100=sea ice concentration [%], 110=missing, 120=land, 104=ocean out of AMSR2 bounds, 119=land out of AMSR2 bounds
+
+
+Processing
+==========
+**Reprojection**
+
+Reprojection from *x, y* to *lon, lat* was done using *pyproj*:
+
+.. figure:: /files/check_projection_bremen_amsr2.png 
+    :scale: 50%
+
+    *Quick check of reprojection by plotting the full SIC field on a random day.*
+
+
+.. figure:: /files/check_projection_bremen_amsr2_mask_zoom.png 
+    :scale: 50%
+
+    *Closer look: land mask (brown) around Nordaustlandet - Basemap coastlines
+    shown in green.*
+    
+**Subset**
+
+Making a smaller subset (``make_subset_bremen.py``).
+
+- File:
+  ``atwain/data/other/sea_ice_concentration/bremen_amsr2_subset_atwain.nc``.
+- 260 x 260 grid points.
+
+
+
+.. figure:: /files/subset_bremen_amsr2.png
+    :scale: 50%
+
+    *Extent of subset.*
+
+**Interpolating onto A-TWAIN point**
+
+
+Interpolated SIC onto ATWAIN point (*lon: 31.22555, lat: 81.40425*)
+(``/atwain/code/processing_and_data/sea_ice_concentration``
+``/make_subset_bremen/interpolate_bremen_sic_onto_atwain.py``).
+
+
+Interpolated dataset stored in ``/atwain/data/other/sea_ice_concentration/SIC_atwain_bremen.p``
+
+Sanity check: Comparison of Bremen and NSIDC. The match is about as good as I'd expect.
+
+.. figure:: /files/compare_bremen_nsidc_atwain_point.png
+    :scale: 80%
+
+    *Comparison of SIC products 1) DMSP SSM/I-SSMIS 25 x 25 km Daily Polar Gridded Sea Ice
+    Concentration and 2) U of Bremen AMSR2 6.25 x 6.25 km, both
+    interpolated onto the ATWAIN mooring location.*
+
+
+Quick look
+==========
+
+.. figure:: /files/mean_std_bremen_sic.png
+    :scale: 70%
+
+    *Mean and standard deviation of SIC. Location of the A-TWAIN 200 mooring
+    indicated with X.*
+

@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Møte 10.10.19 &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Barents Sea ARGO float" href="../argo_barents/argo_barents.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="mote-10-10-19">
+<h1>Møte 10.10.19<a class="headerlink" href="#mote-10-10-19" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="siden-sist">
+<h2><strong>Siden sist</strong><a class="headerlink" href="#siden-sist" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sic-produkt">
+<h3>SIC-produkt<a class="headerlink" href="#sic-produkt" title="Permalink to this headline">¶</a></h3>
+<p>Etter litt frem og tilbake landet på å bruke U of Bremen AMSR2 SIC (6.25 x 6.25
+km). Bedre resolusjon enn NSIDC-produkt (25 km), og MASIE ser ikke ut til å være
+velegnet for å se på konsentrasjon.</p>
+<ul class="simple">
+<li><p>Mer info, og sammenligning med NSIDC <a class="reference external" href="../atwain/data/sea_ice_concentration_data/bremen_amsr2_data.html">her</a>.</p></li>
+<li><p>Også sett litt på romlige korrelasjoner til A-TWAIN punktet, <a class="reference external" href="../atwain/annet/correlations_sic.html">her</a>.</p></li>
+</ul>
+<p>Godt samsvar mellom de forskjellige produktene <span class="math notranslate nohighlight">\(\rightarrow\)</span> holder meg
+til dette produktet nå.</p>
+</div>
+<div class="section" id="adcp-prosessering">
+<h3>ADCP-prosessering<a class="headerlink" href="#adcp-prosessering" title="Permalink to this headline">¶</a></h3>
+<p>Brukt en del tid på å skrive kode for rask prosessering av TRDI-ADCP-data.</p>
+<ul class="simple">
+<li><p>Reprossesert all A-TWAIN ADCP data (detajer <a class="reference external" href="../atwain/data/adcp_processing.html">her</a>).</p></li>
+<li><p>Sett litt nøyere på forskjeller og ulikheter mellom de tre utplasseringene (detajer <a class="reference external" href="../atwain/data/adcp_compare_deployments.html">her</a>). Finner ikke noe som tilsier
+at det er et problem med datakvaliteten ved deployment 1. Det er også god
+overenstemmelse mellom tidevansstrømmene gjennom alle 5 årene.</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Ingen grunn til å utelate perioden 2012-2013?</p>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Ser også ut som kompasset er stabilt - kanskje vi kan stole
+på retningen?</p>
+<ul class="simple">
+<li><p><strong>Har magdec-korreksjon blitt utført</strong>?</p></li>
+</ul>
+</div>
+<div class="section" id="storskala-atmosfaere">
+<h3>Storskala atmosfære<a class="headerlink" href="#storskala-atmosfaere" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Sett litt på storskala atmosfære i ERA Interim, og regnet EOF’er av
+overflatetrykk i et større område (<a class="reference external" href="../atwain/annet/large_scale_atmo.html">her</a>).</p></li>
+</ul>
+<p>Etter hvert: sammenlikne disse indeksene med observasjoner, isdekke etc.</p>
+<p>Kan kanskje også være en ide å lagr en liknende <strong>indeks for storskala
+isdrift</strong>?</p>
+</div>
+<div class="section" id="roms">
+<h3>ROMS<a class="headerlink" href="#roms" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Sett litt på ROMS-datasettet, og tatt en kjapp titt på ATWAIN-området  (<a class="reference external" href="../atwain/annet/roms_model_overview.html">her</a>).</p></li>
+</ul>
+<p>I følge modellen er AT201
+plassert et godt stykke utenfor kjernen av strømmen, og forventet strømstyrke  og
+temperatur er langt lavere her enn lengre nord.</p>
+</div>
+</div>
+<div class="section" id="diskusjonspunkter">
+<h2><strong>Diskusjonspunkter</strong><a class="headerlink" href="#diskusjonspunkter" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-twain">
+<h3>A-TWAIN<a class="headerlink" href="#a-twain" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Skal vi bruke hele tidsperioden?</p></li>
+</ul>
+<p><strong>Narrativ/videre utforsking</strong>
+Hvile spørsmål kan vi addressere med disse dataene?</p>
+<ul class="simple">
+<li><p><em>What are the predominant drivers of sea ice cover on the shelf north of Svalbard?</em></p></li>
+<li><p><a href="#id6"><span class="problematic" id="id7">*</span></a>What is the interannual variability of heat and currents on the outer shelf?</p></li>
+</ul>
+<p>Litt usikker på hvor mye vi kan generalisere ut fra denne riggen mtp på plassering..</p>
+<p><strong>Spektra og miksing</strong></p>
+<dl class="simple">
+<dt>(Relevante plott <a href="#id8"><span class="problematic" id="id9">`</span></a>her</dt><dd><p>&lt;../atwain/annet/roms_model_overview.html&gt;`_).</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>Klar sammenheng mellom subtidal energi og vind..</p></li>
+<li><p>Øyensynlig sammenheng mellom M2-skjær og lagdeling (logisk mtp modes)?</p></li>
+</ul>
+</div>
+<div class="section" id="postdokplan">
+<h3>Postdokplan<a class="headerlink" href="#postdokplan" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Er detaljnivået ok?</p></li>
+<li><p>Er <a href="#id10"><span class="problematic" id="id11">*</span></a>ambisjons*nivået ok?</p></li>
+<li><p>Noe mer som skal inn?</p></li>
+<li><p>Uklarheter om riggdata etc.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="til-neste-gang">
+<h2><strong>Til neste gang</strong><a class="headerlink" href="#til-neste-gang" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Helt grovt utkast av poster/presentasjon, med grunnstruktur.</p></li>
+<li><p>Ferdigskrive dokumentasjon av alle klarerte datasett.</p></li>
+<li><p>Forberedelser til AeN-møte.</p></li>
+<li><p>Ferdig postdokplan.</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../projects.html">Projects</a><ul>
+      <li>Previous: <a href="../argo_barents/argo_barents.html" title="previous chapter">Barents Sea ARGO float</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/projects/misc/moete_101019.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

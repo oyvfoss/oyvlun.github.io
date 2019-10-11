@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>MASIE &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Sea ice drift" href="../sea_ice_drift_atwain.html" />
+    <link rel="prev" title="U of Bremen AMSR2" href="bremen_amsr2_data.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="masie">
+<h1>MASIE<a class="headerlink" href="#masie" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In the data I have downloaded (nc files), sea ice concentration values are
+always either 0% or 70-100%. I don’t know a reason why the 1-69% would be
+suppressed. I’ve e-mailed NSIDC, but for now I’ll use something else (Bremen
+AMSR2, probably).</p>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../../_images/masie_nh_example_time_series.png"><img alt="../../../../_images/masie_nh_example_time_series.png" src="../../../../_images/masie_nh_example_time_series.png" style="width: 375.20000000000005px; height: 93.2px;" /></a>
+<p class="caption"><span class="caption-text"><em>Example time series at an ocean point.</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../../../_images/masie_nh_example_histogram.png"><img alt="../../../../_images/masie_nh_example_histogram.png" src="../../../../_images/masie_nh_example_histogram.png" style="width: 314.0px; height: 120.80000000000001px;" /></a>
+<p class="caption"><span class="caption-text"><em>Histogram of values in an example monthly file.</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>MASIE-NH <a class="reference external" href="https://nsidc.org/data/masie/about_masie">(webpage)</a></p>
+<p><em>Multisensor Analyzed Sea Ice Extent – Northern Hemisphere</em></p>
+<ul class="simple">
+<li><p>Daily.</p></li>
+<li><p>4 x 4 km gridded.</p></li>
+<li><p>“Relies more on visible imagery than on passive microwave data. As a result,
+the ice edge position is generally more accurate.”</p></li>
+<li><p>According to the <a class="reference external" href="https://nsidc.org/data/masie/masie_faq">MASIE FAQ</a>, other
+products are better suited for looking at trends in sea ice cover, etc.</p></li>
+</ul>
+<p>Looks like this product, with its high resolution and advantages near the ice
+edge, is the one to use.</p>
+<p><strong>Citation</strong></p>
+<p>Crediting in image captions: <em>Credit: NSIDC/NIC MASIE product</em>.</p>
+<p>NSIDC wants the dataset to be cited as:</p>
+<blockquote>
+<div><p>National Ice Center and National Snow and Ice Data Center. Compiled by F.
+Fetterer, M. Savoie, S. Helfrich, and P. Clemente-Colón. 2010, updated
+daily. <em>Multisensor Analyzed Sea Ice Extent - Northern Hemisphere (MASIE-NH),
+Version 1.</em> [Indicate subset used]. Boulder, Colorado USA. NSIDC: National
+Snow and Ice Data Center. doi: <a class="reference external" href="https://doi.org/10.7265/N5GT5K3K">https://doi.org/10.7265/N5GT5K3K</a>. [Date
+Accessed].</p>
+</div></blockquote>
+<p>Trying to emulate this in the entry <em>nsidc_2010</em> to <em>zotbib_full</em>, need to make
+sure it comes out right.</p>
+</div>
+<div class="section" id="processing">
+<h2>Processing<a class="headerlink" href="#processing" title="Permalink to this headline">¶</a></h2>
+<p><strong>Downloading</strong></p>
+<p>Downloaded all current data on 03.10.19 from
+<a class="reference external" href="ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G10005/Data/">ftp://sidads.colorado.edu/pub/DATASETS/NOAA/G10005/Data/</a> and storing in
+<code class="docutils literal notranslate"><span class="pre">~/work/atwain/data/other/sea_ice_concentration/masie/masie_dl/</span></code>.</p>
+<p>May want to keep this updated as new data arrives. Haven’t bothered writing a
+script, the following should work</p>
+<ul class="simple">
+<li><p>Modify script to include the missing files:
+<code class="docutils literal notranslate"><span class="pre">code/processing_and_data/sea_ice_concentration/dl_masie.sh</span></code> <em>(actually, may
+be just as easy to download from browser)</em>.</p></li>
+<li><p>Files are downloaded to <code class="docutils literal notranslate"><span class="pre">sidads.colorado.edu/.../G10005/201X/</span></code>.</p></li>
+<li><p>Need to unzip (<code class="docutils literal notranslate"><span class="pre">gunzip</span> <span class="pre">&lt;file.nc.gz&gt;</span></code>) and then move to
+<code class="docutils literal notranslate"><span class="pre">data/other/sea_ice_concentration/masie/masie_dl/</span></code>.</p></li>
+</ul>
+<p><strong>File contents</strong></p>
+<ul class="simple">
+<li><p>Monthly files.</p></li>
+<li><p>07/2012 to 09/2019.</p></li>
+<li><p><em>t, y, x</em> = [31, 2550, 2100]</p></li>
+</ul>
+<p>Variables:</p>
+<ul class="simple">
+<li><p><strong>Longitude</strong> <em>(y, x)</em>.</p></li>
+<li><p><strong>Latitude</strong> <em>(y, x)</em>.</p></li>
+<li><p><strong>Day of Month</strong> or <strong>Day_of_Month</strong> <em>(t)</em>.</p></li>
+<li><dl class="simple">
+<dt><strong>sea ice concentration</strong> or <strong>sea_ice_concentration</strong> <em>(t, y, x)</em>.</dt><dd><ul>
+<li><p>0-100=sea ice concentration [%], 110=missing, 120=land, 104=ocean out of AMSR2 bounds, 119=land out of AMSR2 bounds</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>Combining and creating subset</strong></p>
+<p>Subset for a large area created in <code class="docutils literal notranslate"><span class="pre">processing_and_data/sea_ice_concentration/make_subset_masie/make_subset_masie.py.</span></code></p>
+<div class="figure align-default" id="id5">
+<a class="reference internal image-reference" href="../../../../_images/masie_subset_atwain.png"><img alt="../../../../_images/masie_subset_atwain.png" src="../../../../_images/masie_subset_atwain.png" style="width: 720.0px; height: 240.0px;" /></a>
+<p class="caption"><span class="caption-text">Example day, showing extent of subset (<em>right:</em> grid coordinates, <em>left:</em>
+geographical coordinates).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>Subset is stored as
+<code class="docutils literal notranslate"><span class="pre">atwain/data/other/sea_ice_concentration/MASIE_subset_atwain.nc</span></code>.</p>
+<p><strong>Combining and creating ATWAIN time series</strong></p>
+<p>Subset for a large area created in <code class="docutils literal notranslate"><span class="pre">processing_and_data/sea_ice_concentration/make_subset_masie/interpolate_masie_sic_onto_atwain.py</span></code></p>
+<p>Stored as
+<a href="#id1"><span class="problematic" id="id2">``</span></a>atwain/data/other/sea_ice_concentration/SIC_atwain_masie.p`.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../projects.html">Projects</a><ul>
+  <li><a href="../../atwain.html">A-TWAIN</a><ul>
+  <li><a href="../../data.html">Data</a><ul>
+  <li><a href="../sea_ice_concentration_atwain.html">Sea ice concentration</a><ul>
+      <li>Previous: <a href="bremen_amsr2_data.html" title="previous chapter">U of Bremen AMSR2</a></li>
+      <li>Next: <a href="../sea_ice_drift_atwain.html" title="next chapter">Sea ice drift</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/projects/atwain/data/sea_ice_concentration_data/masie_data.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
