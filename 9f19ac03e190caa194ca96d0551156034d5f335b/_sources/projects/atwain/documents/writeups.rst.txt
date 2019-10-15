@@ -1,0 +1,10 @@
+Writeups of smaller sections
+############################
+
+Various text snippets which ideally can be copypasted into documents.
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    writeups/*

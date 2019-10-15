@@ -1,0 +1,47 @@
+Comparing net sea ice drift on different scales
+############################################### 
+
+.. figure:: /files/sea_ice_drift_interp_areas_three.png
+    :scale: 80
+
+    Three boundary grids used to estimate net sea ice drift. Code for generating
+    the grids, and the figure:
+    ``/atwain/code/processing_and_data/sea_ice_drift/create_grid_box.py``.
+
+
+::
+
+    ## Grid: "small": ##
+    File: data/other/sea_ice_drift/interp/ipgrid_small.p
+    Lon: 30.0 to 33.0
+    Lat: 81.2 to 81.6
+    dy: 44.5 km
+    dx: 51.3 to 48.9 km
+
+    ## Grid: "mid": ##
+    File: data/other/sea_ice_drift/interp/ipgrid_mid.p
+    Lon: 28.0 to 35.0
+    Lat: 81.0 to 82.0
+    dy: 111.3 km
+    dx: 122.3 to 108.8 km
+
+    ## Grid: "large": ##
+    File: data/other/sea_ice_drift/interp/ipgrid_large.p
+    Lon: 24.0 to 39.0
+    Lat: 80.5 to 82.5
+    dy: 222.6 km
+    dx: 276.5 to 218.7 km
+
+
+.. figure:: /files/compare_net_sid_three.png
+    :scale: 80
+
+    Quick comparison of net ice flux into the three areas using NSIDC (*blue*) and
+    Ifremer (*red*) products. 
+
+    Correlations and means are computed after interpolating the data interpolated onto the same time
+    grid (23.10.12 to 30.12.18).
+
+    Code: ``atwain/code/sid/compare_three/quick_compare_three.py``
+
+

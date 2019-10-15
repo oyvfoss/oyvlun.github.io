@@ -1,0 +1,25 @@
+Overview, sea ice concentration
+###############################
+
+
+``/media/sf_work/atwain/code/sic/video/make_video_amsr2_full_area.py``.
+
+:download:`Video of U of Bremen AMSR2 SIC </files/sic_amsr2_full_area_animation.mp4>`.
+
+
+
+
+.. figure:: /files/compare_bremen_nsidc_atwain_point.png
+    :scale: 80%
+
+    *Comparison of SIC products 1) DMSP SSM/I-SSMIS 25 x 25 km Daily Polar Gridded Sea Ice
+    Concentration and 2) U of Bremen AMSR2 6.25 x 6.25 km, both
+    interpolated onto the ATWAIN mooring location.*
+
+
+.. figure:: /files/mean_std_bremen_sic.png
+    :scale: 70%
+
+    *Mean and standard deviation of SIC. Location of the A-TWAIN 200 mooring
+    indicated with X.*
+

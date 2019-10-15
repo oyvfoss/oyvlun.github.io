@@ -1,0 +1,8 @@
+Sea ice concentration
+#####################
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    sea_ice/*

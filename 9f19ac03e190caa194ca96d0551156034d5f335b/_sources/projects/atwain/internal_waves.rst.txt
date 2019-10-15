@@ -1,0 +1,46 @@
+Spectra, etc
+############
+
+
+.. figure:: /files/spectrogram_10d_windows_rot.png
+    :scale: 80
+
+    Spectrogram of the rotary components of velocity. Depth avergaged spectra
+    computed from FFTs of complex velocity over 10-day windows overlapping by
+    50%.
+
+
+.. figure:: /files/subtidal_band_ts_cw_ccw_with_forcing.png
+    :scale: 80
+
+    Bottom: Time evolution of power spectral density in the $\sim$0.5 cpd band.
+    Also shown are sea ice concentration (top) and wind speed (middle).
+
+
+Shear
+=====
+
+.. figure:: /files/mean_spec_10d_windows_rot_shear.png
+    :scale: 80
+
+    Average rotary spectra of vertical shear. Computed from FFT performed over
+    10-day windows.
+
+
+
+.. figure:: /files/spectrogram_10d_windows_rot_shear.png
+    :scale: 80
+
+    Spectrogram of the rotary components of vertical shear. Depth avergaged spectra
+    computed from FFTs of complex shear over 10-day windows overlapping by
+    50%.
+
+
+
+.. figure:: /files/m2_band_ts_cw_ccw_shear.png
+    :scale: 80
+
+    Bottom: Time evolution of power spectral density in the semi-diurnal ($\sim$2 cpd) band.
+    Also shown are sea ice concentration (top) and density difference between 50
+    and 105 db (middle).
+

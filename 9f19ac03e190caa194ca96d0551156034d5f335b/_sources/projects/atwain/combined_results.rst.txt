@@ -1,0 +1,8 @@
+Combining the datasets
+######################
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    combined_results/*

@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>ROMS/CICE 800 m model &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Documents" href="../documents.html" />
+    <link rel="prev" title="Comparing net sea ice drift on different scales" href="sea_ice_drift_data/sea_ice_drift_compare.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="roms-cice-800-m-model">
+<h1>ROMS/CICE 800 m model<a class="headerlink" href="#roms-cice-800-m-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>ROMS <code class="docutils literal notranslate"><span class="pre">S800_2014</span></code> run. See <em>Duarte et al (2019)</em> for a detailed model description.</p>
+<ul class="simple">
+<li><p><strong>1300</strong> (<span class="math notranslate nohighlight">\(\xi\)</span>) <strong>x 1150</strong> (<span class="math notranslate nohighlight">\(\eta\)</span>) <strong>point</strong> horizontal grid (even <strong>800 m</strong> spacing).</p></li>
+<li><p><strong>35 vertical layers</strong> (should give an average resolution of 5.7 m at 200 m depth).</p></li>
+<li><p>Time coverage is <strong>01.01.2005 to 16.07.2010</strong>.</p></li>
+<li><p>CICE sea ice model v5.1 with prescribed oceanic and
+atmospheric forcing. The model is 1D but rather advanced.</p></li>
+<li><p>Detailed freshwater fluxes
+etc. (fresh fjords..).</p></li>
+<li><p>Vorticity terms are computed (I think these are all
+implicitly computed).</p></li>
+<li><p>Model domain spans a large area around Svalbard, including the continental
+slope all the way to Frans Jozef Land, much of the Nansen Basin, and the
+northern Barents Sea:</p></li>
+</ul>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/roms800_2014_temp_example.png"><img alt="../../../_images/roms800_2014_temp_example.png" src="../../../_images/roms800_2014_temp_example.png" style="width: 454.0px; height: 408.5px;" /></a>
+<p class="caption"><span class="caption-text"><em>Example showing the model domain: SST field on an arbitrarily chosen model day.</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition-parameter-values admonition">
+<p class="admonition-title">Parameter values</p>
+<p>More detailed explanation <a class="reference external" href="https://www.myroms.org/wiki/Vertical_S-coordinate#Vertical_Stretching_Functions">here</a>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Vstretching</span></code>: <strong>1</strong> <em>(choosing the S-H94 stretching function)</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Vtransform</span></code>: <strong>1</strong> <em>(vertical stretching parameter)</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">theta_s</span></code>: <strong>8</strong> <em>(higher values</em> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <em>more layers near
+the surface)</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">theta_b</span></code>: <strong>0.1</strong> <em>(near 0</em> <span class="math notranslate nohighlight">\(\rightarrow\)</span> <em>resolution focused at the
+surface, not the bottom)</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dt</span></code>: <strong>60</strong> <em>(Size of long (baroclinic?) time steps, seconds)</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dfast</span></code>: <strong>1</strong> <em>(Size of short (barotropic?) time steps, seconds)</em>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<p>Files are located on shared disk <em>/berner (?)</em>. Since my VM doesn’t interface
+very easily with the network, I’ve imported everything to disk
+(<code class="docutils literal notranslate"><span class="pre">fenrir/data/roms_runs_norseas/S800_2014</span></code>).</p>
+<p>Files are <strong>daily averages</strong>, each is about 1.5 GB.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../projects.html">Projects</a><ul>
+  <li><a href="../atwain.html">A-TWAIN</a><ul>
+  <li><a href="../data.html">Data</a><ul>
+      <li>Previous: <a href="sea_ice_drift_data/sea_ice_drift_compare.html" title="previous chapter">Comparing net sea ice drift on different scales</a></li>
+      <li>Next: <a href="../documents.html" title="next chapter">Documents</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/projects/atwain/data/roms_model_overview.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

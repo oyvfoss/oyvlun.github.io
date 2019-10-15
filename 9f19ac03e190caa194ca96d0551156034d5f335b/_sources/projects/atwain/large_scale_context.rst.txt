@@ -1,0 +1,8 @@
+Large scale ocean and atmosphere context
+########################################
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    large_scale_context/*

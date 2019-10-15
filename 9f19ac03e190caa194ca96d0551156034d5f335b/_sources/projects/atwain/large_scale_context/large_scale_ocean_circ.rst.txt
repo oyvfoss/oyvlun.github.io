@@ -1,0 +1,36 @@
+Large-scale ocean circulation
+#############################
+
+ROMS-CICE 800 m runs currently only available for the period 01.01.2005 to
+16.07.2010.
+I may still instructive to look at the model to contextualize the ATWAIN observations.
+
+
+Quick look: transect
+====================
+
+.. figure:: /files/map_transect_atwain_initial.png
+    :scale: 80%
+
+    A-TWAIN 200 location (black dot) and model transect (red).
+
+
+
+.. figure:: /files/T_u_transect_large.png
+    :scale: 80%
+
+    Time average temperature and cross-transect velocity (grid *u*) along the transect.
+
+    
+.. figure:: /files/T_u_transect_mean_std.png
+    :scale: 80%
+
+    Time average (upper) and standard deviation (lower) of temperature and
+    cross-transect velocity (grid *u*) along the transect, zommed in on the
+    shallow region.
+
+.. admonition:: Animation of currents and temperature across the transect
+
+
+    :download:`Video link </files/transect_movie.mp4>` 
+    

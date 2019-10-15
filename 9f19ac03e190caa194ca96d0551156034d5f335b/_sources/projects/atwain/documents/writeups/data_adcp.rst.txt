@@ -1,0 +1,17 @@
+Data: ADCP
+##########
+
+The mooring was equipped with a Teledyne RDI Workhorse Sentinel 150 kHz Acoustic
+Doppler Current Profiler *(ADCP)*. The ADCP was mounted on a buoy near 110 m  
+depth, facing upward in the water column. Instrument configuration varied
+slightly between the three different deployments. Average velocity profiles were
+recorded every 15/20 minutes, and velocities were recorded in 4/8 m bins.
+
+
+Samples were removed where the following quantities exceeded their respective
+accepted ranges, indicated in parentheses: Current speed (< 100 cm/s), percent
+good 3- and 4-beam ensemble averages (> 75%), beam average backscatter amplitude
+(> 64 db), error velocity (< 4 cm/s and < current speed), beam average
+correlation amplitude (> 45 out of 255 counts). In addition, the two bottom bins
+were removed as the dataset showed signs of artificial damping of the current
+towrds the transducer.

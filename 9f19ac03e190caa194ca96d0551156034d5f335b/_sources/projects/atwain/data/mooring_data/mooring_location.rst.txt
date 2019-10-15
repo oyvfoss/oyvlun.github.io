@@ -1,0 +1,25 @@
+Mooring locations during the 3 deployments
+##########################################
+
+
+200-m mooring coordinates taken from  cruise reports:
+
+==========   =========  ===========   ===========
+Deployment   Time       Lat           Lon
+==========   =========  ===========   ===========
+D1 (dep)     16 Sep 12  81N 24.2'     31E 13.02'
+----------   ---------  -----------   -----------
+D2 (dep)     22 Sep 13  81N 24.202'   31E 13.247'
+----------   ---------  -----------   -----------
+D3 (dep)     19 Sep 15  81N 24.255'   31E 13.533'
+==========   =========  ===========   ===========
+
+
+
+Quick plot of the mooring locations:
+
+.. figure:: /files/map_moorings.png
+    :width: 150%
+
+    Mooring deployment locations plotted on *IBCAO v3* 500 m x 500 m bathymetry.
+

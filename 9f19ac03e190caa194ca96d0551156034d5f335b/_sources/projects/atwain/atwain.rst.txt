@@ -6,13 +6,38 @@ A-TWAIN
 .. figure:: /files/map_basic_atwain.png
     :width: 60%
 
-
 .. toctree::
     :maxdepth: 1
     :glob:
 
     data
-    writing
-    annet/*
+    documents
 
-- :download:`A-TWAIN initial writeup </files/atwain_initial.pdf>`.
+
+Results
+-------
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    mooring_obs
+    sea_ice
+    sea_ice_drift
+    large_scale_context
+
+--------------------------
+
+.. toctree::
+    :maxdepth: 2
+    :glob:
+
+    combined_results
+
+--------------------------
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    internal_waves

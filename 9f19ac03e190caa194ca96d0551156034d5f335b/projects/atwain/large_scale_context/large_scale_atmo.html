@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Large-scale atmosphere &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Large-scale ocean circulation" href="large_scale_ocean_circ.html" />
+    <link rel="prev" title="AO and Arctic State" href="ao_index.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="large-scale-atmosphere">
+<h1>Large-scale atmosphere<a class="headerlink" href="#large-scale-atmosphere" title="Permalink to this headline">¶</a></h1>
+<p>Interested in whether the main driver of sea-ice concentration near the A-TWAIN
+mooring is large-scale atmospherice forcing.</p>
+<p>Doing some preliminary analysis of the large-scale atmosphere based on a subset
+of ERA-Interim. Experimenting with using the python <em>eofs</em> module, which seems
+very promising.</p>
+<p>At each point, EOFs are weighted with the square root of the cosine of latitude.</p>
+<p><em>Note: Check that the data is provided on an equal lat/lon grid - if not, this
+probably doesn’t make sense</em>.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/era_slice_area.png"><img alt="../../../_images/era_slice_area.png" src="../../../_images/era_slice_area.png" style="width: 512.0px; height: 384.0px;" /></a>
+<p class="caption"><span class="caption-text">Area subset used for EOF analysis of ERA-Interim data.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../_images/eof_slp_modes.png"><img alt="../../../_images/eof_slp_modes.png" src="../../../_images/eof_slp_modes.png" style="width: 800.0px; height: 240.0px;" /></a>
+<p class="caption"><span class="caption-text">Spatial structure of first three EOF modes.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../../../_images/eof_slp_modes_cov.png"><img alt="../../../_images/eof_slp_modes_cov.png" src="../../../_images/eof_slp_modes_cov.png" style="width: 800.0px; height: 240.0px;" /></a>
+<p class="caption"><span class="caption-text">Covariance of time series of first three EOF modes with each spatial point.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="../../../_images/eof_slp_timeseries.png"><img alt="../../../_images/eof_slp_timeseries.png" src="../../../_images/eof_slp_timeseries.png" style="width: 400.0px; height: 560.0px;" /></a>
+<p class="caption"><span class="caption-text">Time series of first three EOF modes.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="ideas">
+<h2>Ideas<a class="headerlink" href="#ideas" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Look at time series in relation to A-TWAIN SIC.</p></li>
+<li><p>Look at structure of correlation (lagged) between local/regional SIC and large
+spatial fields.</p></li>
+<li><p>EOF analysis of all ERA fields.</p></li>
+<li><p>Try removing the seasonal cycle before computing the modes?</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../projects.html">Projects</a><ul>
+  <li><a href="../atwain.html">A-TWAIN</a><ul>
+  <li><a href="../large_scale_context.html">Large scale ocean and atmosphere context</a><ul>
+      <li>Previous: <a href="ao_index.html" title="previous chapter">AO and Arctic State</a></li>
+      <li>Next: <a href="large_scale_ocean_circ.html" title="next chapter">Large-scale ocean circulation</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/projects/atwain/large_scale_context/large_scale_atmo.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

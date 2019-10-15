@@ -1,0 +1,24 @@
+SIC: Spatial correlations
+#########################
+
+Scripts in ``atwain/code/sic/statistics``.
+
+Straight correlations and lagged max correlation (value and max lag) stored in
+the *nc*-file.
+
+.. figure:: /files/simple_correlation_atwain_bremen_amsr2.png
+    :scale: 80%
+
+    *Correlation (unlagged) between A-TWAIN SIC and SIC elsewhere (from the U of Bremen
+    AMSR2 6.25 x 6.25 product). In cells where SIC is always is always zero
+    (such that the correlation is undefined), the correlation has been set to 0.*
+
+
+
+.. figure:: /files/corr_lagged_bremen_sic.png
+    :scale: 100%
+
+    *Maximum lagged correlation with up to* :math:`\pm` *31-day shift.* Right: *Max
+    correlation*, Left: *Time lag at max correlation*.
+
+

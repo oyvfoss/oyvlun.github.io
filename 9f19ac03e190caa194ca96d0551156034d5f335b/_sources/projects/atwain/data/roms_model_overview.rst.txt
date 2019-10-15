@@ -1,0 +1,53 @@
+ROMS/CICE 800 m model
+#####################
+
+Overview
+========
+
+ROMS ``S800_2014`` run. See *Duarte et al (2019)* for a detailed model description.
+
+- **1300** (:math:`\xi`) **x 1150** (:math:`\eta`) **point** horizontal grid (even **800 m** spacing).
+
+- **35 vertical layers** (should give an average resolution of 5.7 m at 200 m depth).
+
+- Time coverage is **01.01.2005 to 16.07.2010**.
+
+- CICE sea ice model v5.1 with prescribed oceanic and
+  atmospheric forcing. The model is 1D but rather advanced.
+
+- Detailed freshwater fluxes
+  etc. (fresh fjords..).
+
+- Vorticity terms are computed (I think these are all
+  implicitly computed).
+
+- Model domain spans a large area around Svalbard, including the continental
+  slope all the way to Frans Jozef Land, much of the Nansen Basin, and the
+  northern Barents Sea: 
+
+.. figure:: /files/roms800_2014_temp_example.png
+    :scale: 50
+
+    *Example showing the model domain: SST field on an arbitrarily chosen model day.*
+
+.. admonition:: Parameter values
+
+    More detailed explanation `here <https://www.myroms.org/wiki/Vertical_S-coordinate#Vertical_Stretching_Functions>`_.
+
+    - ``Vstretching``: **1** *(choosing the S-H94 stretching function)*.
+    - ``Vtransform``: **1** *(vertical stretching parameter)*.
+    - ``theta_s``: **8** *(higher values* :math:`\rightarrow` *more layers near 
+      the surface)*.
+    - ``theta_b``: **0.1** *(near 0* :math:`\rightarrow` *resolution focused at the
+      surface, not the bottom)*.
+    - ``dt``: **60** *(Size of long (baroclinic?) time steps, seconds)*.
+    - ``dfast``: **1** *(Size of short (barotropic?) time steps, seconds)*.
+
+Data
+====
+
+Files are located on shared disk */berner (?)*. Since my VM doesn't interface
+very easily with the network, I've imported everything to disk
+(``fenrir/data/roms_runs_norseas/S800_2014``).
+
+Files are **daily averages**, each is about 1.5 GB.
