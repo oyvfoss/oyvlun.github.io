@@ -1,0 +1,74 @@
+Interpolating SID (NSIDC product)
+#################################
+
+**Motivation:**
+
+Want to calculate total advective sea-ice flux in/out of the domain.
+
+**Source:** 
+
+#. NSIDC Polar Pathfinder Daily 25 km EASE-Grid Sea Ice Motion Vectors product.
+    - 25 x 25 km.
+    - Daily.
+    - Source files are annual *.nc*-files in
+      ``data/other/sea_ice_drift/polar_pathfinder_daily``.
+
+**Interpolation:** 
+
+Interpolating onto the boundaries of the `med <creating_si_budget_grid.html>`_ grid using
+``xesmf.Regridder``. 
+
+For reasons having to do with the input format ``xesmf`` likes: interpoating
+separately onto two *2x26* arrays defining the meridional and zonal boundaries,
+respectively. Already set up these arrays in the grid file
+(``med_boundary_grid.p``) as *lon_para*, *lon_meri*, etc.
+
+Interpolation weights in ``data/other/sea_ice_budget/interp_sid/weights_ip/``.
+
+**Rotation and boundary fluxes:**
+
+- Transforming from grid coordinates to geo-coordinates: rotating the drift
+  vector by *lon* at each point. (Checked this at an earlier point, and the
+  comparison with Ifremer earlier provided a reasonable sanity check).
+
+- Calculating fluxes through the boundaries by multiplying
+
+    ``(Normal flow component) * (Grid width) * (SIC fraction)``
+ 
+  Taking into account that the corned points
+  only account for 1/2 of a step. Weights were previously computed and
+  stored in the grid bunch (*w_y*, *w_x0*, *w_x1* ).
+
+- The net flux into the grid is obtained by adding the incoming terms and
+  subtracting the outgoing ones:
+  
+    ``net_flux_in =  flux_lower - flux_upper + flux_left - flux_right``
+
+.. admonition:: Code, interpolation and calculations
+
+    ``atwain/code/sea_ice_budget/interpolation/interp_sid/``
+    ``interpolate_sid_nsidc_midgrid.py``
+
+    Quick execution: <30 sec.
+
+**Masks/invalids:**
+
+**Output:**
+
+Storing interpolated *u*, and *v*, in the native grid (``ugrid, vgrid``) and rotated
+(``u, v``). The locations correspond to those in the boundary grid. 
+
+Also storing:
+
+- ``t``: Time index of the drift product.
+- ``flux_lower, flux_left``, *etc*: Fluxes through the individual boundaries.
+  Conventions are like *u, v* (positive :math:`\rightarrow`north and 
+  :math:`\rightarrow`east).
+- ``abs_fluxes``: Sum of the absolute value of all fluxes. Useful for
+  interproduct comparison etc.
+- ``net_flux_in``: **Net sea ice advected into the area** [m2/s].
+- ``net_flux_in_k2d``: Same, units [km2/day].
+
+Saved as Bunch in:
+
+    ``work/atwain/data/other/sea_ice_budget/siflux_nsidc_medgrid.p``

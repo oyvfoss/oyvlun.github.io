@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quick look and sanity check &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Combined time series" href="../combined_timeseries_atwain.html" />
+    <link rel="prev" title="Interpolating SID (NSIDC product)" href="interpolating_sid_nsidc.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="quick-look-and-sanity-check">
+<h1>Quick look and sanity check<a class="headerlink" href="#quick-look-and-sanity-check" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-code admonition">
+<p class="admonition-title">Code</p>
+<p><code class="docutils literal notranslate"><span class="pre">atwain/code/sea_ice_budget/first_look/first_look_sea_ice_budget.py</span></code></p>
+</div>
+<p>First look at the drift and sea ice area interpolated onto the <em>med</em> grid.</p>
+<p>Trying to answer the following questions:</p>
+<ol class="arabic simple">
+<li><p><em>Do the individual time series look reasonable?</em></p></li>
+<li><dl class="simple">
+<dt><em>Do the net flux and area cover match?</em></dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt><em>Qualitatively?</em></dt><dd><ul>
+<li><p>E.g.: Periods of high flux in should correspond to increased SIC..</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><em>Quantitatively?</em></dt><dd><ul>
+<li><p>The time derivative of SIC should be a pretty good match to the net flux.
+In principle, any other change should be due to melting/formation..</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="section" id="do-the-individual-time-series-look-reasonable">
+<h2>1. Do the individual time series look reasonable?<a class="headerlink" href="#do-the-individual-time-series-look-reasonable" title="Permalink to this headline">¶</a></h2>
+<p><em>Figures show daily averages and 31-day running means</em>.</p>
+<p><strong>Area cover</strong></p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/sic_sia_medgrid_overview_timeseries.png"><img alt="../../../../_images/sic_sia_medgrid_overview_timeseries.png" src="../../../../_images/sic_sia_medgrid_overview_timeseries.png" style="width: 700.8000000000001px; height: 297.6px;" /></a>
+</div>
+<ul class="simple">
+<li><p>A-TWAIN point SIC is slightly lower and more variable than the domain average.</p></li>
+<li><p>Sea-ice covered area is proportional to average SIC (note:
+<em>area weighted</em> average).</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Seems reasonable.</p>
+<p><strong>Area fluxes</strong></p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/sea_ice_flux_medgrid_overview_timeseries.png"><img alt="../../../../_images/sea_ice_flux_medgrid_overview_timeseries.png" src="../../../../_images/sea_ice_flux_medgrid_overview_timeseries.png" style="width: 569.4px; height: 520.0px;" /></a>
+</div>
+<ul class="simple">
+<li><p>Net flux into domain is usually positive.</p></li>
+<li><p>Meridional and zonal fluxes both usually balance pretty well, and the net flux
+is usually much smaller than the fluxes through the individual boundaries.</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Seems reasonable.</p>
+</div>
+<div class="section" id="do-the-net-flux-and-area-cover-match">
+<h2>2. Do the net flux and area cover match?<a class="headerlink" href="#do-the-net-flux-and-area-cover-match" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/compare_sea_ice_area_flux_medgrid_timeseries.png"><img alt="../../../../_images/compare_sea_ice_area_flux_medgrid_timeseries.png" src="../../../../_images/compare_sea_ice_area_flux_medgrid_timeseries.png" style="width: 700.8000000000001px; height: 640.0px;" /></a>
+</div>
+<ul class="simple">
+<li><p>Magnitudes are at least comparable (both datasets are pretty noisy).
+Generally, the flux amplitude is higher than d(SIC)/dt.</p></li>
+<li><p>There is at least <em>some</em> correspondence between the time series - and they
+agree in ice-free periods.</p></li>
+<li><p>However, they flux in and area change are far from balancing each other. This
+could be due to:</p>
+<ol class="arabic simple">
+<li><p>Methodological errors. E.g.,  something wrong in the computations, or
+perhaps it is not appropriate to directly compare these products?</p></li>
+<li><p>Actual, physical processes (melting/freezing).</p></li>
+</ol>
+</li>
+</ul>
+<p>Not sure exatcly what to expect here, a priori, or how to evaluate whether this
+methodology really makes sense..</p>
+</div>
+<div class="section" id="attempt-at-a-budget">
+<h2>Attempt at a budget<a class="headerlink" href="#attempt-at-a-budget" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/difference_sea_ice_area_flux_medgrid_timeseries.png"><img alt="../../../../_images/difference_sea_ice_area_flux_medgrid_timeseries.png" src="../../../../_images/difference_sea_ice_area_flux_medgrid_timeseries.png" style="width: 880.0px; height: 400.0px;" /></a>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../projects.html">Projects</a><ul>
+  <li><a href="../../atwain.html">A-TWAIN</a><ul>
+  <li><a href="../../data.html">Data</a><ul>
+  <li><a href="../sea_ice_budget.html">Sea ice budget</a><ul>
+      <li>Previous: <a href="interpolating_sid_nsidc.html" title="previous chapter">Interpolating SID (NSIDC product)</a></li>
+      <li>Next: <a href="../combined_timeseries_atwain.html" title="next chapter">Combined time series</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/projects/atwain/data/sea_ice_budget/quick_look_sea_ice_budget.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

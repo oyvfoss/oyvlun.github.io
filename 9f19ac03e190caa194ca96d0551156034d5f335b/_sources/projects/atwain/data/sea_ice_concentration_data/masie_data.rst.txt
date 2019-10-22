@@ -5,8 +5,11 @@ MASIE
 
     In the data I have downloaded (nc files), sea ice concentration values are
     always either 0% or 70-100%. I don't know a reason why the 1-69% would be
-    suppressed. I've e-mailed NSIDC, but for now I'll use something else (Bremen
-    AMSR2, probably). 
+    suppressed. I've e-mailed NSIDC, they weren't very helpful except in
+    saying that the product probably wasn't appropriate for looking at SIC.
+
+    Going to **use another product** for my work. MASIE may be useful in the future,
+    particularly for looking at the exact position of the ice edge.
     
 
     .. figure:: /files/masie_nh_example_time_series.png

@@ -1,0 +1,43 @@
+Interpolating SIC
+#################
+
+
+
+**Motivation:**
+
+Want to calculate total sea ice cover within an area and compare with the
+advective sea-ice flux in/out.
+
+**Source:** 
+
+`U of Bremen 6.25 km AMSR2 data
+<../sea_ice_concentration_data/bremen_amsr2_data.html>`_ 
+(my local subset ``bremen_amsr2_subset_atwain.nc``).
+
+**Interpolation:** 
+
+Interpolating onto the `med <creating_si_budget_grid.html>`_ grid using
+``xesmf.Regridder``. Quick execution. Interpolation weights in ``data/other/sea_ice_budget/weights_ip/``.
+
+Code:
+
+    ``atwain/code/sea_ice_budget/interpolation/interp_sic/``
+    ``interpolate_uob_amsr2_medgrid.py``
+
+**Output:**
+
+Storing interpolated *sic* and the *t, lon, lat* indices of the output grid.
+Also storing **sia**: the *total area 
+
+- ``t, lon, lat``: Time and interpolated grid.
+- ``area``: Total area of domain (for summing the cells).
+- ``sic``: SIC [%] at each point (dimensions *t, lon, lat*).
+- ``sia``: Total sea-ice covered area within the domain [m²] (dimensions *t*).
+
+``sia`` is obtained by multiplying SIC at each grid point with the cell area,
+and summing over the whole domain.
+
+
+Saved as Bunch in:
+
+    ``work/atwain/data/other/sea_ice_budget/sic_sia_medgrid.p``

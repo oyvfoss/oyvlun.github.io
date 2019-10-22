@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Mooring time series, overview &#8212; oyvshare  documentation</title>
+    <title>Combined time series, overview &#8212; oyvshare  documentation</title>
     <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -15,7 +15,7 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Seasonality" href="seasonality.html" />
+    <link rel="next" title="Animation of sea ice and other variables" href="sea_ice_animation.html" />
     <link rel="prev" title="Combining the datasets" href="../combined_results.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
@@ -33,19 +33,33 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="mooring-time-series-overview">
-<h1>Mooring time series, overview<a class="headerlink" href="#mooring-time-series-overview" title="Permalink to this headline">¶</a></h1>
-<p>Note: Processing is quick and preliminary and there could be errors.</p>
+  <div class="section" id="combined-time-series-overview">
+<h1>Combined time series, overview<a class="headerlink" href="#combined-time-series-overview" title="Permalink to this headline">¶</a></h1>
 <div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../_images/plot_sic_arcticflux_heat_airtemp.png"><img alt="../../../_images/plot_sic_arcticflux_heat_airtemp.png" src="../../../_images/plot_sic_arcticflux_heat_airtemp.png" style="width: 720.0px; height: 452.7px;" /></a>
+<p class="caption"><span class="caption-text"><strong>Upper:</strong> <em>Time series of large-scale sea-ice drift, calculated from NSIDC
+Polar Pathfinder product (see</em> <a class="reference external" href="../sea_ice_drift/large_scale_flux.html">this page</a> <em>)</em> <strong>Middle:</strong> <em>Sea-ice concentration
+at the A-TWAIN location (U of Bremen AMSR2 product), with air temperature
+from ERA-Interim indicated in background colors (orange color is &gt;-2C).</em>
+<strong>Bottom</strong>: <em>Ocean temperature from the A-TWAIN 200 m mooring.</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<div class="legend">
+<p><em>All time series have been smoothed with a 31-day running average.</em></p>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For the following plots, processing is quick and preliminary and there could be errors.</p>
+</div>
+<div class="figure align-default" id="id2">
 <a class="reference internal image-reference" href="../../../_images/u_v_q_sic_div_panels_basic.png"><img alt="../../../_images/u_v_q_sic_div_panels_basic.png" src="../../../_images/u_v_q_sic_div_panels_basic.png" style="width: 567.0px; height: 1080.0px;" /></a>
 <p class="caption"><span class="caption-text">Time series of depth-average currents, ocean heat content, density
 difference between 50 and 105 db,  sea ice concentration, and net sea ice
-drift into the area (see this). Script: <code class="docutils literal notranslate"><span class="pre">/atwain/code/mooring_ts/q_vs_a/q_curr_other_panel.py</span></code>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+drift into the area (see this). Script: <code class="docutils literal notranslate"><span class="pre">/atwain/code/mooring_ts/q_vs_a/q_curr_other_panel.py</span></code>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure align-default" id="id2">
+<div class="figure align-default" id="id3">
 <a class="reference internal image-reference" href="../../../_images/u_v_q_sic_panels_basic.png"><img alt="../../../_images/u_v_q_sic_panels_basic.png" src="../../../_images/u_v_q_sic_panels_basic.png" style="width: 540.0px; height: 720.0px;" /></a>
 <p class="caption"><span class="caption-text">Time series of depth-average currents, ocean heat content and sea ice
-concentration. Script: <code class="docutils literal notranslate"><span class="pre">/atwain/code/mooring_ts/q_vs_a/q_vs_a.py</span></code>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+concentration. Script: <code class="docutils literal notranslate"><span class="pre">/atwain/code/mooring_ts/q_vs_a/q_vs_a.py</span></code>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 
@@ -78,7 +92,7 @@ concentration. Script: <code class="docutils literal notranslate"><span class="p
   <li><a href="../atwain.html">A-TWAIN</a><ul>
   <li><a href="../combined_results.html">Combining the datasets</a><ul>
       <li>Previous: <a href="../combined_results.html" title="previous chapter">Combining the datasets</a></li>
-      <li>Next: <a href="seasonality.html" title="next chapter">Seasonality</a></li>
+      <li>Next: <a href="sea_ice_animation.html" title="next chapter">Animation of sea ice and other variables</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

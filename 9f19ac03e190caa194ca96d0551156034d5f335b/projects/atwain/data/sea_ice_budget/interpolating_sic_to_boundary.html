@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Interpolating SIC onto boundary &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Interpolating SID (Ifremer product)" href="interpolating_sid_ifremer.html" />
+    <link rel="prev" title="Interpolating SIC" href="interpolating_sic_interior.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="interpolating-sic-onto-boundary">
+<h1>Interpolating SIC onto boundary<a class="headerlink" href="#interpolating-sic-onto-boundary" title="Permalink to this headline">¶</a></h1>
+<p>Need to have SIC at the boundary grid points in order to correctly calculate flux.</p>
+<p>Want to interpolate UoB AMSR2 SIC onto the boundary grid, and then onto the time grid of sea ice drift.</p>
+<p><strong>Source:</strong></p>
+<p><a class="reference external" href="../sea_ice_concentration_data/bremen_amsr2_data.html">U of Bremen 6.25 km AMSR2 data</a>
+(my local subset <code class="docutils literal notranslate"><span class="pre">bremen_amsr2_subset_atwain.nc</span></code>).</p>
+<p><strong>Interpolation (regridding):</strong></p>
+<p>Interpolating onto the <a class="reference external" href="creating_si_budget_grid.html">med</a> grid boundaries
+(<em>lon_para</em>, <em>lat_para</em>, <em>lon_meri</em>, <em>lat_meri</em>)  using
+<code class="docutils literal notranslate"><span class="pre">xesmf.Regridder</span></code>. Quick execution. Interpolation weights in <code class="docutils literal notranslate"><span class="pre">data/other/sea_ice_budget/weights_ip/</span></code>.</p>
+<p><strong>Interpolation (time):</strong></p>
+<p>Loading the NSIDC SID time array from <code class="docutils literal notranslate"><span class="pre">timearr_nsidc_drift.p</span></code> (in script
+folder). Interpolating the regridded SIC onto this time field  (<em>note: both time
+grids are discrete daily, so this should not induce much of an error</em> Also
+checked this visually.).</p>
+<p>The resulting Bunch has the variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code>: Time grid of NSIDC SID.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sic_para</span></code>: SIC on the zonal boundaries (dim: <em>t, 2, 26</em>) .</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sic_meri</span></code>: SIC on the meridional boundaries (dim: <em>t, 2, 26</em>) .</p></li>
+</ul>
+<p><strong>Code:</strong></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">atwain/code/sea_ice_budget/interpolation/interp_sic/</span></code>
+<code class="docutils literal notranslate"><span class="pre">interpolate_uob_amsr2_medgrid_boundary.py</span></code></p>
+</div></blockquote>
+<p><strong>Output:</strong></p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">atwain/data/other/sea_ice_budget/sic_medgrid_boundary.p</span></code></p>
+</div></blockquote>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../projects.html">Projects</a><ul>
+  <li><a href="../../atwain.html">A-TWAIN</a><ul>
+  <li><a href="../../data.html">Data</a><ul>
+  <li><a href="../sea_ice_budget.html">Sea ice budget</a><ul>
+      <li>Previous: <a href="interpolating_sic_interior.html" title="previous chapter">Interpolating SIC</a></li>
+      <li>Next: <a href="interpolating_sid_ifremer.html" title="next chapter">Interpolating SID (Ifremer product)</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/projects/atwain/data/sea_ice_budget/interpolating_sic_to_boundary.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,7 +1,24 @@
-Mooring time series, overview
-#############################
+Combined time series, overview
+##############################
 
-Note: Processing is quick and preliminary and there could be errors.
+.. figure:: /files/plot_sic_arcticflux_heat_airtemp.png
+    :scale: 90
+
+    **Upper:** *Time series of large-scale sea-ice drift, calculated from NSIDC
+    Polar Pathfinder product (see* `this page
+    <../sea_ice_drift/large_scale_flux.html>`_ *)* **Middle:** *Sea-ice concentration
+    at the A-TWAIN location (U of Bremen AMSR2 product), with air temperature
+    from ERA-Interim indicated in background colors (orange color is >-2C).*
+    **Bottom**: *Ocean temperature from the A-TWAIN 200 m mooring.*
+
+    *All time series have been smoothed with a 31-day running average.*
+
+
+
+
+.. warning::
+
+    For the following plots, processing is quick and preliminary and there could be errors.
 
 .. figure:: /files/u_v_q_sic_div_panels_basic.png
     :scale: 90

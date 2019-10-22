@@ -1,0 +1,8 @@
+Combined time series
+####################
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    combined_timeseries/*

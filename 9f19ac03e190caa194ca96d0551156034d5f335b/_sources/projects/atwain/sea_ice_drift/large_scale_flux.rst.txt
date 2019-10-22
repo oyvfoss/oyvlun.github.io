@@ -1,0 +1,29 @@
+Large-scale flux from the Arctic Ocean
+######################################
+
+Want to create a variable which would represent large-scale ice flux from the
+interior Arctic Ocean towards the A-TWAIN location.
+
+
+Choosing a line going along the native NSIDC drift grid, extending from Franz
+Josef Land about halfway towards Greenland. The line is defined by the following
+indices in the NSIDC drift grid (code for plotting this trajectory in
+``atwain/code/sid/flux_large_transect/transects_for_si_drift_define_ind.py``).
+
+
+:: 
+
+    yind = 155
+    xsl = slice(190, 209)
+
+.. figure:: /files/transect_line_for_large_scale_sid.png
+    :scale: 70%
+
+    Pink line: transect used to compute "Arctic flux". Red dot: AT201 mooring.
+    NSIDC grid points shown as weak grey dots. 
+
+.. figure:: /files/transect_line_for_large_scale_sid_native_grid.png
+    :scale: 70%
+
+    In native NSIDC product grid (background plot is the average mask - the
+    outline of Greenland is probably the easiest reference).

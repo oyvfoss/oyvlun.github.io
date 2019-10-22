@@ -139,6 +139,9 @@ for 2 or more beams.</p></li>
 </dd>
 </dl>
 </li>
+<li><p>Rotating the current vector to correct for time-dependent magnetic
+declination (increasing from 19.6⁰ to 21.8⁰) calculated using <code class="docutils literal notranslate"><span class="pre">geomag</span></code> module,
+which uses the NOAA National Geophysical Data Center, epoch 2015 data.</p></li>
 <li><p>Computing shear (<span class="math notranslate nohighlight">\(u_z, v_z, S^2\)</span>) from first differences.</p></li>
 <li><p>Converting to Bunch dictionary and saved to disk.</p></li>
 </ol>
@@ -222,28 +225,20 @@ below for details.</p>
 </div>
 </div>
 </div>
-<div class="section" id="interpolation-to-common-dz-and-dt">
-<h2>Interpolation to common <em>dz</em> and <em>dt</em><a class="headerlink" href="#interpolation-to-common-dz-and-dt" title="Permalink to this headline">¶</a></h2>
-<p>For comparison purposes, we interpolated the data from each deployment:</p>
-<ul class="simple">
-<li><dl class="simple">
-<dt>First: onto evenly spaced depth grid</dt><dd><ul>
+<div class="section" id="interpolation-to-common-depth-grid">
+<h2>Interpolation to common depth grid<a class="headerlink" href="#interpolation-to-common-depth-grid" title="Permalink to this headline">¶</a></h2>
+<p>All profiles from <em>u</em> and <em>v</em> were interpolated onto an even depth grid:</p>
+<blockquote>
+<div><ul class="simple">
 <li><p><em>dz = 2 m</em>.</p></li>
 <li><p>Between 14 and 94 m depth.</p></li>
 </ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Second: onto evenly spaced time grid.</dt><dd><ul>
-<li><p><em>dt=(1/145) days</em> <span class="math notranslate nohighlight">\(\sim\)</span>  <em>9.9 min</em>.</p></li>
-<li><p>Spanning the length of the deployment (after removing deployment and
-recovery).</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
+</div></blockquote>
+<p>Code: <code class="docutils literal notranslate"><span class="pre">atwain/code/processing_and_data/moorings/adcps/reprocessing/combine_deployments/combine_deployments.py</span></code></p>
+<p>Only <em>u</em> and <em>v</em> for now, but this can easily be extended to include other
+variables (shear, backscatter..) if necessary.</p>
+<p><strong>Output file</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">/atwain/data/reprocessed_mooring_data/adcp_combined/adcp_uv_interp_dep.p</span></code></p>
 </div>
 </div>
 

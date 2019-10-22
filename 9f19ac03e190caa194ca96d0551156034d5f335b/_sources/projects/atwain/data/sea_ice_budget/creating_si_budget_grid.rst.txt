@@ -1,0 +1,51 @@
+Creating grid for sea ice budget computations
+#############################################
+
+Code: ``/code/sea_ice_budget/make_grids/make_med_grid.py``. Can be easily
+modified to generate other grids (built in loop structure).
+
+Choosing the *mid* grid for now. Increasing the resolution a bit to make sure
+the grid spacing is at least smaller than the original products.
+
+**Files**
+
+
+
+  - Boundary grid: ``atwain/data/other/sea_ice_budget/grids/med_boundary_grid.p``
+  - Interior grid: ``atwain/data/other/sea_ice_budget/grids/med_interior_grid.p``
+
+
+.. admonition:: *mid* grid specifications
+
+
+    Latitude: **81 N to 82 N**
+
+    Longitude: **28 E to 35 E**  
+
+    .. figure:: /files/map_med_grid.png
+        :scale: 70%
+
+        *Black*: Interior grid points, *Green*: Boundary grid points, *Red*:
+        A-TWAIN 200 m mooring location.
+
+    *Interior grid*: 25 x 25 points.
+
+    *Boundary grid* (including corners): 26 points per side.
+
+    - :math:`\Delta x`: 4.2 to 4.7 km
+    - :math:`\Delta y`: 4.3 km
+
+    
+    **Area** (according to ``oyv.grid.gridcalc`` functions, which
+    assume a spherical Earth):
+
+    - *Whole domain:* 1.28 x 10¹⁰ m², or 12 800 km².
+    - *Each cell:* 19.4 km² to 21.7 km² (mean: 20.5 km²).
+    
+    **Side lengths**:
+
+    - *Medirional*: 111.3 km.
+    - *Zonal*: 122.3 km (bottom), 108.8 km (top). 
+
+
+

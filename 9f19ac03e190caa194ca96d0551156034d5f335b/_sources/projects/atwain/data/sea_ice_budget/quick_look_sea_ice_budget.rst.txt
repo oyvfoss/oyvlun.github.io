@@ -1,0 +1,75 @@
+Quick look and sanity check
+###########################
+
+.. admonition:: Code
+
+    ``atwain/code/sea_ice_budget/first_look/first_look_sea_ice_budget.py``
+
+First look at the drift and sea ice area interpolated onto the *med* grid.
+
+Trying to answer the following questions:
+
+#. *Do the individual time series look reasonable?*
+#. *Do the net flux and area cover match?*
+    - *Qualitatively?*
+        - E.g.: Periods of high flux in should correspond to increased SIC..
+    - *Quantitatively?*
+        - The time derivative of SIC should be a pretty good match to the net flux.
+          In principle, any other change should be due to melting/formation..
+
+1. Do the individual time series look reasonable?
+=================================================
+
+*Figures show daily averages and 31-day running means*.
+
+**Area cover**
+
+.. figure:: /files/sic_sia_medgrid_overview_timeseries.png
+    :scale: 80%
+
+- A-TWAIN point SIC is slightly lower and more variable than the domain average.
+- Sea-ice covered area is proportional to average SIC (note: 
+  *area weighted* average).
+
+:math:`\rightarrow` Seems reasonable.
+
+
+**Area fluxes**
+
+.. figure:: /files/sea_ice_flux_medgrid_overview_timeseries.png
+    :scale: 65%
+
+- Net flux into domain is usually positive.
+- Meridional and zonal fluxes both usually balance pretty well, and the net flux
+  is usually much smaller than the fluxes through the individual boundaries.
+
+:math:`\rightarrow` Seems reasonable.
+
+
+2. Do the net flux and area cover match?
+========================================
+
+.. figure:: /files/compare_sea_ice_area_flux_medgrid_timeseries.png
+    :scale: 80%
+
+
+- Magnitudes are at least comparable (both datasets are pretty noisy).
+  Generally, the flux amplitude is higher than d(SIC)/dt.
+- There is at least *some* correspondence between the time series - and they
+  agree in ice-free periods. 
+- However, they flux in and area change are far from balancing each other. This
+  could be due to:
+
+  #. Methodological errors. E.g.,  something wrong in the computations, or
+     perhaps it is not appropriate to directly compare these products?
+  #. Actual, physical processes (melting/freezing). 
+
+Not sure exatcly what to expect here, a priori, or how to evaluate whether this
+methodology really makes sense..
+
+Attempt at a budget
+===================
+
+  .. figure:: /files/difference_sea_ice_area_flux_medgrid_timeseries.png
+    :scale: 80%
+

@@ -1,0 +1,21 @@
+Interpolating SID (Ifremer product)
+###################################
+
+.. note:: 
+
+    Incomplete. Fill and copy from *interpolating_sid_nsidc* when doing this for
+    Ifremer.
+
+
+**Motivation:**
+
+Want to calculate total advective sea-ice flux in/out of the domain.
+
+**Source:** 
+
+#. Ifremer-CERSAT merged sea-ice product
+    - Daily data, but shows 3-day drift!
+    - 62.5 x 62.5 km.
+    - Source is daily *.nc*-files in 
+      ``data/other/sea_ice_drift/ifremer/3-daily_missing_values_filled``.
+

@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Interpolating SID (NSIDC product) &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Quick look and sanity check" href="quick_look_sea_ice_budget.html" />
+    <link rel="prev" title="Interpolating SID (Ifremer product)" href="interpolating_sid_ifremer.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="interpolating-sid-nsidc-product">
+<h1>Interpolating SID (NSIDC product)<a class="headerlink" href="#interpolating-sid-nsidc-product" title="Permalink to this headline">¶</a></h1>
+<p><strong>Motivation:</strong></p>
+<p>Want to calculate total advective sea-ice flux in/out of the domain.</p>
+<p><strong>Source:</strong></p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>NSIDC Polar Pathfinder Daily 25 km EASE-Grid Sea Ice Motion Vectors product.</dt><dd><ul class="simple">
+<li><p>25 x 25 km.</p></li>
+<li><p>Daily.</p></li>
+<li><p>Source files are annual <em>.nc</em>-files in
+<code class="docutils literal notranslate"><span class="pre">data/other/sea_ice_drift/polar_pathfinder_daily</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<p><strong>Interpolation:</strong></p>
+<p>Interpolating onto the boundaries of the <a class="reference external" href="creating_si_budget_grid.html">med</a> grid using
+<code class="docutils literal notranslate"><span class="pre">xesmf.Regridder</span></code>.</p>
+<p>For reasons having to do with the input format <code class="docutils literal notranslate"><span class="pre">xesmf</span></code> likes: interpoating
+separately onto two <em>2x26</em> arrays defining the meridional and zonal boundaries,
+respectively. Already set up these arrays in the grid file
+(<code class="docutils literal notranslate"><span class="pre">med_boundary_grid.p</span></code>) as <em>lon_para</em>, <em>lon_meri</em>, etc.</p>
+<p>Interpolation weights in <code class="docutils literal notranslate"><span class="pre">data/other/sea_ice_budget/interp_sid/weights_ip/</span></code>.</p>
+<p><strong>Rotation and boundary fluxes:</strong></p>
+<ul>
+<li><p>Transforming from grid coordinates to geo-coordinates: rotating the drift
+vector by <em>lon</em> at each point. (Checked this at an earlier point, and the
+comparison with Ifremer earlier provided a reasonable sanity check).</p></li>
+<li><p>Calculating fluxes through the boundaries by multiplying</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">(Normal</span> <span class="pre">flow</span> <span class="pre">component)</span> <span class="pre">*</span> <span class="pre">(Grid</span> <span class="pre">width)</span> <span class="pre">*</span> <span class="pre">(SIC</span> <span class="pre">fraction)</span></code></p>
+</div></blockquote>
+<p>Taking into account that the corned points
+only account for 1/2 of a step. Weights were previously computed and
+stored in the grid bunch (<em>w_y</em>, <em>w_x0</em>, <em>w_x1</em> ).</p>
+</li>
+<li><p>The net flux into the grid is obtained by adding the incoming terms and
+subtracting the outgoing ones:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">net_flux_in</span> <span class="pre">=</span>&#160; <span class="pre">flux_lower</span> <span class="pre">-</span> <span class="pre">flux_upper</span> <span class="pre">+</span> <span class="pre">flux_left</span> <span class="pre">-</span> <span class="pre">flux_right</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition-code-interpolation-and-calculations admonition">
+<p class="admonition-title">Code, interpolation and calculations</p>
+<p><code class="docutils literal notranslate"><span class="pre">atwain/code/sea_ice_budget/interpolation/interp_sid/</span></code>
+<code class="docutils literal notranslate"><span class="pre">interpolate_sid_nsidc_midgrid.py</span></code></p>
+<p>Quick execution: &lt;30 sec.</p>
+</div>
+<p><strong>Masks/invalids:</strong></p>
+<p><strong>Output:</strong></p>
+<p>Storing interpolated <em>u</em>, and <em>v</em>, in the native grid (<code class="docutils literal notranslate"><span class="pre">ugrid,</span> <span class="pre">vgrid</span></code>) and rotated
+(<code class="docutils literal notranslate"><span class="pre">u,</span> <span class="pre">v</span></code>). The locations correspond to those in the boundary grid.</p>
+<p>Also storing:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">t</span></code>: Time index of the drift product.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flux_lower,</span> <span class="pre">flux_left</span></code>, <em>etc</em>: Fluxes through the individual boundaries.
+Conventions are like <em>u, v</em> (positive <span class="math notranslate nohighlight">\(\rightarrow\)</span>rightarrow`east).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abs_fluxes</span></code>: Sum of the absolute value of all fluxes. Useful for
+interproduct comparison etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">net_flux_in</span></code>: <strong>Net sea ice advected into the area</strong> [m2/s].</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">net_flux_in_k2d</span></code>: Same, units [km2/day].</p></li>
+</ul>
+<p>Saved as Bunch in:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">work/atwain/data/other/sea_ice_budget/siflux_nsidc_medgrid.p</span></code></p>
+</div></blockquote>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../projects.html">Projects</a><ul>
+  <li><a href="../../atwain.html">A-TWAIN</a><ul>
+  <li><a href="../../data.html">Data</a><ul>
+  <li><a href="../sea_ice_budget.html">Sea ice budget</a><ul>
+      <li>Previous: <a href="interpolating_sid_ifremer.html" title="previous chapter">Interpolating SID (Ifremer product)</a></li>
+      <li>Next: <a href="quick_look_sea_ice_budget.html" title="next chapter">Quick look and sanity check</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/projects/atwain/data/sea_ice_budget/interpolating_sid_nsidc.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

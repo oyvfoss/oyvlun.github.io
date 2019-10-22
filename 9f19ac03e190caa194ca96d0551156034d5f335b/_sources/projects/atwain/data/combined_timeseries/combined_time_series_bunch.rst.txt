@@ -1,0 +1,158 @@
+All time series data colleted in common file
+############################################
+
+.. admonition:: Collecting all variables in one single file
+
+    ``atwain/data/atwain_timeseries_collection.p``
+
+This file is produced in
+``processing_and_data/collect_time_series/create_common_atwain_bunch.py``.
+
+- Creating a *Bunch* object for storing the file.
+- Collecting all variables (sources specified below).
+- For HF data (e.g. mooring data): Smooth with a daily average running mean.
+- Interpolate time series onto a common, daily time grid.
+- For each variable:
+    - Units are stored in ``units[varname]``.
+    - Short description is stored in ``name[varname]``.
+    - Longer description is stored in ``longname[varname]``.
+    - Data source stored in ``data_source[varname]``.
+
+Time
+====
+
+Time grid is daily from 01.08.2012 to 31.12.2017. The following time fields
+are included in the Bunch:
+
+    - ``t``: Time, matplotlib format.
+    - ``t_matlab``: Time, matlab format (``t+366``).
+    - ``yr``: Year
+    - ``mo``: Month
+    - ``yday``: Yearday
+
+Overview of the variables
+=========================
+
+Last column indicates whether this variable has been finalized and included (✓),
+included in preliminary form (✕) or not yet included (*no symbol*). See
+explanation of "preliminary" status below the table.
+
+============================== ============== ======== == 
+**Variable**                   **varname**    **Unit**    
+============================== ============== ======== == 
+**Sea ice cover** 
+SIC, mooring location          ``sic``        %        ✓
+SIA, *medgrid* domain          ``sia_med``    km²      ✓ 
+SIA change, *medgrid* (**A**)  ``dsia_med``   km²/day  ✓
+------------------------------ -------------- -------- -- 
+**Ocean** 
+~50db temperature              ``T50``        ⁰C       ✕                                       
+~105db temperature             ``T105``       ⁰C       ✕ 
+Mean along-slope current       ``u_al``       cm/s     ✓
+Mean cross-slope current       ``u_cr``       cm/s     ✓
+SST                            ``sst``        ⁰C       
+Density diff, 105db-50db       ``dsig``       kg/m³    ✕
+------------------------------ -------------- -------- -- 
+**Atmosphere, mooring**
+2m air temperature             ``airT``       ⁰C       ✕
+Wind speed                     ``wsp``        m/s      ✕
+Wind direction                 ``wdir``       ⁰        ✕
+Time where wind > 10 m/s       ``t_storm``    1/0*     ✕ 
+Time where temp < -2  ⁰C       ``t_freeze``   1/0*     ✕ 
+------------------------------ -------------- -------- -- 
+**Atmosphere, large-scale**
+Pressure EOF mode 1            ``peof1``             
+Pressure EOF mode 2            ``peof2``             
+Pressure EOF mode 3            ``peof3``             
+------------------------------ -------------- -------- --
+**Sea ice flux**
+Large-scale AO flux            ``ao_flux``    km²/day  
+*medgrid* fluxes:
+Out of N boundary              ``flux_n``     km²/day  ✓
+In from S boundary             ``flux_s``     km²/day  ✓
+Out of E boundary              ``flux_e``     km²/day  ✓
+In from W boundary             ``flux_w``     km²/day  ✓
+Net flux *into* domain (**B**) ``net_flux``   km²/day  ✓
+------------------------------ -------------- -------- -- 
+**Sea ice budget**
+Net local ice loss (**B-A**)   ``local_loss`` km²/day  ✓
+============================== ============== ======== ==  
+
+* Running average gives fraction of days within an interval with storms/freezing..
+
+**✕ "Preliminary" status ✕**
+
+``T50``, ``T105``, ``dsig``:
+
+These are computed from the interpolated seabird data post
+2013. Should check exactly how this interpolation was done. Also: ``T105`` pre
+2013 is just the temperature record from the sensor. The depths are pretty close
+to 105 always, though.
+
+Also, there are some artefacts around deployment times. Need to check that
+deployment and recovery have in fact been chopped off.
+
+*None of these things are critical for what I do here - should be fine for the
+time being.*
+
+
+
+``airT``, ``wsp``, ``wdir``, ``t_storm``, ``t_freeze``
+
+Spatial interpolation based on ``RectBivariateSplite`` - should use the xesmf Regridder.
+Shouldn't matter much.
+
+**Current direction**
+
+``u_al``, ``u_cr``:
+
+Rotating such that ``u_al`` is directed towards 14.5⁰ - the approximate
+direction estimated from the bathymetry.
+
+Can be modified (in degrees) to ``ang_rot_deg``.
+
+Source files
+============
+
+See legend below table for source abbreviations.
+
+============== ========== ============================================================================================  
+**Var name**   **Source** **Source file** (in ``atwain/data/``)
+============== ========== ============================================================================================  
+``sic``        *UA*       ``other/sea_ice_concentration/SIC_atwain_bremen.p``
+``sia_med``    *UA*       ``other/sea_ice_budget/sic_sia_medgrid.p``
+``dsia_med``   *UA*       ``other/sea_ice_budget/sic_sia_medgrid.p``
+
+``T50``        *AT201*    ``processed_mooring_data/CTD_50db_combined.p``
+``T105``       *AT201*    ``processed_mooring_data/CTD_105db_combined.p``
+``u_al``       *AT201*    ``reprocessed_mooring_data/adcp_combined/adcp_uv_interp_dep.p``
+``u_cr``       *AT201*    ``reprocessed_mooring_data/adcp_combined/adcp_uv_interp_dep.p``
+``sst``        *oiSST*
+``dsig``       *AT201*    ``processed_mooring_data/CTD_{50/105}db_combined.p``
+
+``airT``       *EI*       ``other/wind/era_interim/era_interim_for_atwain_point.p``
+``wsp``        *EI*       ``other/wind/era_interim/era_interim_for_atwain_point.p``
+``wdir``       *EI*       ``other/wind/era_interim/era_interim_for_atwain_point.p``
+``t_storm``    *EI*       ``other/wind/era_interim/era_interim_for_atwain_point.p``
+``t_freeze``   *EI*       ``other/wind/era_interim/era_interim_for_atwain_point.p``
+``peof1``      *EI*
+``peof2``      *EI*
+``peof3``      *EI*
+
+``ao_flux``    *PP*
+``flux_n``     *PP*       ``other/sea_ice_budget/siflux_nsidc_medgrid.p``
+``flux_s``     *PP*       ``other/sea_ice_budget/siflux_nsidc_medgrid.p``
+``flux_e``     *PP*       ``other/sea_ice_budget/siflux_nsidc_medgrid.p``
+``flux_w``     *PP*       ``other/sea_ice_budget/siflux_nsidc_medgrid.p``
+``net_flux``   *PP*       ``other/sea_ice_budget/siflux_nsidc_medgrid.p``
+
+``local_loss`` *UA, PP*   ``other/sea_ice_budget/sic_sia_medgrid.p``, ``other/sea_ice_budget/siflux_nsidc_medgrid.p``
+============== ========== ============================================================================================  
+
+- **UA**: `AMSR2 6.25 km Sea Ice Concentration product (U of Bremen)
+  <../sea_ice_concentration_data/bremen_amsr2_data.html>`_.
+- **AT201**: A-TWAIN 200 m mooring.
+- **oiSSTv2**: Optimum Interpolation Sea Surface Temperature product
+  (NOAA/OAR/ESRL PSD), version2.
+- **EI**: Era-Interim (ECMWF).
+- **PP**: Polar Pathfinder Daily 25 km EASE-Grid Sea Ice Motion Vectors product (NSIDC).

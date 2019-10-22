@@ -1,0 +1,8 @@
+Sea ice budget
+##############
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    sea_ice_budget/*

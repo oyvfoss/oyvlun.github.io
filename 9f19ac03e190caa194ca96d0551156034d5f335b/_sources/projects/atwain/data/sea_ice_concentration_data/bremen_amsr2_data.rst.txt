@@ -74,6 +74,12 @@ Making a smaller subset (``make_subset_bremen.py``).
 
     *Extent of subset.*
 
+**Snapshots**
+Code for exctracting the daily SIC from one file, and projecting onto lon lat:
+``processing_and_data/sea_ice_concentration/make_snapshot_bremen/make_snapshot_bremen.py``.
+
+Files are saved to ``atwain/data/other/sea_ice_concentration/bremen_amsr2/snapshots/``.
+
 **Interpolating onto A-TWAIN point**
 
 

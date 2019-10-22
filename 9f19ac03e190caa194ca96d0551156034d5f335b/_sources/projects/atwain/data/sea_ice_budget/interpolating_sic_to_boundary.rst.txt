@@ -1,0 +1,46 @@
+Interpolating SIC onto boundary
+###############################
+
+Need to have SIC at the boundary grid points in order to correctly calculate flux.
+
+Want to interpolate UoB AMSR2 SIC onto the boundary grid, and then onto the time grid of sea ice drift.
+
+
+
+**Source:** 
+
+`U of Bremen 6.25 km AMSR2 data
+<../sea_ice_concentration_data/bremen_amsr2_data.html>`_ 
+(my local subset ``bremen_amsr2_subset_atwain.nc``).
+
+
+
+**Interpolation (regridding):** 
+
+Interpolating onto the `med <creating_si_budget_grid.html>`_ grid boundaries
+(*lon_para*, *lat_para*, *lon_meri*, *lat_meri*)  using
+``xesmf.Regridder``. Quick execution. Interpolation weights in ``data/other/sea_ice_budget/weights_ip/``.
+
+
+**Interpolation (time):**
+
+Loading the NSIDC SID time array from ``timearr_nsidc_drift.p`` (in script
+folder). Interpolating the regridded SIC onto this time field  (*note: both time
+grids are discrete daily, so this should not induce much of an error* Also
+checked this visually.).
+
+The resulting Bunch has the variables:
+
+- ``t``: Time grid of NSIDC SID.
+- ``sic_para``: SIC on the zonal boundaries (dim: *t, 2, 26*) .
+- ``sic_meri``: SIC on the meridional boundaries (dim: *t, 2, 26*) .
+
+
+**Code:**
+
+    ``atwain/code/sea_ice_budget/interpolation/interp_sic/``
+    ``interpolate_uob_amsr2_medgrid_boundary.py``
+
+**Output:**
+
+    ``atwain/data/other/sea_ice_budget/sic_medgrid_boundary.p``

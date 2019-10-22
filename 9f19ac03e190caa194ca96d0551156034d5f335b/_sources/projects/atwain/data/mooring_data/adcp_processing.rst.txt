@@ -69,6 +69,9 @@ following algorithm to all three deployments individually:
     #. Error velocity greaqter than 5 cm/s (``|errvel|>5.0``).
     #. Pulse-to-pulse correlation (counts, 0-255) is less than 45 (``ca<45.0``)
        for 2 or more beams.
+#. Rotating the current vector to correct for time-dependent magnetic
+   declination (increasing from 19.6⁰ to 21.8⁰) calculated using ``geomag`` module,
+   which uses the NOAA National Geophysical Data Center, epoch 2015 data.
 #. Computing shear (:math:`u_z, v_z, S^2`) from first differences.
 #. Converting to Bunch dictionary and saved to disk. 
 
@@ -109,16 +112,20 @@ Dep           Year       .p file
         *Same, for shear squared.*
 
 
-Interpolation to common *dz* and *dt*
-=====================================
+Interpolation to common depth grid
+==================================
 
-For comparison purposes, we interpolated the data from each deployment:
+All profiles from *u* and *v* were interpolated onto an even depth grid:
 
-- First: onto evenly spaced depth grid
     - *dz = 2 m*.
     - Between 14 and 94 m depth. 
-- Second: onto evenly spaced time grid.
-    - *dt=(1/145) days* :math:`\sim`  *9.9 min*. 
-    - Spanning the length of the deployment (after removing deployment and
-      recovery).
 
+Code: ``atwain/code/processing_and_data/moorings/adcps/reprocessing/combine_deployments/combine_deployments.py``
+
+Only *u* and *v* for now, but this can easily be extended to include other
+variables (shear, backscatter..) if necessary.
+
+
+**Output file**
+
+``/atwain/data/reprocessed_mooring_data/adcp_combined/adcp_uv_interp_dep.p``
