@@ -1,0 +1,40 @@
+Processing, M3
+==============
+
+
+
+.. warning:: 
+
+    Processing is **preliminary**! 
+
+    Need to:
+
+    - Do thorough checking.
+    - Rethink my processing of seabird (should use ``oyv.data.read_cnv``?).
+
+
+
+
+
+Seabird CTD
+------------
+
+Code and data in ``work/arven_etter_nansen/data/moorings/m3/processed/seabird/``.
+
+- ``grab_seabird_m3.py``: Very ad-hoc processing, seems to work fine.
+  - :math:`\rightarrow` ``seabird_M3_v1.p``
+
+ADCP
+----
+
+Code and data in
+``work/arven_etter_nansen/data/moorings/m3/processed/adcp/``.
+
+- ``process_adcp_m3.py``:
+    - Going through standard processing steps using my ``oyv.data.rdi_adcp``
+      module.
+    - This includes threshold masking with standard parameters, and direction
+      correction for magnetic declination.
+    - Also calculates shear.
+
+      - ``m3_adcp_processed_v1.p``.

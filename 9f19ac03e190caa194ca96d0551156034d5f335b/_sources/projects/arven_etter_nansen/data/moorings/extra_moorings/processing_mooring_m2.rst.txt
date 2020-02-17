@@ -1,0 +1,59 @@
+Processing, M2
+==============
+
+
+
+.. warning:: 
+
+    Processing is **preliminary**! 
+
+    Need to:
+
+    - Do thorough checking.
+    - To reprocess with new calibration constants. 
+    - Should probably also do more thorough salinity editing -
+      pretty ad hoc right now. 
+    - Do systematic comparisons with CTD profiles.
+
+
+
+
+
+
+RBR CTDs
+--------
+
+Code and data in ``work/arven_etter_nansen/data/moorings/m2/processed/ctd``.
+
+- ``process_ctds_m2_concertos.py``: 
+    - Read all Concerto sensors.
+    - Do some very quick salinity editing.
+    - Calculate density and potential temperature from T and S. 
+    - Interpolate onto very high-frequency time array, low-pass with a daily
+      filter and subsample to daily resolution.
+        - :math:`\rightarrow` Arrays with time series for each sensors:
+          ``m2_concertos_full.p``.
+    - Interpolate onto common depth grid as well.
+        - :math:`\rightarrow` ``m2_concertos_full_interp.p``.
+
+- ``process_ctds_m2_all.py``:
+    - Similar, but now including both Solo and Concerto sensors. 
+    - Solo are temperature only - estimating depth from mooring diagram,
+      interpolating between Concerto sensors.
+
+      - :math:`\rightarrow` ``m2_all_temp_interp.p``
+
+ADCP
+----
+
+Code and data in
+``work/arven_etter_nansen/data/moorings/m2/processed/adcp/``.
+
+- ``process_adcp_m2.py``:
+    - Going through standard processing steps using my ``oyv.data.rdi_adcp``
+      module.
+    - This includes threshold masking with standard parameters, and direction
+      correction for magnetic declination.
+    - Also calculates shear.
+
+      - ``m2_adcp_processed_v1.p``.

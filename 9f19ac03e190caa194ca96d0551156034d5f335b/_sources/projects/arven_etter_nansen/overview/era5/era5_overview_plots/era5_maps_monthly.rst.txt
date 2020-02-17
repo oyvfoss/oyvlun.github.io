@@ -1,0 +1,10 @@
+ERA5: *Monthly mean winds*
+###################################
+
+.. figure:: /files/wind_monthly_era5_2018_2019.png
+    :scale: 80 %
+
+    *Monthly mean 10-m wind component in the ERA5 subset. Contours show the mean wind
+    speed* :math:`\langle\sqrt{u^2+v^2}\rangle`, *arrows show the mean wind direction*
+    :math:`\langle\vec u\rangle = \langle u\rangle\hat\imath + \langle v\rangle\hat\jmath`.
+

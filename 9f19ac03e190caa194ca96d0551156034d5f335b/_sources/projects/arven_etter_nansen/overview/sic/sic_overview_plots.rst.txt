@@ -1,0 +1,8 @@
+SIC
+=====
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    sic_overview_plots/*

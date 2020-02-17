@@ -1,0 +1,16 @@
+Sea ice concentration
+=====================
+
+Using the Uni of Bremen AMSR2 product.
+
+- Based on the ASI algorithm
+- 6.25 km x 6.25 km gridded. 
+- Daily product.
+- More information `here <../../atwain/data/sea_ice_concentration_data/bremen_amsr2_data.html>`_.
+
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    sic/*

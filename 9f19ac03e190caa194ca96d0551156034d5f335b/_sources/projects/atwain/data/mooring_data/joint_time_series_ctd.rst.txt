@@ -1,0 +1,42 @@
+Joint CTD time series
+#####################
+
+.. note::
+
+    Phe pressure field on the first deployment is farily different from that on
+    the two other. Ideally, I should get a hold of the raw files here to make
+    sure I'm really processing everything equally.
+
+
+Want to create joint time series of ocean temperature from AT200 mooring.
+Primarily interested in heat content near the surface. The following relevant data are
+available (all CTDs are SBE37s):
+
+.. figure:: /files/ctd_atwain_table.png
+    :scale: 40%
+
+    *Overview of CTD sensors (not showing additional, deeper sensors). Depth
+    estimated from mean pressure and hydrostatic approximation.*
+
+Want to generate time series from **fixed depths**. Since the sensor depths are
+not fixed, I'll do this by (linear) interpolation between two surrounding
+sensors.
+
+We are interested in the water near the surface, and the two last deployments
+have sensors at 46 m/50 m mean depth. The maximum depth of these sensors is 53.7
+m and 62.2 m, respectively. Therefore, we choose to generate a time series at **63 m
+depth**, spanning from 2013-2017.
+
+The uppermost sensor for 2012-2013 has a mean depth of 104.6 m and a maximum depth
+of 106.5 m. Therefore, we create a time series for **107 m** depth.
+
+The following shows the workflow from raw(est) data to interpolated, joined time series:
+
+.. figure:: /files/micocat_processing_workflow.png 
+    :scale: 80%
+
+    *CTD processing workflow. Locations are local in ØL's* ``vidarr`` *Linux
+    VM/windows shared* ``work`` *directory. The source file is in*
+    ``/home/oyvindl/work/atwain/data/reprocessed_mooring_data/documentation/``
+    ``micocat_processing_workflow.png``.
+    

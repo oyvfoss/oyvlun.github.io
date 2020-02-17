@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>CS2SMOS data &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="CS2SMOS sea ice thickness product: Overview" href="CS2SMOS_product.html" />
+    <link rel="prev" title="Sea ice thickness" href="../sea_ice_thickness_atwain.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cs2smos-data">
+<h1>CS2SMOS data<a class="headerlink" href="#cs2smos-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="downloading-data">
+<h2>Downloading data<a class="headerlink" href="#downloading-data" title="Permalink to this headline">¶</a></h2>
+<p>Downloaded all data from <a class="reference external" href="ftp://ftpsrv2.awi.de/sea_ice/product/cryosat2_smos/v202/nh/">this AWI ftp server</a> on 08.01.2020.</p>
+<p>Bulk download script: <code class="docutils literal notranslate"><span class="pre">atwain/data/other/sea_ice_thickness/dl_cs2smos.sh</span></code>.</p>
+<p>Downloaded to <code class="docutils literal notranslate"><span class="pre">data/other/sea_ice_thickness/ftpsrv2.awi.de</span></code> - files sit in the
+native, bulky, directory structure.</p>
+</div>
+<div class="section" id="time-and-averaging-period">
+<h2>Time and averaging period<a class="headerlink" href="#time-and-averaging-period" title="Permalink to this headline">¶</a></h2>
+<p>Files are <strong>daily</strong>, but contain <strong>weekly averages</strong>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">time</span></code> field shows the <strong>central time</strong> of the estimate (mid-day). Checked this
+in <code class="docutils literal notranslate"><span class="pre">data/other/sea_ice_thickness/define_slice_area.py</span></code> for a single day:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Time</span> <span class="n">boundaries</span><span class="p">:</span>
+<span class="n">Central</span> <span class="n">time</span><span class="p">:</span> <span class="mf">18.11</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span>
+<span class="n">Start</span> <span class="n">boundary</span> <span class="n">time</span><span class="p">:</span> <span class="mf">15.11</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+<span class="n">End</span> <span class="n">boundary</span> <span class="n">time</span><span class="p">:</span> <span class="mf">22.11</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fields">
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<p>As far as I can tell, the field <code class="docutils literal notranslate"><span class="pre">analysis_sea_ice_thickness</span></code> is the one I am
+after. <code class="docutils literal notranslate"><span class="pre">analysis_sea_ice_thickness_unc</span></code> should be the uncertainty.</p>
+<div class="figure align-default" id="id1">
+<img alt="../../../../_images/cs2smos_variables.png" src="../../../../_images/cs2smos_variables.png" />
+<p class="caption"><span class="caption-text">Overview of variables in the daily CS2SMOS files.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="spatial-subset">
+<h2>Spatial subset<a class="headerlink" href="#spatial-subset" title="Permalink to this headline">¶</a></h2>
+<p>Using a subset spanning an area covering the northern Barents Sea, Svalbard, and
+extending to the pole.</p>
+<p>Defined by the following slices:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sl_y</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">215</span><span class="p">,</span> <span class="mi">280</span><span class="p">)</span> <span class="c1"># First spatial dimension</span>
+<span class="n">sl_x</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">215</span><span class="p">,</span> <span class="mi">265</span><span class="p">)</span> <span class="c1"># Second spatial dimension</span>
+</pre></div>
+</div>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/cs2smos_sit_exampleday_subset.png"><img alt="../../../../_images/cs2smos_sit_exampleday_subset.png" src="../../../../_images/cs2smos_sit_exampleday_subset.png" style="width: 448.0px; height: 336.0px;" /></a>
+<p class="caption"><span class="caption-text">Map showing the subset used (contours: SIT for the whole Arctic on a specific day).</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="collecting-to-a-single-file">
+<h2>Collecting to a single file<a class="headerlink" href="#collecting-to-a-single-file" title="Permalink to this headline">¶</a></h2>
+<p>Picking out a subslice to collect only a (wide) area of interest:</p>
+<p><code class="docutils literal notranslate"><span class="pre">atwain/data/other/sea_ice_thickness/combine_SIT.py</span></code></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../projects.html">Projects</a><ul>
+  <li><a href="../../atwain.html">A-TWAIN</a><ul>
+  <li><a href="../../data.html">Data</a><ul>
+  <li><a href="../sea_ice_thickness_atwain.html">Sea ice thickness</a><ul>
+      <li>Previous: <a href="../sea_ice_thickness_atwain.html" title="previous chapter">Sea ice thickness</a></li>
+      <li>Next: <a href="CS2SMOS_product.html" title="next chapter">CS2SMOS sea ice thickness product: Overview</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/projects/atwain/data/sea_ice_thickness_data/CS2SMOS_data.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

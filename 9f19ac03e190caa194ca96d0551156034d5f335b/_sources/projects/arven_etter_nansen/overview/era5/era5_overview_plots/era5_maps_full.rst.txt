@@ -1,0 +1,37 @@
+ERA5: *Maps of average quantities*
+###################################
+
+.. figure:: /files/mean_air_temp_era5_2018_2019.png
+    :scale: 80 %
+
+    *Mean 2-m air temperature in the ERA5 subset*.
+
+.. figure:: /files/mean_msl_era5_2018_2019.png
+    :scale: 80 %
+
+    *Mean MSL in the ERA5 subset*.
+
+.. figure:: /files/mean_sst_era5_2018_2019.png
+    :scale: 80 %
+
+    *Mean SST in the ERA5 subset*.
+
+
+
+.. figure:: /files/mean_wind_era5_2018_2019.png
+    :scale: 80 %
+
+    *Mean 10-m wind component in the ERA5 subset. Contours show the mean wind
+    speed* :math:`\langle\sqrt{u^2+v^2}\rangle`, *arrows show the mean wind direction*
+    :math:`\langle\vec u\rangle = \langle u\rangle\hat\imath + \langle v\rangle\hat\jmath`.
+
+
+
+
+.. figure:: /files/mean_u10_v10_era5_2018_2019.png
+    :scale: 50 %
+
+    *Mean 10-m wind components in the ERA5 subset*.
+
+
+    

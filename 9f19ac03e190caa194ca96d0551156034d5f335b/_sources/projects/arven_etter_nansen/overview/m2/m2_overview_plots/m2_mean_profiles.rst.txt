@@ -1,0 +1,10 @@
+M2: *Mean profiles*
+#####################################
+
+.. figure:: /files/mean_profs_m2.png
+    :scale: 70%
+
+    *Mean profiles from the M2 mooring (salinity from Concerto sensors,
+    temperature from Concerto and Solo sensors, velocity from 150 kHz ADCP).
+    Gray shading extends* :math:`\pm` *one standard deviation (computed from daily averages) from the mean.*
+    

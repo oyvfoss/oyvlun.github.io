@@ -1,0 +1,9 @@
+Internal waves
+==============
+
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    internal_waves/*

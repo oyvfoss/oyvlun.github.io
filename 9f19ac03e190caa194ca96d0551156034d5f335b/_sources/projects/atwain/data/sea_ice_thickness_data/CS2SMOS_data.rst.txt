@@ -1,0 +1,68 @@
+CS2SMOS data
+############
+
+Downloading data
+================
+
+Downloaded all data from `this AWI ftp server
+<ftp://ftpsrv2.awi.de/sea_ice/product/cryosat2_smos/v202/nh/>`_ on 08.01.2020.
+
+Bulk download script: ``atwain/data/other/sea_ice_thickness/dl_cs2smos.sh``.  
+
+Downloaded to ``data/other/sea_ice_thickness/ftpsrv2.awi.de`` - files sit in the
+native, bulky, directory structure.
+
+Time and averaging period
+=========================
+
+Files are **daily**, but contain **weekly averages**.
+
+The ``time`` field shows the **central time** of the estimate (mid-day). Checked this
+in ``data/other/sea_ice_thickness/define_slice_area.py`` for a single day:
+
+:: 
+
+ Time boundaries:
+ Central time: 18.11 2010, 12:00
+ Start boundary time: 15.11 2010, 00:00
+ End boundary time: 22.11 2010, 00:00
+
+
+Fields
+======
+
+As far as I can tell, the field ``analysis_sea_ice_thickness`` is the one I am
+after. ``analysis_sea_ice_thickness_unc`` should be the uncertainty.
+
+.. figure:: /files/cs2smos_variables.png
+
+    Overview of variables in the daily CS2SMOS files.
+
+
+Spatial subset
+==============
+
+Using a subset spanning an area covering the northern Barents Sea, Svalbard, and
+extending to the pole.
+
+Defined by the following slices:
+
+::
+    
+    sl_y = slice(215, 280) # First spatial dimension
+    sl_x = slice(215, 265) # Second spatial dimension
+
+.. figure:: /files/cs2smos_sit_exampleday_subset.png
+    :scale: 70%
+
+    Map showing the subset used (contours: SIT for the whole Arctic on a specific day).
+
+
+Collecting to a single file
+===========================
+
+Picking out a subslice to collect only a (wide) area of interest: 
+
+``atwain/data/other/sea_ice_thickness/combine_SIT.py``
+
+

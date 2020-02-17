@@ -1,0 +1,8 @@
+Cruises
+#######
+
+.. toctree:: 
+    :glob:
+    :maxdepth: 1
+    
+    cruises/*

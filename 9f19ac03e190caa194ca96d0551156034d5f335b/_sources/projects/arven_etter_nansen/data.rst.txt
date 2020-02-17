@@ -1,0 +1,15 @@
+Data
+####
+
+.. toctree:: 
+    :glob:
+    :maxdepth: 1
+    
+    data/moorings
+    data/cruises
+
+.. toctree:: 
+    :glob:
+    :maxdepth: 2
+    
+    data/other

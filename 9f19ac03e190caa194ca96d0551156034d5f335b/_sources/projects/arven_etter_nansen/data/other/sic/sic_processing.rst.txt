@@ -1,0 +1,41 @@
+Processing
+##########
+
+My processing was simple:
+
+A) Collecting the files
+=======================
+
+**Code:** ``arven_etter_nansen/data/sic/collect_sic/make_subset_bremen.py``
+
+#. Reprojected from *x, y* to *lon, lat* using *pyproj*.
+    - Checked that the projection looked reasonable; see A-TWAIN page.
+#. Extracting data for a 260 X 260 subset.
+
+   .. figure:: /files/subset_bremen_amsr2.png
+    :scale: 50%
+
+    *Extent of subset.*
+
+#. Collected data from this subset for (daily) data files between 2018 and 2019 and saving to
+   netCDF.
+
+**Output:**
+``arven_etter_nansen/data/sic/sic_subset/SIC_bremen_amsr2_subset_aen_2018_2019.nc``
+
+B) Interpolating onto mooring points
+====================================
+
+
+**Code:**
+``arven_etter_nansen/data/sic/collect_sic/interpolation/`` ``interpolate_sic_onto_aen_mooring_points.py``.
+
+- Reads the subset file and bilinearly interpolates onto each mooring
+  coordinate.
+- Using ``xesmf.Regridder``.
+- Getting mooring coordinates from ``arven_etter_nansen/data/aen_coords.p``.
+- Interpolates onto M1-4 and AT200.
+- Outputs one pickled bunch time 
+  series per mooring.
+
+**Output:** ``arven_etter_nansen/data/sic/sic_moorings/SIC_m1_2018_2019.p``, etc.

@@ -1,0 +1,17 @@
+M2: *Velocity and shear time series*
+#####################################
+
+.. figure:: /files/time_series_uv_M2.png
+    :scale: 40%
+
+    *Velocity from the RDI 150 kHz ADCP on the M2 mooring. Arrows show depth
+    average current vectors (weekly average). Contour plots show velocity
+    component (filtered in timw with a 7-d running mean). Upper panel shows
+    local SIC from UoB AMSR2.*
+    
+.. figure:: /files/time_series_shear_M2.png
+    :scale: 40%
+
+    *Vertical current shear from the RDI 150 kHz ADCP on the M2 mooring,
+    computed from first differencing of the velocity components. Averaged in
+    time with a 3-day running mean. Upper panel shows local SIC from UoB AMSR2.*

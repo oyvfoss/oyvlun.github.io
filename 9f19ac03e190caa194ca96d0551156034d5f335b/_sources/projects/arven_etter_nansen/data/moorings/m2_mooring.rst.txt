@@ -1,0 +1,59 @@
+M2 mooring
+##########
+
+:download:`Riggdiagram M2, deployment 1 </files/m2_diagram_dep1.pdf>` 
+
+:download:`Riggdiagram M2, deployment 2 </files/m2_dep2_diag.jpg>` 
+
+.. toctree::
+    :maxdepth: 1
+    
+    extra_moorings/processing_mooring_m2
+
+
+Sensors
+=======
+
+RBR sensors 
+------------
+(From mooring diagram):
+
+=================== ==========  ================= ================================================================================================================
+Sensor              Serial no.  Nom. depth (m)    Raw file :math:`^*`
+=================== ==========  ================= ================================================================================================================
+Concerto            60599       29                 ``Concerto_M2/060599_20191118_0759.rsk`` :math:`^+` 
+Solo                102489      60                 ``Solo_M2/102489_20191118_0814.rsk``
+Concerto            60598       89                 ``Concerto_M2/060598_20191118_0756.rsk``
+Solo                102483      165                ``Solo_M2/102483_20191118_0811.rsk``
+Concerto            60597       214                ``Concerto_M2/060597_20191118_0752.rsk``
+Solo                102481      274                ``Solo_M2/102481_20191118_0807.rsk``
+Concerto            60596       347               N/A? :math:`^x`
+=================== ==========  ================= ================================================================================================================
+
+- :math:`^*` In location
+  ``/home/oyvindl/work/arven_etter_nansen/data/moorings/m1/raw/``.
+- :math:`^+` Found this file in ``m1/Solo_M1`` - assuming it was put there by mistake..
+- :math:`^x` : Riggdiagram: *"Vann i instrument!"*
+
+150 KHz ADCP
+------------
+
+- SN: 24619.
+- Nominal depth: 344 m.
+- ``arven_etter_nansen/data/moorings/m2/raw/M2_01/M2_01000.000``, etc.
+
+SBE16 V2 ECO sensor - SeaCat with "ECO Puck"
+--------------------------------------------
+
+- SN: 50241/1719.
+- Nominal depth: 31 m.
+- SBE16 data in
+  ``arven_etter_nansen/data/moorings/m2/raw/M2_2018-2019_SeaCAT_16-50241_data``.
+- *Where is the ECO Puck data?*
+
+Nortek Signature 500
+--------------------
+- SN: 802.
+- Nominal depth: 28 m.
+- Data: ``arven_etter_nansen/data/moorings/m2/raw/M2_2018-2019_Signature 500_100802_data/..``
+

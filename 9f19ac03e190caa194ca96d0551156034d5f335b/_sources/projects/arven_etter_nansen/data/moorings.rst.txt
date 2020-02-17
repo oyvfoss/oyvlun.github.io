@@ -1,0 +1,25 @@
+Moorings
+########
+
+
+.. figure:: /files/map_moorings_aen_dep1.png
+    :scale: 80%
+
+.. toctree:: 
+    :glob:
+    :maxdepth: 1
+    
+    moorings/*
+
+- Deployed during the KPH paleo cruise :download:`(cruise report)
+  </files/Cruise_report_nansen_paleo_cruise.pdf>`, turned over during the KPH
+  november 2019 cruise. 
+
+
+.. admonition:: Coordinates
+
+    From the Paleo cruise report.
+
+    .. figure:: /files/mooring_locations_aen.png
+
+

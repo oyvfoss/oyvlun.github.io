@@ -1,0 +1,19 @@
+M2: *T, S, density time series*
+###################################
+
+.. figure:: /files/time_series_T_M2.png
+    :scale: 40%
+
+    *Temperature time series from RBR Solo and Concerto sensors on M2 mooring.
+    Thin/thick lines in bottom plot shows weekly/daily means. Upper panel shows
+    local SIC from UoB AMSR2.*
+
+.. figure:: /files/time_series_S_M2.png
+    :scale: 40%
+
+    *Salinity time series from RBR Concerto sensors on M2 mooring.*
+
+.. figure:: /files/time_series_sig_M2.png
+    :scale: 40%
+
+    *Sigma density anomaly time series from RBR Concerto sensors on M2 mooring.*

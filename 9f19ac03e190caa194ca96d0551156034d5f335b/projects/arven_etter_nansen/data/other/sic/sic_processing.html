@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Processing &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Ideas" href="../../../ideas.html" />
+    <link rel="prev" title="Citation" href="sic_citation.html" />
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="processing">
+<h1>Processing<a class="headerlink" href="#processing" title="Permalink to this headline">¶</a></h1>
+<p>My processing was simple:</p>
+<div class="section" id="a-collecting-the-files">
+<h2>A) Collecting the files<a class="headerlink" href="#a-collecting-the-files" title="Permalink to this headline">¶</a></h2>
+<p><strong>Code:</strong> <code class="docutils literal notranslate"><span class="pre">arven_etter_nansen/data/sic/collect_sic/make_subset_bremen.py</span></code></p>
+<ol class="arabic">
+<li><dl class="simple">
+<dt>Reprojected from <em>x, y</em> to <em>lon, lat</em> using <em>pyproj</em>.</dt><dd><ul class="simple">
+<li><p>Checked that the projection looked reasonable; see A-TWAIN page.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Extracting data for a 260 X 260 subset.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../../../_images/subset_bremen_amsr2.png"><img alt="../../../../../_images/subset_bremen_amsr2.png" src="../../../../../_images/subset_bremen_amsr2.png" style="width: 200.0px; height: 200.0px;" /></a>
+<p class="caption"><span class="caption-text"><em>Extent of subset.</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Collected data from this subset for (daily) data files between 2018 and 2019 and saving to
+netCDF.</p></li>
+</ol>
+<p><strong>Output:</strong>
+<code class="docutils literal notranslate"><span class="pre">arven_etter_nansen/data/sic/sic_subset/SIC_bremen_amsr2_subset_aen_2018_2019.nc</span></code></p>
+</div>
+<div class="section" id="b-interpolating-onto-mooring-points">
+<h2>B) Interpolating onto mooring points<a class="headerlink" href="#b-interpolating-onto-mooring-points" title="Permalink to this headline">¶</a></h2>
+<p><strong>Code:</strong>
+<code class="docutils literal notranslate"><span class="pre">arven_etter_nansen/data/sic/collect_sic/interpolation/</span></code> <code class="docutils literal notranslate"><span class="pre">interpolate_sic_onto_aen_mooring_points.py</span></code>.</p>
+<ul class="simple">
+<li><p>Reads the subset file and bilinearly interpolates onto each mooring
+coordinate.</p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">xesmf.Regridder</span></code>.</p></li>
+<li><p>Getting mooring coordinates from <code class="docutils literal notranslate"><span class="pre">arven_etter_nansen/data/aen_coords.p</span></code>.</p></li>
+<li><p>Interpolates onto M1-4 and AT200.</p></li>
+<li><p>Outputs one pickled bunch time
+series per mooring.</p></li>
+</ul>
+<p><strong>Output:</strong> <code class="docutils literal notranslate"><span class="pre">arven_etter_nansen/data/sic/sic_moorings/SIC_m1_2018_2019.p</span></code>, etc.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../projects.html">Projects</a><ul>
+  <li><a href="../../../arven_etter_nansen.html">Arven etter Nansen</a><ul>
+  <li><a href="../../../data.html">Data</a><ul>
+  <li><a href="../../other.html">Other data</a><ul>
+  <li><a href="../sic_aen.html">Sea ice concentration</a><ul>
+      <li>Previous: <a href="sic_citation.html" title="previous chapter">Citation</a></li>
+      <li>Next: <a href="../../../ideas.html" title="next chapter">Ideas</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../_sources/projects/arven_etter_nansen/data/other/sic/sic_processing.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -8,4 +8,6 @@ Documents
 
     documents/*
 
+- :download:`A-TWAIN manuscript draft V0 </files/atwain_manus_draft_v0.pdf>`.
 - :download:`A-TWAIN initial writeup </files/atwain_initial.pdf>`.
+

@@ -1,0 +1,54 @@
+Processing
+##########
+
+A) Downloading
+==============
+
+Downloading ``work/atwain/data/other/wind/era5/dl_era5_annual.py`` using the
+``cdsapi`` client.
+
+Downloaded annual files: ``atwain/data/other/wind/era5/era5_subset_20XX.nc``.
+
+Both 2018 and 2019 (which are the ones I use here) were downloaded on Feb 12
+2020.
+
+The 2019 file has two sets of variables, e.g. ``t2m_0001`` (through November)
+and ``t2m_0005`` (December).Using *only* the ``_0001`` field - my understanding
+is that the ``_0005`` fields are preliminary *ERA5T* fields. So not including
+December 2019.
+
+
+
+B) Creating a subset
+=======================
+
+**Code:** ``arven_etter_nansen/data/era5/subset/build_joint_era5_file_2018_2019.py``
+
+#. Combining the annual files, creating a joint file from January 2018
+   through November 2019 and saving to
+   netCDF.
+
+**Output:**
+``arven_etter_nansen/data/era5/subset/era5_subset_2018_2019.nc``
+
+C) Interpolating onto mooring points
+====================================
+
+
+**Code:**
+``arven_etter_nansen/data/era5/interpolation/`` ``interpolate_era5_onto_aen_mooring_points.py``.
+
+- Reads the subset file and bilinearly interpolates onto each mooring
+  coordinate.
+- Using ``xesmf.Regridder``.
+- Getting mooring coordinates from ``arven_etter_nansen/data/aen_coords.p``.
+- Interpolates onto M1-4 and AT200.
+- Outputs one pickled bunch time 
+  series per mooring.
+- Grabbing only the time where there is QC (through November 2019) - not using
+  ERA5T data.
+- Converting air temperature K to C.
+- Calculating wind speed and direction.
+
+
+**Output:** ``arven_etter_nansen/data/era5/time_series/era5_{m1, m2, m3, at200}_2018_2019.p``

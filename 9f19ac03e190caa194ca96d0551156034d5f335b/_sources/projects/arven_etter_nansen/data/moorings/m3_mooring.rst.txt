@@ -1,0 +1,32 @@
+M3 mooring
+############
+
+.. figure:: /files/m3_dep2_mooring_schematic.png
+    :scale: 40%
+
+    *Schematic of M3, deployment 2.*
+
+
+.. toctree::
+    :maxdepth: 1
+    
+    extra_moorings/processing_mooring_m3
+
+Sensors
+=======
+
+Microcat
+--------
+
+- SN: 24639.
+- Mean  depth: 201 m.
+- ``arven_etter_nansen/data/moorings/m3/raw/sbe37sm-rs232_03716962_2019_11_15.cnv``
+- ``arven_etter_nansen/data/moorings/m3/raw/SBE37SM-RS232_03716962_2019_11_15.XML``
+
+150 KHz ADCP
+-------------
+
+- SN: 24639.
+- Mean transducer depth: 203 m.
+- ``arven_etter_nansen/data/moorings/m3/raw/M3189000.000``- (Aren't there config
+  files?).

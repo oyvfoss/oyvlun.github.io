@@ -7,6 +7,8 @@ Data
     data/mooring_data_atwain    
     data/sea_ice_concentration_atwain
     data/sea_ice_drift_atwain
+    data/sea_ice_thickness_atwain
+
     data/sea_ice_budget
     data/combined_timeseries_atwain
 

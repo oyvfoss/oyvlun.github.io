@@ -1,0 +1,86 @@
+CS2SMOS sea ice thickness product: Overview
+###########################################
+
+Choosing to look at this product since `Sallila et al 2019
+<https://www.the-cryosphere.net/13/1187/2019/tc-13-1187-2019.pdf>`_  seemed
+to suggest that it has the best overall performance, including over thin sea
+ice. It was also recommended by Mats.
+
+
+
+Reference
+=========
+
+From the nc files:
+
+ Ricker, R., Hendricks, S., Kaleschke, L., Tian-Kunze, X., King, J., and Haas,
+ C.: A weekly Arctic sea-ice thickness data record from merged CryoSat-2 and
+ SMOS satellite data, The Cryosphere, 11, 1607-1623,
+ https://doi.org/10.5194/tc-11-1607-2017, 2017.
+
+
+Overview
+========
+
+Nice overview of the data product `here <https://epic.awi.de/id/eprint/41602/1/cs2smos_user_guide_2_1.pdf>`_ .
+
+*(Mostly from Sallila et al 2019):*
+
+*CS2SMOS* is a blended product of thickness estimates from CryoSat 2 and SMOS.
+
+- Weekly data.
+- 25x25 km EASE2 grid centered at (same as the NSIDC SID product? Not centered
+  at 0W). 
+- Available Nov 2010 to April 2017.
+
+.. figure:: /files/cs2smos_sit_exampleday.png
+    :scale: 70%
+
+    SIT for the whole Arctic on a specific day.
+
+
+**SMOS**
+
+`SMOS satellite mission
+<https://www.esa.int/Applications/Observing_the_Earth/SMOS/Introducing_SMOS>`_ :
+ESA Soil Moisture and Ocean Salinity. Low-Earth orbit (758 km), polar, 23-day
+repeat cycle, 3-day sub-cycle. Carries a novel interferometric radiometer
+that operates in the L-band microwave range (1.4 GHz - "L-band" means 1 to 2
+GHz?) to capture "brightness temperature" images. According to Wikipedia, L-band
+waves penetrate clouds, fog, rain, storms, and vegetation, and this band is
+therefore used for GPS.
+
+L-band brightness temperature may be used to derive SIT in areas of thin sea
+ice (see `Richter et al 2018 <https://pdfs.semanticscholar.org/083b/e7b997ee1b2c10dc5dd49a198a514a709fc7.pdf>`_
+). L-band waves penetrates snow and sea ice for more than half a meter. L-band
+estimates are useful up to 1.5 m.
+
+
+**CryoSat 2**
+
+CryoSat 2 uses radar altimetry to measure the freeboard between the snow/ice
+surface and the sea surface (there are some issues with the method in fact
+measuring the freeboard of the top of the snow layer instead of the ice). Sea
+ice thickness is then estimated by assuming hydrostatic equillibrium. CS2 SIT
+works pretty well for thick ice, and should not be used for <0.5 m. 
+
+
+**Blending and processing** 
+
+From Sallila et al 2018:
+
+    *Due to the satellites having different spatial and temporal coverage, optimal interpolation is used to
+    merge the two data sets (Ricker et al., 2017a). The algorithm
+    includes weighting the data based on the known uncertainties
+    of the products and modelled spatial covariances (Ricker et
+    al., 2017a, b). For sea ice concentration and type, the OSISAF Arctic daily products are used. Snow depth and density
+    follow the MWC. The CS2 product used is the AWI CS2
+    product with processor version 1.2 (Ricker et al., 2014; Hendricks et al., 2016), and the SMOS thicknesses are from the
+    University of Hamburg processor version 3.1 (Tian-Kunze et
+    al., 2014; Kaleschke et al., 2016).*
+
+
+
+
+
+

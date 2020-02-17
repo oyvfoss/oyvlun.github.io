@@ -1,0 +1,73 @@
+Thoughts about the M1 manuscript
+================================
+
+
+Sources
+-------
+
+**Hydrography**
+- Want to show M1 data: 
+    - Seasonal cycle in heat and currents.
+    - Sea ice cover.
+    - Evolution of the stratification (deepeing of ML..).
+
+**Inflow**
+    - In addition to M1 data, I may be able to use:
+        - Kvitøyrenna CTD transects.
+        - AT200 data.
+
+Questions/themes
+----------------
+
+*What governs the inflow of AW into the Barents Sea from the North?*
+
+- Have seasonal variability in currents and heat - where does it come from?
+- Look at large-scale time series of wind forcing and ice..
+- Look at the M1 and M2 mooring together.
+
+
+
+Data
+----
+
+*ADCPs*
++++++++
+
+- I think my processing here is pretty good.
+- Need to make *sure* magnetic declination has not already been applied.
+
+*T/S sensors*
++++++++++++++
+- So far: Using pre-cal coefficients - my understanding is that new ones are on
+  the way. 
+  - Fine to go forward with what I have now, but should make everything flexible
+    enough to easily replace with updated calibration.
+- Interpolation in depth: I think I've already done this reasonably well, but I
+  think there was a mismatch in nominal depth, or something?
+
+*External* 
+++++++++++
+
+- **Sea ice concentration**: I think I'll just keep using Bremen AMSR2.
+- **Large-scale atmosphere**:
+    - Not sure what the overning variable would be here.
+        - Large-scale winds?
+        - Large-scale wind stress curl?
+
+*CTDs* 
+++++++++++
+
+- Need for validating the mooring datasets.
+- May also like to use Kvitøyrenna transects.
+
+Data:
+- Need to do the thorough processing here - or will IMR do it?
+
+
+*LADCP/SADCP* 
++++++++++++++
+
+Both *should* be available- and I can process LADCP if I have good SADCP.
+However, there are awkward gaps in the SADCP data and IMR techs don't seem very
+interested in helping, so I might be stuck.
+

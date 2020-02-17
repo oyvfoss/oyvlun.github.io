@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>CTD data source files &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Joint CTD time series" href="joint_time_series_ctd.html" />
+    <link rel="prev" title="ADCP processing" href="adcp_processing.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="ctd-data-source-files">
+<h1>CTD data source files<a class="headerlink" href="#ctd-data-source-files" title="Permalink to this headline">¶</a></h1>
+<p>For consistency - reprocessing from as early a stage as possible, creating
+single data objects (pickled dictionaries) with a common format, for all
+sensors, and putting in <code class="docutils literal notranslate"><span class="pre">atwain/data/reprocessed_mooring_data</span></code>.</p>
+<div class="section" id="deployment-1">
+<h2>Deployment 1<a class="headerlink" href="#deployment-1" title="Permalink to this headline">¶</a></h2>
+<p>No raw data as far as I can tell. Processed data in
+<code class="docutils literal notranslate"><span class="pre">atwain/data/processed_mooring_data/</span></code> <code class="docutils literal notranslate"><span class="pre">2012_2013deployment/ATWAIN2012_allcats_processed.mat</span></code>.
+This dictionary contains <code class="docutils literal notranslate"><span class="pre">ATWAIN_microcat_200m_9294</span></code> and
+<code class="docutils literal notranslate"><span class="pre">ATWAIN_microcat_200m_9295</span></code> - this is the source of the data used in the
+analysis.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 17%" />
+<col style="width: 21%" />
+<col style="width: 19%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Serial no</p></th>
+<th class="head"><p>Mean <em>p</em></p></th>
+<th class="head"><p>Mean depth</p></th>
+<th class="head"><p>Max depth</p></th>
+<th class="head"><p><em>dt</em></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>9294</p></td>
+<td><p>105.3 db</p></td>
+<td><p>104.6 m</p></td>
+<td><p>106.5 m</p></td>
+<td><p>15 min</p></td>
+</tr>
+<tr class="row-odd"><td><p>9295</p></td>
+<td><p>132.7 db</p></td>
+<td><p>131.8 m</p></td>
+<td><p>132.6 m</p></td>
+<td><p>15 min</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="deployment-2">
+<h2>Deployment 2<a class="headerlink" href="#deployment-2" title="Permalink to this headline">¶</a></h2>
+<p>Had previously used the interpolated product from Geli for the two later deployments. Want to go back a step
+to ensure consistency in what I am doing.</p>
+<p>Grabbing data from <code class="docutils literal notranslate"><span class="pre">raw_mooring_data/2013_2015/SBE37/</span></code>. Here, there are raw
+<code class="docutils literal notranslate"><span class="pre">.hex,</span> <span class="pre">.xmlcon</span></code> files.  To figure out which sensor was where, I went to the
+mooring diagram.</p>
+<p>Processing with <em>SBEDataProcessing</em> and saving to <code class="docutils literal notranslate"><span class="pre">data/reprocessed_mooring_data/seabirds_prelim</span></code>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 17%" />
+<col style="width: 21%" />
+<col style="width: 19%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Serial no</p></th>
+<th class="head"><p>Mean <em>p</em></p></th>
+<th class="head"><p>Mean depth</p></th>
+<th class="head"><p>Max depth</p></th>
+<th class="head"><p><em>dt</em></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>9296</p></td>
+<td></td>
+<td></td>
+<td><p>53.7 m</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>9294</p></td>
+<td></td>
+<td></td>
+<td><p>118.3 m</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>9295</p></td>
+<td></td>
+<td></td>
+<td><p>140.4 m</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>8763</p></td>
+<td></td>
+<td></td>
+<td><p>186.3 m</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="deployment-3">
+<h2>Deployment 3<a class="headerlink" href="#deployment-3" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 17%" />
+<col style="width: 21%" />
+<col style="width: 19%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Serial no</p></th>
+<th class="head"><p>Mean <em>p</em></p></th>
+<th class="head"><p>Mean depth</p></th>
+<th class="head"><p>Max depth</p></th>
+<th class="head"><p><em>dt</em></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>9296</p></td>
+<td></td>
+<td></td>
+<td><p>62.2 m</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>9294</p></td>
+<td></td>
+<td></td>
+<td><p>139.1 m</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>9295</p></td>
+<td></td>
+<td></td>
+<td><p>147.5 m</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>8763</p></td>
+<td></td>
+<td></td>
+<td><p>191.9 m</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../projects.html">Projects</a><ul>
+  <li><a href="../../atwain.html">A-TWAIN</a><ul>
+  <li><a href="../../data.html">Data</a><ul>
+  <li><a href="../mooring_data_atwain.html">Mooring data</a><ul>
+      <li>Previous: <a href="adcp_processing.html" title="previous chapter">ADCP processing</a></li>
+      <li>Next: <a href="joint_time_series_ctd.html" title="next chapter">Joint CTD time series</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/projects/atwain/data/mooring_data/ctd_data.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

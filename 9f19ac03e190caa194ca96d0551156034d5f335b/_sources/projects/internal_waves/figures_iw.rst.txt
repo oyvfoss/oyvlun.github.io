@@ -1,0 +1,11 @@
+Figures
+#######
+
+====
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    figures/*
+    

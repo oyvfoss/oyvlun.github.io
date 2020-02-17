@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Processing &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Sea ice concentration" href="../sic_aen.html" />
+    <link rel="prev" title="ERA-5" href="../era5_aen.html" />
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="processing">
+<h1>Processing<a class="headerlink" href="#processing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-downloading">
+<h2>A) Downloading<a class="headerlink" href="#a-downloading" title="Permalink to this headline">¶</a></h2>
+<p>Downloading <code class="docutils literal notranslate"><span class="pre">work/atwain/data/other/wind/era5/dl_era5_annual.py</span></code> using the
+<code class="docutils literal notranslate"><span class="pre">cdsapi</span></code> client.</p>
+<p>Downloaded annual files: <code class="docutils literal notranslate"><span class="pre">atwain/data/other/wind/era5/era5_subset_20XX.nc</span></code>.</p>
+<p>Both 2018 and 2019 (which are the ones I use here) were downloaded on Feb 12
+2020.</p>
+<p>The 2019 file has two sets of variables, e.g. <code class="docutils literal notranslate"><span class="pre">t2m_0001</span></code> (through November)
+and <code class="docutils literal notranslate"><span class="pre">t2m_0005</span></code> (December).Using <em>only</em> the <code class="docutils literal notranslate"><span class="pre">_0001</span></code> field - my understanding
+is that the <code class="docutils literal notranslate"><span class="pre">_0005</span></code> fields are preliminary <em>ERA5T</em> fields. So not including
+December 2019.</p>
+</div>
+<div class="section" id="b-creating-a-subset">
+<h2>B) Creating a subset<a class="headerlink" href="#b-creating-a-subset" title="Permalink to this headline">¶</a></h2>
+<p><strong>Code:</strong> <code class="docutils literal notranslate"><span class="pre">arven_etter_nansen/data/era5/subset/build_joint_era5_file_2018_2019.py</span></code></p>
+<ol class="arabic simple">
+<li><p>Combining the annual files, creating a joint file from January 2018
+through November 2019 and saving to
+netCDF.</p></li>
+</ol>
+<p><strong>Output:</strong>
+<code class="docutils literal notranslate"><span class="pre">arven_etter_nansen/data/era5/subset/era5_subset_2018_2019.nc</span></code></p>
+</div>
+<div class="section" id="c-interpolating-onto-mooring-points">
+<h2>C) Interpolating onto mooring points<a class="headerlink" href="#c-interpolating-onto-mooring-points" title="Permalink to this headline">¶</a></h2>
+<p><strong>Code:</strong>
+<code class="docutils literal notranslate"><span class="pre">arven_etter_nansen/data/era5/interpolation/</span></code> <code class="docutils literal notranslate"><span class="pre">interpolate_era5_onto_aen_mooring_points.py</span></code>.</p>
+<ul class="simple">
+<li><p>Reads the subset file and bilinearly interpolates onto each mooring
+coordinate.</p></li>
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">xesmf.Regridder</span></code>.</p></li>
+<li><p>Getting mooring coordinates from <code class="docutils literal notranslate"><span class="pre">arven_etter_nansen/data/aen_coords.p</span></code>.</p></li>
+<li><p>Interpolates onto M1-4 and AT200.</p></li>
+<li><p>Outputs one pickled bunch time
+series per mooring.</p></li>
+<li><p>Grabbing only the time where there is QC (through November 2019) - not using
+ERA5T data.</p></li>
+<li><p>Converting air temperature K to C.</p></li>
+<li><p>Calculating wind speed and direction.</p></li>
+</ul>
+<p><strong>Output:</strong> <code class="docutils literal notranslate"><span class="pre">arven_etter_nansen/data/era5/time_series/era5_{m1,</span> <span class="pre">m2,</span> <span class="pre">m3,</span> <span class="pre">at200}_2018_2019.p</span></code></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../projects.html">Projects</a><ul>
+  <li><a href="../../../arven_etter_nansen.html">Arven etter Nansen</a><ul>
+  <li><a href="../../../data.html">Data</a><ul>
+  <li><a href="../../other.html">Other data</a><ul>
+  <li><a href="../era5_aen.html">ERA-5</a><ul>
+      <li>Previous: <a href="../era5_aen.html" title="previous chapter">ERA-5</a></li>
+      <li>Next: <a href="../sic_aen.html" title="next chapter">Sea ice concentration</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../_sources/projects/arven_etter_nansen/data/other/era5/processing_era5.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

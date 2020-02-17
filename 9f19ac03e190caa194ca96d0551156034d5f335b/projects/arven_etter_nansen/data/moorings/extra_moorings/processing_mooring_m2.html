@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Processing, M2 &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="M3 mooring" href="../m3_mooring.html" />
+    <link rel="prev" title="M2 mooring" href="../m2_mooring.html" />
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="processing-m2">
+<h1>Processing, M2<a class="headerlink" href="#processing-m2" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Processing is <strong>preliminary</strong>!</p>
+<p>Need to:</p>
+<ul class="simple">
+<li><p>Do thorough checking.</p></li>
+<li><p>To reprocess with new calibration constants.</p></li>
+<li><p>Should probably also do more thorough salinity editing -
+pretty ad hoc right now.</p></li>
+<li><p>Do systematic comparisons with CTD profiles.</p></li>
+</ul>
+</div>
+<div class="section" id="rbr-ctds">
+<h2>RBR CTDs<a class="headerlink" href="#rbr-ctds" title="Permalink to this headline">¶</a></h2>
+<p>Code and data in <code class="docutils literal notranslate"><span class="pre">work/arven_etter_nansen/data/moorings/m2/processed/ctd</span></code>.</p>
+<ul>
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">process_ctds_m2_concertos.py</span></code>:</dt><dd><ul>
+<li><p>Read all Concerto sensors.</p></li>
+<li><p>Do some very quick salinity editing.</p></li>
+<li><p>Calculate density and potential temperature from T and S.</p></li>
+<li><p>Interpolate onto very high-frequency time array, low-pass with a daily
+filter and subsample to daily resolution.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\rightarrow\)</span> Arrays with time series for each sensors:
+<code class="docutils literal notranslate"><span class="pre">m2_concertos_full.p</span></code>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Interpolate onto common depth grid as well.</dt><dd><ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">m2_concertos_full_interp.p</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">process_ctds_m2_all.py</span></code>:</dt><dd><ul class="simple">
+<li><p>Similar, but now including both Solo and Concerto sensors.</p></li>
+<li><p>Solo are temperature only - estimating depth from mooring diagram,
+interpolating between Concerto sensors.</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\rightarrow\)</span> <code class="docutils literal notranslate"><span class="pre">m2_all_temp_interp.p</span></code></p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="adcp">
+<h2>ADCP<a class="headerlink" href="#adcp" title="Permalink to this headline">¶</a></h2>
+<p>Code and data in
+<code class="docutils literal notranslate"><span class="pre">work/arven_etter_nansen/data/moorings/m2/processed/adcp/</span></code>.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">process_adcp_m2.py</span></code>:</dt><dd><ul>
+<li><p>Going through standard processing steps using my <code class="docutils literal notranslate"><span class="pre">oyv.data.rdi_adcp</span></code>
+module.</p></li>
+<li><p>This includes threshold masking with standard parameters, and direction
+correction for magnetic declination.</p></li>
+<li><p>Also calculates shear.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">m2_adcp_processed_v1.p</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../projects.html">Projects</a><ul>
+  <li><a href="../../../arven_etter_nansen.html">Arven etter Nansen</a><ul>
+  <li><a href="../../../data.html">Data</a><ul>
+  <li><a href="../../moorings.html">Moorings</a><ul>
+  <li><a href="../m2_mooring.html">M2 mooring</a><ul>
+      <li>Previous: <a href="../m2_mooring.html" title="previous chapter">M2 mooring</a></li>
+      <li>Next: <a href="../m3_mooring.html" title="next chapter">M3 mooring</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../_sources/projects/arven_etter_nansen/data/moorings/extra_moorings/processing_mooring_m2.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

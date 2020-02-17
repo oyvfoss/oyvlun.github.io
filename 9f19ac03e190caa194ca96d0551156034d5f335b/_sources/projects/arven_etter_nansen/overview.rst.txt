@@ -1,0 +1,13 @@
+Overview plots
+==============
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    overview/m1/m1_overview_plots.rst
+    overview/m2/m2_overview_plots.rst
+    overview/m3/m3_overview_plots.rst
+    overview/era5/era5_overview_plots.rst
+    overview/sic/sic_overview_plots.rst
+

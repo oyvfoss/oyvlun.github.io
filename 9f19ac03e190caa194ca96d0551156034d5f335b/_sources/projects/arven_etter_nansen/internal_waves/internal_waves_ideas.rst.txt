@@ -1,0 +1,70 @@
+Quick outline for internal waves project
+###########################################
+
+
+Motivation
+===========
+- Stratification extremely important for biology, heat transports and sea ice in
+  the future Arctic.
+- In general, we *do not know* whether the Arctic Ocean will be more or less
+  stratified in the future.
+- Wind stress will be more intense in an ice covered ocean. 
+- Storm tracks:
+    - Will move further north?
+    - Will intensify in strength but not frequency?
+
+Do
+===
+
+
+**Data**
+
+Make single files for each mooring containing:
+
+- U, V *(2D)*
+- SHU, SHV *(2D)*
+- Wind U, Wind V (*1D*)
+- WS U, WS V *(1D)*
+- SIC *(1D)*
+- LON, LAT *(0D)*
+
+Get tide time series (on same grid!) from Padman model..
+
+- Add uv tide time series of tidal prediction.
+
+Get a metric for the Run slab model? (Or just do complex demodulation on the winds?)
+
+- "Inertial input amplitude" (1D)
+
+**Read**
+
+- Alford NI summary paper: Read the Arctic part.
+- Clarify which rotational direction implies upward propagation.
+
+**Analysis**
+
+- 
+
+
+
+**Plots**
+
+
+#. U/V/SHU/SHV panels for all moorings.
+
+#. - Demodulated shear amplitude
+   - Wind input
+   - Sea ice concentration
+
+**Expanding**
+
+*If* we can find somewhat of a connection between shear energy and wind energy
+input:
+    - *Use ERA winds , or maybe CMIP6 winds/sea ice, to evaluate wind stress input across the Arctic in a future
+      scenario or something?* 
+
+*If there are vertical gradients: Can we see anything changing in the upper
+sensors?*
+
+
+

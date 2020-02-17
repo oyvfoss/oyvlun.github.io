@@ -1,0 +1,56 @@
+CTD data source files
+=====================
+
+For consistency - reprocessing from as early a stage as possible, creating
+single data objects (pickled dictionaries) with a common format, for all
+sensors, and putting in ``atwain/data/reprocessed_mooring_data``. 
+
+Deployment 1
+-------------
+
+No raw data as far as I can tell. Processed data in
+``atwain/data/processed_mooring_data/`` ``2012_2013deployment/ATWAIN2012_allcats_processed.mat``.
+This dictionary contains ``ATWAIN_microcat_200m_9294`` and
+``ATWAIN_microcat_200m_9295`` - this is the source of the data used in the
+analysis. 
+
+============= ======== ========== ========= ========
+Serial no     Mean *p* Mean depth Max depth *dt*
+============= ======== ========== ========= ========
+9294          105.3 db 104.6 m    106.5 m   15 min
+9295          132.7 db 131.8 m    132.6 m   15 min
+============= ======== ========== ========= ========
+
+Deployment 2
+------------
+
+Had previously used the interpolated product from Geli for the two later deployments. Want to go back a step
+to ensure consistency in what I am doing.
+
+Grabbing data from ``raw_mooring_data/2013_2015/SBE37/``. Here, there are raw
+``.hex, .xmlcon`` files.  To figure out which sensor was where, I went to the
+mooring diagram.
+
+Processing with *SBEDataProcessing* and saving to ``data/reprocessed_mooring_data/seabirds_prelim``.
+
+============= ======== ========== ========= ========
+Serial no     Mean *p* Mean depth Max depth *dt*
+============= ======== ========== ========= ========
+9296                              53.7 m
+9294                              118.3 m
+9295                              140.4 m
+8763                              186.3 m
+============= ======== ========== ========= ========
+
+
+Deployment 3
+------------
+
+============= ======== ========== ========= ========
+Serial no     Mean *p* Mean depth Max depth *dt*
+============= ======== ========== ========= ========
+9296                              62.2 m
+9294                              139.1 m
+9295                              147.5 m
+8763                              191.9 m
+============= ======== ========== ========= ========

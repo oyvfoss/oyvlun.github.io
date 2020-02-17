@@ -1,0 +1,74 @@
+M1 mooring
+##########
+
+:download:`Riggdiagram M1, deployment 1 </files/m1_diagram_dep1.pdf>` 
+
+:download:`Riggdiagram M1, deployment 2 </files/m1_dep2_diag.jpg>` 
+
+.. toctree::
+    :maxdepth: 1
+    
+    extra_moorings/processing_mooring_m1
+
+
+Sensors
+=======
+
+RBR sensors 
+-----------
+
+(From mooring diagram):
+
+========== ==========  ============= ================================================================================================================
+Sensor     Serial no.  Nominal depth Raw file :math:`^*`
+========== ==========  ============= ================================================================================================================
+Concerto   60594       26 m          ``Concerto_M1/060594_20191117_1842.rsk``
+Solo       102484      60 m          ``Solo_M1/102484_20191117_1858.rsk``
+Concerto   60593       90 m          ``Concerto_M1/060593_20191117_1836.rsk``
+Solo       102485      138 m         ``Solo_M1/102485_20191117_1856.rsk``
+Concerto   60591       172 m         ``Concerto_M1/060591_20191117_1829.rsk``
+Solo       102479      211 m         ``Solo_M1/102479_20191117_1853.rsk``
+Concerto   60590       249 m          ``Concerto_M1/060590_20191117_1816.rsk``  
+========== ==========  ============= ================================================================================================================
+
+:math:`^*` In location
+``/home/oyvindl/work/arven_etter_nansen/data/moorings/m1/raw/``.
+
+**Note:** In ``Solo_M1/``, there is also a file ``060599_20191118_0759.rsk``.
+Serial nr suggests that this might be a concetro, but I don't know where it came
+from..
+
+150 KHz ADCP
+------------
+
+- SN: 24618.
+- Nominal depth: 246 m.
+- ``arven_etter_nansen/data/moorings/m1/raw/rdi adcp/M1_01000.000``, etc.
+
+SBE16 V2 ECO sensor - SeaCat with "ECO Puck"
+----------------------------------------------
+
+- SN - SeaCat: 50240
+- SN - ECO Triplet: 1718.
+- Nominal depth: 29 m.
+
+*SeaCat data:*
+
+    - ``arven_etter_nansen/data/moorings/m1/raw/M1_2018-2019_SeaCAT_16-50240_data/SBE16plus_01650240_2019_11_16.hex``
+    - ``arven_etter_nansen/data/moorings/m1/raw/M1_2018-2019_SeaCAT_16-50240_data/16-50240.xmlcon``
+
+*ECO Triplet data:*
+
+    - ``arven_etter_nansen/data/moorings/m1/raw/M1_2018-2019_SeaCAT_16-50240_data/ECO Triplet 1718/M1_2018-2019_ECO_1718_data.log`` (?).
+ 
+ *Note*: There are two folders;  ``M1_2018-2019_SeaCAT_16-50240_data/``  and
+ ``SeaCAT SBEplus V2 16-50240/``. I think they may be identical, but I haven't
+ really checked.
+
+Nortek Signature 500
+--------------------
+
+- SN: 812.
+- Nominal depth: 25 m.
+- ``arven_etter_nansen/data/moorings/m1/raw/M1_2018-2019_Signature 500_100812_data/..``.
+

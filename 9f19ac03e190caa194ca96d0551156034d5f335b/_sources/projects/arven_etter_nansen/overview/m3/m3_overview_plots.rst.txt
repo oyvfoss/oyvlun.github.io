@@ -1,0 +1,8 @@
+M3 
+###
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    m3_overview_plots/*

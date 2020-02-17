@@ -1,2 +1,20 @@
 Arven etter Nansen
 ::::::::::::::::::
+
+
+
+.. figure:: /files/map_moorings_aen_dep1.png
+    :scale: 60%
+
+
+.. toctree:: 
+    :maxdepth: 1
+
+    data
+    ideas
+    internal_waves
+
+.. toctree:: 
+    :maxdepth: 2
+
+    overview

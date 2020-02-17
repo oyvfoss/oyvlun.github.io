@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quick outline for internal waves project &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Overview plots" href="../overview.html" />
+    <link rel="prev" title="Figures" href="figures_iw.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="quick-outline-for-internal-waves-project">
+<h1>Quick outline for internal waves project<a class="headerlink" href="#quick-outline-for-internal-waves-project" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Stratification extremely important for biology, heat transports and sea ice in
+the future Arctic.</p></li>
+<li><p>In general, we <em>do not know</em> whether the Arctic Ocean will be more or less
+stratified in the future.</p></li>
+<li><p>Wind stress will be more intense in an ice covered ocean.</p></li>
+<li><dl class="simple">
+<dt>Storm tracks:</dt><dd><ul>
+<li><p>Will move further north?</p></li>
+<li><p>Will intensify in strength but not frequency?</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="do">
+<h2>Do<a class="headerlink" href="#do" title="Permalink to this headline">¶</a></h2>
+<p><strong>Data</strong></p>
+<p>Make single files for each mooring containing:</p>
+<ul class="simple">
+<li><p>U, V <em>(2D)</em></p></li>
+<li><p>SHU, SHV <em>(2D)</em></p></li>
+<li><p>Wind U, Wind V (<em>1D</em>)</p></li>
+<li><p>WS U, WS V <em>(1D)</em></p></li>
+<li><p>SIC <em>(1D)</em></p></li>
+<li><p>LON, LAT <em>(0D)</em></p></li>
+</ul>
+<p>Get tide time series (on same grid!) from Padman model..</p>
+<ul class="simple">
+<li><p>Add uv tide time series of tidal prediction.</p></li>
+</ul>
+<p>Get a metric for the Run slab model? (Or just do complex demodulation on the winds?)</p>
+<ul class="simple">
+<li><p>“Inertial input amplitude” (1D)</p></li>
+</ul>
+<p><strong>Read</strong></p>
+<ul class="simple">
+<li><p>Alford NI summary paper: Read the Arctic part.</p></li>
+<li><p>Clarify which rotational direction implies upward propagation.</p></li>
+</ul>
+<p><strong>Analysis</strong></p>
+<ul class="simple">
+<li></li>
+</ul>
+<p><strong>Plots</strong></p>
+<ol class="arabic simple">
+<li><p>U/V/SHU/SHV panels for all moorings.</p></li>
+<li><ul class="simple">
+<li><p>Demodulated shear amplitude</p></li>
+<li><p>Wind input</p></li>
+<li><p>Sea ice concentration</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Expanding</strong></p>
+<p><em>If</em> we can find somewhat of a connection between shear energy and wind energy
+input:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>Use ERA winds , or maybe CMIP6 winds/sea ice, to evaluate wind stress input across the Arctic in a future
+scenario or something?</em></p></li>
+</ul>
+</div></blockquote>
+<p><em>If there are vertical gradients: Can we see anything changing in the upper
+sensors?</em></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../projects.html">Projects</a><ul>
+  <li><a href="../arven_etter_nansen.html">Arven etter Nansen</a><ul>
+  <li><a href="../internal_waves.html">Internal waves</a><ul>
+      <li>Previous: <a href="figures_iw.html" title="previous chapter">Figures</a></li>
+      <li>Next: <a href="../overview.html" title="next chapter">Overview plots</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/projects/arven_etter_nansen/internal_waves/internal_waves_ideas.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

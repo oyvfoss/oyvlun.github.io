@@ -1,0 +1,25 @@
+Preliminary look at CS2SMOS sea ice thickness
+#############################################
+
+.. figure:: /files/SIT_time_series_at200.png
+    :scale: 80%
+
+    CS2SMOS thickness at the AT200 location.
+
+.. figure:: /files/maps_march.png
+    :scale: 80%
+
+    March average CS2SMOS thickness.
+
+
+.. figure:: /files/maps_nov.png
+    :scale: 80%
+
+    November average CS2SMOS thickness.
+
+
+.. figure:: /files/maps_diff_mar_nov.png
+    :scale: 80%
+
+    March minus November average CS2SMOS thickness.
+

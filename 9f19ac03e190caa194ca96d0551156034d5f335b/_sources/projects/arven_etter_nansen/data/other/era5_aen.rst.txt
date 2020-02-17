@@ -1,0 +1,12 @@
+ERA-5
+=============
+
+
+- 0.25 :math:`^{\circ}` x 0.25 :math:`^{\circ}` gridded. 
+- Hourly product.
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    era5/*

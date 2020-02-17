@@ -1,0 +1,13 @@
+Citation
+========
+
+`This link <https://seaice.uni-bremen.de/sea-ice-concentration/information/>`_
+says to cite the following:
+
+    Spreen, G., L. Kaleschke, and G.Heygster (2008), *Sea ice remote sensing
+    using AMSR-E 89 GHz channels* J. Geophys. Res.,vol. 113, C02S03,
+    doi:10.1029/2005JC003384.
+
+However, it might make sense to use something newer for AMSR2?
+
+I downloaded on 04-10-2019 and 11-01-2020.

@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>CS2SMOS sea ice thickness product: Overview &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Preliminary look at CS2SMOS sea ice thickness" href="preliminary_look.html" />
+    <link rel="prev" title="CS2SMOS data" href="CS2SMOS_data.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cs2smos-sea-ice-thickness-product-overview">
+<h1>CS2SMOS sea ice thickness product: Overview<a class="headerlink" href="#cs2smos-sea-ice-thickness-product-overview" title="Permalink to this headline">¶</a></h1>
+<p>Choosing to look at this product since <a class="reference external" href="https://www.the-cryosphere.net/13/1187/2019/tc-13-1187-2019.pdf">Sallila et al 2019</a>  seemed
+to suggest that it has the best overall performance, including over thin sea
+ice. It was also recommended by Mats.</p>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<p>From the nc files:</p>
+<blockquote>
+<div><p>Ricker, R., Hendricks, S., Kaleschke, L., Tian-Kunze, X., King, J., and Haas,
+C.: A weekly Arctic sea-ice thickness data record from merged CryoSat-2 and
+SMOS satellite data, The Cryosphere, 11, 1607-1623,
+<a class="reference external" href="https://doi.org/10.5194/tc-11-1607-2017">https://doi.org/10.5194/tc-11-1607-2017</a>, 2017.</p>
+</div></blockquote>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Nice overview of the data product <a class="reference external" href="https://epic.awi.de/id/eprint/41602/1/cs2smos_user_guide_2_1.pdf">here</a> .</p>
+<p><em>(Mostly from Sallila et al 2019):</em></p>
+<p><em>CS2SMOS</em> is a blended product of thickness estimates from CryoSat 2 and SMOS.</p>
+<ul class="simple">
+<li><p>Weekly data.</p></li>
+<li><p>25x25 km EASE2 grid centered at (same as the NSIDC SID product? Not centered
+at 0W).</p></li>
+<li><p>Available Nov 2010 to April 2017.</p></li>
+</ul>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../../_images/cs2smos_sit_exampleday.png"><img alt="../../../../_images/cs2smos_sit_exampleday.png" src="../../../../_images/cs2smos_sit_exampleday.png" style="width: 448.0px; height: 336.0px;" /></a>
+<p class="caption"><span class="caption-text">SIT for the whole Arctic on a specific day.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>SMOS</strong></p>
+<p><a class="reference external" href="https://www.esa.int/Applications/Observing_the_Earth/SMOS/Introducing_SMOS">SMOS satellite mission</a> :
+ESA Soil Moisture and Ocean Salinity. Low-Earth orbit (758 km), polar, 23-day
+repeat cycle, 3-day sub-cycle. Carries a novel interferometric radiometer
+that operates in the L-band microwave range (1.4 GHz - “L-band” means 1 to 2
+GHz?) to capture “brightness temperature” images. According to Wikipedia, L-band
+waves penetrate clouds, fog, rain, storms, and vegetation, and this band is
+therefore used for GPS.</p>
+<p>L-band brightness temperature may be used to derive SIT in areas of thin sea
+ice (see <a class="reference external" href="https://pdfs.semanticscholar.org/083b/e7b997ee1b2c10dc5dd49a198a514a709fc7.pdf">Richter et al 2018</a>
+). L-band waves penetrates snow and sea ice for more than half a meter. L-band
+estimates are useful up to 1.5 m.</p>
+<p><strong>CryoSat 2</strong></p>
+<p>CryoSat 2 uses radar altimetry to measure the freeboard between the snow/ice
+surface and the sea surface (there are some issues with the method in fact
+measuring the freeboard of the top of the snow layer instead of the ice). Sea
+ice thickness is then estimated by assuming hydrostatic equillibrium. CS2 SIT
+works pretty well for thick ice, and should not be used for &lt;0.5 m.</p>
+<p><strong>Blending and processing</strong></p>
+<p>From Sallila et al 2018:</p>
+<blockquote>
+<div><p><em>Due to the satellites having different spatial and temporal coverage, optimal interpolation is used to
+merge the two data sets (Ricker et al., 2017a). The algorithm
+includes weighting the data based on the known uncertainties
+of the products and modelled spatial covariances (Ricker et
+al., 2017a, b). For sea ice concentration and type, the OSISAF Arctic daily products are used. Snow depth and density
+follow the MWC. The CS2 product used is the AWI CS2
+product with processor version 1.2 (Ricker et al., 2014; Hendricks et al., 2016), and the SMOS thicknesses are from the
+University of Hamburg processor version 3.1 (Tian-Kunze et
+al., 2014; Kaleschke et al., 2016).</em></p>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../projects.html">Projects</a><ul>
+  <li><a href="../../atwain.html">A-TWAIN</a><ul>
+  <li><a href="../../data.html">Data</a><ul>
+  <li><a href="../sea_ice_thickness_atwain.html">Sea ice thickness</a><ul>
+      <li>Previous: <a href="CS2SMOS_data.html" title="previous chapter">CS2SMOS data</a></li>
+      <li>Next: <a href="preliminary_look.html" title="next chapter">Preliminary look at CS2SMOS sea ice thickness</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/projects/atwain/data/sea_ice_thickness_data/CS2SMOS_product.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,8 @@
+M2 
+###
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    m2_overview_plots/*

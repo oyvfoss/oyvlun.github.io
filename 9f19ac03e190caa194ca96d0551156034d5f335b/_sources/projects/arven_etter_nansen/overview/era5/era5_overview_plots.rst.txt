@@ -1,0 +1,8 @@
+ERA5
+=====
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    era5_overview_plots/*

@@ -15,7 +15,7 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="ROMS/CICE 800 m model" href="../roms_model_overview.html" />
+    <link rel="next" title="All time series data colleted in common file (old version)" href="combined_time_series_bunch_old.html" />
     <link rel="prev" title="Combined time series" href="../combined_timeseries_atwain.html" />
    
   <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
@@ -76,194 +76,68 @@ are included in the Bunch:</p>
 <p>Last column indicates whether this variable has been finalized and included (✓),
 included in preliminary form (✕) or not yet included (<em>no symbol</em>). See
 explanation of “preliminary” status below the table.</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 56%" />
-<col style="width: 26%" />
-<col style="width: 15%" />
-<col style="width: 4%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>Variable</strong></p></th>
-<th class="head"><p><strong>varname</strong></p></th>
-<th class="head"><p><strong>Unit</strong></p></th>
-<th class="head"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>Sea ice cover</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>SIC, mooring location</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">sic</span></code></p></td>
-<td><p>%</p></td>
-<td><p>✓</p></td>
-</tr>
-<tr class="row-even"><td><p>SIA, <em>medgrid</em> domain</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">sia_med</span></code></p></td>
-<td><p>km²</p></td>
-<td><p>✓</p></td>
-</tr>
-<tr class="row-odd"><td><p>SIA change, <em>medgrid</em> (<strong>A</strong>)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">dsia_med</span></code></p></td>
-<td><p>km²/day</p></td>
-<td><p>✓</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>Ocean</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>~50db temperature</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">T50</span></code></p></td>
-<td><p>⁰C</p></td>
-<td><p>✕</p></td>
-</tr>
-<tr class="row-even"><td><p>~105db temperature</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">T105</span></code></p></td>
-<td><p>⁰C</p></td>
-<td><p>✕</p></td>
-</tr>
-<tr class="row-odd"><td><p>Mean along-slope current</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">u_al</span></code></p></td>
-<td><p>cm/s</p></td>
-<td><p>✓</p></td>
-</tr>
-<tr class="row-even"><td><p>Mean cross-slope current</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">u_cr</span></code></p></td>
-<td><p>cm/s</p></td>
-<td><p>✓</p></td>
-</tr>
-<tr class="row-odd"><td><p>SST</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">sst</span></code></p></td>
-<td><p>⁰C</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Density diff, 105db-50db</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">dsig</span></code></p></td>
-<td><p>kg/m³</p></td>
-<td><p>✕</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Atmosphere, mooring</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>2m air temperature</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">airT</span></code></p></td>
-<td><p>⁰C</p></td>
-<td><p>✕</p></td>
-</tr>
-<tr class="row-odd"><td><p>Wind speed</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">wsp</span></code></p></td>
-<td><p>m/s</p></td>
-<td><p>✕</p></td>
-</tr>
-<tr class="row-even"><td><p>Wind direction</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">wdir</span></code></p></td>
-<td><p>⁰</p></td>
-<td><p>✕</p></td>
-</tr>
-<tr class="row-odd"><td><p>Time where wind &gt; 10 m/s</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">t_storm</span></code></p></td>
-<td><p>1/0*</p></td>
-<td><p>✕</p></td>
-</tr>
-<tr class="row-even"><td><p>Time where temp &lt; -2  ⁰C</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">t_freeze</span></code></p></td>
-<td><p>1/0*</p></td>
-<td><p>✕</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Atmosphere, large-scale</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Pressure EOF mode 1</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">peof1</span></code></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>Pressure EOF mode 2</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">peof2</span></code></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Pressure EOF mode 3</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">peof3</span></code></p></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Sea ice flux</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Large-scale AO flux</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">ao_flux</span></code></p></td>
-<td><p>km²/day</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><em>medgrid</em> fluxes:</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Out of N boundary</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">flux_n</span></code></p></td>
-<td><p>km²/day</p></td>
-<td><p>✓</p></td>
-</tr>
-<tr class="row-odd"><td><p>In from S boundary</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">flux_s</span></code></p></td>
-<td><p>km²/day</p></td>
-<td><p>✓</p></td>
-</tr>
-<tr class="row-even"><td><p>Out of E boundary</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">flux_e</span></code></p></td>
-<td><p>km²/day</p></td>
-<td><p>✓</p></td>
-</tr>
-<tr class="row-odd"><td><p>In from W boundary</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">flux_w</span></code></p></td>
-<td><p>km²/day</p></td>
-<td><p>✓</p></td>
-</tr>
-<tr class="row-even"><td><p>Net flux <em>into</em> domain (<strong>B</strong>)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">net_flux</span></code></p></td>
-<td><p>km²/day</p></td>
-<td><p>✓</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>Sea ice budget</strong></p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>Net local ice loss (<strong>B-A</strong>)</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">local_loss</span></code></p></td>
-<td><p>km²/day</p></td>
-<td><p>✓</p></td>
-</tr>
-</tbody>
-</table>
+<p>✓
+✕
+============================== ================= ======== ==
+<strong>Variable</strong>                   <strong>varname</strong>       <strong>Unit</strong>
+============================== ================= ======== ==
+<strong>Sea ice cover</strong> ✕
+SIC, mooring location          <code class="docutils literal notranslate"><span class="pre">sic</span></code>           %        ✓
+SIA, <em>medgrid</em> domain          <code class="docutils literal notranslate"><span class="pre">sia_med</span></code>       km²      ✕
+SIA change, <em>medgrid</em> (<strong>A</strong>)  <code class="docutils literal notranslate"><span class="pre">dsia_med</span></code>      km²/day  ✕
+—————————— —————– ——– –
+<strong>Ocean</strong>
+63 m temperature               <code class="docutils literal notranslate"><span class="pre">T63</span></code>           ⁰C       ✓
+107 m temperature              <code class="docutils literal notranslate"><span class="pre">T107</span></code>          ⁰C       ✓
+Mean along-slope current       <code class="docutils literal notranslate"><span class="pre">u_al</span></code>          cm/s
+Mean cross-slope current       <code class="docutils literal notranslate"><span class="pre">u_cr</span></code>          cm/s
+SST                            <code class="docutils literal notranslate"><span class="pre">sst</span></code>           ⁰C       ✕
+Density diff, 105db-50db       <code class="docutils literal notranslate"><span class="pre">dsig</span></code>          kg/m³
+—————————— —————– ——– –
+<strong>Atmosphere, mooring</strong>
+2m air temperature             <code class="docutils literal notranslate"><span class="pre">airT</span></code>          ⁰C       ✓
+Wind speed                     <code class="docutils literal notranslate"><span class="pre">wsp</span></code>           m/s      ✓
+Wind direction                 <code class="docutils literal notranslate"><span class="pre">wdir</span></code>          ⁰        ✓
+u10 wind component             <code class="docutils literal notranslate"><span class="pre">u10</span></code>           m/s      ✓
+Mean SLP                       <code class="docutils literal notranslate"><span class="pre">msl</span></code>           kPa      ✓
+Storm day, BF7 (&gt;13.7 m/s)     <code class="docutils literal notranslate"><span class="pre">storm_day_bf7</span></code> 1/0      ✓
+Storm day, BF8 (&gt;17.2 m/s)     <code class="docutils literal notranslate"><span class="pre">storm_day_bf8</span></code> 1/0      ✓
+Wind stress magnitude          <code class="docutils literal notranslate"><span class="pre">taumag</span></code>        Pa
+Wind stress direction          <code class="docutils literal notranslate"><span class="pre">taudir</span></code>        ⁰
+Time where wind &gt; 10 m/s       <code class="docutils literal notranslate"><span class="pre">t_storm</span></code>       1/0*
+Time where temp &lt; -2  ⁰C       <code class="docutils literal notranslate"><span class="pre">t_freeze</span></code>      1/0*
+—————————— —————– ——– –
+<strong>Atmosphere, large-scale</strong>
+Pressure EOF mode 1            <code class="docutils literal notranslate"><span class="pre">peof1</span></code>
+Pressure EOF mode 2            <code class="docutils literal notranslate"><span class="pre">peof2</span></code>
+Pressure EOF mode 3            <code class="docutils literal notranslate"><span class="pre">peof3</span></code>
+—————————— —————– ——– –
+<strong>Sea ice flux, domain</strong>
+<em>medgrid</em> fluxes:
+Out of N boundary              <code class="docutils literal notranslate"><span class="pre">flux_n</span></code>        km²/day
+In from S boundary             <code class="docutils literal notranslate"><span class="pre">flux_s</span></code>        km²/day
+Out of E boundary              <code class="docutils literal notranslate"><span class="pre">flux_e</span></code>        km²/day
+In from W boundary             <code class="docutils literal notranslate"><span class="pre">flux_w</span></code>        km²/day
+Net flux <em>into</em> domain (<strong>B</strong>) <code class="docutils literal notranslate"><span class="pre">net_flux</span></code>      km²/day
+—————————— —————– ——– –
+<strong>Sea ice flux, transects</strong>
+Across EASE_N                  <code class="docutils literal notranslate"><span class="pre">flux_ease_n</span></code>    km²/day
+Across EASE_S                  <code class="docutils literal notranslate"><span class="pre">flux_ease_s</span></code>    km²/day
+Across EASE_W                  <code class="docutils literal notranslate"><span class="pre">flux_ease_w</span></code>    km²/day</p>
+<p>—————————— —————– ——– –
+<strong>Sea ice budget</strong>
+Net local ice loss (<strong>B-A</strong>)   <code class="docutils literal notranslate"><span class="pre">local_loss</span></code>    km²/day
+============================== ================= ======== ==</p>
 <ul class="simple">
 <li><p>Running average gives fraction of days within an interval with storms/freezing..</p></li>
 </ul>
 <p><strong>✕ “Preliminary” status ✕</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">T50</span></code>, <code class="docutils literal notranslate"><span class="pre">T105</span></code>, <code class="docutils literal notranslate"><span class="pre">dsig</span></code>:</p>
-<p>These are computed from the interpolated seabird data post
-2013. Should check exactly how this interpolation was done. Also: <code class="docutils literal notranslate"><span class="pre">T105</span></code> pre
-2013 is just the temperature record from the sensor. The depths are pretty close
-to 105 always, though.</p>
-<p>Also, there are some artefacts around deployment times. Need to check that
-deployment and recovery have in fact been chopped off.</p>
-<p><em>None of these things are critical for what I do here - should be fine for the
-time being.</em></p>
-<p><code class="docutils literal notranslate"><span class="pre">airT</span></code>, <code class="docutils literal notranslate"><span class="pre">wsp</span></code>, <code class="docutils literal notranslate"><span class="pre">wdir</span></code>, <code class="docutils literal notranslate"><span class="pre">t_storm</span></code>, <code class="docutils literal notranslate"><span class="pre">t_freeze</span></code></p>
-<p>Spatial interpolation based on <code class="docutils literal notranslate"><span class="pre">RectBivariateSplite</span></code> - should use the xesmf Regridder.
-Shouldn’t matter much.</p>
+<p><code class="docutils literal notranslate"><span class="pre">sia_med,</span> <span class="pre">dsia_med</span></code>:
+Currently getting from intepolation onto the previous, coarser <em>medgrid</em>. Should
+use the finer (25x25) grid, but the difference should be indistinguishable.</p>
+<p><code class="docutils literal notranslate"><span class="pre">SST</span></code>:</p>
+<p>Currently getting from my previously extracted SST for the A-TWAIN point.
+Evcentually want to interpolate using xesmf and do an average for the sea ice area.</p>
 <p><strong>Current direction</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">u_al</span></code>, <code class="docutils literal notranslate"><span class="pre">u_cr</span></code>:</p>
 <p>Rotating such that <code class="docutils literal notranslate"><span class="pre">u_al</span></code> is directed towards 14.5⁰ - the approximate
@@ -276,8 +150,8 @@ direction estimated from the bathymetry.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 12%" />
-<col style="width: 9%" />
-<col style="width: 79%" />
+<col style="width: 8%" />
+<col style="width: 80%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Var name</strong></p></th>
@@ -288,31 +162,31 @@ direction estimated from the bathymetry.</p>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sic</span></code></p></td>
 <td><p><em>UA</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/sea_ice_concentration/SIC_atwain_bremen.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/sea_ice_concentration/SIC_atwain_bremen.p</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sia_med</span></code></p></td>
 <td><p><em>UA</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/sic_sia_medgrid.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/sic_sia_medgrid.p</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dsia_med</span></code></p></td>
 <td><p><em>UA</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/sic_sia_medgrid.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/sic_sia_medgrid.p</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">T50</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">T63</span></code></p></td>
 <td><p><em>AT201</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">processed_mooring_data/CTD_50db_combined.p</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">atwain/data/reprocessed_mooring_data/seabirds_combined/seabirds_collected_2012_2017_10min.p</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">T105</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">T107</span></code></p></td>
 <td><p><em>AT201</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">processed_mooring_data/CTD_105db_combined.p</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">atwain/data/reprocessed_mooring_data/seabirds_combined/seabirds_collected_2012_2017_10min.p</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">u_al</span></code></p></td>
 <td><p><em>AT201</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">reprocessed_mooring_data/adcp_combined/adcp_uv_interp_dep.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">reprocessed_mooring_data/adcp_combined/adcp_uv_interp_dep.p</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">u_cr</span></code></p></td>
 <td><p><em>AT201</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">reprocessed_mooring_data/adcp_combined/adcp_uv_interp_dep.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">reprocessed_mooring_data/adcp_combined/adcp_uv_interp_dep.p</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sst</span></code></p></td>
 <td><p><em>oiSST</em></p></td>
@@ -320,27 +194,27 @@ direction estimated from the bathymetry.</p>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dsig</span></code></p></td>
 <td><p><em>AT201</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">processed_mooring_data/CTD_{50/105}db_combined.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">processed_mooring_data/CTD_{50/105}db_combined.p</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">airT</span></code></p></td>
 <td><p><em>EI</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/wind/era_interim/era_interim_for_atwain_point.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/wind/era5/era5_atwain.p</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">wsp</span></code></p></td>
 <td><p><em>EI</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/wind/era_interim/era_interim_for_atwain_point.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/wind/era5/era5_atwain.p</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">wdir</span></code></p></td>
 <td><p><em>EI</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/wind/era_interim/era_interim_for_atwain_point.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/wind/era5/era5_atwain.p</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">t_storm</span></code></p></td>
 <td><p><em>EI</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/wind/era_interim/era_interim_for_atwain_point.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/wind/era5/era5_atwain.p</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">t_freeze</span></code></p></td>
 <td><p><em>EI</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/wind/era_interim/era_interim_for_atwain_point.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/wind/era5/era5_atwain.p</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">peof1</span></code></p></td>
 <td><p><em>EI</em></p></td>
@@ -360,27 +234,27 @@ direction estimated from the bathymetry.</p>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">flux_n</span></code></p></td>
 <td><p><em>PP</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/siflux_nsidc_medgrid.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/siflux_nsidc_medgrid.p</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">flux_s</span></code></p></td>
 <td><p><em>PP</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/siflux_nsidc_medgrid.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/siflux_nsidc_medgrid.p</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">flux_e</span></code></p></td>
 <td><p><em>PP</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/siflux_nsidc_medgrid.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/siflux_nsidc_medgrid.p</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">flux_w</span></code></p></td>
 <td><p><em>PP</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/siflux_nsidc_medgrid.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/siflux_nsidc_medgrid.p</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">net_flux</span></code></p></td>
 <td><p><em>PP</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/siflux_nsidc_medgrid.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/siflux_nsidc_medgrid.p</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">local_loss</span></code></p></td>
 <td><p><em>UA, PP</em></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/sic_sia_medgrid.p</span></code>, <code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/siflux_nsidc_medgrid.p</span></code></p></td>
+<td><p><strong>N</strong> <code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/sic_sia_medgrid.p</span></code>, <code class="docutils literal notranslate"><span class="pre">other/sea_ice_budget/siflux_nsidc_medgrid.p</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -425,7 +299,7 @@ direction estimated from the bathymetry.</p>
   <li><a href="../../data.html">Data</a><ul>
   <li><a href="../combined_timeseries_atwain.html">Combined time series</a><ul>
       <li>Previous: <a href="../combined_timeseries_atwain.html" title="previous chapter">Combined time series</a></li>
-      <li>Next: <a href="../roms_model_overview.html" title="next chapter">ROMS/CICE 800 m model</a></li>
+      <li>Next: <a href="combined_time_series_bunch_old.html" title="next chapter">All time series data colleted in common file (old version)</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

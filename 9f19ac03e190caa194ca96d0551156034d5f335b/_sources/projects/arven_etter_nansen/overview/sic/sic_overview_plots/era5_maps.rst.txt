@@ -1,0 +1,7 @@
+SIC: *Monthly maps*
+####################
+
+.. figure:: /files/monthly_sic_uob_2018_2019.png
+    :scale: 80 %
+
+    *Monthly average SIC from the UoB AMSR2 product.*

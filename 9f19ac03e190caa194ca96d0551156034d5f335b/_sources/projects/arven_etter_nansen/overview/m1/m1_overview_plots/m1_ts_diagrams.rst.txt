@@ -1,0 +1,11 @@
+M1: *T, S distribution*
+#####################################
+
+.. figure:: /files/tsplot_full_m1.png 
+    :scale: 70%
+
+    *Histogram showing the distribution of salinity and distribution in the
+    various M1 CTD sensors, ordered into three seasons. Redder colors indicate
+    higher occurrence. Reference water masses from Oziel et al. (2016). Gray
+    lines are isopycnals separated by 0.2 kg m-3*.
+    

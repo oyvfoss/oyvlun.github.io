@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Thoughts about the M1 manuscript &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Internal waves" href="../internal_waves.html" />
+    <link rel="prev" title="Ideas" href="../ideas.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="thoughts-about-the-m1-manuscript">
+<h1>Thoughts about the M1 manuscript<a class="headerlink" href="#thoughts-about-the-m1-manuscript" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sources">
+<h2>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h2>
+<p><strong>Hydrography</strong>
+- Want to show M1 data:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Seasonal cycle in heat and currents.</p></li>
+<li><p>Sea ice cover.</p></li>
+<li><p>Evolution of the stratification (deepeing of ML..).</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt><strong>Inflow</strong></dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>In addition to M1 data, I may be able to use:</dt><dd><ul>
+<li><p>Kvitøyrenna CTD transects.</p></li>
+<li><p>AT200 data.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="questions-themes">
+<h2>Questions/themes<a class="headerlink" href="#questions-themes" title="Permalink to this headline">¶</a></h2>
+<p><em>What governs the inflow of AW into the Barents Sea from the North?</em></p>
+<ul class="simple">
+<li><p>Have seasonal variability in currents and heat - where does it come from?</p></li>
+<li><p>Look at large-scale time series of wind forcing and ice..</p></li>
+<li><p>Look at the M1 and M2 mooring together.</p></li>
+</ul>
+</div>
+<div class="section" id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="adcps">
+<h3><em>ADCPs</em><a class="headerlink" href="#adcps" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>I think my processing here is pretty good.</p></li>
+<li><p>Need to make <em>sure</em> magnetic declination has not already been applied.</p></li>
+</ul>
+</div>
+<div class="section" id="t-s-sensors">
+<h3><em>T/S sensors</em><a class="headerlink" href="#t-s-sensors" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>So far: Using pre-cal coefficients - my understanding is that new ones are on
+the way.
+- Fine to go forward with what I have now, but should make everything flexible</p>
+<blockquote>
+<div><p>enough to easily replace with updated calibration.</p>
+</div></blockquote>
+</li>
+<li><p>Interpolation in depth: I think I’ve already done this reasonably well, but I
+think there was a mismatch in nominal depth, or something?</p></li>
+</ul>
+</div>
+<div class="section" id="external">
+<h3><em>External</em><a class="headerlink" href="#external" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Sea ice concentration</strong>: I think I’ll just keep using Bremen AMSR2.</p></li>
+<li><dl class="simple">
+<dt><strong>Large-scale atmosphere</strong>:</dt><dd><ul>
+<li><dl class="simple">
+<dt>Not sure what the overning variable would be here.</dt><dd><ul>
+<li><p>Large-scale winds?</p></li>
+<li><p>Large-scale wind stress curl?</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="ctds">
+<h3><em>CTDs</em><a class="headerlink" href="#ctds" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Need for validating the mooring datasets.</p></li>
+<li><p>May also like to use Kvitøyrenna transects.</p></li>
+</ul>
+<p>Data:
+- Need to do the thorough processing here - or will IMR do it?</p>
+</div>
+<div class="section" id="ladcp-sadcp">
+<h3><em>LADCP/SADCP</em><a class="headerlink" href="#ladcp-sadcp" title="Permalink to this headline">¶</a></h3>
+<p>Both <em>should</em> be available- and I can process LADCP if I have good SADCP.
+However, there are awkward gaps in the SADCP data and IMR techs don’t seem very
+interested in helping, so I might be stuck.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../projects.html">Projects</a><ul>
+  <li><a href="../arven_etter_nansen.html">Arven etter Nansen</a><ul>
+  <li><a href="../ideas.html">Ideas</a><ul>
+      <li>Previous: <a href="../ideas.html" title="previous chapter">Ideas</a></li>
+      <li>Next: <a href="../internal_waves.html" title="next chapter">Internal waves</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../_sources/projects/arven_etter_nansen/ideas/throughts_m1_manuscript.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

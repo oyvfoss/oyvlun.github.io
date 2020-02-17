@@ -1,0 +1,10 @@
+Internal waves in AeN/A-TWAIN mooring data
+##########################################
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    data_iw
+    figures_iw
+    documents_iw

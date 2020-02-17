@@ -1,0 +1,11 @@
+ERA5: *Time series at mooring locations*
+##########################################
+
+.. figure:: /files/era5_mooring_timeseries_2018_2019.png
+    :scale: 80 %
+
+    *Time series of air temperature, sea level pressure, mean wind speed,
+    maximum wind speed and wind direction at the mooring sites. Thin lines show
+    daily means, thick lines show weekly means.* (Note: Using 25hr and (24*7+1)
+    hr windowing for some of these, since ``runstats`` requires an even window..).   
+

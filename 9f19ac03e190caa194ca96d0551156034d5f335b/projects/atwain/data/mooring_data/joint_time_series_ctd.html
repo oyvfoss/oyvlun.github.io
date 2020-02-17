@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Joint CTD time series &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Data" href="mooring_data_overview.html" />
+    <link rel="prev" title="CTD data source files" href="ctd_data.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="joint-ctd-time-series">
+<h1>Joint CTD time series<a class="headerlink" href="#joint-ctd-time-series" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Phe pressure field on the first deployment is farily different from that on
+the two other. Ideally, I should get a hold of the raw files here to make
+sure I’m really processing everything equally.</p>
+</div>
+<p>Want to create joint time series of ocean temperature from AT200 mooring.
+Primarily interested in heat content near the surface. The following relevant data are
+available (all CTDs are SBE37s):</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="../../../../_images/ctd_atwain_table.png"><img alt="../../../../_images/ctd_atwain_table.png" src="../../../../_images/ctd_atwain_table.png" style="width: 428.8px; height: 84.4px;" /></a>
+<p class="caption"><span class="caption-text"><em>Overview of CTD sensors (not showing additional, deeper sensors). Depth
+estimated from mean pressure and hydrostatic approximation.</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Want to generate time series from <strong>fixed depths</strong>. Since the sensor depths are
+not fixed, I’ll do this by (linear) interpolation between two surrounding
+sensors.</p>
+<p>We are interested in the water near the surface, and the two last deployments
+have sensors at 46 m/50 m mean depth. The maximum depth of these sensors is 53.7
+m and 62.2 m, respectively. Therefore, we choose to generate a time series at <strong>63 m
+depth</strong>, spanning from 2013-2017.</p>
+<p>The uppermost sensor for 2012-2013 has a mean depth of 104.6 m and a maximum depth
+of 106.5 m. Therefore, we create a time series for <strong>107 m</strong> depth.</p>
+<p>The following shows the workflow from raw(est) data to interpolated, joined time series:</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../../../../_images/micocat_processing_workflow.png"><img alt="../../../../_images/micocat_processing_workflow.png" src="../../../../_images/micocat_processing_workflow.png" style="width: 635.2px; height: 562.4px;" /></a>
+<p class="caption"><span class="caption-text"><em>CTD processing workflow. Locations are local in ØL’s</em> <code class="docutils literal notranslate"><span class="pre">vidarr</span></code> <em>Linux
+VM/windows shared</em> <code class="docutils literal notranslate"><span class="pre">work</span></code> <em>directory. The source file is in</em>
+<code class="docutils literal notranslate"><span class="pre">/home/oyvindl/work/atwain/data/reprocessed_mooring_data/documentation/</span></code>
+<code class="docutils literal notranslate"><span class="pre">micocat_processing_workflow.png</span></code>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../projects.html">Projects</a><ul>
+  <li><a href="../../atwain.html">A-TWAIN</a><ul>
+  <li><a href="../../data.html">Data</a><ul>
+  <li><a href="../mooring_data_atwain.html">Mooring data</a><ul>
+      <li>Previous: <a href="ctd_data.html" title="previous chapter">CTD data source files</a></li>
+      <li>Next: <a href="mooring_data_overview.html" title="next chapter">Data</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/projects/atwain/data/mooring_data/joint_time_series_ctd.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

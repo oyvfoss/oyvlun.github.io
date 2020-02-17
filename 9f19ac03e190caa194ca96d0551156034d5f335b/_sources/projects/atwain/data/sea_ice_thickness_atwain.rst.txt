@@ -1,0 +1,8 @@
+Sea ice thickness
+=================
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    sea_ice_thickness_data/*
