@@ -1,0 +1,40 @@
+Understanding the melt equations
+################################
+
+The melt equations come from considering the thermodynamic conditions at the
+glacier-ocean interface.
+
+We assume that there is a thin interface layer between the glacier and the ocean
+where the water is in thermodynamic equillibrium with the ice. *(Note: do we also
+assume that this layer is of constant thickness?)*:
+
+.. figure:: /files/meltcartoon.jpg
+    :scale: 50%
+
+The first governing equation comes from the assumption that the interface layer
+is in thermodynamic equillibrium, i.e. it is at freezing temperature. We get the
+freezing temperature from an approcimation of the freezing temperature as
+linearly dependent on the salinity and depth ; :math:`T_f(S, z) = \lambda_1 S +
+\lambda_2 + \lambda_3 z`, which I like to write :math:`T_f = \lambda_1 S +
+\beta`.
+
+For the interface we get:
+
+.. figure:: /files/eqmelt1.JPG
+    :scale: 40%
+
+Next, we consider the *salinity budget* for the interface layer. The
+contributors are exchange with the ice through melting/freezing, and with the
+(plume) water through turbulent exchange:
+
+.. figure:: /files/eqmelt2.JPG
+    :scale: 35%
+
+The *heat budget* for the interface layer is similar, but we also have to
+consider the heat loss that goes into generating the melt, so we get an extra term. 
+
+
+.. figure:: /files/eqmelt3.JPG
+    :scale: 35%
+
+These three equations comprise the melt equations in the plume. 

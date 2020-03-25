@@ -92,8 +92,8 @@ interpolating between Concerto sensors.</p>
 </li>
 </ul>
 </div>
-<div class="section" id="adcp">
-<h2>ADCP<a class="headerlink" href="#adcp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rdi-adcp">
+<h2>RDI ADCP<a class="headerlink" href="#rdi-adcp" title="Permalink to this headline">¶</a></h2>
 <p>Code and data in
 <code class="docutils literal notranslate"><span class="pre">work/arven_etter_nansen/data/moorings/m1/processed/adcp/</span></code>.</p>
 <ul class="simple">
@@ -113,6 +113,23 @@ correction for magnetic declination.</p></li>
 </dl>
 </li>
 </ul>
+</div>
+<div class="section" id="signature-500-adcp">
+<h2>Signature 500 ADCP<a class="headerlink" href="#signature-500-adcp" title="Permalink to this headline">¶</a></h2>
+<p>Code and data in
+<code class="docutils literal notranslate"><span class="pre">work/arven_etter_nansen/data/moorings/m1/processed/signature_500/</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">read_and_combine_avg_signature500_m1.py</span></code>:</p>
+<ul class="simple">
+<li><p>Read signature 500 <em>.mat</em> files from the M1 mooring.</p></li>
+<li><p>Compute bin depth based on pressure record.</p></li>
+<li><p>Grab revelant fields including u, v, w, beam correlation, amplitude.</p></li>
+<li><p>Compute shear from first difference of every second beam (since cell extent overlaps
+by 50%)</p></li>
+<li><p>Sort chronologically and combine into arrays spanning the entire deployment.</p></li>
+<li><p>Saving to <code class="docutils literal notranslate"><span class="pre">m1_signature_avg_combined_unprocessed.p</span></code>.</p></li>
+</ul>
+<p><em>Note: NO MASKING OR QUALITY CONTROL done here. The whole depth range is included,
+including above-surface bins.</em></p>
 </div>
 </div>
 

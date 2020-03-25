@@ -40,8 +40,8 @@ Code and data in ``work/arven_etter_nansen/data/moorings/m1/processed/ctd``.
       - :math:`\rightarrow` ``m1_all_temp.p``.
       - :math:`\rightarrow` ``m1_all_temp_interp.p``
 
-ADCP
-----
+RDI ADCP
+--------
 
 Code and data in
 ``work/arven_etter_nansen/data/moorings/m1/processed/adcp/``.
@@ -54,3 +54,22 @@ Code and data in
     - Also calculates shear.
 
       - ``m1_adcp_processed_v1.p``.
+
+Signature 500 ADCP
+------------------
+
+Code and data in
+``work/arven_etter_nansen/data/moorings/m1/processed/signature_500/``.
+
+``read_and_combine_avg_signature500_m1.py``:
+
+- Read signature 500 *.mat* files from the M1 mooring.
+- Compute bin depth based on pressure record.
+- Grab revelant fields including u, v, w, beam correlation, amplitude.
+- Compute shear from first difference of every second beam (since cell extent overlaps
+  by 50%)
+- Sort chronologically and combine into arrays spanning the entire deployment.
+- Saving to ``m1_signature_avg_combined_unprocessed.p``.
+
+*Note: NO MASKING OR QUALITY CONTROL done here. The whole depth range is included,
+including above-surface bins.*

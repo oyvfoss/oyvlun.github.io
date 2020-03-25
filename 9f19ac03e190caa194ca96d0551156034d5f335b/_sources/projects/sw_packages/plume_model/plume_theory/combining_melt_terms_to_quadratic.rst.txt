@@ -1,0 +1,10 @@
+Numerical implementation of the melt equations
+###############################################
+
+I was really confused by the form of the melt equations in the original matlab
+scripts for a while. It took me a while to figure out how the three melt
+equations were obtained on a quadratic form, but it's really just a matter of
+algebra:
+
+
+:download:`PDF of calculation </files/jenkinsmelt.pdf>`.

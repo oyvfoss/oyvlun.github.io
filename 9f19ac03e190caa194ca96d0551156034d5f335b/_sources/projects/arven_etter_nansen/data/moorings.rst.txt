@@ -9,7 +9,10 @@ Moorings
     :glob:
     :maxdepth: 1
     
-    moorings/*
+    moorings/m1_mooring
+    moorings/m2_mooring
+    moorings/m3_mooring
+    moorings/atwain_mooring_dep4
 
 - Deployed during the KPH paleo cruise :download:`(cruise report)
   </files/Cruise_report_nansen_paleo_cruise.pdf>`, turned over during the KPH
@@ -20,6 +23,19 @@ Moorings
 
     From the Paleo cruise report.
 
+    **Note:** Latitude for M3 is *definitely* wrong - should probably be 77.8700 N.
+
     .. figure:: /files/mooring_locations_aen.png
 
+    **AT200** *mooring*: 
+
+    - Lat: 81.4098 N
+    - Lon: 31.2418 E
+
+
+.. toctree:: 
+    :glob:
+    :maxdepth: 2
+    
+    moorings/moorings_qc
 

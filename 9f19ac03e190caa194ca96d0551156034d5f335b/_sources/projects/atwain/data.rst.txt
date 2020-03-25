@@ -5,6 +5,8 @@ Data
     :maxdepth: 2
     
     data/mooring_data_atwain    
+    data/qc_observations
+
     data/sea_ice_concentration_atwain
     data/sea_ice_drift_atwain
     data/sea_ice_thickness_atwain

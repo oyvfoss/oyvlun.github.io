@@ -1,0 +1,8 @@
+Theory
+########
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    plume_theory/*

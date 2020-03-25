@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>AT200-5 mooring &#8212; oyvshare  documentation</title>
+    <title>AT200-4 mooring &#8212; oyvshare  documentation</title>
     <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="M1 mooring" href="m1_mooring.html" />
-    <link rel="prev" title="Moorings" href="../moorings.html" />
+    <link rel="next" title="Processing and data quality" href="moorings_qc.html" />
+    <link rel="prev" title="Processing, M3" href="extra_moorings/processing_mooring_m3.html" />
    
   <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
   
@@ -33,11 +33,96 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="at200-5-mooring">
-<h1>AT200-5 mooring<a class="headerlink" href="#at200-5-mooring" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="at200-4-mooring">
+<h1>AT200-4 mooring<a class="headerlink" href="#at200-4-mooring" title="Permalink to this headline">¶</a></h1>
 <div class="figure align-default" id="id1">
-<a class="reference internal image-reference" href="../../../../_images/at200_5_diag.jpg"><img alt="../../../../_images/at200_5_diag.jpg" src="../../../../_images/at200_5_diag.jpg" style="width: 576.0px; height: 768.0px;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/at200_4_diag.jpg"><img alt="../../../../_images/at200_4_diag.jpg" src="../../../../_images/at200_4_diag.jpg" style="width: 688.0px; height: 943.2px;" /></a>
 <p class="caption"><span class="caption-text"><em>Schematic of AT200 mooring, deployment 5 (2019 :math:`rightarrow` ).</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="sensors">
+<h2>Sensors<a class="headerlink" href="#sensors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rbr-sensors">
+<h3>RBR sensors<a class="headerlink" href="#rbr-sensors" title="Permalink to this headline">¶</a></h3>
+<p>(From mooring diagram):</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 6%" />
+<col style="width: 11%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Sensor</p></th>
+<th class="head"><p>Serial no.</p></th>
+<th class="head"><p>Nom. depth (m)</p></th>
+<th class="head"><p>Raw file <span class="math notranslate nohighlight">\(^*\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SBE16</p></td>
+<td><p>6928</p></td>
+<td><p>43</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AT200_2017-2019_SeaCAT_16-6928_data/SBE16plus_01606928_2019_11_19.hex</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>SBE37</p></td>
+<td><p>9294</p></td>
+<td><p>53</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AT200_2017-2019_uCAT_37-9294_data/SBE37SM-RS232_03709294_2019_11_19.hex</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>SBE37</p></td>
+<td><p>15252</p></td>
+<td><p>107</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AT200_2017-2019_uCAT_37-15252_data/SBE37SM-RS232_03715252_2019_11_19.hex</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>SBE37</p></td>
+<td><p>15085</p></td>
+<td><p>189</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AT200_2017-2019_uCAT_37-15085_data/SBE37SM-RS232_03715085_2019_11_19.hex</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(^*\)</span> In location
+<code class="docutils literal notranslate"><span class="pre">/home/oyvindl/work/arven_etter_nansen/data/moorings/at200/raw/</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="khz-adcp">
+<h3>150 KHz ADCP<a class="headerlink" href="#khz-adcp" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>SN: 16640.</p></li>
+<li><p>Nominal depth: 178 m.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arven_etter_nansen/data/moorings/at200/raw/AT201_ADCP/A0201000.000</span></code>, etc.</p></li>
+</ul>
+</div>
+<div class="section" id="nortek-signature-250">
+<h3>Nortek Signature 250<a class="headerlink" href="#nortek-signature-250" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This unit had memory card problems, see the document <code class="docutils literal notranslate"><span class="pre">Recovery</span> <span class="pre">report</span> <span class="pre">-</span> <span class="pre">SD</span>
+<span class="pre">card</span> <span class="pre">problems.pdf</span></code> .</p>
+<p>Looks like the data coverage was choppy. Looks like coverage is good from 5
+May 2018 to Feb 22 2019.</p>
+<div class="figure align-default">
+<img alt="../../../../_images/pressure_sig250_at200.png" src="../../../../_images/pressure_sig250_at200.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>SN: 396, (in files: 100396).</p></li>
+<li><p>Frequency: 250 Hz.</p></li>
+<li><p>Nominal depth: 39 m.</p></li>
+<li><p>5 beam.</p></li>
+<li><p>From pressure sensor: Actual depth around 40-41 m.</p></li>
+<li><dl class="simple">
+<dt>Sampling:</dt><dd><ul>
+<li><p>Burst sequence (<em>1 Hz?</em>) every 15 min.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><em>Bins</em>: 38, <em>Cell size</em>: 2 m, <em>Blanking distance:</em> 0.5 m:</p></li>
+<li><p>Data: <code class="docutils literal notranslate"><span class="pre">arven_etter_nansen/data/moorings/at200/raw/AT200_2017-2019_Signature</span> <span class="pre">250_100396_data/..</span></code></p></li>
+</ul>
+</div>
 </div>
 </div>
 
@@ -70,8 +155,8 @@
   <li><a href="../../arven_etter_nansen.html">Arven etter Nansen</a><ul>
   <li><a href="../../data.html">Data</a><ul>
   <li><a href="../moorings.html">Moorings</a><ul>
-      <li>Previous: <a href="../moorings.html" title="previous chapter">Moorings</a></li>
-      <li>Next: <a href="m1_mooring.html" title="next chapter">M1 mooring</a></li>
+      <li>Previous: <a href="extra_moorings/processing_mooring_m3.html" title="previous chapter">Processing, M3</a></li>
+      <li>Next: <a href="moorings_qc.html" title="next chapter">Processing and data quality</a></li>
   </ul></li>
   </ul></li>
   </ul></li>

@@ -68,7 +68,14 @@ SBE16 V2 ECO sensor - SeaCat with "ECO Puck"
 Nortek Signature 500
 --------------------
 
-- SN: 812.
+- SN: 812, (in files: 100812).
+- 5-beam with ice tracking mode (and *turbulence functionality*?).
+- 500 kHz.
 - Nominal depth: 25 m.
+- From pressure sensor: Actual depth around 20-21 m.
+
+- Sampling:
+    - Burst sequence (1 Hz) every 15 min. 
+- *Bins*: 16, *Cell size*: 2 m, *Blanking distance:* 0.5 m:
 - ``arven_etter_nansen/data/moorings/m1/raw/M1_2018-2019_Signature 500_100812_data/..``.
 

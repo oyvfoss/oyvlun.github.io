@@ -53,7 +53,20 @@ SBE16 V2 ECO sensor - SeaCat with "ECO Puck"
 
 Nortek Signature 500
 --------------------
-- SN: 802.
+
+.. note ::
+
+    These data seem to have names including *M1* rather than *M2*. However, the
+    serial number in the data is 100802 and data looks distinctly different from
+    M1 - probably just a labelling mistake.
+
+- SN: 802, (in files: 100802).
+- 5-beam with ice tracking mode (and *turbulence functionality*?).
 - Nominal depth: 28 m.
+- From pressure sensor: Actual depth around 19 m.
+- Sampling:
+    - Burst sequence (1 Hz) every 15 min. 
+- *Bins*: 16, *Cell size*: 2 m, *Blanking distance:* 0.5 m:
 - Data: ``arven_etter_nansen/data/moorings/m2/raw/M2_2018-2019_Signature 500_100802_data/..``
+
 

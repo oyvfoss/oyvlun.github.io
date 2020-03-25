@@ -1,0 +1,20 @@
+AT200 vs AT800
+==============
+
+Comparison of temperature and salinity from SBE37s on AT200 and AT800. Looking
+at sensors mounted near 100 m depth (no shallower sensor on AT200 during
+deployment 1, or on AT800 during deployment 2).
+
+*A few observations:*
+
+- Seasonal cycle has similar phase, but much higher amplitude at AT200.
+- This is mainly due to a difference in the cold season (spring/summer), when
+  temperatures at AT200 are typically around 2C lower than at AT800. 
+- In the warm season (fall) there is little difference between the moorings.
+  Previous analysis of the AT200 data has shown that the warm season is associated with
+  inflowing AW.
+- Warming trend in cold season temperature observed at both moorings across the three
+  years.
+
+.. figure:: /files/compare_at800_at200_TSP_near_100m.png
+    :scale: 80%

@@ -57,3 +57,23 @@ Code and data in
     - Also calculates shear.
 
       - ``m2_adcp_processed_v1.p``.
+
+
+Signature 500 ADCP
+------------------
+
+Code and data in
+``work/arven_etter_nansen/data/moorings/m2/processed/signature_500/``.
+
+``read_and_combine_avg_signature500_m2.py``:
+
+- Read signature 500 .mat files from the M2 mooring.
+- Compute bin depth based on pressure record.
+- Grab revelant fields including u, v, w, beam correlation, amplitude.
+- Compute shear from first difference of every second beam (since cell extent overlaps
+  by 50%)
+- Sort chronologically and combine into arrays spanning the entire deployment.
+- Saving to ``m2_signature_avg_combined_unprocessed.p``.
+
+*Note: NO MASKING OR QUALITY CONTROL done here. The whole depth range is included,
+including above-surface bins.*

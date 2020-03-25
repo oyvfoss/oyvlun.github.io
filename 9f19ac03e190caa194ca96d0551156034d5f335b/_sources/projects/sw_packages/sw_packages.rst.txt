@@ -1,0 +1,8 @@
+Software packages
+#################
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    ./*

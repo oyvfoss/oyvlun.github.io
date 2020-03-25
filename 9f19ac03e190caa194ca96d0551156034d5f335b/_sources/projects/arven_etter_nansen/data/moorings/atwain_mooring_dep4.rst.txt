@@ -1,7 +1,60 @@
-AT200-5 mooring
-===============
+AT200-4 mooring
+###############
 
-.. figure:: /files/at200_5_diag.jpg
+.. figure:: /files/at200_4_diag.jpg
     :scale: 80%
 
     *Schematic of AT200 mooring, deployment 5 (2019 :math:`\rightarrow` ).*
+
+
+
+
+Sensors
+=======
+
+RBR sensors 
+------------
+(From mooring diagram):
+
+=================== ==========  ================= ================================================================================================================
+Sensor              Serial no.  Nom. depth (m)    Raw file :math:`^*`
+=================== ==========  ================= ================================================================================================================
+SBE16               6928        43                 ``AT200_2017-2019_SeaCAT_16-6928_data/SBE16plus_01606928_2019_11_19.hex``
+SBE37               9294        53                 ``AT200_2017-2019_uCAT_37-9294_data/SBE37SM-RS232_03709294_2019_11_19.hex``
+SBE37               15252       107                ``AT200_2017-2019_uCAT_37-15252_data/SBE37SM-RS232_03715252_2019_11_19.hex``
+SBE37               15085       189                ``AT200_2017-2019_uCAT_37-15085_data/SBE37SM-RS232_03715085_2019_11_19.hex``
+=================== ==========  ================= ================================================================================================================
+
+- :math:`^*` In location
+  ``/home/oyvindl/work/arven_etter_nansen/data/moorings/at200/raw/``.
+
+150 KHz ADCP
+------------
+
+- SN: 16640.
+- Nominal depth: 178 m.
+- ``arven_etter_nansen/data/moorings/at200/raw/AT201_ADCP/A0201000.000``, etc.
+
+
+Nortek Signature 250
+--------------------
+
+.. note ::
+
+    This unit had memory card problems, see the document ``Recovery report - SD
+    card problems.pdf`` .
+
+    Looks like the data coverage was choppy. Looks like coverage is good from 5
+    May 2018 to Feb 22 2019.
+
+    .. figure:: /files/pressure_sig250_at200.png
+
+- SN: 396, (in files: 100396).
+- Frequency: 250 Hz.
+- Nominal depth: 39 m.
+- 5 beam.
+- From pressure sensor: Actual depth around 40-41 m.
+- Sampling:
+    - Burst sequence (*1 Hz?*) every 15 min. 
+- *Bins*: 38, *Cell size*: 2 m, *Blanking distance:* 0.5 m:
+- Data: ``arven_etter_nansen/data/moorings/at200/raw/AT200_2017-2019_Signature 250_100396_data/..``

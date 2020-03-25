@@ -1,0 +1,12 @@
+Understanding the melt equations
+################################
+
+The melt equations come from considering the thermodynamic conditions at the
+interface between the ice face and the plume.
+
+We assume that there is a thin interface between the plume and the glacier, where
+the interface is in thermodynamic equillibrium with the ice.
+
+.. figure:: /files/meltcartoon.jpg
+    :scale: 50%
+

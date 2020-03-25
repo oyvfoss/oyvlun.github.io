@@ -9,6 +9,13 @@ Projects
    argo_barents/argo_barents
    fjordeco/fjordeco
 
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   sw_packages/sw_packages
+
+
 Miscellaneous:
 
 .. toctree::

@@ -1,0 +1,14 @@
+M1: Shear spectra
+#################
+
+.. figure:: /files/sic_for_iw_m1.png
+    :scale: 80%
+
+    *Sea ice concentration at M1.*
+
+
+.. figure:: /files/shear_spectra_m1.png
+    :scale: 80%
+
+    *Shear spectra from the M1 ADCP. Computed using overlapping hanning windows
+    of 90 day length.*

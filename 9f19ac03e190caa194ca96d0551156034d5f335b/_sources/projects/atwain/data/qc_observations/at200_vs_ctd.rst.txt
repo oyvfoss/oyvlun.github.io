@@ -1,0 +1,74 @@
+Comparison: mooring time series and shipboard CTD
+##################################################
+
+No post-deployment calibration is available from the SBE37 sensors on the AT200
+mooring. In order to evaluate the validity of the measurements across the
+measurement period, we attempt to compare with shipboard CTDs taken during service of the
+moorings.
+
+Three SBE37 sensors were used on the mooring (serial numbers 9294, 9295, and
+9296). The depth of each sensor varied between deployments:
+
+ *Table 1: Overview of (approximate!) depths of each sensor during each deployment.*
+
+======= ======== ======== =========
+ -      **9294** **9295** **9296**
+======= ======== ======== =========
+Dep 1   105 m    132 m    189 m 
+Dep 2   118 m    140 m    53 m 
+Dep 3   130 m    144 m    50 m 
+======= ======== ======== =========
+
+We look at specific CTD profiles taken within 2 km of the mooring location, 
+detailed in the table below. CTD data was read directly from the files specified
+in the table, and no processing was applied to the CTD data.
+
+ *Table 2: Overview of shipboard CTDs used for comparison with SB CTD sensors on AT200 mooring. D is
+ the distance between the mooring and the CTD coordinates*.
+
+===== ======= ========================== ========= ===================
+Depl. CTD#    Source file                Date      D (km)
+===== ======= ========================== ========= ===================
+1     1       ``atw12_CTD.nc``           16.09.12  1.51
+1     2       ``atw13_CTD.nc``           15.09.13  0.73
+2     M1-1    ``M1-1.cnv``               15.09.15  0.32
+2     M1-2    ``M1-2.cnv``               15.09.15  0.86
+3     AT209   ``AT209.cnv``              17.09.17  0.35
+3     AT209-1 ``AT209.cnv``              17.09.17  0.48
+===== ======= ========================== ========= ===================
+
+A direct comparison between the moorings and CTD profiles yields poor results in
+most cases. While this may in part be due to sensor problems, it probably a
+reflection of time and space offsets in combination with the large temperature
+variability.
+
+The figures below show the direct comparison between the mooring temperature time
+series and the ship CTDs in Table 2. 
+
+*Note that each CTD profile is only assigned one
+single time stamp, which is what is shown here. The exact time of the
+measurement at the mooring sensor depth may be different from the time stamp
+used here.*
+
+*(See text on figure for details).*
+
+*(Click on the figures for larger versions).*
+
+.. figure:: /files/compare_ctd_dep1_ctd1_2012.png
+    :scale: 60%
+
+.. figure:: /files/compare_ctd_dep1_ctd2_2013.png
+    :scale: 60%
+
+.. figure:: /files/compare_ctd_dep2_ctdM1-1_2015.png
+    :scale: 60%
+
+.. figure:: /files/compare_ctd_dep2_ctdM1-2_2015.png
+    :scale: 60%
+
+.. figure:: /files/compare_ctd_dep3_ctd209-1_2017.png
+    :scale: 60%
+
+
+.. figure:: /files/compare_ctd_dep3_ctd209_2017.png
+    :scale: 60%
