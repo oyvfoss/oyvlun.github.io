@@ -1,0 +1,21 @@
+Surface heat budget
+###################
+
+Comparing heat flux terms from ERA-5 (interpolated onto the AT200 location) with
+ocean and sea ice time series.
+
+The following ERA5 variables are used (divided by 3600 hps to obtain the
+instantaneous fluxes):
+    
+    - ``surface_sensible_heat_flux``
+    - ``surface_latent_heat_flux``
+    - ``surface_net_thermal_radiation``
+    - ``surface_net_solar_radiation``
+
+In the figure below, thin lines show dailty means, and thick lines show weekly
+means. 
+
+(*Click to enlarge*)
+
+.. figure:: /files/surafce_heat_and_ocean_overview.png
+    :scale: 80%

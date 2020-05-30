@@ -1,6 +1,8 @@
 Comparison: mooring time series and shipboard CTD
 ##################################################
 
+Code: ``/home/oyvindl/work/atwain/code/qc/at200_vs_ctd``, esp. ``individual_prof_and_time_series.py``.
+
 No post-deployment calibration is available from the SBE37 sensors on the AT200
 mooring. In order to evaluate the validity of the measurements across the
 measurement period, we attempt to compare with shipboard CTDs taken during service of the

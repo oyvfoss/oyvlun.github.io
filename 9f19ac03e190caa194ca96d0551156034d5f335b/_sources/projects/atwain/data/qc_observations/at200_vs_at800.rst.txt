@@ -16,5 +16,7 @@ deployment 1, or on AT800 during deployment 2).
 - Warming trend in cold season temperature observed at both moorings across the three
   years.
 
+Code and collected data in ``/home/oyvindl/work/atwain/code/qc/at800/``.
+
 .. figure:: /files/compare_at800_at200_TSP_near_100m.png
     :scale: 80%

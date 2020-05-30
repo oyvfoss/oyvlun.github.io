@@ -24,6 +24,7 @@ Results
     mooring_obs
     sea_ice
     sea_ice_drift
+    surface_heat_budget/surface_heat_budget_overview
     large_scale_context
 
 --------------------------
