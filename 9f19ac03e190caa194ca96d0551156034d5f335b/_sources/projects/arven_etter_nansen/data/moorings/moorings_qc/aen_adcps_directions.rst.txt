@@ -1,4 +1,4 @@
 Investigating current directions in AeN moorings
 ################################################
 
-`Slides detailing ADCP processing and QC <../../../../../../html_external/misc/adcp_proc_liminal_slides/adcp_proc.html>`_
+See last section of `slides detailing ADCP processing and QC <../../../../../html_external/misc/adcp_proc_liminal_slides/adcp_proc.html>`_
