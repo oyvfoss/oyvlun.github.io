@@ -1,0 +1,45 @@
+Overview of code and figures
+#############################
+
+**NOTE:** Code refers to data of the ``FJORD_DATA`` disk.
+
+
+Figures
+=======
+
+
+
+- Code in ``projects/andvord_plumes/code/figures``
+- Figures in ``projects/andvord_plumes/figures/manuscript/``
+
+
+==================== ======================= ===================================== ==============================
+Figure name          Source script           Description                           Figure  
+==================== ======================= ===================================== ==============================
+``overv_map``        ``mapfig.py``            **a:** nice bathy map                 |mapfig|
+                                              **b:** map of CTDs and BG area
+-------------------- ----------------------- ------------------------------------- ------------------------------                                          
+``near_glacier``     ``near_glacier_map.py``  Map of near-glacier measurements     |near_glacier|
+==================== ======================= ===================================== ==============================
+
+
+
+.. |mapfig| image:: /files/mapfig.png 
+   :scale: 15%
+
+.. |near_glacier| image:: /files/near_glacier.png
+   :scale: 15%
+
+
+Figures in Eidam 2019
+=====================
+
+Links to Eidam 2019:
+
+- `Main <https://agupubs.onlinelibrary.wiley.com/doi/epdf/10.1029/2019GL084499>`_ 
+- `Supplementary <https://agupubs.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1029%2F2019GL084499&file=grl59823-sup-0001-2019GL084499-S01.pdf>`_ 
+
+.. figure:: /files/plumefigs_eidam.png
+
+    *Figure S1, supp info*
+

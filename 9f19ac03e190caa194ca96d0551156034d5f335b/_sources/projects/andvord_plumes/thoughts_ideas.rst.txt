@@ -1,0 +1,9 @@
+Thoughts and ideas
+==================
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    thoughts_ideas/*
+

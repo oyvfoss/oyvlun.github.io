@@ -1,0 +1,81 @@
+Narrative
+##########
+
+Motivation
+===========
+
+- WAP is special compared to other glacial fjords in that runoff is very small.
+- We know next to nothing about glacier-ocean interactions, except that they are
+  very important to sediment and iron fluxes and biology. 
+- Like in Greenland, there is a deep-water heat source in the form of mUCDW - 
+  and this appears to drive glacial retreat along the WAP.
+- Both the atmosphere and the ocean are changing - we are interested in how this
+  may change g-o interactions in the future.
+
+Observations
+==============
+**Plumes**
+
+- Plumes observed in Andvord Bay during three separate field campaigns.
+- Source appears to be consistently at the same location.
+- Spreading downfjord, dissapating with distance.
+
+**Origin of plumes derived from T-S properties**
+
+- Examine T-S properties from near-glacier plumes (glider transect).
+- Compare with output from plume model.
+    - Trying both line and cone, and various parameters. 
+    - :math:`\rightarrow` **Meltwater source (!)**
+
+**Sensitivity experiments**
+
+- Sensitivity to deep water temperature.
+    - Using an ideal profile together with existing parameters, "heat up" the
+      deepwater and see whether melting/fluxes increase. 
+    - **NOTE**: Is there also a *density difference* between BSW/mUCDW that would
+      make a difference? 
+- Evaluating for WAP fjords?
+    - Holding everything else equal and forcing with profiles from WAP model?
+    - **NOTE** perhaps a difficult exercise - would have to scale with the
+      geometry somehow?
+    - **Or** can we use a dimensionalised scaling somehow? Maybe a smart choice
+      of diagnostic parameters could make this possible?
+- Sensitivity to subglacial runoff.
+    - *What happens if we start to get subglacial freshwater runoff?*
+    - Introduce subglacial FW flux and see what happens.
+        - Do the plumes reach the surface?
+        - Do they quickly out-compete the present-day plumes?
+
+
+
+**Known unknowns: Need for observations**
+
+- Need to constrain the fluxes.
+- Need to know more about terminus geometry.
+
+Points of discussion
+====================
+
+**Origin of observed mid-water intrusions**
+
+(Combining and shortening 4.1 and 4.2. from present manuscript).
+
+- TS properties consistent with meltwater source.
+- Speculation: Maybe overhang/melt?
+- Key: Otherwise silent system?
+- Frequqncy connected to caling events etc?
+
+**Lessons from buoyant plume theory**
+(Base on 4.3 from present manuscript).
+
+- Specific to the Bagshawe experiments.
+
+**Implications for physical and geochemical fluxes**
+
+**Potential effects of ocean warming and/or increased subglacial runoff**
+
+
+NOTES
+=====
+
+- What about geothermal melt?

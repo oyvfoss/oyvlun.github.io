@@ -1,0 +1,15 @@
+Andvord Bay glacial plumes
+##########################
+
+.. figure:: /files/example_prof_plume.png
+    :scale: 70%
+
+
+.. toctree:: 
+    :maxdepth: 1
+
+    thoughts_ideas
+    code_and_figure_overview
+    status
+
+- `Plume model implementation <../sw_packages/plume_model.html>`_

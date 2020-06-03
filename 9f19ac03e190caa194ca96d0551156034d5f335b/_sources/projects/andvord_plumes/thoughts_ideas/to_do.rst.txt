@@ -1,0 +1,49 @@
+To do
+######
+
+- **Validate plume model implementation.**
+    - Need to make sure the model does what it is supposed to.
+    - Did some of this earlier - looks good, but gettign some (minor
+      discrepancies vs Matlab implememntation).
+      - Need to make sure I understand what is going on.
+
+- **Make completely sure I understand whether to use potential or in-situ
+  temperature**
+    - Look at my notes from somewhere in the logbook - I've been over this before. 
+
+- **Consider reprocessing CTD data?**
+    - Maybe use improved SB routines?
+
+- **Find terminus positions**
+   - Need to know exactly how far from the terminus these measurements were collected!
+    - Previous e-mails with Jack?
+    - Amanda's submitted paper?
+   - May have to go with the *closest position in time*, or a linear average of
+     the two closest ones?
+
+- **Look around in Quantarctica at tidal flexing, etc?**
+    - Can I obtain some basic parameters that may be of interest?
+
+- **Read and reacquaint with relevant papers**
+    - My fjordeco papers.
+    - Emily.
+    - Lisa and Kiefer.
+    - Jack.
+    - RACMO papers (van Wessem).
+    - Vaughan runoff paper.
+
+- **Finish and publish plume code**
+    - I think things should be running ok now?
+    - The following need to be done before publishing:
+        - Check integrety (see above)
+        - Remove any internal dependencies.
+        - Check ease-of-use.
+        - Fix documentation.
+    - Git publishing:
+        - Create a separate git user for code projects.
+            - Want to keep separate from the project website..
+         
+
+
+
+

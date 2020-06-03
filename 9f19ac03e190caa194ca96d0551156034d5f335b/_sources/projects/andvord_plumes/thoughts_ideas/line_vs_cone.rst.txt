@@ -1,0 +1,9 @@
+Line vs cone plume?
+###################
+
+- Transects seem to indicate 1 km as a (generous upper bound).
+- Line plume assumes that width is much larger than sides..
+- May have to repeat the analysis with both line and cone plumes?
+   - Need to implement in ``plume.py`` (should be pretty easy).
+
+
