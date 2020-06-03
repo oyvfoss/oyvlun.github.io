@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Øyvind test template</title> <!-- You'll want to change that obviously-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../source_code/stylesheets/katex.min.css">
+    <link rel="stylesheet" href="../source_code/stylesheets/liminal.css">
+
+    <style>            
+        /* Overall styling for slide */
+        .remark-slide-content {
+            padding:0em 4em 0em 4em;
+            font-family: 'Georgia';
+            letter-spacing: 0.025em;
+        }
+     
+        /* Styling for level one header, #Text */
+        .remark-slide-content h1 {
+            font-size: 2.4em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Styling for level two header, ##Text */
+        .remark-slide-content h2 {
+            font-size: 1.55em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Styling for level three header, ###Text */
+        .remark-slide-content h3 {
+            font-size: 1.4em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+
+        /* Styling for paragraphs and lists */
+        .remark-slide-content p,ol,ul {font-size: 1.2em;}
+
+        /* Styling for code blocks */
+        .remark-code,.remark-inline-code {font-family: 'Ubuntu Mono';}
+        
+        /* Styling for links */
+        a {text-decoration: none;color: #666666;}
+        /* Setting link properties is particular, do not change order below*/
+        a:visited {color: #666666}        
+        a:hover {color: #33AA99}
+        a:active,a#active {color: #FF9700;}
+        
+        /* Some special classes for the title slide */
+
+
+        .authors {
+            font-size: 1.4em;
+            color: #606060;
+            letter-spacing: 0.02em;
+        }
+        
+
+        .title {
+            font-size: 2.0em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+        
+
+        .journalanddate {
+            font-size: 1.0em;
+            color: #606060;
+            font-style: italic;
+            letter-spacing: 0.02em;
+        }
+        
+        .subtitle, .institution {
+            font-size: 1.0em;
+        }
+
+        .zotbibcode {     
+            color: rgb(88, 140, 182);
+       
+            font-size: 0.8em;
+            font-style: italic;}
+        
+        .linktopaper {
+            color: #285ba7;
+            font-size: 1.0em;
+            font-style: italic;
+        }
+        
+        .note {
+            font-size: 0.6em;
+        }
+        
+        /* Other special classes */
+        .cite {
+            font-size: 0.8em;
+            color: #33AA99;
+            font-style: italic;
+        }
+        
+        .footnote {
+            position: absolute;
+            bottom: 2em;
+            left: 6em;
+            font-size: 0.7em;
+        }
+        
+        .caption {
+            font-size: 0.5em;
+            line-height: 10%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <textarea id="source">
+class: center, middle
+<br/><br/><br/><br/>     
+.authors[Authors]  
+
+.title[Paper title ]     
+.journalanddate[Journal name and year]
+<br/><br/>          
+.linktopaper[[{Link to paper}](https://www.dagbladet.no)]      
+<br/><br/>          
+.zotbibcode[zotbib_2002]      
+<br/><br/><br/>
+.note[Notes by Øyvind Lundesgaard. Created using a modified version of [{Liminal}](https://github.com/jonathanlilly/liminal).]
+    
+<!-----
+name: toc
+class: left
+#Table of Contents        
+      
+1. [Introduction](#overview)
+1. [Method](#method)
+1. [Conclusions](#conclusions)
+
+---
+layout: true  .toc[[&#10023;](#toc)]-->   
+        
+---
+name: overview  
+class: left
+#  Overview
+
+Quick summary of the paper.
+
+---
+name: method     
+class: left
+#  Methods
+        
+---
+class: center
+##An example figure
+
+<img style="width:60%"  src="./figures/figure1.png">
+
+---
+class: center
+##An example figure with to columns
+
+.left-column[<br/>Text in the right column.]
+.right-column[<img style="width:100%"  src="./figures/figure1.png"> <br/><br/>*Text below
+the figure*]
+
+---
+class: center
+#An Animation
+   
+Commented out for now.
+<!-- <video preload="auto" width="60%" height="auto"  data-setup="{}" autoplay
+loop controls><source src="./videos/vortexmovie.mp4" type="video/mp4" /></video>
+-->
+                
+---
+name: conclusions       
+class: left
+#  Conclusions
+        
+
+    </textarea>
+    <script src="../source_code/javascript/remark-latest.min.js" type="text/javascript"></script>
+    <script defer src="../source_code/javascript/katex.min.js"></script>
+    <script defer src="../source_code/javascript/auto-render.min.js"></script>
+    <!-- Call remark.js and KaTeX with liminal default settings -->
+    <script type="text/javascript" src="../source_code/javascript/call-javascript.js">
+</script>
+       
+</body>
+</html>

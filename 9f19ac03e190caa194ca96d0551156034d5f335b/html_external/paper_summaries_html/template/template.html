@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Journal title</title> <!-- You'll want to change that obviously-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../liminal_source_code/stylesheets/katex.min.css">
+    <link rel="stylesheet" href="../liminal_source_code/stylesheets/liminal.css">
+
+    <style>            
+        /* Overall styling for slide */
+        .remark-slide-content {
+            padding:0em 4em 0em 4em;
+            font-family: 'Georgia';
+            letter-spacing: 0.025em;
+        }
+     
+        /* Styling for level one header, #Text */
+        .remark-slide-content h1 {
+            font-size: 2.4em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Styling for level two header, ##Text */
+        .remark-slide-content h2 {
+            font-size: 1.55em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Styling for level three header, ###Text */
+        .remark-slide-content h3 {
+            font-size: 1.4em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+
+        /* Styling for paragraphs and lists */
+        .remark-slide-content p,ol,ul {font-size: 1.2em;}
+
+        /* Styling for code blocks */
+        .remark-code,.remark-inline-code {font-family: 'Ubuntu Mono';}
+        
+        /* Styling for links */
+        a {text-decoration: none;color: #666666;}
+        /* Setting link properties is particular, do not change order below*/
+        a:visited {color: #666666}        
+        a:hover {color: #33AA99}
+        a:active,a#active {color: #FF9700;}
+        
+        /* Some special classes for the title slide */
+
+
+        .authors {
+            font-size: 0.8em;
+            color: #606060;
+            letter-spacing: 0.02em;
+        }
+        
+
+        .title {
+            font-size: 1.0em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.02em;
+        }
+        
+
+        .journal {
+            font-size: 0.8em;
+            color: #606060;
+            letter-spacing: 0.02em;
+        }
+        
+        .subtitle, .institution {
+            font-size: 1.0em;
+        }
+
+        .zotbibcode {     
+            color: rgb(88, 140, 182);
+            font-size: 0.6em;
+            font-style: italic;}
+        
+        .linktopaper {
+            color: #285ba7;
+            font-size: 0.6em;
+            font-style: italic;
+        }
+        
+        .note {
+            font-size: 0.5em;
+        }
+        
+        /* Other special classes */
+        .cite {
+            font-size: 0.8em;
+            color: #33AA99;
+            font-style: italic;
+        }
+        
+        .footnote {
+            position: absolute;
+            bottom: 2em;
+            left: 6em;
+            font-size: 0.7em;
+        }
+        
+        .caption {
+            font-size: 0.5em;
+            line-height: 10%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <textarea id="source">
+class: center
+
+.left-column[<br/><br/><br/>
+<img style="width:100%"  src="merk_2020_frontpage.png">]
+.right-column[
+<br/><br/>  
+.authors[Author et al. (20XX)] <br/> 
+.title[The Title of the Paper]
+<br/><br/>.journal[Journal of Something]
+<br/><br/>     
+
+.zotbibcode[author_20XX]  
+.linktopaper[[Link to paper](https://www.dagbladet.no)]      
+<br/><br/>      
+.note[Notes by Øyvind Lundesgaard. Created using a modified version of [{Liminal}](https://github.com/jonathanlilly/liminal).]
+]
+
+
+        
+---
+name: overview  
+class: left
+#  Overview
+
+Using a slightly modified version JS Lilly's [{Liminal}](https://github.com/jonathanlilly/liminal)] to create summaries of papers.
+
+---
+name: basics  
+class: center
+##  Some basics
+
+See [J.M. Lilly's tutorial](http://jmlilly.net/talks/liminal/index.html) 
+for details.
+<br/><br/>
+Can use normal makup stylizing such as **bold** or *italic*.
+<br/><br/>
+Otherwise, need to use some html basics, such as line breaks. 
+<br/><br/>
+Figures can be included, e.g.:
+
+<img style="width:30%"  src="./figure1.png">
+
+Here is a figure, together with a caption that describes it.
+<br/><br/>
+See the following page for the code used to produce this. 
+
+---
+name: basics_code  
+class: left
+##  Some basics (code)
+
+```haml  
+---
+name: basics  
+class: center
+##  Some basics
+
+See [J.M. Lilly's tutorial](http://jmlilly.net/talks/liminal/index.html) 
+for details.
+<br/><br/>
+Can use normal makup stylizing such as **bold** or *italic*.
+<br/><br/>
+Otherwise, need to use some html basics, such as line breaks. 
+<br/><br/>
+Figures can be included, e.g.:
+
+<img style="width:30%"  src="./figure1.png">
+
+Here is a figure, together with a caption that describes it.
+<br/><br/>
+See the following page for the code used to produce this. 
+```
+
+---
+name: method     
+class: left
+#  Methods
+        
+---
+class: center
+##An example figure
+
+<img style="width:60%"  src="mer2020_meteo_forcing.png">
+
+---
+class: center
+##An example figure with two columns
+
+.left-column[<br/>Text in the right column.]
+.right-column[<img style="width:100%"  src="mer2020_meteo_forcing.png">
+<br/><br/>
+<img style="width:75%"  src="mer2020_meteo_capt.png"> 
+]
+
+---
+class: center
+#An Animation
+   
+Commented out for now.
+<!-- <video preload="auto" width="60%" height="auto"  data-setup="{}" autoplay
+loop controls><source src="./videos/vortexmovie.mp4" type="video/mp4" /></video>
+-->
+                
+---
+name: conclusions       
+class: left
+#  Conclusions
+        
+
+    </textarea>
+    <script src="../liminal_source_code/javascript/remark-latest.min.js" type="text/javascript"></script>
+    <script defer src="../liminal_source_code/javascript/katex.min.js"></script>
+    <script defer src="../liminal_source_code/javascript/auto-render.min.js"></script>
+    <!-- Call remark.js and KaTeX with liminal default settings -->
+    <script type="text/javascript" src="../liminal_source_code/javascript/call-javascript.js">
+</script>
+       
+</body>
+</html>

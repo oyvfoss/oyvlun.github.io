@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ADCP processing</title> <!-- You'll want to change that obviously-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="./stylesheets/katex.min.css">
+    <link rel="stylesheet" href="./stylesheets/liminal.css">
+
+    <style>            
+        /* Overall styling for slide */
+        .remark-slide-content {
+            padding:0em 4em 0em 4em;
+            font-family: 'Georgia';
+            letter-spacing: 0.025em;
+        }
+     
+        /* Styling for level one header, #Text */
+        .remark-slide-content h1 {
+            font-size: 2.4em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Styling for level two header, ##Text */
+        .remark-slide-content h2 {
+            font-size: 1.55em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Styling for level three header, ###Text */
+        .remark-slide-content h3 {
+            font-size: 1.4em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+
+        /* Styling for paragraphs and lists */
+        .remark-slide-content p,ol,ul {font-size: 1.2em;}
+
+        /* Styling for code blocks */
+        .remark-code,.remark-inline-code {font-family: 'Ubuntu Mono';}
+        
+        /* Styling for links */
+        a {text-decoration: none;color: #666666;}
+        /* Setting link properties is particular, do not change order below*/
+        a:visited {color: #666666}        
+        a:hover {color: #33AA99}
+        a:active,a#active {color: #FF9700;}
+        
+        /* Some special classes for the title slide */
+        .title {
+            font-size: 2.0em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+        
+        .author {
+            font-size: 1.4em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.02em;
+        }
+        
+        .coauthor {
+            font-size: 1.0em;
+            color: #606060;
+            font-weight: bold;
+            letter-spacing: 0.02em;
+        }
+        
+        .subtitle, .institution {
+            font-size: 1.0em;
+        }
+        
+        .date {
+            font-size: 1.0em;
+            font-style: italic;
+        }
+        
+        .note {
+            font-size: 0.6em;
+        }
+        
+        /* Other special classes */
+        .cite {
+            font-size: 0.8em;
+            color: #33AA99;
+            font-style: italic;
+        }
+        
+        .footnote {
+            position: absolute;
+            bottom: 2em;
+            left: 6em;
+            font-size: 0.7em;
+        }
+        
+        .caption {
+            font-size: 0.5em;
+            line-height: 10%;
+        }
+        
+        .smaller {
+            font-size: 0.85em;
+        }
+        
+                
+        .tocentry {
+            font-size: 1.5em;
+        }
+
+    </style>
+</head>
+
+<body>
+    <textarea id="source">
+class: center, middle
+<br/><br/><br/><br/>                       
+.title[Processing of AeN mooring data]     <br/>   
+.subtitle[Overview of preliminary processing and diagnostics]
+<br/><br/>          
+.date[June 2, 2020] 
+<br/><br/><br/><br/><br/>   
+.note[Created by Øyvind L with [{Liminal}](https://github.com/jonathanlilly/liminal) using [{Remark.js}](http://remarkjs.com/) + [{Markdown}](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) +  [{KaTeX}](https://katex.org)]
+    
+
+---
+name: toc
+class: left
+#Table of Contents        
+<br/>  
+1. .tocentry[[ADCP data](#adcp_data)]
+1. .tocentry[[Data processing - 150 kHz ADCP](#data_proc)]
+1. .tocentry[[Data processing - Signature 500](#data_proc_sig)]
+1. .tocentry[[Results](#results)]
+1. .tocentry[[Issues with current direction](#curr_dir)]
+1. .tocentry[[Compass headings vs current directions](#heading_vs_dir)]
+<!-- Comment out the next slide if you don't want the Table of Contents link -->         
+---
+layout: true  .toc[[&#10023;](#toc)]
+        
+
+---
+name: adcp_data 
+class: left
+
+
+.left-column[
+#  ADCP data
+Three moorings in the northern Barents Sea, all equipped with RDI 150kHz ADCPs.
+
+- Two standard moorings.
+- One bottom lander *(M3)*.
+
+<img style="width:75%"  src="./figures/mooring_depths.png">
+
+Oct 2018 -  Nov 2019]
+
+.right-column[<img style="width:100%"  src="./figures/map_etc.png">]
+
+--
+
+M1 and M2 also equipped with Nortek Signature 500 5-beam ADCPS at 25/28 m.
+
+---
+
+class: left
+#  ADCP data
+
+##  150 kHz ADCP configuration
+
+Same for all three 150 kHz instruments.
+
+- Broadband mode.
+
+- 24 pings/ensemble.
+
+- 24 seconds per ping. 
+
+- Averaging interval: 20 minutes.
+
+- Vertical bin size: 8 m.
+
+<br/>
+
+No compass calibration prior to deployment.
+
+---
+
+name: data_proc   
+class: leftfile:///media/sf_work/arven_etter_nansen/data/moorings/qc/adcp_proc_overview/adcp_proc_liminal_slides/adcp_proc.html#5
+
+
+
+# Data processing - 150 kHz 
+### Initial steps
+--
+
+Data converted from *.000* to *.mat* using RDI's *WinADCP* software.
+<br/><br/>
+--
+
+Post-processing in Python using the (experimental) *oyv.data.rdi_adcp* module.
+<br/><br/>
+--
+
+Bin depths calculated based on pressure:
+
+<img style="width:70%"  src="./figures/depcalc.png">
+
+--
+
+- Chopping away profiles from deployment/recovery (from *p*).
+- Removing obviously bad rows (above surface, etc.).
+- Removing rows near the transducer, or at the far end of the range that look like
+obvious anomalies in mean profiles of current components. 
+
+--
+
+*Successive tests used to mask invalid data*
+
+---
+class: left
+# Data processing - 150 kHz 
+
+## Masking criteria
+
+Based loosely on the [IOOS Manual for Real-Time Quality Control of In-Situ
+Current Observations](https://repository.oceanbestpractices.org/bitstream/handle/11329/292/qartod_currents_manual.pdf?sequence=1&isAllowed=y).
+
+
+<img style="width:100%"  src="./figures/masking_criteria.png">
+
+
+
+---
+class: left
+# Data processing - 150 kHz 
+
+## Magnetic declination correction
+
+Rotating the current vector to correct for time-dependent magnetic declination calculated using the
+[*geomag*](https://pypi.org/project/geomag/) module, which uses the NOAA National Geophysical Data Center, epoch 2015 data.
+
+For each time step, the operation is the equivalent of:
+
+```haml
+import geomag
+magdec = geomag.declination(lat, lon, alt=0, num2date(t).date())
+uvc_corrected = uvc_orig * np.exp(1j*magdec*np.pi/180) 
+```
+
+Where *uvc = u + iv* is the complex velocity. 
+
+*Deployment average magnetic declination error:*
+
+<img style="width:40%"  src="./figures/magdec_table.png">
+
+---
+class: left
+# Data processing - 150 kHz 
+
+## Calculating shear
+
+Since adjacent depth bins are not entirely overlapping, vertical current shear is computed from first differencing of every second bin, i.e., e.g.:
+
+<img style="width:60%"  src="./figures/shear_calc.png">
+
+where *i*-indices denote vertical bins.
+
+---
+class: left
+# Data processing - 150 kHz
+
+##Example call to *oyv.data.rdi_adcp*
+
+<img style="width:100%"  src="./figures/example_call.png">
+           
+
+---
+class: left
+# Data processing - 150 kHz
+
+## Interpolation
+
+Before analysis, all ADCP data (RDI 150 and Sig 500) was interpolated in time and depth.
+.smaller[
+**Column-wise interpolation**
+
+All profiles linearly interpolated onto fixed grid with *dz* 2 m (RDI150) and 1 m (Sig
+500).
+
+- Gaps of up to 1 cell - 8 m (RDI150) and 2 m (Sig
+500) - were filled by interpolation, larger gaps left as invalid (masked).]
+
+.smaller[
+**Row-wise interpolation**]
+
+.smaller[
+1. .smaller[All data linearly interpolated onto a uniform, high-resolution time grid (*dt=19.7/9
+   min*). Gaps >2 hours left as invalid.]
+
+1. .smaller[Then, a 9-point boxcar filter was applied in time, and the time series was
+   subsampled every 9 points -> Uniform grid with *dt* = 19.7 s.]
+
+]
+
+---
+class: left
+# Data processing - 150 kHz 
+## Example of processing (M1 ADCP)
+
+<img style="width:100%"  src="./figures/m1_example.png">
+
+---
+
+name: data_proc_sig 
+class: left
+
+
+# Data processing - Sig 500
+### Processing of Signature 500 data
+
+Processing similar to RDI 150 kHz ADCP (chopping, magnetic declination
+correction, interpolation, etc.) - implemented in the *oyv.data.signature_adcp* module.
+
+First, all daily *.ad2cp* files are converted to average *.mat* files with
+Nortek's *Deployment* software.
+
+Then, the daily *.mat* files are loaded and joined into *numpy* arrays using the
+
+*read_join_signature_adcp_avg()* function, then subject to processing steps.
+
+---
+
+class: left
+
+
+# Data processing - Sig 500
+## Masking criteria
+
+
+Based on [IOOS
+Manual](https://repository.oceanbestpractices.org/bitstream/handle/11329/292/qartod_currents_manual.pdf?sequence=1&isAllowed=y)
+and [recommendations from
+Nortek](https://www.nortekgroup.com/assets/software/N3015-011-SignaturePrinciples.pdf).
+
+
+<img style="width:80%"  src="./figures/masking_criteria_sig.png">
+
+
+---
+class: left
+# Data processing - Sig 500
+
+##Example call to *oyv.data.signature_adcp*
+
+<img style="width:100%"  src="./figures/code_proc_sig.png">
+
+
+---
+class: left
+# Data processing - Sig 500 
+## Example of processing (M1 Signature)
+
+<img style="width:100%"  src="./figures/m1_sig_example.png">
+
+
+
+
+---
+
+name: results 
+class: left
+
+
+# Results
+### Currents, M1 (weekly means)
+
+<img style="width:100%"  src="./figures/m1_sig_rdi_panels.png">
+
+
+
+---
+
+class: left
+
+
+# Results
+### Currents, M2 (weekly means)
+
+<img style="width:100%"  src="./figures/m2_sig_rdi_panels.png">
+
+
+
+
+---
+
+class: left
+
+
+# Results
+### Currents, M3 (weekly means)
+
+<img style="width:100%"  src="./figures/m3_curr.png">
+
+
+---
+
+class: left
+
+
+# Results
+### Currents, M3 (weekly means)
+
+<img style="width:100%"  src="./figures/m3_curr.png">
+
+
+---
+
+class: left
+
+
+# Results
+### Full-resolution currents 
+
+<img style="width:100%"  src="./figures/tidepanels_m1_m2.png">
+
+---
+
+class: left
+
+
+# Results
+### Correlation, RDI150 vs Sig 500 (M1)
+
+<img style="width:100%"  src="./figures/scatter_u_v_sig_vs_rdi_m1.png">
+
+
+---
+
+class: left
+
+
+# Results
+### Correlation, RDI150 vs Sig 500 (M2)
+
+<img style="width:100%"  src="./figures/scatter_u_v_sig_vs_rdi_m2.png">
+
+
+---
+
+name: curr_dir 
+class: left
+
+# Issues with current direction
+
+- Compasses not calibrated.
+
+- Unknown whether M3 ADCP compass (mounted in metal lander) behaves.
+
+- Examining current directions agains various datasets.
+
+---
+
+class: left
+## LP current variance ellipses vs bathymetry
+
+
+
+<img style="width:68%"  src="./figures/lpdirs.png">
+
+- .smaller[M3 *very* contrary to expectations (strong down-gradient mean-current)]
+- .smaller[M1 and M2 ellipse rotated CCW of bathymetric contours by ~20°.]
+
+-> M3 looks **bad**, need to examine M1 and M2..
+
+
+
+---
+
+class: left
+##Comparing with AOTIM-5 predicted tides 
+.left-column[.smaller[HPFed currents depth averaged ADCP<br/>(*right:* predicted barotropic) <br/>
+<font color="#ffec5578">Variance ellipse of HPFed currents</font><br/>
+<font color="#fe5bac">Variance ellipse of tidal fit to 11 first tidal constituents</font>]
+
+
+<img style="width:120%; margin-left: -80px;"  src="./figures/comp_w_tides.png" > ]
+
+--
+
+.right-column[<br/> Comparison with tidal prediction again suggests that
+- **M3 is way off** 
+-  **M1 and M2 are both ~20° off** (both RDI150 and Sig 500).]
+
+--
+
+.right-column[This happens to be similar to the magnetic declination correction..
+<img style="width:80%"  src="./figures/magdec_table.png">
+]
+
+
+
+---
+
+name:heading_vs_dir
+class: left
+##Compass heading vs current direction
+
+### *M1 150 kHz*
+<br/><br/>
+<img style="width:100%"  src="./figures/head_vs_curr_m1.png">
+
+
+
+<br/>
+Some correlation between current direction and compass heading.
+
+
+
+---
+
+class: left
+##Compass heading vs current direction
+
+### *M1 150 kHz (detided currents)*
+<br/><br/>
+<img style="width:100%"  src="./figures/head_vs_curr_m1_detided.png">
+
+
+
+<br/>
+Correlation slightly weaker when taking out the tides.
+
+
+---
+class: left
+##Compass heading vs current direction
+
+### *M2 150 kHz*
+<br/><br/>
+<img style="width:100%"  src="./figures/head_vs_curr_m2.png">
+
+
+
+Small range in both compass heading and current direction<br/><br/> -> Difficult to
+establish correlation..
+
+
+---
+
+class: left
+##Compass heading vs current direction
+
+### *M2 150 kHz (detided currents)*
+<br/><br/>
+<img style="width:100%"  src="./figures/head_vs_curr_m2_detided.png">
+
+
+
+
+Removing the tides has little effect.
+
+---
+
+class: left
+##Compass heading vs current direction
+### *M1 Sig 500*
+
+<br/><br/>
+<img style="width:100%"  src="./figures/head_vs_curr_m1_sig500.png">
+
+
+
+<br/>
+Strong correlation in Signature 500..
+
+
+
+---
+
+class: left
+##Compass heading vs current direction
+### *M1 Sig 500 (detided currents)*
+
+<br/><br/>
+<img style="width:100%"  src="./figures/head_vs_curr_m1_detided_sig500.png">
+
+
+<br/>
+Correlation much reduced when detiding 
+
+
+---
+
+class: left
+##Compass heading vs current direction
+### *M2 Sig 500*
+
+<br/><br/>
+<img style="width:100%"  src="./figures/head_vs_curr_m2_sig500.png">
+
+
+
+
+---
+
+class: left
+##Compass heading vs current direction
+### *M2 Sig 500 (detided currents)*
+
+<br/><br/>
+<img style="width:100%"  src="./figures/head_vs_curr_m2_detided_sig500.png">
+
+
+
+    </textarea>
+    <script src="./javascript/remark-latest.min.js" type="text/javascript"></script>
+    <script defer src="./javascript/katex.min.js"></script>
+    <script defer src="./javascript/auto-render.min.js"></script>
+    <!-- Call remark.js and KaTeX with liminal default settings -->
+    <script type="text/javascript" src="./javascript/call-javascript.js">
+</script>
+       
+</body>
+</html>
