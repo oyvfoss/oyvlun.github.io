@@ -1,0 +1,17 @@
+JPL SMAP SSS
+#############
+
+SSS product. From website:s
+
+    *..sea surface salinity (SSS) product from the NASA Soil Moisture
+    Active Passive (SMAP) observatory. It is based on the Combined
+    Active-Passive (CAP) retrieval algorithm developed at JPL originally in the
+    context of Aquarius/SAC-D and now extended to SMAP.*
+    
+
+Available both as `swath product
+<https://podaac.jpl.nasa.gov/dataset/SMAP_JPL_L2B_SSS_CAP_V43?ids=ProcessingLevel:Measurement:Variable:Sensor&values=*2*:SALINITY/DENSITY:SALINITY:SMAP%20L-BAND%20RADIOMETER>`_
+with global coverage achieved about each 3 days, or `gridded product
+<https://podaac.jpl.nasa.gov/dataset/SMAP_JPL_L3_SSS_CAP_8DAY-RUNNINGMEAN_V43?ids=Measurement:ProcessingLevel:Collections&values=SALINITY/DENSITY:*3*:Aquarius-CAP>`_
+(0.6 degrees resolution, 8-day temporal resolution, or monthly means).
+

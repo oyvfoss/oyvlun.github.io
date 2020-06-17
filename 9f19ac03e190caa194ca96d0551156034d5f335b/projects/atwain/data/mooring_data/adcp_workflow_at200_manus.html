@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>ADCP workflow: processing and analysis &#8212; oyvshare  documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="CTD data source files" href="ctd_data.html" />
+    <link rel="prev" title="ADCP processing" href="adcp_processing.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="adcp-workflow-processing-and-analysis">
+<h1>ADCP workflow: processing and analysis<a class="headerlink" href="#adcp-workflow-processing-and-analysis" title="Permalink to this headline">¶</a></h1>
+<p><strong>Processing workflow</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">/atwain/data/reprocessed_mooring_data/</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">adcps_2012_2013/adcp2012_2013_read_raw.mat</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adcps_2013_2015/adcp2013_2015_read_raw.mat</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adcps_2015_2017/adcp2015_2017_read_raw.mat</span></code></p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\downarrow\)</span></p>
+<p><code class="docutils literal notranslate"><span class="pre">code/processing_and_data/moorings/adcps/reprocessing/</span></code>
+<code class="docutils literal notranslate"><span class="pre">qc_processing/process_mat_to_qc_bunch.py</span></code></p>
+<p><span class="math notranslate nohighlight">\(\downarrow\)</span></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">data/reprocessed_mooring_data/adcps_2012_2013/atwain_adcp_proc_dep1.p</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data/reprocessed_mooring_data/adcps_2013_2015/atwain_adcp_proc_dep2.p</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data/reprocessed_mooring_data/adcps_2015_2017/atwain_adcp_proc_dep3.p</span></code></p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\downarrow\)</span></p>
+<p><code class="docutils literal notranslate"><span class="pre">code/processing_and_data/moorings/adcps/reprocessing/</span></code>
+<code class="docutils literal notranslate"><span class="pre">qc_processing/compare_deployments/interpolate_deployments_for_comparison.py</span></code></p>
+<p><span class="math notranslate nohighlight">\(\downarrow\)</span></p>
+<p><code class="docutils literal notranslate"><span class="pre">data/reprocessed_mooring_data/adcp_combined/interpolated_for_comparison/</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">uv_interp_dep1.p</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uv_interp_dep2.p</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uv_interp_dep3.p</span></code></p></li>
+</ul>
+<p><strong>Analysis</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">code/processing_and_data/moorings/adcps/reprocessing/</span></code>
+<code class="docutils literal notranslate"><span class="pre">qc_processing/compare_deployments/</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">compare_mean_quantities.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compare_tidal_const.py</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atwain/figures/at200_manuscript/v1/figures_supp/uv_plot.py</span></code></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">oyvshare</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../projects.html">Projects</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../projects.html">Projects</a><ul>
+  <li><a href="../../atwain.html">A-TWAIN</a><ul>
+  <li><a href="../../data.html">Data</a><ul>
+  <li><a href="../mooring_data_atwain.html">Mooring data</a><ul>
+      <li>Previous: <a href="adcp_processing.html" title="previous chapter">ADCP processing</a></li>
+      <li>Next: <a href="ctd_data.html" title="next chapter">CTD data source files</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Øyvind Lundesgaard.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/projects/atwain/data/mooring_data/adcp_workflow_at200_manus.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

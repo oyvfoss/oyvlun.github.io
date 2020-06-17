@@ -1,0 +1,23 @@
+Background and research questions
+#################################
+
+- Ocean-ice-atmosphere interactions in the Arctic (and elsewhere!) are highly
+  dependent on the upper surface layer. 
+    - Also: Critical for biology, carbonate chemistry etc.
+- Is there a characteristic scale away from the sea ice edge where freshening occurs?
+- Is there a difference between receding and advancing sea ice cover? 
+
+*Barents Sea specific:*
+
+- What governs variability 
+    - Sea ice advection?
+    - Sea ice melt cycle timing?
+    - Wind influence?
+    
+
+
+--
+
+- *The surface ocean near the advancing and retreating sea ice edge*
+- *The freshwater layer in the Barents Sea: structure and evolution*
+

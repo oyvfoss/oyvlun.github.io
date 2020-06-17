@@ -7,6 +7,7 @@ Projects
    arven_etter_nansen/arven_etter_nansen
    atwain/atwain
    argo_barents/argo_barents
+   freshSI/freshSI
    andvord_plumes/andvord_plumes
    fjordeco/fjordeco
 

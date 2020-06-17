@@ -1,0 +1,24 @@
+TSG data from Kronprins Haakon
+###############################
+
+Received full time series processed from Ylva. Includes a quality flag system
+(1: good, 0: bad) based on a number of tests.
+
+*Variables:*
+
+- ``SSC`` - TSG conductivity
+- ``SSJT`` - TSG temperature
+- ``SSPS`` - TSG salinity
+- ``SSTP`` - Intake temperature
+
+Also lat, lon, time, flags, intake depth, etc.
+
+*Recommended flags:*
+
+    - ``QF_time`` - flags duplicates.
+    - ``QF_san`` - flags data collected during freshwater flushing
+      maintenance.
+    - ``QF_dT`` - flags instances wheredifference between SSTP and SSJT too high (accounts for lag).
+    - ``QF_h2o`` - flags instances with low water flow (e.g. during ice clogging
+      the system), as well as 10 min before and 45 min after such instances.
+

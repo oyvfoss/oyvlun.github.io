@@ -1,0 +1,32 @@
+Surface salinity near sea ice
+################################
+
+
+
+**Figures**
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    figures_fsi/*
+
+
+**Data**
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    data_fsi/*
+
+
+
+
+**Misc**
+
+.. toctree::
+    :maxdepth: 1
+    :glob:
+
+    misc_fsi/*

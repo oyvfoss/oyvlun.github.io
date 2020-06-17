@@ -1,0 +1,67 @@
+SSS monthly means in the Barents Sea
+====================================
+
+From JPL SMAP monthly means, gridded product.
+
+Click thumbnails to see the full images.
+
+
+.. figure:: /files/jpl_smap_monmeans_01_Jan.png
+    :scale: 7%
+
+    *January*
+
+.. figure:: /files/jpl_smap_monmeans_02_Feb.png
+    :scale: 7%
+
+    *February*
+
+.. figure:: /files/jpl_smap_monmeans_03_Mar.png
+    :scale: 7%
+
+    *March*
+
+.. figure:: /files/jpl_smap_monmeans_04_Apr.png
+    :scale: 7%
+
+    *April*
+
+.. figure:: /files/jpl_smap_monmeans_05_May.png
+    :scale: 7%
+
+    *May*
+
+.. figure:: /files/jpl_smap_monmeans_06_Jun.png
+    :scale: 7%
+
+    *June*
+
+.. figure:: /files/jpl_smap_monmeans_07_Jul.png
+    :scale: 7%
+
+    *July*
+
+.. figure:: /files/jpl_smap_monmeans_08_Aug.png
+    :scale: 7%
+
+    *August*
+
+.. figure:: /files/jpl_smap_monmeans_09_Sep.png
+    :scale: 7%
+
+    *September*
+
+.. figure:: /files/jpl_smap_monmeans_10_Oct.png
+    :scale: 7%
+
+    *October*
+
+.. figure:: /files/jpl_smap_monmeans_11_Nov.png
+    :scale: 7%
+
+    *November*
+
+.. figure:: /files/jpl_smap_monmeans_12_Dec.png
+    :scale: 7%
+
+    *December*

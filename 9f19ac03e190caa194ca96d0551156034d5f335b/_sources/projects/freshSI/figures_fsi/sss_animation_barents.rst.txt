@@ -1,0 +1,6 @@
+Animation of SSS in the Barents Sea
+===================================
+
+From JPL SMAP 8-day running mean, gridded product.
+
+Video :download:`HERE </files/jpl_smap_sss_anim_barents_fast.mpg>` 

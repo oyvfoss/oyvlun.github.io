@@ -1,0 +1,45 @@
+ADCP workflow: processing and analysis
+######################################
+
+
+**Processing workflow**
+
+``/atwain/data/reprocessed_mooring_data/``
+
+- ``adcps_2012_2013/adcp2012_2013_read_raw.mat``
+- ``adcps_2013_2015/adcp2013_2015_read_raw.mat``
+- ``adcps_2015_2017/adcp2015_2017_read_raw.mat``
+
+:math:`\downarrow`
+
+``code/processing_and_data/moorings/adcps/reprocessing/``
+``qc_processing/process_mat_to_qc_bunch.py``
+
+:math:`\downarrow`
+
+-    ``data/reprocessed_mooring_data/adcps_2012_2013/atwain_adcp_proc_dep1.p``
+-    ``data/reprocessed_mooring_data/adcps_2013_2015/atwain_adcp_proc_dep2.p``
+-    ``data/reprocessed_mooring_data/adcps_2015_2017/atwain_adcp_proc_dep3.p``
+
+:math:`\downarrow`
+
+``code/processing_and_data/moorings/adcps/reprocessing/``
+``qc_processing/compare_deployments/interpolate_deployments_for_comparison.py``
+
+:math:`\downarrow`
+
+``data/reprocessed_mooring_data/adcp_combined/interpolated_for_comparison/``
+
+- ``uv_interp_dep1.p``
+- ``uv_interp_dep2.p``
+- ``uv_interp_dep3.p``
+
+**Analysis**
+
+``code/processing_and_data/moorings/adcps/reprocessing/``
+``qc_processing/compare_deployments/``
+
+- ``compare_mean_quantities.py``
+- ``compare_tidal_const.py``
+
+- ``atwain/figures/at200_manuscript/v1/figures_supp/uv_plot.py``

@@ -1,6 +1,8 @@
 Processing and data quality 
 ###########################
 
+- `Slides detailing ADCP processing and QC <../../../../../html_external/misc/adcp_proc_liminal_slides/adcp_proc.html>`_
+
 .. toctree::
     :glob:
     :maxdepth: 1

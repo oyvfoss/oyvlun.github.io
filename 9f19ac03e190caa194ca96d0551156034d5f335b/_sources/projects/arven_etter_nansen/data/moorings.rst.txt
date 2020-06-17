@@ -33,9 +33,12 @@ Moorings
     - Lon: 31.2418 E
 
 
+
+
 .. toctree:: 
     :glob:
     :maxdepth: 2
     
     moorings/moorings_qc
 
+- `Slides detailing ADCP processing and QC <../../../html_external/misc/adcp_proc_liminal_slides/adcp_proc.html>`_
